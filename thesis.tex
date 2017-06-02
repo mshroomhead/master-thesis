@@ -3,7 +3,7 @@
     BCOR=15mm, % Bindekorrektur
     chapterprefix=false,
     headinclude=true,
-    footinclude=flase,
+    footinclude=false,
     mpinclude=false,
     pagesize,%         write pagesize to DVI or PDF
     fontsize=11pt,%             use this font size
@@ -15,15 +15,13 @@
     listof=flat,%        improved list of tables
     numbers=noenddot
   ]{scrbook}
-
-\usepackage{fixltx2e}
 \usepackage[utf8]{inputenc}
 \usepackage{makeidx}
 \usepackage{amsfonts}
-\usepackage[slantedGreek,sc]{mathpazo}  % Schriftart Palatino
-%\usepackage{lmodern}    % statt mathpazo, falls CM Fonts verwendet werden sollen
+%\usepackage[slantedGreek,sc]{mathpazo}  % Schriftart Palatino
+\usepackage{lmodern}    % statt mathpazo, falls CM Fonts verwendet werden sollen
 %\usepackage{mathptmx}    % statt mathpazo, falls Times  verwendet werden soll
-\usepackage[scaled=.95]{helvet}
+%\usepackage[scaled=.95]{helvet}
 \usepackage{courier}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -37,6 +35,7 @@
 \usepackage{scrpage2}
 \usepackage{epstopdf}
 \usepackage[ngerman]{babel}
+\usepackage[german=quotes]{csquotes}
 \usepackage{ellipsis}  % Korrigiert den Weißraum um Auslassungspunkte
 \usepackage{microtype}  % optischer Randausgleich etc.
 \usepackage{url}
@@ -95,12 +94,14 @@
 }
 
 %----==== new commands ====----%
+% fancy quotes
 \include{fquotes}
+
 
 \newcommand{\evaluation}[3][0]{\draw node at (#2+.5,#3+.5) {#1};}
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{C}{>{\centering\arraybackslash}X}	
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 %----==== preparations ====----%

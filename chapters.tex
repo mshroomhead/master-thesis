@@ -18,7 +18,7 @@ Diese Arbeit wird sich mit einer Anwendung für die AR beschäftigen -- der Soft
 
 Obwohl der Begriff AR zunehmend in der Industrie Verwendung findet, entbehrt er doch einer einheitlichen Definition. In \cite{azuma1997survey} wird AR als \emph{"`Variation"'} von VR betrachtet. Dagegen vermittelt Milgrim in \cite{milgram1995augmented} ein vollständigeres Verständnis, weshalb sich die Begrifflichkeiten in dieser Arbeit daran anlehnen sollen. Nach Milgrim existieren die beiden entgegengesetzten Extreme der Realität und der Virtualität. Alles dazwischen ist die sogenannte \emph{Mixed Reality (MR)}.
 
-\paragraph{MR} ist eine Umgebung, in der Elemente der realen und einer virtuellen Welt zusammen dargestellt werden.\\
+\paragraph{MR} ist eine Umgebung, in der Elemente der realen und einer virtuellen Welt zusammen dargestellt werden. \cite{kato1999marker} \\
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/rv-continuum}
@@ -51,11 +51,11 @@ Gerade bei komplexen Software-Systemen ist das der Fall. Soll zum Beispiel die z
 So wie UML-Diagramme, war die Darstellungsform der Softwarevisualisierung bislang meist zweidimensional. Mit AR wird dieser Disziplin der Visualisierung jedoch wortwörtlich ein neuer Raum an Möglichkeiten eröffnet und in diese Arbeit soll diesen Raum ausfüllen.
 
 \section{Zielsetzung}
-Für die Zielsetzung einer 3D Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die "`visualization of artifacts related to software and its development process"' \cite{diehl2007software}. Wird aber der Fokus mehr auf die Ziele, d.h. den Nutzen für den Betrachter gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
+Für die Zielsetzung einer 3D Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die "`visualization of artifacts related to software and its development process"' \cite{diehl2007software}. Wird der Fokus mehr auf die Ziele, d.h. den Nutzen für den Betrachter gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
 
-\begin{quotation}
+\begin{defbox}{Softwarevisualisierung}{software-visualization}
 Softwarevisualisierung ist die bildliche oder auch metaphorische Darstellung einer Software, um dem Betrachter durch Vereinfachung und Abstraktion das bessere Verständnis oder die einfachere Analyse von Software zu ermöglichen.
-\end{quotation}
+\end{defbox}
 
 In dieser Arbeit soll das neue Konzept \emph{CodeLeaves} für eine solche Softwarevisualisierung in der AR vorgestellt und im Detail ausgearbeitet werden.
 
@@ -85,14 +85,107 @@ Das Kapitel \ref{ch:conclusion} fasst die Ergebnisse der Arbeit zusammen und ein
 \chapter{Das Konzept CodeLeaves}
 \label{ch:concept}
 
-``Hierarchies are almost ubiquitous [...]'' \cite{robertson1991cone} haben Robertson et. al schon 1991 bei der Visualisierung von hierarchischen Informationen festgehalten. So auch bei der Struktur einer Software. Jede Software mit einer geschachtelten Paketstruktur ist hierarchisch und ist in einer Baumstruktur angeordnet. Die Dateien der Software bilden die Blätter.
+\section{CodeLeaves und die Metapher Software-Wald}
+\label{sec:idea}
 
-Der in der Informatik selbstverständlich verwendete Begriff "`Blätter"' zeugt von der ursprünglichen Metapher der Baumstruktur -- ein dreidimensionaler Baum wie er in der Natur wächst. Für eine 3D Softwarevisualisierung legt das eine wortwörtliche Interpretation der Baum-Metapher nahe.
+\emph{``Hierarchies are almost ubiquitous [...]''} \cite{robertson1991cone} halten Robertson \emph{et al.}
+ schon 1991 bei der Visualisierung von hierarchischen Informationen fest. So auch bei der Struktur einer Software. Jede Software mit einer geschachtelten Paketstruktur ist hierarchisch und kann in einer Baumstruktur dargestellt werden. \emph{"`Bäume sind eine der wichtigsten Datenstrukturen, die besonders im Zusammenhang mit hierarchischen Abhängigkeiten und Beziehungen zwischen Daten von Vorteil sind."'} \cite{ernst2016grundkurs} stellen auch Ernst \emph{et al.} fest. Draus folgt, dass die Darstellung von Software als Baum oder auch Bäume sinnvoll ist.
+
+Der Baum in der Informatik zeugt von einer ursprünglichen Metapher -- der Baum, wie er draußen in der Natur wächst. Da dieser unbestritten dreidimensional ist, liegt eine Softwarevisualisierung für die Dreidimensionalität mit einer realitätsnäheren Interpretation der Baum-Metapher nahe. Werden die Bäume, die im zweidimensionalen meist von oben nach unten gezeichnet wird, in 3D in natürlicher Wuchsrichtung modelliert und mehrere Bäume für eine Software verwendet, entsteht eine neue Metapher: der \emph{Software-Wald}.
+
+CodeLeaves stellt ein Konzept dar, dass sich die Metapher des Software-Waldes zu nutze macht und wird im Folgenden auf High-Level-Ebene skizziert und danach genauer erläutert:
+
+\begin{definitionbox}{\textbf{Konzept:} CodeLeaves}
+  \begin{enumerate}
+    \item Die Struktur der Software wird mit nach oben wachsenden Bäumen dargestellt.
+    \item Jedes Paket im \emph{Root-Verzeichnis} wird als einzelner Baum auf einer Ebene -- dem \emph{Waldboden} -- dargestellt.
+    \item Die Blätter der Bäume entsprechen den Softwareartefakten (z.B. Klassen) und können durch ihre Farbe eine beliebigen Metrik visualisieren. 
+    \item Zwischen den Bäumen entsteht ein \emph{Wurzelgeflecht}, was die aggregierten Abhängigkeiten zwischen den Paketen darstellt.
+    \item Abhängigkeiten zwischen einzelnen Softwareartefakten werden aggregiert über die Elternpakete als farbige bzw. Dicke der Äste dargestellt oder alternativ als direkte \emph{Spinnweben} zwischen den Bäumen.
+  \end{enumerate}
+\end{definitionbox}
+
+\paragraph{Punkt 1} ist dafür verantwortlich, dass die Softwarevisualisierung nahe an der tatsächlichen Software ist, wie sie ein Entwickler in seiner Code-Base gewöhnt ist. Das heißt, diejenigen, die auch tatsächlich mit der Software arbeiten, finden sich aufgrund der bekannten Baumstruktur auch in der Visualisierung schnell zurecht, ohne jedes Softwareartefakt auszuwählen, um zu sehen, mit welchem sie es zu tun haben. Im Fachjargon wird hier von der \emph{Habitability} gesprochen, also wie schnell oder gut sich ein Betrachter in einer Software oder auch deren Visualisierung "`zuhause"' fühlt. \cite{wettel2007program}
+
+\paragraph{Punkt 2} ist weitgehend selbsterklärend. Durch Darstellung der Software in mehreren Bäumen entsteht erst der Software-Wald und die Pakete im Root-Verzeichnis als Wurzeln der Bäume zu verwenden bietet sich an. Das schließt jedoch nicht aus, dass Unterpakete als neuer Waldboden verwendet wird. Interaktion mit dem Waldboden soll Teil des Kapitel \ref{ch:interaction} sein.
+
+\paragraph{Punkt 3} bedeutet, dass in CodeLeaves durch die Farbe der Blätter ein \emph{Laubdach} entsteht, dass eine gute Übersicht über eine ausgewählte Metrik der Software gibt. Beispielsweise kann der Farbe der Blätter die Code-Coverage der einzelnen Softwareartefakte zugewiesen werden. Mit einer Skala von Grün bis Rot kann dann der Software-Wald bei guter Testabdeckung im sommerlichen Grün erstrahlen, oder bei einer weniger guten Coverage eher in den Herbst übergehen. Die Färbung des Laubdachs ist flexibel auf jegliche Metrik anwendbar, die bei der betrachteten Software zur Verfügung steht.
+
+\paragraph{Punkt 4} bietet einen goßen Vorteil gegenüber der Zweidimensionalität. In Abbildung \ref{fig:3d-advantage} wird rechts das Prinzip des Wurzelgeflechts mit einem minimalistischen Beispiel illustriert.
+
+\begin{figure}[htb]
+  \includegraphics[width=.8\textwidth]{figures/3d-advantage}
+  \caption{Vorteil der Dreidimensionalität bei der Darstellung von Abhängigkeiten}
+  \label{fig:3d-advantage}
+\end{figure}
+
+Die Abhängigkeiten zwischen den Bäumen wird auf einen Blick ersichtlich. Betrachtet man die Bäume in 2D, wie es im linken Teil der Abbildung dargestellt ist, verschwinden die Abhängigkeiten hintereinander und sind nicht zuzuordnen.
+
+\paragraph{Punkt 5} heißt, dass die Abhängigkeiten einer Software sehr übersichtlich auf die Struktur der Software abgebildet werden können, ohne diese zu beeinflussen. Für das besser Verständnis bedarf es einer Definition der Aggregation von Abhängigkeiten.\\
+
+\begin{splitbox}{Aggregation von Abhängigkeiten}{aggregation}
+Bei der Aggregation von Abhängigkeiten zwischen Softwareartefakten werden die Abhängigkeiten nicht direkt dargestellt, sondern über die Eltern-Pakete geleitet. Seien $x, y$ Pakete und Softwareartefakt $A \in x$ besitze eine Abhängigkeit zu Softwareartefakt $B \in y$, dann geht die Abhängigkeit von $A$ zu einem zusätzlich Konstrukt $\Psi_x$, das das Pakets $x$ repräsentiert. Angenommen $x$ und $y$ befinden sich zudem im Paket $z$, dann geht die aggregierte Abhängigkeit entweder direkt von $\Psi_x$ zu $\Psi_y$, oder weiter über $\Psi_z$ zu $\Psi_y$ und schließlich $B$.
+\tcblower
+%\raggedright
+%Beispiel in CodeLeaves:\par\vspace{.6cm}
+\includegraphics[width=\linewidth]{figures/aggregation}
+\end{splitbox}
+
+Auf der rechten Seite der Definition \ref{def:aggregation} ist eine aggregierte Abhängigkeit am Beispiel von CodeLeaves zu sehen. Die $\Psi$ in CodeLeaves sind die Knoten der Bäume, an denen die Äste zusammen laufen und im Spezialfall des Root-Verzeichnisses, der Waldboden.
+
+Bei mehreren Abhängigkeiten zwischen Nachbar-Paketen, überlagern sich die aggregierten Abhängigkeiten zwangsläufig. Falls in unserem Beispiel eine weitere Abhängigkeit von Paket $x$ zu Paket $y$ bestünde, würden sich die Abhängigkeiten von $\Psi_x$ bis $\Psi_y$ überlagern. Daraus ergibt sich, dass nicht jede aggregierte Abhängigkeit ohne Interaktion zwangsläufig eindeutig zuzuordnen ist.
+
+Wird aber bei jeder Kante, sei es ein Ast, Stamm, oder Wurzel, die Anzahl an überlagernden Abhängigkeiten als Dicke der Kante dargestellt, bekommt der Betrachter eine gute Übersicht über die Gesamtheit der Abhängigkeiten. Durch Interaktion mit einzelnen Kanten, oder sogar des ganzen Waldbodens, soll eine fein granulärere Analyse der Abhängigkeiten möglich sein.
+
+Das zweite Element von Punkt 5 sind die Spinnweben. Damit lassen sich die Abhängigkeiten direkt darstellen. Um bei großen Software-Systemen aber die Übersicht über den Wald nicht zu verlieren, sollten diese mithilfe der Interaktion des Nutzers flexibel aktivierbar sein.
 
 \section{Vergleich mit anderen Konzepten}
 \label{sec:comparison}
-\section{Grundliegende Idee der Metapher Software-Wald}
-\label{sec:idea}
+
+Im Vorfeld dieser Arbeit wurde evaluiert, was eine gute Softwarevisualisierung ausmacht und unterstützen sollte. Ausgehend davon, wurden vorhandene 3D Visualisierungen und andere mögliche Konzepte miteinander verglichen. Die Ergebnisse dieser Untersuchung, soll in Folgenden vorgestellt werden.
+
+Um herauszufinden welchen Mehrwert sich Nutzer einer Softwarevisualisierung von dieser versprechen, wurde eine Umfrage in der QAware GbmH durchgeführt. Die QAware ist ein Projekthaus mit den Kerngeschäften Diagnose, Sanierung, Exploration und Realisierung von Software \cite{qaware2017it-probleme}. Durch die Erfahrung in Projekten für namhafte Kunden, zeichnen sich die Mitarbeiter durch fundiertes Wissen und Expertise aus. Es wurden insgesamt 22 Mitarbeiter mit unterschiedlichen Rollen in der Softwareentwicklung befragt.
+
+\begin{figure}
+\begin{tikzpicture}
+  \begin{axis} [
+    width = \textwidth,
+    height = 8cm,
+    symbolic x coords={Lines of Code, Komplexität, Coverage, Struktur, Abhängigkeiten, Code-Violations, Anzahl Aufrufe, Laufzeiten, Laufzeitfehler, Ressourcen-Auslastung, Evolution der Statik, Evolution eins Themas},
+    xtick={Lines of Code, Komplexität, Coverage, Struktur, Abhängigkeiten, Code-Violations, Anzahl Aufrufe, Laufzeiten, Laufzeitfehler, Ressourcen-Auslastung, Evolution der Statik, Evolution eins Themas},
+    x tick label style={rotate=45, anchor=east, align=center},
+    major x tick style = transparent,
+    axis lines = left,
+    axis line style = {-},
+    ymajorgrids = true,
+    ylabel=Anzahl,
+    legend style = {at={(.99,.98)}, anchor=north east, legend columns=-1, column sep=1ex},
+    ymin=0,
+    bar width=5mm,
+    ybar=-0.5cm, 
+    enlarge x limits={abs=0.6cm}
+  ]
+    \addplot[style={fill=primary}]
+      coordinates {(Lines of Code, 1) (Komplexität, 3) (Coverage, 1) (Struktur, 5) (Abhängigkeiten, 7) (Code-Violations, 4)};
+    \addplot[style={fill=secondary}]
+      coordinates {(Anzahl Aufrufe, 5) (Laufzeiten, 5) (Laufzeitfehler, 1) (Ressourcen-Auslastung, 1)};
+    \addplot[style={fill=tertiary}]
+      coordinates {(Evolution der Statik, 3) (Evolution eins Themas, 1)};
+  
+    \legend{Statik, Dynamik, Evolution}
+  
+  \end{axis}
+\end{tikzpicture}
+\caption{Gewünschte Metriken} \label{fig:survey}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/code-city}
+	\caption{CodeCity von ArgoUML \cite{wettel2008visual}} \label{fig:code-city}
+\end{figure}
+
+
 \section{Anforderungen an CodeLeaves}
 \label{sec:requirements}
 
@@ -107,3 +200,4 @@ Der in der Informatik selbstverständlich verwendete Begriff "`Blätter"' zeugt 
 \label{ch:interaction}
 \chapter{Zusammenfassung und Ausblick}
 \label{ch:conclusion}
+		

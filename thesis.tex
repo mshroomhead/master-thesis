@@ -47,8 +47,13 @@
 
 \usepackage{ltablex, array, multirow, makecell, ragged2e} %Tabellenzeug
 \usepackage{ifthen}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,breakable}
 \usepackage{tikz} %tikz-stuff
 \usetikzlibrary{shapes,calc,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usetikzlibrary{calc} 
 \usepackage{todonotes}
 
 \selectlanguage{ngerman}
@@ -57,10 +62,15 @@
 %\definecolor{primary}{HTML}{CEE9FF}%
 %\definecolor{secondary}{HTML}{FFCDCB}%
 %\definecolor{tertiary}{HTML}{C9CC90}%
+
 \colorlet{primary}{CornflowerBlue}%
 \colorlet{secondary}{Thistle}%
 \colorlet{tertiary}{Apricot}%
-\definecolor{hightlight}{HTML}{da6b24}%
+
+\colorlet{boxcontent}{gray!20}%
+\colorlet{boxheader}{gray!75}%
+
+\definecolor{highlight}{HTML}{da6b24}%
 \definecolor{dark}{HTML}{32829A}%
 \colorlet{quotemark}{primary}
 
@@ -76,22 +86,43 @@
 \renewfloatcommand{fcapside}{figure}[\capbeside][\FBwidth]
 \newfloatcommand{tcapside}{table}[\capbeside][\FBwidth]
 
-%----==== new environments ====----%
-\newenvironment{citeenv}{%
-  \def\FrameCommand{%
-    \hspace{1pt}%
-    {\color{blue}\vrule width 2pt}%
-    {\color{blue!10}\vrule width 4pt}%
-    \colorbox{blue!10}%
-  }%
-  \MakeFramed{\advance\hsize-\width\FrameRestore}%
-%  \noindent\hspace{-4.55pt}% disable indenting first paragraph
-  \begin{adjustwidth}{}{7pt}%
-  \vspace{2pt}\vspace{2pt}%
+%----==== tcolorbox ====----%
+
+\tcbset{
+  boxstyle/.style={
+%    before skip=6.25ex,
+%    after skip=3.25ex,
+    noparskip,
+	center,
+	breakable,
+	colback=boxcontent,
+	colframe=boxheader,
+	toptitle=.2em,
+	bottomtitle=.2em,
+	sharp corners,
+	boxrule=0.5pt,
+	fonttitle=\sffamily,
+	width=0.8\textwidth
+  }
 }
-{%
-  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
-}
+
+\newtcbtheorem[number within=chapter]{defbox}{Definition}{
+  boxstyle, 
+  fonttitle=\sffamily\bfseries,
+  description font=\mdseries
+}{def}
+  
+\newtcbtheorem[number within=chapter]{splitbox}{Definition}{
+  boxstyle, 
+  fonttitle=\sffamily\bfseries,
+  description font=\mdseries,
+  sidebyside,
+%  sidebyside align=top,
+  righthand width=.4\textwidth,
+  width=\textwidth
+}{def}
+  
+\newtcolorbox{definitionbox}[2][]{boxstyle, title=#2, #1}
 
 %----==== new commands ====----%
 % fancy quotes

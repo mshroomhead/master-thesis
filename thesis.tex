@@ -59,19 +59,19 @@
 \selectlanguage{ngerman}
 
 %----==== colors ====----%
-%\definecolor{primary}{HTML}{CEE9FF}%
-%\definecolor{secondary}{HTML}{FFCDCB}%
-%\definecolor{tertiary}{HTML}{C9CC90}%
+%\definecolor{primary}{HTML}{086D8F}
+%\definecolor{secondary}{HTML}{820038}
+%\definecolor{tertiary}{HTML}{0E8260}
 
-\colorlet{primary}{CornflowerBlue}%
-\colorlet{secondary}{Thistle}%
-\colorlet{tertiary}{Apricot}%
+\colorlet{primary}{gray}
+\colorlet{secondary}{gray!60}
+\colorlet{tertiary}{gray!30}
 
-\colorlet{boxcontent}{gray!20}%
-\colorlet{boxheader}{gray!75}%
+\colorlet{boxcontent}{gray!20}
+\colorlet{boxheader}{gray!75}
 
-\definecolor{highlight}{HTML}{da6b24}%
-\definecolor{dark}{HTML}{32829A}%
+\definecolor{highlight}{HTML}{da6b24}
+\definecolor{dark}{HTML}{32829A}
 \colorlet{quotemark}{primary}
 
 %----==== numbers ====----%
@@ -90,9 +90,8 @@
 
 \tcbset{
   boxstyle/.style={
-%    before skip=6.25ex,
-%    after skip=3.25ex,
-    noparskip,
+    before skip=3.25ex plus 1ex minus .2ex,
+    after skip=3.25ex plus 1ex minus .2ex,
 	center,
 	breakable,
 	colback=boxcontent,

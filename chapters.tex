@@ -97,7 +97,7 @@ Der Baum in der Informatik zeugt von einer ursprünglichen Metapher -- der Baum,
 
 CodeLeaves stellt ein Konzept dar, dass sich die Metapher des Software-Waldes zu nutze macht und wird im Folgenden auf High-Level-Ebene skizziert und danach genauer erläutert:
 
-\begin{definitionbox}{\textbf{Konzept:} CodeLeaves}
+\begin{titlebox}{\textbf{Konzept:} CodeLeaves}
   \begin{enumerate}
     \item Die Struktur der Software wird mit nach oben wachsenden Bäumen dargestellt.
     \item Jedes Paket im \emph{Root-Verzeichnis} wird als einzelner Baum auf einer Ebene -- dem \emph{Waldboden} -- dargestellt.
@@ -105,7 +105,7 @@ CodeLeaves stellt ein Konzept dar, dass sich die Metapher des Software-Waldes zu
     \item Zwischen den Bäumen entsteht ein \emph{Wurzelgeflecht}, was die aggregierten Abhängigkeiten zwischen den Paketen darstellt.
     \item Abhängigkeiten oder Aufrufe zwischen einzelnen Softwareartefakten werden aggregiert über die Elternpakete als farbige bzw. Dicke der Äste dargestellt oder alternativ als direkte \emph{Spinnweben} zwischen den Bäumen.
   \end{enumerate}
-\end{definitionbox}
+\end{titlebox}
 
 \paragraph{Punkt 1} ist dafür verantwortlich, dass die Softwarevisualisierung nahe an der tatsächlichen Software ist, wie sie ein Entwickler in seiner Code-Base gewöhnt ist. Das heißt, diejenigen, die auch tatsächlich mit der Software arbeiten, finden sich aufgrund der bekannten Baumstruktur auch in der Visualisierung schnell zurecht, ohne jedes Softwareartefakt auszuwählen, um zu sehen, mit welchem sie es zu tun haben. Im Fachjargon wird hier von der \emph{Habitability} gesprochen, also wie schnell oder gut sich ein Betrachter in einer Software oder auch deren Visualisierung "`zuhause"' fühlt \cite{wettel2007program}.
 
@@ -127,7 +127,7 @@ CodeLeaves stellt ein Konzept dar, dass sich die Metapher des Software-Waldes zu
 
 Die Abhängigkeiten zwischen den Bäumen wird auf einen Blick ersichtlich. Betrachtet man die Bäume in 2D, wie es im linken Teil der Abbildung dargestellt ist, verschwinden die Abhängigkeiten hintereinander und sind nicht zuzuordnen.
 
-\paragraph{Punkt 5} heißt, dass die Abhängigkeiten einer Software sehr übersichtlich auf die Struktur der Software abgebildet werden können, ohne diese zu beeinflussen. Für das besser Verständnis bedarf es einer Definition der Aggregation von Abhängigkeiten.
+\paragraph{Punkt 5} heißt, dass die Abhängigkeiten einer Software sehr übersichtlich auf die Struktur der Software abgebildet werden können, ohne diese zu beeinflussen. Für das besser Verständnis bedarf es einer Definition der Aggregation von Abhängigkeiteän.
 
 \begin{splitbox}{Aggregation von Abhängigkeiten}{aggregation}
 Bei der Aggregation von Abhängigkeiten zwischen Softwareartefakten werden die Abhängigkeiten nicht direkt dargestellt, sondern über die Eltern-Pakete geleitet. Seien $x, y$ Pakete und Softwareartefakt $A \in x$ besitze eine Abhängigkeit zu Softwareartefakt $B \in y$, dann geht die Abhängigkeit von $A$ zu einem zusätzlich Konstrukt $\Psi_x$, das das Pakets $x$ repräsentiert. Angenommen $x$ und $y$ befinden sich zudem im Paket $z$, dann geht die aggregierte Abhängigkeit entweder direkt von $\Psi_x$ zu $\Psi_y$, oder weiter über $\Psi_z$ zu $\Psi_y$ und schließlich $B$.
@@ -261,12 +261,205 @@ Die betrachteten Alternativen und weitere, haben gemein, dass sie zum einen Stru
 \section{Anforderungen an CodeLeaves}
 \label{sec:requirements}
 
+Die Umfrage, die in Abschnitt \ref{sec:comparison} vorgestellt wurde, ergab einen gutes Stimmungsbarometer über die Wünsche im Bezug auf zu visualisierend Informationen. In diesem Abschnitt soll genauer auf die Anforderungen an einen Software-Wald eingegangen werden. Dazu wurden von der QAware zwei Experten der Softwareanalyse zu diesem Thema befragt, um Userstories für CodeLeaves zu sammeln.
+
+Aus der dynamischen Analyse wurde der promovierende Performance-Analyst F. Lautenschlager befragt. Dieser erarbeitete im Zuge seiner Dissertation eine hochperformante Zeitreihendatenbank zur Speicherung und Auswertung von dynamischen Daten einer Software und ist Experte auf diesem Gebiet.
+
+Als Experte der statischen Analyse wurde J. Weigend befragt. Dieser ist Chefarchitekt, Geschäftsführer und Mitgründer der QAware. Er studierte Informatik mit Schwerpunkt "Verteilte Systeme" an der Hochschule Rosenheim und hält dort seit 2001 Vorlesungen \cite{qaware2017johannes}.
+
+Im Folgenden werden die Gespräche mit den beiden Experten unter Anwendung der Methoden aus \cite{cohn2004user} in Userstories und dazugehörige Akzeptanzkriterien zusammengefasst. Zum Großteil überschneiden sich die Userstories mit der Umfrage aus Abschnitt \ref{sec:comparison}, was für eine gute Übereinstimmung der eingeholten Informationen spricht.
+
+Zunächst betrachten wir die Userstories von Lautenschlager.
+\begin{userstoryf}{Dynamische Metriken}
+  Als \textit{Performance-Analyst}\\
+  möchte ich \textit{Funktionsaufrufe, deren Antwortzeiten, Laufzeitfehler und Resourcen-Auslastung visualisiert haben},\\
+  um \textit{das Laufzeitverhalten der Software explorativ bewerten zu können.}
+\end{userstoryf}
+  
+\newcommand{\tableheader}{
+\endfirsthead
+\multicolumn{2}{l}{\small \tablename\ \thetable\ -- \textit{Fortsetzung von vorheriger Seite}} \\
+\hline
+  \endhead
+  \hline
+  \endlastfoot
+  \hline
+\multicolumn{2}{r}{\textit{\small Fortsetzung auf nächster Seite...}} \\
+\endfoot
+\hline
+}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{lX}
+	\caption{Akzeptanzkriterien zu Userstory 1}\label{tab:static-metrics} \\
+	\tableheader
+    1 & Antwortzeiten und Laufzeitfehler können als Metrik auf die Farbe der Blätter angewandt werden.\\
+    2 & Wenn ich ein Blatt auswähle, dann kann ich die genaue Zahl der gerade betrachteten Metrik sehen.\\
+    3 & Wenn ich ein Blatt auswähle, kann ich sehen wohin von dieser Klasse Aufrufe hin- bzw. eingehen.\\
+    4 & Die Dicke einer Verbindung (d.h. ein Stück Ast oder Wurzel) zeigt mir die Anzahl der Aufrufe zwischen Anfang und Ende der Verbindung.\\
+    5 & Wenn ich eine Verbindung anklicke, dann kann ich sehen, welche Klassen von dieser Verbindung betroffen sind.\\
+    6 & Wenn ich eine Verbindung anklicke, dann kann ich sehen in welche Richtung die meisten betroffenen Verbindungen gehen.\\
+    7 & Wenn ich den Wald betrachte, dann kann ich die Änderung der Ressourcen-Auslastung erkennen.
+\end{tabularx}
+
+\begin{userstoryf}{Zustand der Software}
+  Als \textit{Systemverantwortlicher}\\
+  möchte ich \textit{auf einen Blick den Zustand meiner Software erkennen},\\
+  um \textit{bei Bedarf agieren zu können}.
+\end{userstoryf}
+
+\begin{tabularx}{\textwidth}{lX}
+	\caption{Akzeptanzkriterien zu Userstory 2}\label{tab:static-metrics} \\
+	\tableheader
+    1 & Wenn ich die Laubfarbe des Waldes betrachte, dann möchte ich eine möglichst gute Gesamtübersicht über die ausgewählte Metrik haben.\\
+    2 & Wenn ich die Laubfarbe des Waldes betrachte, dann kann ich Ausreißer der ausgewählten Metrik gut erkennen.\\
+    3 & Die Struktur der Bäume ist möglichst übersichtlich und hat keine Überlappungen.
+\end{tabularx}
+
+\begin{userstoryf}{Kopplung und Struktur}
+  Als \textit{Softwarearchiteckt}\\
+  möchte ich \textit{die Kopplung und Struktur einer großen Software sehen},\\
+  um \textit{die Zusammenhänge zu verstehen}.
+\end{userstoryf}
+
+\begin{tabularx}{\textwidth}{lX}
+	\caption{Akzeptanzkriterien zu Userstory 3}\label{tab:static-metrics} \\
+	\tableheader
+    1 & Die Paketstruktur entspricht der Struktur der Bäume.\\
+    2 & Wenn ich die Verbindungen zwischen einzelnen Bäumen oder Verzweigungen betrachte, dann erkenne ich durch die Dicke, wie stark die Pakete aneinander gekoppelt sind.\\
+    3 & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Abhängigkeiten hervorheben.\\
+    4 & Wenn ich ein Blatt auswähle, dann kann ich Abhängigkeiten direkt als Spinnweben darstellen.\\
+    5 & Wenn ich eine Verbindung auswähle, dann kann ich die von den Abhängigkeiten betroffenen Klassen hervorheben.\\
+    6 & Wenn ich eine Verbindung auswähle, dann kann ich sehen wie viele Abhängigkeiten in welche Richtung fließen.\\
+    7 & Wenn ich auswähle, dass zyklische Abhängigkeiten hervorgehoben werden, können diese direkt als Spinnweben im gesamten Wald dargestellt werden.
+\end{tabularx}
+
+\begin{userstoryf}{Code-Qualität}
+  Als \textit{Softwarearchitekt}\\
+  möchte ich \textit{Code-Qualität auf die Struktur abbilden können},\\
+  um \textit{Anomalien und Qualitätsdefizite zu erkennen}.
+\end{userstoryf}
+
+\begin{tabularx}{\textwidth}{lX}
+	\caption{Akzeptanzkriterien zu Userstory 4}\label{tab:static-metrics} \\
+	\tableheader
+    1 & Statische Metriken der Code-Qualität, wie z.B. Code-Coverage, kann auf die Farbe der Blätter angewandt werden.\\
+    2 & Wenn ich die Laubfarbe des Waldes betrachte, dann kann ich Ausreißer der ausgewählten Metrik gut erkennen.
+\end{tabularx}
+
+\begin{userstoryf}{Code-Qualität}
+  Als \textit{Softwarearchitekt}\\
+  möchte ich \textit{einen intuitiven Drilldown haben},\\
+  um \textit{die Zusammenhänge auf verschiedener Pakte-Ebene zu verstehen}.
+\end{userstoryf}
+
+\begin{tabularx}{\textwidth}{lX}
+	\caption{Akzeptanzkriterien zu Userstory 5}\label{tab:static-metrics} \\
+	\tableheader
+    1 & Wenn ich eine Verbindung auswähle, dann kann ich das repräsentierte Paket als neuen Waldboden festlegen. \\
+    2 & Wenn ich die Laubfarbe des Waldes betrachte, dann kann ich Ausreißer der ausgewählten Metrik gut erkennen.
+\end{tabularx}
+
 \chapter{Datenmodell}
 \label{ch:data-model}
-\section{FAMIX-Familie}
+\section{Schichtenmodell}
+\label{ch:data-layers}
+
+Das Datenmodell für CodeLeaves nimmt einen zentralen Baustein ein, auf den sich die Implementierung stützt. Bei dem Entwurfsmuster sind einige Prinzipien zu beachten. Wie Buschmann et al. in \cite{frank2007pattern} beschreibt, ist das Pattern \textit{Layers} ein Grundprinzip bei Software-Architekturen. Durch die \textit{Separation of concerns} werden einzelnen Schichten voneinander getrennt und können so zum Beispiel später ausgetauscht werden:
+
+``Using semi-independent parts also enables the easier exchange of individual parts at a later date.`` \cite{frank2007pattern}
+
+Gerade bei der Visualisierung von abstrakten Daten, wie es eine Software ist, ist eine Schichtentrennung besonders wichtig. CodeLeaves hat das Ziel eine beliebige objektorientierte Software darstellen zu können. Da aber nicht für jede Programmiersprache CodeLeaves angepasst werden soll, ist hier die erste Trennungsschicht sinnvoll. Die Software sollte in ein Sprach-agnostisches Format gebracht werden, mit dem CodeLeaves weiter arbeitet. Der Transfer von der realen Software in deren Repräsentation, kann dann für beliebige Sprachen ausgetauscht werden.
+
+Wie in \todo{link auf Abgrenzung} bereits festgehalten, soll der Schritt des Transfers der realen Software in deren Repräsentation nicht Schwerpunkt dieser Arbeit sein.
+
+Die Einteilung in Schichten geht aber noch weiter. Das Modell CodeLeaves könnte neben Software prinzipiell auch jegliche anderen, hierarchisch strukturierten Informationen darstellen. Für die interne Datenhaltung wird deshalb für die \textit{Application logic} das Datenmodell weiter abstrahiert und in ein Format gebracht, dass sich stark an der Baumstruktur der Informatik orientiert. So könnten später auch leicht andere Datenquellen angebunden werden.
+
+Die letzte Schicht ist die der \textit{Presentation}. Das Datenmodell für hierarchische Informationen muss für die Darstellung der Bäume weiter verarbeitet werden. Zum Beispiel muss für die rekursive Generierung der Bäume bekannt sein, wie groß die maximale \textit{Tiefe} der einzelnen Äste ist. Nur so kann das Paket mit der tiefsten Schachtelung auch sinnvoll als \textit{Stamm} des Baumes dargestellt werden. Auch die Aggregation der Verbindungen zwischen einzelnen Blättern findet in diesem Schritt statt, sodass in den Zeichenalgorithmen, mit denen die Bäume in Unity generiert werden, keine fachliche Logik mehr benötigt wird.
+
+Das bedeutet auch diese Schicht könnte wieder ausgetauscht werden und unterschiedliche Zeichenalgorithmen könnten unterstützt werden.
+
+In Abbildung \ref{fig:data-layers} ist die Beziehung der Datenmodelle in den drei relevanten Schichten abgebildet.
+
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{\figdir/data-layers}
+  \caption{Schichten der Datenstrukturen}
+  \label{fig:data-layers}
+\end{figure}
+
+\section{UI-Datenmodell}
+\label{sec:ui-model}
+
+\begin{figure}[htb]
+  \includegraphics[width=.6\textwidth]{\figdir/ui-model}
+  \caption{UI-Datenmodell}
+  \label{fig:ui-model}
+\end{figure}
 
 \chapter{Modellierung}
 \label{ch:modelling}
+
+\section{Generierung eines Baumes}
+
+\subsection*{Berechnung der Knoten Koordinaten}
+
+Für das Anfügen einer neuen Kante oder einem Blatt an eine bestehende Kante müssen die Koordinaten des Knoten am Ende der bestehenden Kante berechnet werden.
+ 
+Die Positionierung eines Knoten im Anschluss an den Stamm des Baumes ist trivial. Von der Position des Stammes auf dem Waldboden wird in y-Richtung die Länge des Stammes aufaddiert. Wächst der Baum z.B. auf dem Punkt $(0, 0, 0)$ und der Stamm hat eine länge von $h$, ergibt sich der Punkt für den Start aller direkt anschließenden Kanten mit $(0, h, 0)$. Für die Berechnung aller weiteren Punkte der Knoten müssen die Winkel der Äste jedoch miteinbezogen werden.
+  
+Wird eine Kante mit der Länge $l$ an einen Knoten angefügt, um die x-Achse mit dem Winkel $\theta$ geneigt und anschließend um die y-Achse mit den Winkel $\varphi$ rotiert, entsteht ein Kugelkoordinatensystem mit dem vorhandenen Knoten als Ursprung $O$, der y-Achse als Polachse, dem gesuchten Knoten als Punkt $P$, dem \emph{Polarwinkel} $\theta$ und dem \emph{Azimutwinkel} $\varphi$ \cite{papula2001mathematik}.
+
+In Abbildung \ref{fig:node-calculation} ist die beschriebene Situation von der Seite und aus Vogelperspektive dargestellt.
+
+\setlength{\fwidth}{.49\textwidth}
+\begin{figure}[htb]
+  \centering
+  \begin{subfigure}[b]{\fwidth}
+   \includegraphics[width=\textwidth]{figures/yz-plane}
+   \subcaption{Seitenansicht} \label{fig:yz-plane}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{\fwidth}
+  	\includegraphics[width=\textwidth]{figures/xz-plane}
+  	\subcaption{Vogelperspektive} \label{fig:xz-plane}
+  \end{subfigure}
+  \caption{Berechnung der Koordinaten eines neuen Knotens} \label{fig:node-calculation}
+\end{figure}
+
+Die Koordinaten $(l, \theta, \varphi)$ müssen in das kartesische Koordinatensystem umgerechnet werden. Dies wird durch folgende Formel erreicht:
+
+\begin{equation}
+  \vec{k} = 
+  \begin{pmatrix}
+    sin(\varphi) \cdot cos(\theta) \cdot l\\
+    cos(\theta) \cdot l\\
+    cos(\varphi) \cdot cos(\theta) \cdot l
+  \end{pmatrix}
+\end{equation}
+
+
+In Unity spiegelt sich diese Formel in der Funktion \texttt{AddNode}, wie sie in Listing \ref{lst:addnode} zu sehen ist, wieder.
+
+\begin{codesnippet}{Hinzufügen eines Knotens an eine Kante}{lst:addnode}
+private static void AddNode(Transform branch, 
+                            Transform edge, 
+                            float edgeLength)
+{
+    var node = new GameObject("Node");
+    node.transform.parent = branch;
+
+    var theta = DegreeToRadian(edge.eulerAngles.x);
+    var phi = DegreeToRadian(edge.eulerAngles.y);
+
+    var y = (float) Math.Cos(theta) * edgeLength;
+    var xz = (float) Math.Sin(theta) * edgeLength;
+    var x = (float) Math.Sin(phi) * xz;
+    var z = (float) Math.Cos(phi) * xz;
+
+    node.transform.localPosition = new Vector3(x, y, z);
+}
+\end{codesnippet} 
+
+%\input{tikzpictures/add-node} 
 
 \chapter{Interaktionskonzept}
 \label{ch:interaction}

@@ -48,24 +48,23 @@
 \usepackage{ltablex, array, multirow, makecell, ragged2e} %Tabellenzeug
 \usepackage{ifthen}
 \usepackage{tcolorbox}
-\tcbuselibrary{theorems,breakable}
+\tcbuselibrary{theorems,breakable,listings,skins,raster}
 \usepackage{tikz} %tikz-stuff
 \usetikzlibrary{shapes,calc,positioning}
+\usepackage{tikz-3dplot}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.10}
-\usetikzlibrary{calc} 
+\usetikzlibrary{calc}
 \usepackage{todonotes}
+\usepackage{sourcecodepro}
+
 
 \selectlanguage{ngerman}
 
 %----==== colors ====----%
-%\definecolor{primary}{HTML}{086D8F}
-%\definecolor{secondary}{HTML}{820038}
-%\definecolor{tertiary}{HTML}{0E8260}
-
-\colorlet{primary}{gray}
-\colorlet{secondary}{gray!60}
-\colorlet{tertiary}{gray!30}
+\definecolor{primary}{HTML}{086D8F}
+\definecolor{secondary}{HTML}{820038}
+\definecolor{tertiary}{HTML}{0E8260}
 
 \colorlet{boxcontent}{gray!20}
 \colorlet{boxheader}{gray!75}
@@ -73,6 +72,13 @@
 \definecolor{highlight}{HTML}{da6b24}
 \definecolor{dark}{HTML}{32829A}
 \colorlet{quotemark}{primary}
+
+% Code
+\definecolor{strings}{rgb}{0.6,0,0} % for strings
+\definecolor{comments}{rgb}{0.25,0.5,0.35} % comments
+\colorlet{keywords}{primary} % keywords
+\definecolor{javadoc}{rgb}{0.25,0.35,0.75} % javadoc
+\definecolor{codebackground}{HTML}{F8F8F8} % background
 
 %----==== numbers ====----%
 %\newlength\bla
@@ -86,14 +92,36 @@
 \renewfloatcommand{fcapside}{figure}[\capbeside][\FBwidth]
 \newfloatcommand{tcapside}{table}[\capbeside][\FBwidth]
 
-%----==== tcolorbox ====----%
+\lstset{
+  language=[Sharp]C,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{keywords}\bfseries,
+  stringstyle=\color{strings},
+  commentstyle=\color{comments},
+  morecomment=[s][\color{javadoc}]{/**}{*/},
+  numbers=left,
+  numberstyle=\tiny\ttfamily\color{boxheader!80!black},
+  stepnumber=1,
+  numbersep=6mm,
+  tabsize=4,
+  showspaces=false,
+  showstringspaces=false,
+  morekeywords={var}
+}
 
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+
+%----==== tcolorbox ====----%
 \tcbset{
   boxstyle/.style={
     before skip=3.25ex plus 1ex minus .2ex,
     after skip=3.25ex plus 1ex minus .2ex,
-	center,
-	breakable,
 	colback=boxcontent,
 	colframe=boxheader,
 	toptitle=.2em,
@@ -101,27 +129,41 @@
 	sharp corners,
 	boxrule=0.5pt,
 	fonttitle=\sffamily,
-	width=0.8\textwidth
+	width=0.8\textwidth,
+	center,
+    breakable
   }
 }
 
 \newtcbtheorem[number within=chapter]{defbox}{Definition}{
-  boxstyle, 
+  boxstyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries
 }{def}
-  
+
 \newtcbtheorem[number within=chapter]{splitbox}{Definition}{
-  boxstyle, 
+  boxstyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries,
-  sidebyside,
-%  sidebyside align=top,
-  righthand width=.4\textwidth,
+  sidebyside,  righthand width=.4\textwidth,
   width=\textwidth
 }{def}
-  
-\newtcolorbox{definitionbox}[2][]{boxstyle, title=#2, #1}
+
+\newtcblisting[auto counter, number within=chapter]{codesnippet}[2]{
+  boxstyle, 
+  listing only,
+  title=\hspace{-7.5mm}\textbf{Listing \thetcbcounter:} #1, 
+  width=\textwidth,
+  listing options={},
+  colback=codebackground,
+  left=10mm,
+  enhanced,
+  overlay={\begin{tcbclipinterior}\fill[boxheader!10!codebackground] (frame.south west) rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}},
+  label=#2
+}
+
+\newtcolorbox{titlebox}[2][]{boxstyle, title=#2, #1}
+\newtcolorbox[auto counter]{userstoryf}[2][]{boxstyle, valign=center, halign=left, after skip=0em, title=\textbf{Userstory \thetcbcounter:} #2, #1}
 
 %----==== new commands ====----%
 % fancy quotes

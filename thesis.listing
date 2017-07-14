@@ -1,0 +1,17 @@
+private static void AddNode(Transform branch,
+                            Transform edge,
+                            float edgeLength)
+{
+    var node = new GameObject("Node");
+    node.transform.parent = branch;
+
+    var theta = DegreeToRadian(edge.eulerAngles.x);
+    var phi = DegreeToRadian(edge.eulerAngles.y);
+
+    var y = (float) Math.Cos(theta) * edgeLength;
+    var xz = (float) Math.Sin(theta) * edgeLength;
+    var x = (float) Math.Sin(phi) * xz;
+    var z = (float) Math.Cos(phi) * xz;
+
+    node.transform.localPosition = new Vector3(x, y, z);
+}

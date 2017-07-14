@@ -119,7 +119,7 @@
 
 %----==== tcolorbox ====----%
 \tcbset{
-  boxstyle/.style={
+  basestyle/.style={
     before skip=3.25ex plus 1ex minus .2ex,
     after skip=3.25ex plus 1ex minus .2ex,
 	colback=boxcontent,
@@ -131,18 +131,18 @@
 	fonttitle=\sffamily,
 	width=0.8\textwidth,
 	center,
-    breakable
+	breakable
   }
 }
 
 \newtcbtheorem[number within=chapter]{defbox}{Definition}{
-  boxstyle,
+  basestyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries
 }{def}
 
 \newtcbtheorem[number within=chapter]{splitbox}{Definition}{
-  boxstyle,
+  basestyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries,
   sidebyside,  righthand width=.4\textwidth,
@@ -150,7 +150,7 @@
 }{def}
 
 \newtcblisting[auto counter, number within=chapter]{codesnippet}[2]{
-  boxstyle, 
+  basestyle,
   listing only,
   title=\hspace{-7.5mm}\textbf{Listing \thetcbcounter:} #1, 
   width=\textwidth,
@@ -162,8 +162,9 @@
   label=#2
 }
 
-\newtcolorbox{titlebox}[2][]{boxstyle, title=#2, #1}
-\newtcolorbox[auto counter]{userstoryf}[2][]{boxstyle, valign=center, halign=left, after skip=0em, title=\textbf{Userstory \thetcbcounter:} #2, #1}
+\newtcolorbox{titlebox}[2][]{basestyle, title=#2, #1}
+\newtcolorbox[auto counter]{userstory}[2][]{basestyle, valign=center, halign=left, after skip=0em, title=\textbf{Userstory \thetcbcounter:} #2, #1}
+
 
 %----==== new commands ====----%
 % fancy quotes

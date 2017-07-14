@@ -270,11 +270,11 @@ Als Experte der statischen Analyse wurde J. Weigend befragt. Dieser ist Chefarch
 Im Folgenden werden die Gespräche mit den beiden Experten unter Anwendung der Methoden aus \cite{cohn2004user} in Userstories und dazugehörige Akzeptanzkriterien zusammengefasst. Zum Großteil überschneiden sich die Userstories mit der Umfrage aus Abschnitt \ref{sec:comparison}, was für eine gute Übereinstimmung der eingeholten Informationen spricht.
 
 Zunächst betrachten wir die Userstories von Lautenschlager.
-\begin{userstoryf}{Dynamische Metriken}
+\begin{userstory}{Dynamische Metriken}
   Als \textit{Performance-Analyst}\\
   möchte ich \textit{Funktionsaufrufe, deren Antwortzeiten, Laufzeitfehler und Resourcen-Auslastung visualisiert haben},\\
   um \textit{das Laufzeitverhalten der Software explorativ bewerten zu können.}
-\end{userstoryf}
+\end{userstory}
   
 \newcommand{\tableheader}{
 \endfirsthead
@@ -301,11 +301,11 @@ Zunächst betrachten wir die Userstories von Lautenschlager.
     7 & Wenn ich den Wald betrachte, dann kann ich die Änderung der Ressourcen-Auslastung erkennen.
 \end{tabularx}
 
-\begin{userstoryf}{Zustand der Software}
+\begin{userstory}{Zustand der Software}
   Als \textit{Systemverantwortlicher}\\
   möchte ich \textit{auf einen Blick den Zustand meiner Software erkennen},\\
   um \textit{bei Bedarf agieren zu können}.
-\end{userstoryf}
+\end{userstory}
 
 \begin{tabularx}{\textwidth}{lX}
 	\caption{Akzeptanzkriterien zu Userstory 2}\label{tab:static-metrics} \\
@@ -315,11 +315,11 @@ Zunächst betrachten wir die Userstories von Lautenschlager.
     3 & Die Struktur der Bäume ist möglichst übersichtlich und hat keine Überlappungen.
 \end{tabularx}
 
-\begin{userstoryf}{Kopplung und Struktur}
+\begin{userstory}{Kopplung und Struktur}
   Als \textit{Softwarearchiteckt}\\
   möchte ich \textit{die Kopplung und Struktur einer großen Software sehen},\\
   um \textit{die Zusammenhänge zu verstehen}.
-\end{userstoryf}
+\end{userstory}
 
 \begin{tabularx}{\textwidth}{lX}
 	\caption{Akzeptanzkriterien zu Userstory 3}\label{tab:static-metrics} \\
@@ -333,11 +333,11 @@ Zunächst betrachten wir die Userstories von Lautenschlager.
     7 & Wenn ich auswähle, dass zyklische Abhängigkeiten hervorgehoben werden, können diese direkt als Spinnweben im gesamten Wald dargestellt werden.
 \end{tabularx}
 
-\begin{userstoryf}{Code-Qualität}
+\begin{userstory}{Code-Qualität}
   Als \textit{Softwarearchitekt}\\
   möchte ich \textit{Code-Qualität auf die Struktur abbilden können},\\
   um \textit{Anomalien und Qualitätsdefizite zu erkennen}.
-\end{userstoryf}
+\end{userstory}
 
 \begin{tabularx}{\textwidth}{lX}
 	\caption{Akzeptanzkriterien zu Userstory 4}\label{tab:static-metrics} \\
@@ -346,11 +346,11 @@ Zunächst betrachten wir die Userstories von Lautenschlager.
     2 & Wenn ich die Laubfarbe des Waldes betrachte, dann kann ich Ausreißer der ausgewählten Metrik gut erkennen.
 \end{tabularx}
 
-\begin{userstoryf}{Code-Qualität}
+\begin{userstory}{Code-Qualität}
   Als \textit{Softwarearchitekt}\\
   möchte ich \textit{einen intuitiven Drilldown haben},\\
   um \textit{die Zusammenhänge auf verschiedener Pakte-Ebene zu verstehen}.
-\end{userstoryf}
+\end{userstory}
 
 \begin{tabularx}{\textwidth}{lX}
 	\caption{Akzeptanzkriterien zu Userstory 5}\label{tab:static-metrics} \\
@@ -386,8 +386,60 @@ In Abbildung \ref{fig:data-layers} ist die Beziehung der Datenmodelle in den dre
   \label{fig:data-layers}
 \end{figure}
 
-\section{UI-Datenmodell}
-\label{sec:ui-model}
+\section{Datenmodell für die Repräsentation von Software}
+\label{sec:software-model}
+
+\section{Datenmodell für hierarchische Informationen}
+\label{sec:hierarchical-model}
+
+Das interne Datenmodell von CodeLeaves baut stark auf der Datenstruktur eines Baumes auf -- \textit{"`the most important nonlinear structures that arise in computer algorithms"'}\cite{knuth1973fundamental} -- das zum Beispiel in \cite{knuth1973fundamental, ernst2016grundkurs, gumm2009einfuehrung} definiert wird.
+
+Da aber die Struktur von CodeLeaves zum Teil von der klassischen Definition abweicht und teilweise neue Bezeichnungen benötigt, betrachten wir daher einige Definitionen zur Baumstruktur, um diese an die Gegebenheiten von CodeLeaves anzupassen und führen neue Begriffe ein. Dabei sollen die Bezeichnungen für das interne Datenmodell, aber auch für die in Kapitel \ref{ch:modelling} behandelten Algorithmen Verwendung finden.
+
+\subsection{Begriffsklärung}
+
+\begin{itemize}
+  \item Ein \textit{Baum} (engl.: \textit{tree}) besteht aus einer Menge von \textit{Knoten}, die so durch \textit{Kanten} verbunden sind, dass keine Kreise auftreten (Abgewandelt aus \cite{gumm2009einfuehrung, ernst2016grundkurs}).
+  \item Ein \textit{Knoten} beinhaltet Informationen zu sich selbst und hat $0$ bis $n$ \textit{Kinder} (auch Nachfahren genannt, engl.: \textit{childs} oder \textit{descendant}).
+  \item Ein Knoten mit keinen Kindern wird als \textit{Blatt} (engl.: \textit{leaf}) bezeichnet. Alle anderen Knoten heißen \textit{innere Knoten} (engl.: \textit{innerNode}) \cite{gumm2009einfuehrung}.
+  \item Kinder des selben Knotens werden \textit{Geschwister} (engl.: \textit{siblings}) genannt.
+\end{itemize}
+
+Bei der klassischen Definition eines Baumes wird bei dem Knoten ohne Elternteil von der "`Wurzel"' gesprochen. Im Modell von CodeLeaves ist der unterste Knoten des Baumes jedoch noch durch eine Kante mit dem Waldboden verbunden. Darüber hinaus überschneidet sich die Bezeichnung von "`Wurzel"' mit den Verbindungen zwischen den einzelnen Bäumen, die bei der klassischen Definition nicht existieren. Deshalb wird für diesen speziellen Knoten eine neue Bezeichnung eingeführt.
+
+\begin{itemize}
+  \item Der unterste Knoten eines Baumes wird als \textit{Kronenansatz} (engl.: \textit{crown base}) bezeichnet.
+  \item Alle Knoten bis auf den Kronenansatz haben genau einen Knoten als \textit{Elternteil} (auch Vorfahre genannt, engl.: \textit{parent} oder \textit{ancestor}).
+\end{itemize}
+
+Nachdem in den meisten Fällen Bäume in 2D nach unten wachsend dargestellt werden, was wahrscheinlich auf die Tatsache zurück zu führen ist, dass handschriftliche Diagramme tendenziell nach unten wachsend gezeichnet werden \cite{knuth1973fundamental}, wird bei Knoten auch oft von einer Tiefe gesprochen. Diese Bezeichnung wird beibehalten.
+
+\begin{itemize}
+  \item Die \textit{Tiefe} eines Knotens gibt an, wie viele Kanten er vom Kronenansatz aus entfernt liegt (Abgewandelt aus \cite{ernst2016grundkurs}).
+  \item Die \textit{Höhe} (engl.: \textit{height}) eines Knoten beschreibt die maximale Tiefe aller Nachfahren.
+\end{itemize}
+
+Alle nachfolgenden Kanten und Knoten eines Knotens $A$ werden in der Literatur unterschiedlich bezeichnet. Es ist die Rede von "`Teilbaum"' \cite{ernst2016grundkurs} oder auch "`Unterbäumen"' \cite{gumm2009einfuehrung}. Wir definieren dafür einen dem 3D Modell besser entsprechenden Begriff.
+
+\begin{itemize}
+  \item Ein \textit{Ast} (engl.: \textit{branch}) sind alle nachfolgenden Kanten und Knoten des Knotens $A$ ausschließlich des Knotens $A$ selbst.
+\end{itemize}
+
+Bisher wurden Bezeichnungen aus einschlägiger Literatur verwendet oder abgeändert. Betrachten wir nun Elemente von CodeLeaves, die so nicht in der klassischen Definition einer Baumes vorkommen.
+
+\begin{itemize}
+  \item Der Kronenansatz ist durch die Kante namens \textit{Stamm} (engl.: \textit{trunk}) mit den \textit{Waldboden} (engl.: forest floor) verbunden.
+  \item Der Schnittpunkt zwischen Stamm und Waldboden nennen wir \textit{Stammbasis} (engl.: \textit{trunk base}). Dieser ist jedoch kein Knoten und beinhaltet auch keine Informationen.
+  \item Ein \textit{Wald} besteht aus einer disjunkten Menge an Bäumen und dem Waldboden.
+  \item Ein Waldboden eines Waldes mit $n$ Bäumen besitzt $0$ bis $n!$ \textit{Wurzeln} (engl. \textit{roots}), die jeweils zwei Stammbasen miteinander verbinden.
+\end{itemize}
+
+\begin{figure}[htb]
+  \includegraphics[width=.6\textwidth]{\figdir/naming}
+  \caption{Bezeichnungen}
+  \label{fig:naming}
+\end{figure}
+
 
 \begin{figure}[htb]
   \includegraphics[width=.6\textwidth]{\figdir/ui-model}
@@ -395,12 +447,26 @@ In Abbildung \ref{fig:data-layers} ist die Beziehung der Datenmodelle in den dre
   \label{fig:ui-model}
 \end{figure}
 
+% ----===== Chapter ====---- %
 \chapter{Modellierung}
 \label{ch:modelling}
 
 \section{Generierung eines Baumes}
 
-\subsection*{Berechnung der Knoten Koordinaten}
+\subsection{Grundlegender Ansatz}
+Für die Beschreibung der in diesem Kapitel betrachteten 
+
+CodeLeaves steht und fällt mit der korrekten und übersichtlichen Darstellung der Baumstruktur. Durch Akzeptanzkriterium \todo{link auf Akzeptanz} ist die Struktur der Bäume so zu generieren, dass so viele Blätter wie möglich gleichzeitig im Blickfeld des Betrachters ist. Auf der anderen Seite gilt es wegen Akzeptanzkriterium \todo{link auf Akzeptanz} die Struktur übersichtlich und deswegen mit so wenig Überschneidungen wie möglich zu generieren.
+
+Für die Generierung eines Baumes gibt es prinzipiell zwei verschiedene Ansätze. Ein Baum kann rekursiv von der Wurzel bis zu den Blättern generiert werden. Wir sprechen hier von der \textit{Bottom-up-Methode}. Wird bei den Blättern angefangen und rekursiv bis zur Wurzel miteinander verbunden, sprechen wir von der \textit{To-down-Methode}.
+
+\subsubsection*{Bottom-up-Methode}
+Bei dieser Methode wird ein Punkt im Raum vorgegeben und rekursiv für jeden folgenden Knoten
+
+\subsubsection* {Top-down-Methode}
+
+
+\subsection{Berechnung der Knoten Koordinaten}
 
 Für das Anfügen einer neuen Kante oder einem Blatt an eine bestehende Kante müssen die Koordinaten des Knoten am Ende der bestehenden Kante berechnet werden.
  
@@ -459,8 +525,13 @@ private static void AddNode(Transform branch,
 }
 \end{codesnippet} 
 
-%\input{tikzpictures/add-node} 
+%\input{tikzpictures/add-node}
 
+\section{Positionierung der Bäume}
+
+\section{Berechnung der aggregierten Verbindungen}
+
+% ----==== Chapter ====---- %
 \chapter{Interaktionskonzept}
 \label{ch:interaction}
 \chapter{Zusammenfassung und Ausblick}

@@ -1,34 +1,13 @@
-\tdplotsetmaincoords{60}{110}
-%
-\pgfmathsetmacro{\rvec}{1}
-\pgfmathsetmacro{\thetavec}{30}
-\pgfmathsetmacro{\phivec}{60}
-%
-\begin{tikzpicture}[scale=7,tdplot_main_coords]
 
-\coordinate (O) at (0,0,0);
-\draw[dashdotted,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
-\draw[dashdotted,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[dashdotted,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+\begin{tikzpicture}[scale=7]
 
-\tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec}
-\coordinate (E) at (Pz);
+\coordinate (O) at (0,0);
+\draw[dashdotted,->] (0,0) -- (2,0) node[right]{$x$};
+\draw[dashdotted,->] (0,0) -- (0,1) node[above]{$y$};
 
-\draw[thick] (O) node[point,label=above left:$O$]{} -- node[left=3pt]{$h$} (E) node[point,label=above left:$E$]{};
-\draw[thick] (O) -- node[below right]{$l$} (P) node[point,label=above right:$P$]{};
-\draw (E) -- node[above right]{$r$} (P);
-\draw[dashed] (O) -- (Pxy);
-\draw[dashed] (P) -- (Pxy);
-%\draw[dashed] (P) -- (Pyz);
-%\draw[dashed] (E) -- (Pyz);
+\filldraw (.5,.5) node[point, label=above left:$O$]{};
+\filldraw (.5,.5) node[circle, minimum size=.5cm, fill=black!30]{};
 
-\tdplotsetthetaplanecoords{\phivec}
-\tdplotdrawarc[tdplot_rotated_coords]{(E)}{0.1}{90}%
-    {180}{above left}{$\cdot$}
-\tdplotdrawarc{(O)}{0.2}{0}{\phivec}{anchor=north}{$\varphi$}
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.3}{0}%
-    {\thetavec}{anchor=south west}{$\theta$}
-    
 \end{tikzpicture}
 
 %%Angle Definitions
@@ -39,6 +18,7 @@
 %\tdplotsetmaincoords{0}{0}
 %
 %%define polar coordinates for some vector
+%%TODO: look into using 3d spherical coordinate system
 %\pgfmathsetmacro{\rvec}{.8}
 %\pgfmathsetmacro{\thetavec}{30}
 %\pgfmathsetmacro{\phivec}{60}

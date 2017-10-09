@@ -39,6 +39,7 @@
 \usepackage{ellipsis}  % Korrigiert den Weißraum um Auslassungspunkte
 \usepackage{microtype}  % optischer Randausgleich etc.
 \usepackage{url}
+
 \usepackage[table, dvipsnames]{xcolor}         % z.B. für schattierte Boxen
 \usepackage{framed}			% shaded Umgebung
 % Links im PDF
@@ -56,8 +57,12 @@
 \pgfplotsset{compat=1.10}
 \usetikzlibrary{calc}
 \usepackage{todonotes}
-\usepackage{sourcecodepro}
+\usepackage[scaled=.90]{sourcecodepro}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage[a]{esvect}
 
+\setlist[1]{itemsep=0pt}
 
 \selectlanguage{ngerman}
 
@@ -113,7 +118,7 @@
   >=latex, % option for nice arrows
   inner sep=0pt,%
   outer sep=2pt,%
-  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+  point/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
     fill=black,circle}%
 }
 
@@ -152,9 +157,9 @@
 \newtcblisting[auto counter, number within=chapter]{codesnippet}[2]{
   basestyle,
   listing only,
-  title=\hspace{-7.5mm}\textbf{Listing \thetcbcounter:} #1, 
+  title=\hspace{-7.5mm}\textbf{Listing \thetcbcounter:} #1,
   width=\textwidth,
-  listing options={},
+  listing options={basicstyle=\ttfamily\small},
   colback=codebackground,
   left=10mm,
   enhanced,
@@ -176,6 +181,7 @@
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{D}[1]{>{\centering\arraybackslash}p{#1}}
 
 %----==== preparations ====----%
 \addbibresource{thesis.bib}
@@ -210,6 +216,7 @@
 % \include{append}
 
 \cleardoublepage
+\renewcommand{\UrlFont}{\ttfamily\small}
 \printbibliography
 
 \cleardoublepage

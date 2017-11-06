@@ -39,12 +39,12 @@
 \usepackage{ellipsis}  % Korrigiert den Weißraum um Auslassungspunkte
 \usepackage{microtype}  % optischer Randausgleich etc.
 \usepackage{url}
-
 \usepackage[table, dvipsnames]{xcolor}         % z.B. für schattierte Boxen
 \usepackage{framed}			% shaded Umgebung
 % Links im PDF
 \usepackage[colorlinks=false, pdfborder={0 0 0}, breaklinks=true]{hyperref}
 \usepackage[backend=bibtex,style=numeric]{biblatex} %Bibliographie
+% End template
 
 \usepackage{ltablex, array, multirow, makecell, ragged2e} %Tabellenzeug
 \usepackage{ifthen}
@@ -55,14 +55,15 @@
 \usepackage{tikz-3dplot}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.10}
-\usetikzlibrary{calc}
+\usepackage{tikz-uml}
 \usepackage{todonotes}
 \usepackage[scaled=.90]{sourcecodepro}
 \usepackage[shortlabels]{enumitem}
 \usepackage{siunitx}
 \usepackage[a]{esvect}
+\usepackage{wrapfig}
 
-\setlist[1]{itemsep=0pt}
+\usepackage{layouts}
 
 \selectlanguage{ngerman}
 
@@ -85,18 +86,16 @@
 \definecolor{javadoc}{rgb}{0.25,0.35,0.75} % javadoc
 \definecolor{codebackground}{HTML}{F8F8F8} % background
 
-%----==== numbers ====----%
-%\newlength\bla
-%\setlength{\bla}{.24\textwidth}
+%----==== lists ====----%
+\setlist[1]{itemsep=0pt}
 
-
-%----==== customization ====----%
-% Einstellungen für Bild-/Tabellenbeschriftung neben dem Bild
+%----==== figures ====----%
 \floatsetup[figure]{capbesideposition={inside,top}}
 \floatsetup[table]{capbesideposition={inside,top},style=plaintop}
 \renewfloatcommand{fcapside}{figure}[\capbeside][\FBwidth]
 \newfloatcommand{tcapside}{table}[\capbeside][\FBwidth]
 
+%----==== listing ====----%
 \lstset{
   language=[Sharp]C,
   basicstyle=\ttfamily\small,
@@ -114,6 +113,7 @@
   morekeywords={var}
 }
 
+%----==== global tikz ====----%
 \tikzset{%
   >=latex, % option for nice arrows
   inner sep=0pt,%
@@ -121,6 +121,10 @@
   point/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
     fill=black,circle}%
 }
+
+%----==== uml ====----%
+\tikzumlset{fill class=white} % This is the general color switch
+\tikzumlset{font=\small\sffamily} % This is the general color switch
 
 %----==== tcolorbox ====----%
 \tcbset{
@@ -144,6 +148,13 @@
   basestyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries
+}{def}
+
+\newtcbtheorem[number within=chapter]{defboxfullwidth}{Definition}{
+  basestyle,
+  fonttitle=\sffamily\bfseries,
+  description font=\mdseries,
+  width=\textwidth
 }{def}
 
 \newtcbtheorem[number within=chapter]{splitbox}{Definition}{
@@ -175,15 +186,46 @@
 % fancy quotes
 \include{fquotes}
 
-
-\newcommand{\evaluation}[3][0]{\draw node at (#2+.5,#3+.5) {#1};}
+%----==== tables ====----%
+% \tableheader{<number of columns>}{<column1 & column2 ...>}
+\newcommand{\tableheader}[2]{
+\ifx&#2&%
+   % #2 is empty
+\else
+   #2 \\
+\fi
+\endfirsthead
+\multicolumn{#1}{l}{\small \tablename\ \thetable\ -- \textit{Fortsetzung von vorheriger Seite}} \\
+%\hline
+\ifx&#2&%
+   % #2 is empty
+\else
+   #2 \\ \hline
+\fi
+\endhead
+\hline
+\endlastfoot
+\hline
+\multicolumn{#1}{r}{\textit{\small Fortsetzung auf nächster Seite...}} \\
+\endfoot
+\hline
+}
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{D}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{B}[1]{>{\raggedright\arraybackslash}b{#1}}
+\newcolumntype{M}[1]{>{\raggedright\arraybackslash}m{#1}}
 
-%----==== preparations ====----%
+\newcounter{userstoryid}
+\setcounter{userstoryid}{1}
+\newcounter{acceptanceid}
+\setcounter{acceptanceid}{0}
+\renewcommand{\theacceptanceid}{\theuserstoryid.\arabic{acceptanceid}}
+\newcommand{\accid}[1]{\refstepcounter{acceptanceid}\theacceptanceid\label{#1}}
+\newcommand{\setaccid}{\stepcounter{userstoryid}\setcounter{acceptanceid}{0}}
+
+%----==== bibliography ====----%
 \addbibresource{thesis.bib}
 
 %-----===== begin document =====-----%

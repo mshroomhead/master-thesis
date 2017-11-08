@@ -343,16 +343,6 @@ Für das Prototyping wird überwiegend mit einem \textit{High-Fi Prototyp}\footn
 
 Weitere Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit{Low-Fi Prototyp}\footnote{englisch Low Fidality, aus: low = gering und fidelity = Genauigkeit; Low-Fi Prototypen zeichnen sich durch eine schnelle und einfache Übersetzung von Designkonzepten auf hohem Niveau in greifbare und testbare Artefakte aus \cite{egger2000fi}.} ergänzt.
 
-\subsubsection*{Prioritäten}
-
-Bei den Akzeptanzkriterien wird zwischen drei verschiedenen Prioritäten unterschieden:
-
-\begin{enumerate}[{Priorität }1:, font={\bfseries}, leftmargin=*]
-  \item Grundfunktionalität, die für die Beurteilung des Mehrwertes von CodeLeaves unerlässlich ist und im High-Fi Prototyp implementiert wird.
-  \item Funktionalität die konzeptionell ausgearbeitet wird und im Low-Fi Prototyp enthalten ist.
-  \item Funktionalität, die für die Beurteilung des Mehrwertes von CodeLeave nicht essentiell ist.
-\end{enumerate}
-
 \noindent Im Folgenden werden nun User-Storys und Akzeptanzkriterien aufgeführt.
 
 \begin{userstory}{Code-Qualität}
@@ -362,13 +352,13 @@ Bei den Akzeptanzkriterien wird zwischen drei verschiedenen Prioritäten untersc
 \end{userstory}
 
 \renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 1} \label{tab:acceptance1}\\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{acc:s-metrics} & Ich kann statische Metriken der Code-Qualität, wie z.B. Code-Coverage, auf die Farbe der Blätter anwenden. & 1\\
-    \accid{acc:s-hotspots} & Ich kann Ausreißer der ausgewählten Metrik gut erkennen. & 1\\
-    \accid{acc:s-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für eine bestimmte Klasse anzeigen lassen & 1\\
-    \accid{acc:s-overview} & Ich möchte möglichst viele Blätter gleichzeitig betrachten können. & 1\\
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{acc:s-metrics} & Ich kann statische Metriken der Code-Qualität, wie z.B. Code-Coverage, auf die Farbe der Blätter anwenden.\\
+    \accid{acc:s-hotspots} & Ich kann Ausreißer der ausgewählten Metrik gut erkennen.\\
+    \accid{acc:s-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für eine bestimmte Klasse anzeigen lassen\\
+    \accid{acc:s-overview} & Ich möchte möglichst viele Blätter gleichzeitig betrachten können.\\
 \end{tabularx}
 
 \begin{userstory}{Kopplung und Struktur}
@@ -378,17 +368,17 @@ Bei den Akzeptanzkriterien wird zwischen drei verschiedenen Prioritäten untersc
 \end{userstory}
 
 \setaccid
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 2} \\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{s-hotspots} & Die Struktur der Bäume entspricht der der Software. & 1\\
-    \accid{acc:s-structure} & Die Struktur der Bäume ist eindeutig und hat keine Überschneidungen. & 1\\
-    \accid{acc:s-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Abhängigkeiten hervorheben. & 2\\
-    \accid{acc:s-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der dazugehörigen Abhängigkeiten. & 2\\
-    \accid{acc:s-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Abhängigkeiten betroffenen Blättern hervorheben. & 2\\
-    \accid{acc:s-connection-count} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich sehen wie viele Abhängigkeiten in welche Richtung fließen. & 2\\
-    \accid{acc:s-timestamp} & Ich kann den Zeitpunkt auswählen, auf die sich die dargestellten Daten beziehen. & 2\\
-    \accid{acc:s-cyclic} & Zyklische Verbindungen können hervorgehoben werden. & 3
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{s-hotspots} & Die Struktur der Bäume entspricht der der Software.\\
+    \accid{acc:s-structure} & Die Struktur der Bäume ist eindeutig und hat keine Überschneidungen.\\
+    \accid{acc:s-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Abhängigkeiten hervorheben.\\
+    \accid{acc:s-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der dazugehörigen Abhängigkeiten.\\
+    \accid{acc:s-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Abhängigkeiten betroffenen Blättern hervorheben.\\
+    \accid{acc:s-connection-count} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich sehen wie viele Abhängigkeiten in welche Richtung fließen.\\
+    \accid{acc:s-timestamp} & Ich kann den Zeitpunkt auswählen, auf die sich die dargestellten Daten beziehen.\\
+    \accid{acc:s-cyclic} & Zyklische Verbindungen können hervorgehoben werden.\\
 \end{tabularx}
 
 \begin{userstory}{Drilldown}
@@ -398,11 +388,11 @@ Bei den Akzeptanzkriterien wird zwischen drei verschiedenen Prioritäten untersc
 \end{userstory}
 
 \setaccid
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 3} \\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{acc:s-drilldown} & Wenn ich eine Kante auswähle, dann kann ich das repräsentierte Softwareartefakt als neuen Waldboden festlegen. & 2\\
-    \accid{acc:s-reset} & Ich habe die Möglichkeit den Wald zurückzusetzen. & 2\\
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{acc:s-drilldown} & Wenn ich eine Kante auswähle, dann kann ich das repräsentierte Softwareartefakt als neuen Waldboden festlegen.\\
+    \accid{acc:s-reset} & Ich habe die Möglichkeit den Wald zurückzusetzen.\\
 \end{tabularx}
 
 \begin{userstory}{Dynamische Metriken}
@@ -412,17 +402,17 @@ Bei den Akzeptanzkriterien wird zwischen drei verschiedenen Prioritäten untersc
 \end{userstory}
 
 \setaccid
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 4} \\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{acc:d-metrics} & Ich kann Antwortzeiten und Laufzeitfehler auf die Blattfarbe anwenden. & 1\\
-    \accid{acc:d-hotspots} & Ich kann Ausreißer der ausgewählten Metrik gut erkennen. & 1\\
-    \accid{acc:d-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für eine bestimmte Klasse anzeigen lassen & 1\\
-    \accid{acc:d-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Aufrufe hervorheben. & 2\\
-    \accid{acc:d-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der dazugehörigen Aufrufe. & 2\\
-    \accid{acc:d-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Aufrufen betroffenen Blättern hervorheben. & 2\\
-    \accid{acc:d-connection-count} & Wenn ich eine Wurzel oder Kante anklicke, dann kann ich sehen wie viele Verbindungen in welche Richtung gehen. & 2\\
-    \accid{acc:d-timespan} & Ich kann den Zeitraum auswählen, auf die sich die dargestellten Daten beziehen. & 2
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{acc:d-metrics} & Ich kann Antwortzeiten und Laufzeitfehler auf die Blattfarbe anwenden.\\
+    \accid{acc:d-hotspots} & Ich kann Ausreißer der ausgewählten Metrik gut erkennen.\\
+    \accid{acc:d-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für eine bestimmte Klasse anzeigen lassen\\
+    \accid{acc:d-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Aufrufe hervorheben.\\
+    \accid{acc:d-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der dazugehörigen Aufrufe.\\
+    \accid{acc:d-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Aufrufen betroffenen Blättern hervorheben.\\
+    \accid{acc:d-connection-count} & Wenn ich eine Wurzel oder Kante anklicke, dann kann ich sehen wie viele Verbindungen in welche Richtung gehen.\\
+    \accid{acc:d-timespan} & Ich kann den Zeitraum auswählen, auf die sich die dargestellten Daten beziehen.\\
 \end{tabularx}
 
 \begin{userstory}{Zustand der Software}
@@ -432,11 +422,11 @@ Bei den Akzeptanzkriterien wird zwischen drei verschiedenen Prioritäten untersc
 \end{userstory}
 
 \setaccid
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 5} \label{tab:acceptance5}\\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{acc:d-overview} & Wenn ich die Laubfarbe des Waldes betrachte, dann möchte ich eine möglichst gute Gesamtübersicht über die ausgewählte Metrik haben. & 1\\
-    \accid{acc:d-no-intersections} & Die Struktur der Bäume ist möglichst übersichtlich und hat so wenig Überschneidungen wie möglich. & 1
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{acc:d-overview} & Wenn ich die Laubfarbe des Waldes betrachte, dann möchte ich eine möglichst gute Gesamtübersicht über die ausgewählte Metrik haben.\\
+    \accid{acc:d-no-intersections} & Die Struktur der Bäume ist möglichst übersichtlich und hat so wenig Überschneidungen wie möglich.\\
 \end{tabularx}
 
 Es wird deutlich, dass sich viele Akzeptanzkriterien aus der statischen und dynamischen Analyse überschneiden. Das lässt erkennen wie sinnvoll es ist diese beiden Sichten miteinander zu kombinieren. Ob es sich um statische oder dynamische Metriken handelt, spielt für die Visualisierung keine Rolle. Genauso funktioniert die Aggregierung und die Interaktion mit Kanten und Wurzeln für beide Sichten gleich. Für den High-Fi Prototyp wird deshalb beispielhaft nur mit einer statischen Metrik gearbeitet. Mit dem Datenmodell, dass im Kapitel \ref{ch:data-layers} entworfen wird, und entsprechender Datenbeschaffung können aber genauso dynamische Metriken und Verbindungen visualisiert werden. 
@@ -454,13 +444,13 @@ Aus anfänglichem Prototyping mit der HoloLens sind weitere User-Story entstande
 \end{userstory}
 
 \setaccid
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 6} \label{tab:acceptance6}\\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{acc:u-place} & Ich kann den Wald im Raum platzieren. & 1\\
-    \accid{acc:u-scale} & Ich kann den Wald skalieren. & 1\\
-    \accid{acc:u-rotate} & Ich kann den Wald rotieren. & 1\\
-    \accid{acc:u-identify} & Ich kann Elemente im Wald mit dem Namen der repräsentieren Softwareartefakte identifizieren. & 1\\
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{acc:u-place} & Ich kann den Wald im Raum platzieren.\\
+    \accid{acc:u-scale} & Ich kann den Wald skalieren.\\
+    \accid{acc:u-rotate} & Ich kann den Wald rotieren.\\
+    \accid{acc:u-identify} & Ich kann Elemente im Wald mit dem Namen der repräsentieren Softwareartefakte identifizieren.\\
 \end{tabularx}
 
 Akzeptanzkriterium 6.1 aus Tabelle \ref{tab:acceptance6} ist vor allem am Anfang wichtig, um den Wald dort zu platzieren, wo es am meisten Sinn macht. Ist der Wald initial von realen Objekten verdeckt, kann der Nutzer nicht damit arbeiten. Für den Wechsel zwischen Übersicht und die Betrachtung von Details ist auch Akzeptanzkriterium 6.2 essentiell. Akzeptanzkriterium 6.4 ist eine Funktionalität, die durchgängig benötigt wird. Zwar können Pakete durch die Struktur der Bäume Pakete erkannt werden, jedoch ist die Anzeige der Namen der Softwareartefakten unerlässlich, um genau zu wissen, welches Element des Waldes was repräsentiert.
@@ -474,12 +464,12 @@ Vor der Platzierung des Waldes ist noch ein weiterer Schritt erforderlich. Es mu
 \end{userstory}
 
 \setaccid
-\begin{tabularx}{\textwidth}{cXc}
+\begin{tabularx}{\textwidth}{cX}
 	\caption{Akzeptanzkriterien zu User-Story 7} \label{tab:acceptance7}\\
-	\tableheader{3}{\textbf{ID} & \textbf{Beschreibung} & \textbf{Prio}}
-    \accid{acc:u-project-selection} & Ich kann bereits gespeicherte Projekte öffnen. & 1\\
-    \accid{acc:u-import} & Ich kann ein neues Projekt aus unterstützen Datenquellen importieren. & 2\\
-    \accid{acc:u-add-data} & Ich kann Daten zu einem bereits gespeicherten Projekt aus unterstützen Daten hinzufügen. & 2\\
+	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
+    \accid{acc:u-project-selection} & Ich kann bereits gespeicherte Projekte öffnen.\\
+    \accid{acc:u-import} & Ich kann ein neues Projekt aus unterstützen Datenquellen importieren.\\
+    \accid{acc:u-add-data} & Ich kann Daten zu einem bereits gespeicherten Projekt aus unterstützen Daten hinzufügen.\\
 \end{tabularx}
 
 Alle Akzeptanzkriterien mit Priorität 1 werden im High-Fi Prototyp umgesetzt und ergeben gleichzeitig einen technischen Durchstich für CodeLeaves. Dabei wird besonders Wert auf das Layout des Waldes gelegt, das in Kapitel \ref{ch:layout} erarbeitet wird, da ohne die übersichtliche Struktur jegliche Weiterentwicklung von CodeLeaves sinnlos wäre.
@@ -1635,7 +1625,7 @@ In der Tabelle \ref{tab:actions} können alle verfügbaren Aktionen betrachtet w
         (Akz. \ref{acc:s-leaf-connections},
         \ref{acc:d-leaf-connections},
         \ref{acc:s-connection-highlight} und
-        \ref{acc:d-connection-highlight})                            & Double-tap   & Double-tap    & Double-tap   \\
+        \ref{acc:d-connection-highlight})                             & Double-tap   & Double-tap    & Double-tap   \\
    7 & \icon{connections-in} & Eingehende Verbindungen hervorheben    & KM           & KM            &              \\
    8 & \icon{connections-out} & Ausgehende Verbindungen hervorheben   & KM           & KM            &              \\
    9 & \icon{right} & Verbindungen nach Rechts hervorheben            &              &               & KM           \\

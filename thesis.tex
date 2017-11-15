@@ -68,9 +68,9 @@
 \selectlanguage{ngerman}
 
 %----==== colors ====----%
-\definecolor{primary}{HTML}{086D8F}
-\definecolor{secondary}{HTML}{820038}
-\definecolor{tertiary}{HTML}{0E8260}
+\definecolor{primary}{HTML}{1E6A8B}
+\definecolor{secondary}{HTML}{26A5C5}
+\definecolor{tertiary}{HTML}{9EE8FE}
 
 \colorlet{boxcontent}{gray!20}
 \colorlet{boxheader}{gray!75}
@@ -179,7 +179,7 @@
 }
 
 \newtcolorbox{titlebox}[2][]{basestyle, title=#2, #1}
-\newtcolorbox[auto counter]{userstory}[2][]{basestyle, valign=center, halign=left, after skip=0em, title=\textbf{Userstory \thetcbcounter:} #2, #1}
+\newtcolorbox[auto counter]{userstory}[2][]{basestyle, valign=center, halign=left, after skip=0em, title=\textbf{Userstory \thetcbcounter:} #2, label=#1}
 
 
 %----==== new commands ====----%

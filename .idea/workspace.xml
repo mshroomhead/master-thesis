@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7891d404-40cd-41a5-a948-b7163754f92f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/coordinate-system.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figures/circle-packing-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figures/circle-packing-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figures/layout-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/thesis.listing" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/app-menu-mockup.png" afterPath="$PROJECT_DIR$/figures/app-menu-mockup.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/circle-packing.png" afterPath="$PROJECT_DIR$/figures/circle-packing.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/layout.png" afterPath="$PROJECT_DIR$/figures/layout.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/leaf-contextmenu-connections.png" afterPath="$PROJECT_DIR$/figures/leaf-contextmenu-connections.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/leaf-contextmenu.png" afterPath="$PROJECT_DIR$/figures/leaf-contextmenu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/meta-model.pdf" afterPath="$PROJECT_DIR$/figures/meta-model.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/spatial-mapping.jpg" afterPath="$PROJECT_DIR$/figures/spatial-mapping.jpg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thesis 2.pdf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/3d-advantage.eps" afterPath="$PROJECT_DIR$/figures/3d-advantage.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/aggregation.eps" afterPath="$PROJECT_DIR$/figures/aggregation.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/figures/data-layers.eps" afterPath="$PROJECT_DIR$/figures/data-layers.eps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesis.pdf" afterPath="$PROJECT_DIR$/thesis.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/append.tex" afterPath="$PROJECT_DIR$/append.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters.tex" afterPath="$PROJECT_DIR$/chapters.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesis.bib" afterPath="$PROJECT_DIR$/thesis.bib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesis.tex" afterPath="$PROJECT_DIR$/thesis.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/title.tex" afterPath="$PROJECT_DIR$/title.tex" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,18 +29,11 @@
       <file leaf-file-name="chapters.tex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chapters.tex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="1647" column="118" lean-forward="true" selection-start-line="1647" selection-start-column="118" selection-end-line="1647" selection-end-column="118" />
+            <state relative-caret-position="484">
+              <caret line="108" column="43" lean-forward="false" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
               <folding>
-                <element signature="e#15642#15645#2" expanded="true" />
-                <element signature="e#15696#15699#2" expanded="true" />
-                <element signature="e#15768#15772#2" expanded="true" />
-                <element signature="e#15918#15922#2" expanded="true" />
-                <element signature="e#15930#15934#2" expanded="true" />
-                <element signature="e#16232#16236#3" expanded="true" />
-                <element signature="e#16614#16618#2" expanded="true" />
-                <element signature="e#16627#16631#2" expanded="true" />
-                <element signature="e#31038#31042#3" expanded="true" />
+                <element signature="e#15979#15982#2" expanded="true" />
+                <element signature="e#16021#16024#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,10 +48,16 @@
       <find>interaction-ar</find>
       <find>tableheader</find>
       <find>\tableheader{2}</find>
+      <find>d.h.</find>
+      <find>.\,h</find>
+      <find>bzw.</find>
     </findStrings>
     <replaceStrings>
       <replace>ch:interaction-ar</replace>
       <replace>\tableheader{</replace>
+      <replace>.\,h</replace>
+      <replace>.\,h.</replace>
+      <replace>bzw.\</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -90,7 +80,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1172" />
+    <option name="height" value="1173" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -126,6 +116,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -140,9 +133,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,11 +369,11 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1172" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1920" height="1173" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="IView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -420,15 +410,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15642#15645#2" expanded="true" />
-            <element signature="e#15696#15699#2" expanded="true" />
-            <element signature="e#15768#15772#2" expanded="true" />
-            <element signature="e#15918#15922#2" expanded="true" />
-            <element signature="e#15930#15934#2" expanded="true" />
-            <element signature="e#16232#16236#3" expanded="true" />
-            <element signature="e#16614#16618#2" expanded="true" />
-            <element signature="e#16627#16631#2" expanded="true" />
-            <element signature="e#31038#31042#3" expanded="true" />
+            <element signature="e#15979#15982#2" expanded="true" />
+            <element signature="e#16021#16024#2" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -438,15 +421,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15642#15645#2" expanded="true" />
-            <element signature="e#15696#15699#2" expanded="true" />
-            <element signature="e#15768#15772#2" expanded="true" />
-            <element signature="e#15918#15922#2" expanded="true" />
-            <element signature="e#15930#15934#2" expanded="true" />
-            <element signature="e#16232#16236#3" expanded="true" />
-            <element signature="e#16614#16618#2" expanded="true" />
-            <element signature="e#16627#16631#2" expanded="true" />
-            <element signature="e#31038#31042#3" expanded="true" />
+            <element signature="e#15979#15982#2" expanded="true" />
+            <element signature="e#16021#16024#2" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -456,15 +432,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15642#15645#2" expanded="true" />
-            <element signature="e#15696#15699#2" expanded="true" />
-            <element signature="e#15768#15772#2" expanded="true" />
-            <element signature="e#15918#15922#2" expanded="true" />
-            <element signature="e#15930#15934#2" expanded="true" />
-            <element signature="e#16232#16236#3" expanded="true" />
-            <element signature="e#16614#16618#2" expanded="true" />
-            <element signature="e#16627#16631#2" expanded="true" />
-            <element signature="e#31038#31042#3" expanded="true" />
+            <element signature="e#15979#15982#2" expanded="true" />
+            <element signature="e#16021#16024#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#15979#15982#2" expanded="true" />
+            <element signature="e#16021#16024#2" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -493,18 +473,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="1647" column="118" lean-forward="true" selection-start-line="1647" selection-start-column="118" selection-end-line="1647" selection-end-column="118" />
+        <state relative-caret-position="484">
+          <caret line="108" column="43" lean-forward="false" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
           <folding>
-            <element signature="e#15642#15645#2" expanded="true" />
-            <element signature="e#15696#15699#2" expanded="true" />
-            <element signature="e#15768#15772#2" expanded="true" />
-            <element signature="e#15918#15922#2" expanded="true" />
-            <element signature="e#15930#15934#2" expanded="true" />
-            <element signature="e#16232#16236#3" expanded="true" />
-            <element signature="e#16614#16618#2" expanded="true" />
-            <element signature="e#16627#16631#2" expanded="true" />
-            <element signature="e#31038#31042#3" expanded="true" />
+            <element signature="e#15979#15982#2" expanded="true" />
+            <element signature="e#16021#16024#2" expanded="true" />
           </folding>
         </state>
       </provider>

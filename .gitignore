@@ -207,6 +207,9 @@ TSWLatexianTemp*
 # Texpad
 .texpadtmp
 
+# IntelliJ
+.idea
+
 # Kile
 *.backup
 

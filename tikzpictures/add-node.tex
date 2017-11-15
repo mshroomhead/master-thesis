@@ -7,16 +7,16 @@
 \begin{tikzpicture}[scale=7,tdplot_main_coords]
 
 \coordinate (O) at (0,0,0);
-\draw[dashdotted,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
-\draw[dashdotted,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[dashdotted,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+\draw[dashdotted,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$z$};
+\draw[dashdotted,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$x$};
+\draw[dashdotted,->] (0,0,0) -- (0,0,1) node[anchor=south]{$y$};
 
 \tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec}
 \coordinate (E) at (Pz);
 
 \draw[thick] (O) node[point,label=above left:$O$]{} -- node[left=3pt]{$h$} (E) node[point,label=above left:$E$]{};
 \draw[thick] (O) -- node[below right]{$l$} (P) node[point,label=above right:$P$]{};
-\draw (E) -- node[above right]{$r$} (P);
+\draw (E) -- node[above right]{$a_n$} (P);
 \draw[dashed] (O) -- (Pxy);
 \draw[dashed] (P) -- (Pxy);
 %\draw[dashed] (P) -- (Pyz);

@@ -11,8 +11,8 @@ I think AR is [...] big, it’s huge. I get excited because of the things that c
 \section{Einführung in die AR}
 Viele der einflussreichsten Technologieunternehmen arbeiten an der \emph{Virtual} bzw.\ \emph{Augmented Reality (VR} bzw.\ \emph{AR)}. Tim Cook ist überzeugt davon, dass die AR die nächste \emph{``big idea''} nach dem Smartphone wird \cite{theindependent2017apple}.
 
-Nicht nur Großkonzerne wie Apple, Facebook oder Samsung arbeiten intensiv in diesem Bereich. Ein Start-up-Unternehmen namens \emph{Magic Leap} entwickelt eine AR Brille und wird von Investoren in Billionenhöhe unterstützt \cite{kelly2016untold}. Laut einem Cover-Artikel der Zeitschrift \emph{Wire} ist die noch unter Verschluss gehaltene Technologie den Konkurrenzprodukten allen voraus. Das Release der Hardware ist Stand heute noch nicht bekannt, aber es lässt sich ein Trend erkennen, der die nächsten Jahre viele neue Möglichkeiten eröffnen wird und möglicherweise die Digitalisierung revolutionieren könnte.
-Diese Arbeit wird sich mit einer Anwendung für die AR beschäftigen -- der Softwarevisualisierung. Die Spezialisierung auf AR kann nach der Abgrenzung von AR und VR besser nachvollzogen werden.
+Nicht nur Großkonzerne wie Apple, Facebook oder Samsung arbeiten intensiv in diesem Bereich. Ein Start-up-Unternehmen namens \emph{Magic Leap} entwickelt eine AR Brille und wird von Investoren in Billionenhöhe unterstützt \cite{kelly2016untold}. Laut einem Cover-Artikel der Zeitschrift \emph{Wire} ist die noch unter Verschluss gehaltene Technologie den Konkurrenzprodukten allen voraus. Das Release der Hardware ist Stand heute noch nicht bekannt, aber es lässt sich ein Trend erkennen, der die nächsten Jahre viele neue Möglichkeiten eröffnen wird und möglicherweise die Digitalisierung revolutionieren wird.
+Diese Arbeit wird sich mit einer Anwendung der AR beschäftigen -- der Softwarevisualisierung. Die Spezialisierung auf AR kann nach der Abgrenzung von AR und VR besser nachvollzogen werden.
 
 \paragraph{VR} ist eine Umgebung, in der der Betrachter vollkommen von einer computergenerierten Welt umgeben ist, die oft die reale Welt imitiert, aber auch rein fiktiv sein kann \cite{milgram1995augmented}.\\
 
@@ -22,7 +22,7 @@ Obwohl der Begriff AR zunehmend in der Industrie Verwendung findet, entbehrt er 
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/rv-continuum}
-  \caption{Abgewandelte Darstellung des Reality-Virtuality-Kontinuums aus \cite{milgram1995augmented}}
+  \caption{Das Reality-Virtuality-Kontinuum (nach \cite{milgram1995augmented})}
   \label{fig:rv-continuum}
 \end{figure}
 
@@ -34,62 +34,59 @@ Dieses \emph{Reality-Virtuality-Kontinuum} ist in Abbildung \ref{fig:rv-continuu
 
 Auch die \emph{Augmented Virtuality}, also die Erweiterung der virtuellen Welt durch reale Elemente, gehört zur MR.
 
-Wie viele der einflussreichsten Menschen der Technologie-Industrie, sieht Tim Cook mehr Zukunft in der AR, da, wie er in einem Interview sagt, diese Technologie nicht wie die VR die wirkliche Welt ausschließt, sondern die Realität erweitert und Teil von zwischenmenschlicher Kommunikation sein kann \cite{theindependent2017apple}.
+Wie viele der einflussreichsten Menschen der Technologie-Industrie, sieht Tim Cook mehr Zukunft in der AR. Er begründet das in einem Interview damit, dass diese Technologie die wirkliche Welt nicht ausschließt, sondern die Realität erweitert und Teil von zwischenmenschlicher Kommunikation sein kann \cite{theindependent2017apple}.
 
-Wir stellen uns ein Hologramm vor, dass auf einem Konferenztisch Gestalt annimmt und ein Software-System repräsentiert. Entwickler, Projektleiter oder auch Kunden versammeln sich um den Tisch und können miteinander interaktiv die Software betrachten, evaluieren und wichtige Informationen daraus ziehen.
+Wir stellen uns ein Hologramm vor, dass auf einem Konferenztisch Gestalt annimmt und eine Software visualisiert. Entwickler, Projektleiter oder auch Kunden versammeln sich um den Tisch und können miteinander interaktiv die Software betrachten, evaluieren und wichtige Informationen daraus ziehen.
 
 Dies wäre mit VR nicht möglich, da der Betrachter von der Außenwelt abgeschottet ist. Deshalb wird im Zuge dieser Arbeit mit der Stand heute am weitesten ausgereiften Technologie der AR gearbeitet -- der \emph{HoloLens} von Microsoft.
 
-\section{Motivation dieser Arbeit}
+\section{Motivation für eine Softwarevisualisierung in der AR}
 Die Technologie der AR bietet uns viele neue Möglichkeiten. Eine Motivation dieser Arbeit ist es sich produktiv mit einer neuen, zukunftsträchtigen Technologie zu beschäftigen. Das ist jedoch nur die eine Seite. Die weitaus größere Motivation ist, die zuvor noch nicht dagewesene Zugänglichkeit und Interaktion mit dreidimensionaler \emph{Visualisierung} auszunutzen. Visualisierung im Allgemeinen begegnet uns in vielen Bereichen unseres Lebens und nimmt eine wichtige Rolle ein.
 
 Niemand konnte bislang unser Sonnensystem von außen betrachten. Dennoch haben wir alle eine ziemlich gute Vorstellung wie dieses aufgebaut ist. Durch die Visualisierung der Planeten und der Sonne entsteht in uns ein geistiges Abbild der Realität. Das Konzept komplexe Realitäten zu abstrahieren und zu visualisieren, um dadurch die Realität besser verstehen zu können, ist in vielen Disziplinen der Wissenschaft vertreten.
 
-Neben Wissenschaften wie Physik, Chemie oder Biologie, nimmt Visualisierung
-auch besonders in der Informatik eine wichtige Rolle ein. In vielen Bereichen müssen Informationen in eine visuelle Form gebracht werden, die für das menschliche Auge besser zu lesen sind.
+Neben Wissenschaften wie Physik, Chemie oder Biologie, nimmt Visualisierung auch besonders in der Informatik eine wichtige Rolle ein. In vielen Bereichen müssen Informationen in eine visuelle Form gebracht werden, die für das menschliche Auge besser zu lesen sind.
 
 Gerade bei komplexen Software-Systemen ist das der Fall. Soll zum Beispiel die zu Grunde liegende Struktur einer Software Außenstehenden erklärt werden, gelingt das mit einem visuellen Modell wie einem UML-Diagramm sicherlich besser, als nur in den Source-Code zu schauen.
 
-So wie UML-Diagramme, war die Darstellungsform der Softwarevisualisierung bislang meist zweidimensional. Mit AR wird dieser Disziplin der Visualisierung jedoch wortwörtlich ein neuer Raum an Möglichkeiten eröffnet und in diese Arbeit soll diesen Raum ausfüllen.
+So wie UML-Diagramme, war die Darstellungsform der Softwarevisualisierung bislang meist zweidimensional. Mit AR wird dieser Disziplin der Visualisierung jedoch wortwörtlich ein neuer Raum an Möglichkeiten eröffnet und diese Arbeit soll damit beginnen den Raum ausfüllen.
 
-\section{Zielsetzung}
-Für die Zielsetzung einer 3D Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die "`visualization of artifacts related to software and its development process"' \cite{diehl2007software}. Wird der Fokus mehr auf die Ziele, d.h. den Nutzen für den Betrachter gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
+\section{Zielsetzung der Arbeit}
+Für die Zielsetzung einer 3D Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die "`visualization of artifacts related to software and its development process"' \cite{diehl2007software}. Diese Definition ist sehr breit gefasst. Wird der Fokus mehr auf die Nutzerorientierung gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
 
 \begin{defbox}{Softwarevisualisierung}{software-visualization}
-Softwarevisualisierung ist die bildliche oder auch metaphorische Darstellung einer Software, um dem Betrachter durch Vereinfachung und Abstraktion das bessere Verständnis oder die einfachere Analyse von Software zu ermöglichen.
+Softwarevisualisierung ist die bildliche oder auch metaphorische Darstellung einer Software, um dem Nutzer durch Vereinfachung und Abstraktion das bessere Verständnis oder die einfachere Analyse von Software zu ermöglichen.
 \end{defbox}
 
-In dieser Arbeit soll das neue Konzept \emph{CodeLeaves} für eine solche Softwarevisualisierung in der AR vorgestellt und im Detail ausgearbeitet werden.
+In dieser Arbeit soll eine solche Softwarevisualisierung für die AR vorgestellt werden. Das neuartige Konzept \emph{CodeLeaves} bedient sich der Metapher des \textit{Software-Waldes} und soll vorgestellt und im Detail ausgearbeitet werden.
 
-Dabei soll CodeLeaves, im Vergleich zu andern 3D Softwarevisualisierungen, die Vorteile der Dreidimensionalität optimal ausnutzen.
+Im Vorfeld dieser Arbeit wurde in einer Studie erkannt, dass eine gute Softwarevisualisierung sowohl statische als auch dynamische Daten unterstützen sollte. Mit CodeLeaves soll dies möglich sein. Beliebige Daten sollen übersichtlich auf die Struktur der Software abgebildeten werden können.
 
-Im Vorfeld dieser Arbeit wurden in einer Studie Metriken gesammelt, die eine gute Softwarevisualisierung bzw. CodeLeaves unterstützen sollte.
+Durch Expertengespräche sollen User-Storys erstellt werden, um den Mehrwert des neuen Konzepts zu veranschaulichen und für weitere Überlegungen Anforderungen zu definieren.
 
-Es sollen dynamische und statische Daten zur Erkennung von Anomalien in einer Software unterstützt werden. Ebenfalls soll die Darstellung der Struktur und die darauf abgebildeten Abhängigkeiten innerhalb einer Software möglich sein.
+Um den Anforderungen gerecht zu werden, soll für CodeLeaves ein sprachunabhängiges Datenmodell entworfen werden, dass alle geforderten Informationen unterstützt.
 
-Durch weitere Expertengespräche sollen User-Storys erstellt werden um den Mehrwert des neuen Konzepts validieren zu können.
-
-Um diesen Anforderungen gerecht zu werden, soll für CodeLeaves ein sprachunabhängiges Datenmodell entworfen werden, dass alle geforderten Daten unterstützt.
-
-Der Praktische Teil dieser Arbeit soll die prototypische Entwicklung von CodeLeaves für die HoloLens sein.
+Der Praktische Teil dieser Arbeit soll die prototypische Entwicklung von CodeLeaves sein. Dabei sollen zwei Schwerpunkte gesetzt werden. Zum einen soll die Generierung des Waldes und die dafür benötigten Layout-Algorithmen erarbeitet und für die HoloLens umgesetzt werden. Zum anderen soll ein Interkations-Konzept ausgearbeitet werden, mit dem CodeLeaves bedienbar wird und eine Software bis ins Detail erforscht werden kann.
 
 \section{Aufbau der Arbeit}
-Im Kapitel \ref{ch:concept} wird das Konzept von CodeLeaves vorgestellt. Dabei wird zunächst unter Betrachtung alternativer Ansätzen begründet, wieso ein neues Konzept sinnvoll ist, um dann in Abschnitt \ref{sec:idea} genauer auf das Konzept einzugehen. Die Befragung von Experten der Softwareanalyse und die daraus abgeleiteten Anforderungen an CodeLeaves in Abschnitt \ref{sec:requirements} schließen das erste Kapitel ab.
+Im nächsten Kapitel wird das Konzept von CodeLeaves zunächst auf High-Level-Ebene vorgestellt, um es anschließend detaillierter zu erörtern. Es werden Begriffe definiert, die für weitere Inhalte ein einheitliches Verständnis schaffen. Nachdem das Konzept verstanden wurde, werden Unterschiede und Vorteile von CodeLeaves zu alternativen 3D Softwarevisualisierungen hervorgehoben. Die Befragung von Experten der Softwareanalyse und die daraus abgeleiteten Anforderungen an CodeLeaves \ref{sec:requirements} schließen das erste Kapitel ab.
 
-Das Kapitel \ref{ch:data-model} beschäftigt sich mit der Entwicklung eines geeigneten Datenmodells für CodeLeaves. Es werden vorhandene Datenmodelle auf Tauglichkeit für CodeLeaves überprüft und Rücksprache mit erfahrenen Software-Ingenieuren gehalten.
+Das Kapitel \ref{ch:data-model} beschäftigt sich mit der Entwicklung eines geeigneten Datenmodells für CodeLeaves. Nachdem vorhandene Datenmodelle auf Tauglichkeit für CodeLeaves überprüft wurden, wird ein neues, in Schichten getrenntes Datenmodell entwickelt.
 
-Aufbauend auf das entwickelte Datenmodell, wird das Konzept von CodeLeaves in Kapitel \ref{ch:layout} theoretisch weiter ausgearbeitet. Darunter fällt die Positionierung der Bäume auf einer Grundfläche und die Länge, Dicke und der Winkel der einzelnen Äste. Parallel zur Theorie wird aufgezeigt, wie sich CodeLeaves in Unity für die HoloLens modellieren lässt.
+Mit diesem Datenmodell kann der Wald für CodeLeaves generiert werden, was Thema des \ref{ch:layout}. Kapitels ist. In diesem Zuge werden zwei Algorithmen und die verwendete Mathematik vorgestellt, die eine möglichst natürliche und übersichtliche Struktur des Waldes produzieren. Abbildungen der HoloLens-Applikation zeigen die praktische Anwendung der theoretischen Inhalte.
 
-Die Interaktion mit CodeLeaves soll Thema des Kapitel \ref{ch:interaction-codeleaves} sein. Besonders die Abhängigkeiten von Artefakten einer Software sollen mithilfe von CodeLeaves interaktiv exploriert werden können.
+Kapitel \ref{ch:interaction-ar} behandelt Grundlagen der Interaktion in der AR, die bei der Interaktion mit CodeLeaves Anwendung finden. Es wird auch beschrieben wie mit reaktiver Programmierung die Interaktion technisch sinnvoll umgesetzt werden kann.
 
-Das Kapitel \ref{ch:conclusion} fasst die Ergebnisse der Arbeit zusammen und ein Ausblick auf zukünftige Verwendung und weiterführende Arbeiten runden die Arbeit ab.
+Die Interaktion mit CodeLeaves ist Thema des Kapitels \ref{ch:interaction}. Es wird gezeigt wie CodeLeaves mit den zur Verfügung stehenden Eigabemöglichkeiten bis ins Detail exploriert werden kann.
+
+Das Kapitel \ref{ch:conclusion} fasst die Ergebnisse der Arbeit zusammen und ein Ausblick auf weiterführende Arbeiten runden die Arbeit ab.
 
 \section{Abgrenzung}
 \label{sec:distinction}
 
-Die Beschaffung der Informationen über eine Software soll wird hier nur am Rande betrachtet. Für die Analyse einer Software müssen statische und dynamische Informationen gesammelt und aggregiert werden. Dafür gibt es verschiedenste Tools, wie inhouse Entwicklungen der QAware mit dem \textit{Software-EKG} und dem \textit{QAvalidator} oder proprietäre und Open-Source-Software. Die Anbindung an CodeLeaves würde den Rahmen dieser Arbeit jedoch sprengen.
+Die Beschaffung der Informationen über eine Software wird hier nur am Rande betrachtet. Für die Analyse einer Software müssen statische und dynamische Informationen gesammelt und aggregiert werden. Dafür gibt es verschiedenste Tools Open-Source- und proprietäre Tools. Die Anbindung an CodeLeaves würde den Rahmen dieser Arbeit jedoch bei Weitem sprengen. Diese Arbeit stellt jedoch den Anspruch, dass mit realistischen Beispieldaten gearbeitet wird, um eine valide Einschätzung des Mehrwerts von CodeLeaves geben zu können.
 
-Stattdessen soll der Fokus besonders auf das grundlegende Konzept und das Frontend mit der Generierung und Interaktion des Waldes gelegt werden. Diese Arbeit stellt jedoch den Anspruch, dass mit realistischen Daten gearbeitet wird, um eine valide Einschätzung des Mehrwerts von CodeLeaves geben zu können.
+Weiterhin wird im Zuge dieser Arbeit mit Prototypen gearbeitet. Diese sind kein fertiges Produkt der Softwarevisualisierung, sondern dienen vielmehr einen technischen Durchstich für die HoloLens und als Basis für eine weiterführende Entwicklung.
 
 \chapter{Das Konzept CodeLeaves}
 \label{ch:concept}
@@ -98,85 +95,100 @@ Stattdessen soll der Fokus besonders auf das grundlegende Konzept und das Fronte
 \label{sec:idea}
 
 \emph{``Hierarchies are almost ubiquitous [...]''} \cite{robertson1991cone} halten Robertson \emph{et al.}
- schon 1991 bei der Visualisierung von hierarchischen Informationen fest. So auch bei der Struktur einer Software. Jede Software mit einer geschachtelten Paketstruktur ist hierarchisch und kann in einer Baumstruktur dargestellt werden. \emph{"`Bäume sind eine der wichtigsten Datenstrukturen, die besonders im Zusammenhang mit hierarchischen Abhängigkeiten und Beziehungen zwischen Daten von Vorteil sind."'} \cite{ernst2016grundkurs} stellen auch Ernst \emph{et al.} fest. Draus folgt, dass die Darstellung von Software als Baum oder auch Bäume sinnvoll ist.
+ schon 1991 bei der Visualisierung von hierarchischen Informationen fest. So verhält es sich auch bei der Struktur einer Software. Jede Software mit einer geschachtelten Struktur ist hierarchisch und kann mithilfe eines Baumes dargestellt werden. \emph{"`Bäume sind eine der wichtigsten Datenstrukturen, die besonders im Zusammenhang mit hierarchischen Abhängigkeiten und Beziehungen zwischen Daten von Vorteil sind."'} \cite{ernst2016grundkurs} stellen auch Ernst \emph{et al.} fest.
 
-Der Baum in der Informatik zeugt von einer ursprünglichen Metapher -- der Baum, wie er draußen in der Natur wächst. Da dieser unbestritten dreidimensional ist, liegt eine Softwarevisualisierung für die Dreidimensionalität mit einer realitätsnäheren Interpretation der Baum-Metapher nahe. Werden die Bäume, die im zweidimensionalen meist von oben nach unten gezeichnet wird, in 3D in natürlicher Wuchsrichtung modelliert und mehrere Bäume für eine Software verwendet, entsteht eine neue Metapher: der \emph{Software-Wald}.
+Der Baum in der Informatik zeugt von einer ursprünglichen Metapher -- dem Baum, wie er draußen in der Natur wächst. Da dieser unbestritten dreidimensional ist, liegt eine Softwarevisualisierung für die Dreidimensionalität mit einer realitätsnahen Interpretation der Baum-Metapher nicht fern. Werden Bäume in 3D in natürlicher Wuchsrichtung modelliert und mehrere Bäume für eine Software verwendet, entsteht eine neue Metapher: der \emph{Software-Wald}.
 
 CodeLeaves stellt ein Konzept dar, dass sich die Metapher des Software-Waldes zu nutze macht und wird im Folgenden auf High-Level-Ebene skizziert und danach genauer erläutert:
 
 \begin{titlebox}{\textbf{Konzept:} CodeLeaves}
   \begin{enumerate}[leftmargin=1em]
     \item Die Struktur der Software wird mit nach oben wachsenden Bäumen dargestellt.
-    \item Jedes Paket im \emph{Root-Verzeichnis} wird als einzelner Baum auf einer Ebene -- dem \emph{Waldboden} -- dargestellt.
-    \item Die Blätter der Bäume entsprechen den kleinsten betrachteten \textit{Softwareartefakten} (siehe Definition \ref{def:softwareartefact}) und können durch ihre Farbe eine beliebige \textit{Metrik} (siehe Definition \ref{def:metric} visualisieren.
-    \item \textit{Verbindungen} zwischen einzelnen Softwareartefakten werden aggregiert über die Elternpakete als Dicke der Kanten dargestellt oder alternativ als direkte \emph{Spinnweben} zwischen den Bäumen.
-    \item Zwischen den Bäumen entsteht ein Geflecht aus \emph{Wurzeln}, was aggregierte Verbindungen zwischen den Paketen darstellt.
+    \item Pakete\ im Hauptverzeichnis werden als Bäume, Unterpakete als Äste und Klassen als Blätter dargestellt.
+    \item Die Blätter der Bäume können durch ihre Farbe eine beliebige \textit{Metrik}\footnotemark[1]{} visualisieren.
+    \item \textit{Verbindungen}\footnotemark[2]{} zwischen einzelnen Klassen werden aggregiert auf die Struktur der Bäume als Dicke der Kanten abgebildet oder interaktiv als direkte \emph{Spinnweben} dargestellt.
+    \item Zwischen den Bäumen entsteht ein Geflecht aus \emph{Wurzeln}, was aggregierte Verbindungen zwischen den Bäumen darstellt.
   \end{enumerate}
 \end{titlebox}
 
-\paragraph{Punkt 1} ist dafür verantwortlich, dass die Softwarevisualisierung nahe an der tatsächlichen Software ist, wie sie ein Entwickler in seiner Code-Base gewöhnt ist. Das heißt, diejenigen, die auch tatsächlich mit der Software arbeiten, finden sich aufgrund der bekannten Baumstruktur auch in der Visualisierung schnell zurecht, ohne jedes Softwareartefakt auszuwählen, um zu sehen, mit welchem sie es zu tun haben. Im Fachjargon wird hier von der \emph{Habitability} gesprochen, also wie schnell oder gut sich ein Betrachter in einer Software oder auch deren Visualisierung "`zuhause"' fühlt \cite{wettel2007program}.
+%\footnotetext{siehe Definition \ref{def:softwareartefact}}
+\stepcounter{footnote}
+\footnotetext{siehe Definition \ref{def:metric}}
+\stepcounter{footnote}
+\footnotetext{siehe Definition \ref{def:connection}}
 
-\paragraph{Punkt 2} ist weitgehend selbsterklärend. Durch Darstellung der Software in mehreren Bäumen entsteht erst der Software-Wald und die Pakete im Root-Verzeichnis als Wurzeln der Bäume zu verwenden bietet sich an. Das schließt jedoch nicht aus, dass Unterpakete als neuer Waldboden verwendet wird. Interaktionen dieser Art sind Teil des Kapitels \ref{ch:interaction}.
+\paragraph{Punkt 1} ist dafür verantwortlich, dass der geistige Transfer zwischen realer Software und deren Visualisierung möglichst gering ist. Das bedeutet auch, dass diejenigen, die tatsächlich mit der Software arbeiten, sich aufgrund der bekannten Baumstruktur auch in der Visualisierung schnell zurecht finden. Im Fachjargon wird hier von der \emph{Habitability} gesprochen, also wie schnell oder gut sich ein Betrachter in einer Software oder auch deren Visualisierung "`zuhause"' fühlt \cite{wettel2007program}.
 
-\paragraph{Punkt 3} bedeutet, dass in CodeLeaves durch die Farbe der Blätter ein \emph{Laubdach} entsteht, dass eine gute Übersicht über eine ausgewählte Metrik (siehe Definition \ref{def:metric}) der Software gibt. Beispielsweise kann der Farbe der Blätter die Code-Coverage der einzelnen kbS (siehe Definition \ref{def:softartefact}) zugewiesen werden. Mit einer Skala von Grün bis Rot kann dann der Software-Wald bei guter Testabdeckung im sommerlichen Grün erstrahlen, oder bei einer weniger guten Coverage eher in den Herbst übergehen. Die Färbung des Laubdachs ist flexibel auf jegliche Metrik anwendbar, die bei der betrachteten Software zur Verfügung steht.
+\paragraph{Punkt 2} beschreibt die Überführung der Struktur einer Software in einen Wald. Dabei sollen Klassen im Weiteren beispielhaft als die kleinsten betrachteten \textit{Softwareartefakte} angesehen werden.
 
-\begin{defbox}{Softwareartefakt}{softwartefact}
-  Ein \textit{Softwareartefakt} wird in dieser Arbeit als Überbegriff für eine definierte Einheit einer Software verwendet. Das sind typischerweise Pakete und Klassen. Die \textit{kleinsten betrachteten Softwareartefakte (kbS)} sind die Einheiten, die nicht weiter unterteilt werden. In den meisten Softwarevisualisierungen sind dies Klassen, könnten bei feinerer Granularität aber auch Methoden oder sogar Code-Blöcke sein.
+\begin{defbox}{Softwareartefakt}{softwareartefact}
+  Ein Softwareartefakt ist eine definierte Einheit einer Software.
 \end{defbox}
+
+Bei feinerer Granularität könnten Klassen aber auch mit Methoden oder sogar Code-Blöcke ersetzt werden. Für Softwareartefakte, die aus anderen Softwareartefakten bestehen, einigen wir uns auf die Bezeichnung Paket. Auch hier gilt, dass die Organisation von Software genauso in Module oder Komponenten aufgebaut sein kann, solange sie hierarchisch ist.
+ 
+Die Darstellung einzelner Bäume für die Pakete im Hauptverzeichnis einer Software bietet sich an. Dieser Ansatz schließt jedoch nicht aus, dass Pakete aus einer tieferen Hierarchie-Ebene als neuer Waldboden verwendet werden. Interaktionen dieser Art sind Teil des Kapitels \ref{ch:interaction}. 
+
+\paragraph{Punkt 3} bedeutet, dass in CodeLeaves durch die Farbe der Blätter eine gute Übersicht über eine ausgewählte Metrik der Software entsteht.
 
 \begin{defbox}{Metrik}{metric}
-  Eine \textit{Metrik} ist eine Eigenschaft, die für jedes kbS gemessen und mit einem eindeutigen Zahlenwert festgelegt werden kann. Ein Beispiel dafür ist die Testabdeckung von Klassen.
+  Eine Metrik ist eine Eigenschaft, die für jede Klasse gemessen und mit einem eindeutigen Zahlenwert festgelegt werden kann. Ein Beispiel dafür ist die Testabdeckung von Klassen.
 \end{defbox}
 
-\paragraph{Punkt 4} heißt, dass die Verbindungen (siehe Definition \ref{def:connection}) einer Software sehr übersichtlich auf die Struktur der Software abgebildet werden können, ohne diese zu beeinflussen. Für das besser Verständnis bedarf es einer Definition einer Verbindung und der Aggregation einer solchen.
+Beispielsweise kann der Farbe der Blätter die Testabdeckung der einzelnen Klassen zugewiesen werden. Mit einer Skala von Grün bis Rot kann dann der Software-Wald bei guter Testabdeckung im sommerlichen Grün erstrahlen, oder bei einer weniger guten Testabdeckung eher in den Herbst übergehen. Die Färbung der Blätter ist flexibel auf jegliche Metrik anwendbar, die für die betrachtete Software zur Verfügung steht.
+
+\paragraph{Punkt 4} heißt, dass die Verbindungen einer Software sehr übersichtlich auf die Struktur der Software abgebildet werden können, ohne diese negativ zu beeinflussen. Eine Verbindung in einer Software und die Aggregation einer solchen wird im Folgenden für das bessere Verständnis definiert.
 
 \begin{defboxfullwidth}{Verbindung}{connection}
-Eine \textit{Verbindung} ist eine gerichtete Beziehung zwischen zwei kbS. Ein kbS kann mehrere Ein- und Ausgehende Verbindungen besitzen. Ein Beispiel für eine Verbindungs-Typ sind statische Abhängigkeiten von Klassen.
+Unter einer Verbindung in einer Software verstehen wir eine gerichtete Beziehung eines bestimmten Typs zwischen zwei Klassen. Eine Klasse kann mehrere ein- und ausgehende Verbindungen besitzen. Ein Beispiel für ein Verbindungs-Typ sind statische Abhängigkeiten von Klassen.
 \end{defboxfullwidth}
 
+
+
 \begin{splitbox}{Aggregation von Verbindungen}{aggregation}
-Bei der Aggregation von Verbindungen zwischen Softwareartefakten werden die Verbindungen nicht direkt dargestellt, sondern über die Eltern-Pakete geleitet. Seien $x, y$ Pakete und Softwareartefakt $A \in x$ besitze eine Verbindung zu Softwareartefakt $B \in y$, dann geht die Verbindung von $A$ zu einem zusätzlich Konstrukt $\Psi_x$, das das Pakets $x$ repräsentiert. Angenommen $x$ und $y$ befinden sich zudem im Paket $z$, dann geht die aggregierte Verbindung weiter über $\Psi_z$ zu $\Psi_y$ und schließlich $B$.
+Bei der Aggregation von Verbindungen zwischen Klassen werden die Verbindungen nicht direkt dargestellt, sondern über die Eltern geleitet. Seien $x, y$ Pakete und Klasse $A \in x$ besitze eine Verbindung zu Klasse $B \in y$, dann geht die Verbindung von $A$ zunächst zu $x$. Angenommen $x$ und $y$ befinden sich zudem im Paket $z$, dann geht die aggregierte Verbindung weiter über $z$ zu $y$ und schließlich zu $B$.
 \tcblower
 %\raggedright
 %Beispiel in CodeLeaves:\par\vspace{.6cm}
 \includegraphics[width=\linewidth]{figures/aggregation}
 \end{splitbox}
 
-Auf der rechten Seite der Definition \ref{def:aggregation} ist eine aggregierte Abhängigkeit am Beispiel von CodeLeaves zu sehen. Die $\Psi$ in CodeLeaves sind die Knoten der Bäume, an denen die Äste zusammen laufen und im Spezialfall des Root-Verzeichnisses, der Waldboden.
+Auf der rechten Seite der Definition \ref{def:aggregation} ist eine aggregierte Verbindung am Beispiel von CodeLeaves zu sehen.
 
-Bei mehreren Abhängigkeiten zwischen Nachbar-Paketen, überlagern sich die aggregierten Abhängigkeiten zwangsläufig. Falls in unserem Beispiel eine weitere Abhängigkeit von Paket $x$ zu Paket $y$ bestünde, würden sich die Abhängigkeiten von $\Psi_x$ bis $\Psi_y$ überlagern. Daraus ergibt sich, dass nicht jede aggregierte Abhängigkeit ohne Interaktion zwangsläufig eindeutig zuzuordnen ist.
+Bei mehreren Verbindungen zwischen benachbarten Paketen, überlagern sich die aggregierten Abhängigkeiten zwangsläufig. Falls im Beispiel von \ref{def:aggregation} eine weitere Abhängigkeit von einer anderen Klasse in $x$ zu einer anderen Klasse in $y$ bestünde, würden sich die aggregierten Verbindungen von $x$ bis $y$ überlagern. Daraus resultiert, dass nicht jede aggregierte Verbindung ohne Interaktion zwangsläufig eindeutig zuzuordnen ist.
 
-Wird aber bei jeder Kante, sei es ein Ast, Stamm, oder Wurzel, die Anzahl an überlagernden Abhängigkeiten als Dicke der Kante dargestellt, bekommt der Betrachter eine gute Übersicht über die Gesamtheit der Abhängigkeiten. Durch Interaktion mit einzelnen Kanten, oder sogar des ganzen Waldbodens, soll eine fein granulärere Analyse der Abhängigkeiten möglich sein.
+Wird aber bei jedem Verbindungsstück, sei es eine Kante oder Wurzel, die Anzahl an überlagernden Verbindungen als Dicke des Verbindungsstücks dargestellt, bekommt der Betrachter eine gute Übersicht über die Gesamtheit der Verbindungen. Durch Interaktion mit einzelnen Verbindungsstücken soll eine fein granulärere Analyse der Verbindungen möglich sein.
 
-Das zweite Element von Punkt 4 sind die Spinnweben. Damit lassen sich die Verbindungen direkt darstellen. Um bei großen Software-Systemen aber die Übersicht über den Wald nicht zu verlieren, sollten diese mithilfe der Interaktion des Nutzers flexibel aktivierbar sein.
+Das zweite Element von Punkt 4 sind Spinnweben. Damit lassen sich die Verbindungen direkt darstellen. Um bei großen Software-Systemen aber die Übersicht über den Wald nicht zu verlieren, sollten diese mithilfe von Interaktion flexibel aktivierbar sein.
 
 \paragraph{Punkt 5} bietet einen goßen Vorteil gegenüber der Zweidimensionalität. In Abbildung \ref{fig:3d-advantage} wird rechts das Prinzip des Wurzelgeflechts mit einem minimalistischen Beispiel illustriert.
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{figures/3d-advantage}
-  \caption{Vorteil der Dreidimensionalität bei der Darstellung von Abhängigkeiten}
+  \caption{Vorteil der Dreidimensionalität bei der Darstellung von Wurzeln}
   \label{fig:3d-advantage}
 \end{figure}
 
-Darin sind die Verbindungen zwischen den Bäumen auf einen Blick ersichtlich. Bei Betrachtung der Bäume in 2D, wie es im linken Teil der Abbildung dargestellt ist, verschwinden die Verbindungen hintereinander und sind nicht zuzuordnen.\\
+In 3D sind die Verbindungen zwischen den Bäumen auf einen Blick ersichtlich. Bei Betrachtung der Bäume in 2D, wie es im linken Teil der Abbildung dargestellt ist, verschwinden die Verbindungen hintereinander und sind nicht zuzuordnen.\\
 
-Nachdem das grundlegende Konzept von CodeLeaves verstanden ist, muss eine Begriffsdefinition ein Einheitliches Verständnis der verwendeten Komponenten schaffen. Die eingeführten Bezeichnungen dienen dem Verständnis der verwendeten Datenmodelle im nächsten Kapitel, sowie die entwickelten Layout-Algorithmen in Kapitel \ref{ch:layout}.
-
-Die Struktur von CodeLeaves baut stark auf der Datenstruktur eines klassischen Baumes auf -- \textit{"`the most important nonlinear structures that arise in computer algorithms"'}\cite{knuth1973fundamental} -- die zum Beispiel in \cite{knuth1973fundamental, ernst2016grundkurs, gumm2009einfuehrung} definiert wird.
-
-Da aber die Struktur von CodeLeaves zum Teil von der klassischen Definition abweicht und teilweise neue Bezeichnungen benötigt, betrachten wir daher einige Definitionen zur Baumstruktur, um diese an die Gegebenheiten von CodeLeaves anzupassen und führen neue Begriffe ein.
+Nachdem das grundlegende Konzept von CodeLeaves verstanden ist, muss eine Begriffsklärung ein einheitliches Verständnis der verwendeten Elemente schaffen. Es wurden bereits Elemente des Waldes intuitiv verwendet, müssen aber für die Verwendung im Datenmodell im nächsten Kapitel sowie in den entwickelten Layout-Algorithmen in Kapitel \ref{ch:layout} genau definiert werden.
 
 \section{Begriffsklärung}
 \label{sec:naming}
 
+Die Bezeichnungen, die im Folgenden definiert werden, bauen stark auf die Datenstruktur eines Baumes in der Informatik auf -- \textit{"`the most important nonlinear structures that arise in computer algorithms"'}\cite{knuth1973fundamental} -- die in einschlägiger Literatur wie \cite{knuth1973fundamental, ernst2016grundkurs, gumm2009einfuehrung} definiert wird.
+
+Da sich aber nicht alle Begriffe der Datenstruktur auf die Elemente von CodeLeaves eins-zu-eins übertragen lassen, passen wir einige Begriffe der Datenstruktur an die Gegebenheiten von CodeLeaves an und führen neue Begriffe ein.
+
 \begin{itemize}
-  \item Ein \textit{Baum} (engl.: \textit{tree}) besteht aus einer Menge von \textit{Knoten}, die so durch \textit{Kanten} verbunden sind, dass keine Kreise auftreten (Abgewandelt aus \cite{gumm2009einfuehrung, ernst2016grundkurs}).
-  \item Ein \textit{Knoten} beinhaltet Informationen zu sich selbst und hat $0$ bis $n$ \textit{Kinder} (auch Nachfahren genannt, engl.: \textit{childs} oder \textit{descendant}).
+  \item Ein \textit{Baum} (engl.: \textit{tree}) besteht aus einer Menge von \textit{Knoten}, die so durch \textit{Kanten} so verbunden sind, dass keine Kreise auftreten (Abgewandelt aus \cite{gumm2009einfuehrung, ernst2016grundkurs}).
+  \item Ein \textit{Knoten} beinhaltet Informationen zu sich selbst und hat $0$ bis $n$ \textit{Kinder} (engl.: \textit{childs}).
   \item Ein Knoten mit keinen Kindern wird als \textit{Blatt} (engl.: \textit{leaf}) bezeichnet. Alle anderen Knoten heißen \textit{innere Knoten} (engl.: \textit{innerNode}) \cite{gumm2009einfuehrung}.
   \item Kinder des selben Knotens werden \textit{Geschwister} (engl.: \textit{siblings}) genannt.
+  \item Alle Kinder und Kindeskinder eines Knoten werden \textit{Nachfahren} (engl.: \textit{descendants}) des Knotens genannt.
 \end{itemize}
 
-Bei der klassischen Definition eines Baumes wird bei dem Knoten ohne Elternteil von der "`Wurzel"' gesprochen. Im Modell von CodeLeaves ist der unterste Knoten des Baumes jedoch noch durch eine Kante mit dem Waldboden verbunden. Darüber hinaus überschneidet sich die Bezeichnung von "`Wurzel"' mit den Verbindungen zwischen den einzelnen Bäumen, die bei der klassischen Definition nicht existieren. Deshalb wird für diesen speziellen Knoten eine neue Bezeichnung eingeführt.
+Bei der klassischen Definition eines Baumes wird bei dem Knoten ohne Elternteil von der "`Wurzel"' gesprochen. Im Modell von CodeLeaves ist der unterste Knoten eines Baumes jedoch noch durch eine Kante mit dem Waldboden verbunden. Darüber hinaus überschneidet sich die Bezeichnung von "`Wurzel"' mit den Verbindungen zwischen den einzelnen Bäumen, die bei der klassischen Definition nicht existieren. Deshalb wird für diesen speziellen Knoten eine neue Bezeichnung eingeführt. 
 
 \begin{itemize}
   \item Der unterste Knoten eines Baumes wird als \textit{Kronenansatz} (engl.: \textit{crown base}) bezeichnet.
@@ -188,82 +200,83 @@ Nachdem in den meisten Fällen Bäume in 2D nach unten wachsend dargestellt werd
 \begin{itemize}
   \item Die \textit{Tiefe} eines Knotens gibt an, wie viele Kanten er vom Kronenansatz aus entfernt liegt (Abgewandelt aus \cite{ernst2016grundkurs}).
   \item Die \textit{Höhe} (engl.: \textit{height}) eines Knoten beschreibt die maximale Tiefe aller Nachfahren.
-  \item Alle Knoten mit der gleichen Höhe befinden sich auf der selben \textit{Ebene}
+  \item Alle Knoten mit der gleichen Höhe befinden sich auf der selben \textit{Ebene}.
 \end{itemize}
 
 Alle nachfolgenden Kanten und Knoten eines Knotens $A$ werden in der Literatur unterschiedlich bezeichnet. Es ist die Rede von "`Teilbaum"' \cite{ernst2016grundkurs} oder auch "`Unterbäumen"' \cite{gumm2009einfuehrung}. Wir definieren dafür einen dem 3D Modell besser entsprechenden Begriff.
 
 \begin{itemize}
-  \item Ein \textit{Ast} (engl.: \textit{branch}) sind alle nachfolgenden Kanten und Knoten des Knotens $A$ ausschließlich des Knotens $A$ selbst.
+  \item Ein \textit{Ast} (engl.: \textit{branch}) ist die Menge aller Nachfahren eines Knotens und die dazugehörigen Kanten.
 \end{itemize}
 
-Bisher wurden Bezeichnungen aus einschlägiger Literatur verwendet oder abgeändert. Betrachten wir nun Elemente von CodeLeaves, die so nicht in der klassischen Definition einer Baumes vorkommen.
+Bisher wurden Bezeichnungen aus Literatur verwendet oder abgeändert. Betrachten wir nun Elemente von CodeLeaves, die so nicht in der klassischen Definition einer Baumes vorkommen.
 
 \begin{itemize}
-  \item Der Kronenansatz ist durch die Kante namens \textit{Stamm} (engl.: \textit{trunk}) mit den \textit{Waldboden} (engl.: forest floor) verbunden.
+  \item Der Kronenansatz ist durch die Kante namens \textit{Stamm} (engl.: \textit{trunk}) mit dem \textit{Waldboden} (engl.: forest floor) verbunden.
   \item Der Schnittpunkt zwischen Stamm und Waldboden nennen wir \textit{Stammbasis} (engl.: \textit{trunk base}). Dieser ist jedoch kein Knoten und beinhaltet auch keine Informationen.
-  \item Ein \textit{Wald} besteht aus einer disjunkten Menge an Bäumen und dem Waldboden.
-  \item Ein Waldboden eines Waldes mit $n$ Bäumen besitzt $0$ bis $n!$ \textit{Wurzeln} (engl. \textit{roots}), die jeweils zwei Stammbasen miteinander verbinden.
+  \item Ein Wald mit $n$ Bäumen besitzt $0$ bis $n!$ \textit{Wurzeln} (engl. \textit{roots}), die jeweils zwei Stammbasen miteinander verbinden.
+  \item Ein \textit{Wald} besteht aus einer disjunkten Menge an Bäumen, Wurzeln und dem Waldboden.
 \end{itemize}
 
 \begin{figure}[htb]
   \includegraphics[width=.6\textwidth]{\figdir/naming}
-  \caption{Bezeichnungen}
+  \caption{Begriffsklärung}
   \label{fig:naming}
 \end{figure}
 
 \section{Vergleich mit anderen Konzepten}
 \label{sec:comparison}
 
-Im Vorfeld dieser Arbeit wurde in \cite{puetz2017softwarevisualisierung} evaluiert, was eine gute Softwarevisualisierung ausmacht und unterstützen sollte. Ausgehend davon, wurden vorhandene 3D Visualisierungen und andere mögliche Konzepte miteinander verglichen. Die Ergebnisse dieser Untersuchung, soll in Folgenden vorgestellt werden.
+Im Vorfeld dieser Arbeit wurde in \cite{puetz2017softwarevisualisierung} evaluiert, was eine gute Softwarevisualisierung ausmacht und unterstützen sollte. Ausgehend davon wurden vorhandene und neue Konzepte der 3D Softwarevisualisierungen miteinander verglichen. Die Ergebnisse dieser Untersuchung sollen im Folgenden vorgestellt werden.
 
-Um herauszufinden welchen Mehrwert sich Nutzer einer Softwarevisualisierung von dieser versprechen, wurde eine Umfrage in der QAware GbmH durchgeführt. Die QAware ist ein Projekthaus mit den Kerngeschäften Diagnose, Sanierung, Exploration und Realisierung von Software \cite{qaware2017it-probleme}. Durch die Erfahrung in Projekten für namhafte Kunden, zeichnen sich die Mitarbeiter durch fundiertes Wissen und Expertise aus. Es wurden insgesamt 22 Mitarbeiter mit unterschiedlichen Rollen in der Softwareentwicklung befragt.
+Um herauszufinden welchen Mehrwert sich Nutzer einer Softwarevisualisierung von dieser versprechen, wurde eine Umfrage in der QAware GbmH durchgeführt. Die QAware ist ein Projekthaus mit den Kerngeschäften Diagnose, Sanierung, Exploration und Realisierung von Software \cite{qaware2017it-probleme}. Durch die Erfahrung in Projekten für namhafte Kunden zeichnen sich die Mitarbeiter durch fundiertes Wissen und Expertise aus. Es wurden insgesamt 22 Mitarbeiter mit unterschiedlichen Rollen in der Softwareentwicklung befragt.
 
 \begin{figure}[hbt]
 \begin{tikzpicture}
   \begin{axis} [
     width = \textwidth,
     height = 8cm,
-    symbolic x coords={Lines of Code, Komplexität, Coverage, Struktur, Abhängigkeiten, Code-Violations, Anzahl Aufrufe, Ausführungszeiten, Laufzeitfehler, Ressourcen-Auslastung, Evolution der Statik, Evolution eins Themas},
-    xtick={Lines of Code, Komplexität, Coverage, Struktur, Abhängigkeiten, Code-Violations, Anzahl Aufrufe, Ausführungszeiten, Laufzeitfehler, Ressourcen-Auslastung, Evolution der Statik, Evolution eins Themas},
+    symbolic x coords={Lines-of-Code, Testabdeckung, Komplexität, Code-Violations, Struktur, Abhängigkeiten, Anzahl Aufrufe, Ausführungszeiten, Laufzeitfehler, Ressourcen-Auslastung, Evolution der Statik},
+    xtick={Lines-of-Code, Testabdeckung, Komplexität, Code-Violations, Struktur, Abhängigkeiten, Anzahl Aufrufe, Ausführungszeiten, Laufzeitfehler, Ressourcen-Auslastung, Evolution der Statik},
     x tick label style={rotate=45, anchor=east, align=center},
     major x tick style = transparent,
     axis lines = left,
     axis line style = {-},
     ymajorgrids = true,
     ylabel=Anzahl,
-    legend style = {at={(.99,.98)}, anchor=north east, legend columns=-1, column sep=1ex},
+    ylabel shift =1em,
+    legend style = {at={(.99,.98)}, anchor=north east, legend columns=2, column sep=1ex},
     ymin=0,
-    bar width=5mm,
-    ybar=-0.5cm,
-    enlarge x limits={abs=0.6cm}
+    bar width=.6cm,
+    ybar=-.6cm,
+    enlarge x limits={abs=.6cm}
   ]
     \addplot[style={fill=primary}]
-      coordinates {(Lines of Code, 1) (Komplexität, 3) (Coverage, 1) (Struktur, 5) (Abhängigkeiten, 7) (Code-Violations, 4)};
+      coordinates {(Lines-of-Code, 1) (Testabdeckung, 1) (Komplexität, 3) (Code-Violations, 4) (Struktur, 5) (Abhängigkeiten, 7)};
     \addplot[style={fill=secondary}]
       coordinates {(Anzahl Aufrufe, 5) (Ausführungszeiten, 5) (Laufzeitfehler, 1) (Ressourcen-Auslastung, 1)};
     \addplot[style={fill=tertiary}]
-      coordinates {(Evolution der Statik, 3) (Evolution eins Themas, 1)};
+      coordinates {(Evolution der Statik, 4)};
 
     \legend{Statik, Dynamik, Evolution}
 
   \end{axis}
 \end{tikzpicture}
-\caption{Von Mitarbeitern der QAware gewünschte Informationen} \label{fig:survey}
+\caption{Informationen über Software, an deren Visualisierung Mitarbeitern der QAware Interesse haben} \label{fig:survey}
 \end{figure}
 
-In Abbildung \ref{fig:survey} ist zu sehen, wie oft welche Metriken genannt wurden. Alle Metriken lassen sich in die drei Kategorien der Softwarevisualisierung aus \cite{diehl2007software} einordnen und sind farbig entsprechend gruppiert.
+In Abbildung \ref{fig:survey} ist zu sehen, wie oft welche Informationen genannt wurden. Alle Informationen lassen sich in Diel's Kategorien der Softwarevisualisierung \cite{diehl2007software} \textit{Statik}, \textit{Dynamik} und \textit{Evolution} einordnen und sind in Abbildung \ref{fig:survey} entsprechend farbig gruppiert.
 
-\paragraph{Statik} sind die Informationen, die ohne die Ausführung der Software generiert werden können \cite{diehl2007software}. Darunter fallen die Metriken, die als Zahl zu jedem Softwareartefakt zugeordnet werden können und damit zueinander in Relation gesetzt werden können. Genannt wurden LOC, Komplexität, Coverage und Code-Violations. Letzteres sind beispielsweise Verletzungen von vereinbarten \emph{Code-Conventions}. Die Informationen, die komplizierter zu visualisieren sind, stellen die Struktur und die Abhängigkeiten dar. Aus Abbildung \ref{fig:survey} geht hervor, dass diese Informationen gleichzeitig am meisten von Interesse sind.
+\paragraph{Statik} sind die Informationen, die ohne die Ausführung der Software generiert werden können \cite{diehl2007software}. Als Metriken wurden Lines-of-Code (LOC), Komplexität, Testabdeckung und Code-Violations genannt. Letzteres sind Verletzungen von vereinbarten \emph{Code-Conventions}. Komplizierter zu visualisieren sind Struktur einer Software und Abhängigkeiten darin. Aus Abbildung \ref{fig:survey} geht hervor, dass diese Informationen gleichzeitig am meisten von Interesse sind.
 
-\paragraph{Dynamik} beschreibt die Informationen, die zur Laufzeit einer Software generiert werden können \cite{diehl2007software}. Besonders oft wurden Ausführungszeiten von Softwareartefakten und Anzahl von Aufrufen genannt. Damit sind beispielsweise \emph{Bottlenecks} identifizierbar. Auch die Darstellung der Laufzeitfehler einer fehlerhaften Software sind für deren Analyse wichtig. Die Resourcen-Auslastung ist dabei auch hilfreich, wirkt sich jedoch wenig auf das 3D Modell der Softwarevisualisierung aus, da diese Informationen parallel zur eigentlichen Software existieren.
+\paragraph{Dynamik} beschreibt die Informationen, die zur Laufzeit einer Software generiert werden können \cite{diehl2007software}. Besonders oft wurden Ausführungszeiten und Anzahl von Aufrufen genannt. Mit der Kombination aus beiden Informationen können \emph{Bottlenecks} identifiziert werden. Auch die Visualisierung der Laufzeitfehler einer fehlerhaften Software ist für deren Analyse von Vorteil. Die Resourcen-Auslastung ist dabei ebenfalls hilfreich, wirkt sich jedoch wenig auf das 3D Modell der Softwarevisualisierung aus, da diese Informationen parallel zur eigentlichen Software existieren.
 
-\paragraph{Evolution} beschreibt den zeitlichen Verlauf einer Software und stellt den Entwicklungsprozess in den Vordergrund \cite{diehl2007software}. Beispielsweise kann die Entwicklung statischer Metriken verfolgt werden. Mit der Evolution eines Themas ist gemeint, dass anhand die Entwicklung eines bestimmten Themas nachverfolgt werden kann.\\
+\paragraph{Evolution} beschreibt den zeitlichen Verlauf einer Software und stellt den Entwicklungsprozess in den Vordergrund \cite{diehl2007software}. Beispielsweise kann die Entwicklung statischer Metriken verfolgt werden.
 
-Aus den von den Mitarbeiten gewünschten Informationen und weitern Rahmenbedingungen wurde in \cite{puetz2017softwarevisualisierung} folgende Kriterien aufgestellt, anhand derer vier verschiedene Modelle der 3D Softwarevisualisierung bewertet wurden.
+Aus den von den Mitarbeiten gewünschten Informationen und weitern Rahmenbedingungen wurden in \cite{puetz2017softwarevisualisierung} folgende Kriterien aufgestellt, anhand derer vier am vielversprechendsten erscheinende Modelle der 3D Softwarevisualisierung bewertet wurden.
 
 \begin{itemize}
-  \item Statische Metriken (z.B. Komplexität)
+  \item Statische Metriken (z.\,B. Komplexität)
   \item Struktur
   \item Abhängigkeiten
   \item Dynamik (Primär Ausführungszeiten und Anzahl der Aufrufe)
@@ -273,12 +286,12 @@ Aus den von den Mitarbeiten gewünschten Informationen und weitern Rahmenbedingu
   \item Technische Machbarkeit
 \end{itemize}
 
-Bei dem Kriterium Drilldown wurde bewertet, wie gut eine Visualisierung ihre Informationen von High-Level, bis hin zu Details darstellen kann.
+Bei dem Kriterium Drilldown wurde bewertet, wie gut eine Visualisierung ihre Informationen von High-Level bis hin zu Details darstellen kann.
 
 Bei der technischen Machbarkeit wurde berücksichtigt, ob eine existierende Softwarevisualisierung für die HoloLens verwendbar ist. In Abbildung \ref{fig:alternatives} sind die untersuchten Alternativen abgebildet, darunter auch ein erster Entwurf von CodeLeaves.
 
 \subsubsection*{CodeCity}
-2007 stellten Wettel et al. CodeCity vor, die mithilfe der \textit{Stadt-Metapher} dreidimensionale Städte visualisiert, in denen Klassen als Gebäude und Pakete als Stadtviertel dargestellt werden \cite{wettel2007program, wettel2008visual, wettel2011software}. Für die Breite und Tiefe der Gebäude wurde für die Anzahl der Attribute (engl. \emph{number of attributes (NOA)}) und für die Höhe die Anzahl der Methoden (engl. \emph{number of methods (NOM)}) der visualisierten Klasse gewählt.
+2007 stellten Wettel et al. \textit{CodeCity} vor, die mithilfe der \textit{Stadt-Metapher} dreidimensionale Städte visualisiert. Darin werden Klassen als Gebäude und Pakete als Stadtviertel dargestellt \cite{wettel2007program, wettel2008visual, wettel2011software}. Für die Breite und Tiefe der Gebäude wurde für die Anzahl der Attribute (engl. \emph{number of attributes (NOA)}) und für die Höhe die Anzahl der Methoden (engl. \emph{number of methods (NOM)}) einer Klasse gewählt.
 
 Die CodeCity ist als Konzept sehr durchdacht, bietet durch die Metapher gute Habitability und unterstützt die Darstellung der Evolution. Auch soll nach Wettel et al. die CodeCity die Analyse von Software im Vergleich zu herkömmlichen Analyse-Werkzeugen signifikant verbessern \cite{wettel2011software}.
 
@@ -308,44 +321,36 @@ Jedoch unterstützt CodeCity keine Dynamik und die Abhängigkeiten sind nur als 
   	\includegraphics[width=\textwidth]{figures/code-leaves}
   	\subcaption{Erster Entwurf von CodeLeaves} \label{fig:code-leaves}
   \end{subfigure}
-  \caption{CodeLeaves und alternative Modelle} \label{fig:alternatives}
+  \caption{CodeLeaves und alternative Ansätze der 3D Softwarevisualisierung} \label{fig:alternatives}
 \end{figure}
 
 \subsubsection*{SoftVis3D}
-SoftVis3D greift das Konzept der CodeCity auf und visualisiert als Plugin für SonarQube\footnote{SonarQube ist eine open-source Plattform für statische Code-Qualität, \url{https://www.sonarqube.org/}} Projekte direkt im Browser. Durch die direkte Anbindung an SonarQube, ist SoftVis3D hoch konfigurierbar und kann alle Metriken darstellen, die auch in SonarQube zur Verfügung. Neben dem \emph{District-Layout}, wie es in der CodeCity verwendet wird, unterstützt SoftVis3D darüber hinaus auch des \emph{Evostreet-Layout}, das ursprünglich in \cite{steinbruckner2013consistent} für die Evolution einer Software entworfen wurde. In diesem Layout, wie es in Abbildung \ref{fig:softvis3d} zu sehen ist, werden Pakete als Straßen dargestellt.
+\textit{SoftVis3D} greift das Konzept der CodeCity auf und visualisiert als Plugin für SonarQube\footnote{SonarQube ist eine open-source Plattform für statische Code-Qualität, \url{https://www.sonarqube.org/}} Projekte direkt im Browser. Durch die direkte Anbindung an SonarQube ist SoftVis3D hoch konfigurierbar und kann alle Metriken darstellen, die auch in SonarQube zur Verfügung stehen. Neben dem \emph{District-Layout}, wie es in der CodeCity verwendet wird, unterstützt SoftVis3D darüber hinaus auch des \emph{Evostreet-Layout}, das ursprünglich in \cite{steinbruckner2013consistent} für die Evolution einer Software entworfen wurde. In diesem Layout, wie es in Abbildung \ref{fig:softvis3d} zu sehen ist, werden Pakete als sich verzweigende Straßen dargestellt. In Abbildung \ref{fig:softvis3d} fällt auf, dass die Städte mit vielen Geschwistern im root-Verzeichnis durch das Evo-Street-Layout sehr in die Länge gezogen werden, was sich negativ auf die Übersichtlichkeit auswirkt.
 
-Die Evolution wird von SoftVis3D trotz Evostreet-Layout jedoch nicht unterstützt. Bei Die Abhängigkeiten wurde in früheren Versionen aggregiert dargestellt. Dafür wurden Pakete im Distrikt-Layout in übereinander liegenden Ebenen abgebildet und für $\Psi$ (vgl. Definition \ref{def:aggregation}) ein Hilfsgebäude benutzt, dass zu der darüberliegenden Ebene führt. Dadurch ging jedoch die Stadt-Metapher und die Übersichtlichkeit verloren. Die Dynamik kann in SoftVis3D ebenfalls nicht visualisiert werden. Die verwendete Technologie ist zwar mit \emph{WebGL} für den Browser State of the Art, aber für die HoloLens aktuell noch nicht sinnvoll einsetzbar \cite{puetz2017softwarevisualisierung}.
+Die Evolution wird von SoftVis3D trotz Evostreet-Layout nicht unterstützt. Abhängigkeiten konnten in früheren Versionen aggregiert dargestellt werden. Dafür wurden Pakete im Distrikt-Layout in übereinander liegenden Ebenen abgebildet und die aggregierten Abhängigkeiten über ein zusätzliches Hilfsgebäude zu der darüberliegenden Ebene geleitet. Dadurch ging jedoch die Stadt-Metapher und die Übersichtlichkeit verloren. Die Dynamik kann in SoftVis3D ebenfalls nicht visualisiert werden. Die verwendete Technologie ist zwar mit \emph{WebGL} für den Browser State-of-the-Art, aber für die HoloLens aktuell noch nicht sinnvoll einsetzbar \cite{puetz2017softwarevisualisierung}.
 
 \subsubsection*{CodeUniverse}
 
-Im Zuge der der Studie \cite{puetz2017softwarevisualisierung} wurde eine weitere Metapher evaluiert. Ähnlich wie in der Arbeit \cite{graham2004solar, balzer2004software}, wird die Software als Universum dargestellt. Die Softwareartefakte in Paketen gruppieren sich als Sterne in Galaxien. Statische Metriken können dann als Farbe und Größe der Sterne widergespiegelt werden. So können "`weiße Zwerge"' bis hin zu "`roten Riesen"' entstehen.
+Im Zuge der der Studie \cite{puetz2017softwarevisualisierung} wurde eine weitere Metapher evaluiert. Ähnlich wie in der Arbeiten \cite{graham2004solar, balzer2004software} wird die Software als Universum dargestellt. Klassen gruppieren sich als Sterne in Galaxien. Statische Metriken können dann als Farbe und Größe der Sterne widergespiegelt werden. So können "`weiße Zwerge"' bis hin zu "`roten Riesen"' entstehen.
 
-Das CodeUniverse ist für statische Metriken gut geeignet. Auch die Evolution ist mit der Entstehung von neuen Sternen und Galaxien gut vorstellbar. Die Struktur der Software ist zwar mit der Gruppierung der Sterne gegeben, aber weniger offensichtlich wie andere Konzepte. Bei der Visualisierung der Abhängigkeiten stößt das CodeUniverse aber an seine Grenzen. Durch direkte Verbindungen zwischen den Sternen lassen sich zwar Abhängigkeiten darstellen, aber bei großen Software-Systemen würde das schnell im Chaos enden. Auch in \cite{balzer2004software} wird beschrieben, dass eine übersichtliche Darstellung von Abhängigkeiten nur durch deren Aggregation erreicht werden kann. Deshalb wird in \cite{balzer2004software} ein Konzept entworfen, dass die Softwareartefakte mit einem \emph{"`hierarchischem Netz"'} verbindet. Dieses ist nichts anderes als die vorhandene Baumstruktur der Software und hat mit der Metapher des Universums auch nichts mehr zu tun. Folglich wären wir wieder bei dem neuen Konzept CodeLeaves angelangt.
+Das \textit{CodeUniverse} ist für statische Metriken gut geeignet. Auch die Evolution ist mit der Entstehung von neuen Sternen und Galaxien gut vorstellbar. Die Struktur der Software ist zwar mit der Gruppierung der Sterne gegeben, aber weniger offensichtlich wie andere Konzepte. Bei der Visualisierung von Abhängigkeiten und dynamischen Aufrufen stößt das CodeUniverse aber an seine Grenzen. Durch direkte Verbindungen zwischen den Sternen ist dies zwar möglich, aber bei großen Software-Systemen würde das schnell im Chaos enden. Auch in \cite{balzer2004software} wird beschrieben, dass eine übersichtliche Darstellung von Abhängigkeiten nur durch deren Aggregation erreicht werden kann. Deshalb wird in \cite{balzer2004software} ein Konzept entworfen, dass die Klassen mit einem \emph{"`hierarchischem Netz"'} verbindet. Dieses ist nichts anderes als die vorhandene Baumstruktur der Software und hat mit der Metapher des Universums auch nichts mehr zu tun. Folglich wären wir wieder bei dem neuen Konzept CodeLeaves angelangt.
 
 
 \subsubsection*{Vorteile von CodeLeaves gegenüber anderen 3D Softwarevisualisierungen}
-Die betrachteten Alternativen und weitere, haben gemein, dass sie zum einen Struktur, Dynamik und Evolution nicht vereinen. Zum anderen können Abhängigkeiten oder dynamische Aufrufe zwischen Softwareartefakten nicht ohne Verlust der Übersichtlichkeit angezeigt werden. CodeLeaves soll alle drei Kategorien der Softwarevisualisierung unterstützen und ist bei der Visualisierung der Struktur und der Abhängigkeiten den Alternativen überlegen. Durch die Baumstruktur, wie er auch in der Code-Base vorhanden ist, wird die Paket-Struktur eins zu eins wiedergegeben. Die aggregierten Abhängigkeiten lehnen sich an die Struktur an und beeinflussen diese nicht negativ. Durch das Wurzelgeflecht und die Spinnweben wird die Dreidimensionalität optimal ausgenutzt.
+Die betrachteten Alternativen und andere haben gemein, dass sie Struktur, Dynamik und Evolution nicht vereinen. Darüber hinaus können Verbindungen zwischen Klassen nicht ohne Verlust der Übersichtlichkeit angezeigt werden. CodeLeaves soll alle drei Kategorien der Softwarevisualisierung unterstützen und ist bei der Visualisierung von Struktur und Verbindungen überlegen. Durch die Baumstruktur wie sie auch in der Software vorhanden ist, wird die Struktur eins-zu-eins wiedergegeben. Die aggregierten Abhängigkeiten lehnen sich an die Struktur an und beeinflussen diese nicht negativ. Zusätzlich zur dreidimensionalen Struktur der Bäume wird durch das Wurzelgeflecht und die Spinnweben die Dreidimensionalität sehr gut ausgenutzt.
 
 \section{Anforderungen an CodeLeaves}
 \label{sec:requirements}
 
-Die Umfrage, die in Abschnitt \ref{sec:comparison} vorgestellt wurde, ergab einen gutes Stimmungsbarometer über die Wünsche im Bezug auf zu visualisierend Informationen. In diesem Abschnitt soll genauer auf die Anforderungen an einen Code-Leaves eingegangen werden. Dazu wurden von der QAware zwei Experten der Softwareanalyse befragt, um User-Storys und Akzeptanzkriterien auf zu stellen.
+Die Umfrage, die in Abschnitt \ref{sec:comparison} vorgestellt wurde, ergab einen gutes Stimmungsbarometer über die Wünsche im Bezug auf zu visualisierend Informationen. In diesem Abschnitt soll genauer auf die Anforderungen an einen Code-Leaves eingegangen werden. Dazu wurde das Konzept von CodeLeaves zwei Experten der Softwareanalyse vorgestellt und befragt was sie von CodeLeaves erwarten würden. Durch die Expertengespräche werden User-Storys gesammelt und Akzeptanzkriterien abgeleitet.
 
-Aus der dynamischen Analyse wurde der promovierende Performance-Analyst F. Lautenschlager befragt. Dieser hat im Zuge seiner Dissertation eine hochperformante Zeitreihendatenbank zur Speicherung und Auswertung von dynamischen Daten einer Software erarbeitet. Er ist führend auf diesem Gebiet und ist unter anderem als Sprecher auf internationalen Konferenzen geladen.
+Aus der dynamischen Analyse wurde der promovierende Performance-Analyst F. Lautenschlager interviewed. Dieser hat im Zuge seiner Dissertation eine hochperformante Zeitreihendatenbank zur Speicherung und Auswertung von dynamischen Daten einer Software erarbeitet. Er ist führend auf diesem Gebiet und ist unter anderem als Sprecher auf internationalen Konferenzen geladen.
 
-Als Experte der statischen Analyse wurde J. Weigend befragt. Dieser ist Chefarchitekt, Geschäftsführer und Mitgründer der QAware. Er studierte Informatik mit Schwerpunkt "`Verteilte Systeme"' an der Hochschule Rosenheim und hält dort seit 2001 Vorlesungen \cite{qaware2017johannes}.
+Als Experte der statischen Analyse wurde J. Weigend interviewed. Dieser ist "`Chefarchitekt, Geschäftsführer und Mitgründer der QAware. Er studierte Informatik mit Schwerpunkt \enquote*{Verteilte Systeme} an der Hochschule Rosenheim und hält dort seit 2001 Vorlesungen."' \cite{qaware2017johannes}
 
-Die Expertengespräche werden unter Anwendung der Methoden aus \cite{cohn2004user} in User-Storys und in den Tabellen \ref{tab:acceptance1} -- \ref{tab:acceptance5} zu den dazugehörige Akzeptanzkriterien zusammengefasst. Bei den Akzeptanzkriterien dient die ID der Nachverfolgbarkeit und der Bezugnahme im weiteren Text. Die letzte Spalte gibt die Priorität des Akzeptanzkriteriums an, welche besonders für das Prototyping von Bedeutung ist.
+Die Expertengespräche werden unter Anwendung der Methoden aus \cite{cohn2004user} in User-Storys 1 - 5 zusammengefasst. Tabellen \ref{tab:acceptance1} -- \ref{tab:acceptance5} beinhalten die abgeleiteten Akzeptanzkriterien.
 
-\subsubsection*{Prototypen}
-
-Für das Prototyping wird überwiegend mit einem \textit{High-Fi Prototyp}\footnote{englisch High Fidality, aus: high = hoch und fidelity = Genauigkeit; High-Fi Prototypen zeichnen sich durch eine High-Tech-Darstellung der Designkonzepte aus, die zu einer partiellen bis vollständigen Funktionalität führt \cite{egger2000fi}.} für die HoloLens gearbeitet. Dieser Prototyp kann in der Augmented Reality erlebt werden und auch die Interaktion mit der HoloLens können erprobt werden. Die Inhalte, die in Kapitel \ref{ch:layout} beschrieben werden, und einige Interaktionen aus Kapitel \ref{ch:interaction} sind im High-Fi Prototyp enthalten.
-
-Weitere Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit{Low-Fi Prototyp}\footnote{englisch Low Fidality, aus: low = gering und fidelity = Genauigkeit; Low-Fi Prototypen zeichnen sich durch eine schnelle und einfache Übersetzung von Designkonzepten auf hohem Niveau in greifbare und testbare Artefakte aus \cite{egger2000fi}.} ergänzt.
-
-\noindent Im Folgenden werden nun User-Storys und Akzeptanzkriterien aufgeführt.
-
-\begin{userstory}{Code-Qualität}
+\begin{userstory}[u:quality]{Code-Qualität (Statik)}
   Als \textit{Softwarearchitekt}\\
   möchte ich \textit{Code-Qualität auf die Struktur abbilden können},\\
   um \textit{Anomalien und Qualitätsdefizite zu erkennen}.
@@ -353,49 +358,62 @@ Weitere Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit
 
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 1} \label{tab:acceptance1}\\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:quality}} \label{tab:acceptance1}\\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
-    \accid{acc:s-metrics} & Ich kann statische Metriken der Code-Qualität, wie z.B. Code-Coverage, auf die Farbe der Blätter anwenden.\\
+    \accid{acc:s-metrics} & Die Farbe der Blätter kann eine beliebige Metrik darstellen.\\
     \accid{acc:s-hotspots} & Ich kann Ausreißer der ausgewählten Metrik gut erkennen.\\
-    \accid{acc:s-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für eine bestimmte Klasse anzeigen lassen\\
     \accid{acc:s-overview} & Ich möchte möglichst viele Blätter gleichzeitig betrachten können.\\
+    \accid{acc:s-angle} & Ich möchte die Blätter aus allen Winkeln gut erkennen können.\\
 \end{tabularx}
 
-\begin{userstory}{Kopplung und Struktur}
+Die Blätter in CodeLeaves ermöglichen eine hervorragende Umsetzungsmöglichkeit von User-Story \ref{u:quality}. Sie können jegliche Metrik darstellen, seien es Zahlenwerte in Prozent oder andere Werte. Mit dem Minimum und Maximum einer ausgewählten Metrik lässt sich ein Farbverlauf festlegen mit dem die Metrik für jede Klasse gleichzeitig betrachtet werden kann und Ausreißer aus der Menge hervorstechen.
+
+Für diese User-Story ist es besonders wichtig ein Layout für den Wald zu entwickeln, dass die Blätter so verteilt, dass sie sich so wenig wie möglich überlappen. Dieser Ansatz fließt in Kapitel \ref{ch:layout} mit ein.
+
+\begin{userstory}[u:structure]{Kopplung und Struktur (Statik)}
   Als \textit{Softwarearchiteckt}\\
-  möchte ich \textit{die Kopplung und Struktur einer großen Software sehen},\\
+  möchte ich \textit{die Kopplung und Struktur einer großen Software überblicken können},\\
   um \textit{die Zusammenhänge zu verstehen}.
 \end{userstory}
 
 \setaccid
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 2} \\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:structure}} \\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
-    \accid{s-hotspots} & Die Struktur der Bäume entspricht der der Software.\\
-    \accid{acc:s-structure} & Die Struktur der Bäume ist eindeutig und hat keine Überschneidungen.\\
-    \accid{acc:s-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Abhängigkeiten hervorheben.\\
-    \accid{acc:s-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der dazugehörigen Abhängigkeiten.\\
-    \accid{acc:s-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Abhängigkeiten betroffenen Blättern hervorheben.\\
-    \accid{acc:s-connection-count} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich sehen wie viele Abhängigkeiten in welche Richtung fließen.\\
-    \accid{acc:s-timestamp} & Ich kann den Zeitpunkt auswählen, auf die sich die dargestellten Daten beziehen.\\
-    \accid{acc:s-cyclic} & Zyklische Verbindungen können hervorgehoben werden.\\
+    \accid{acc:s-structure} & Die Struktur der Bäume spiegelt die tatsächliche Struktur der Software wider und ist gut zu erkennen.\\
+    \accid{acc:s-metapher} & Ich verstehe die Metapher des Software-Waldes intuitiv.\\
+    \accid{acc:s-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der durchfließenden Verbindungen des ausgewählten Verbindungs-Typs.\\
 \end{tabularx}
 
-\begin{userstory}{Drilldown}
+Mit den Baumstrukturen und der Dicke der Kanten und Wurzeln ist User-Story \ref{u:structure} mit CodeLeaves besonders gut umsetzbar. In der AR kann der Nutzer um den Wald herum gehen, sodass er die Struktur mit den aggregierten Verbindungen aus jedem Winkel betrachten kann.
+
+Jedoch setzten Akzeptanzkriterien \ref{acc:s-structure} - \ref{acc:s-metapher} bereits viel voraus. Aus beliebig geschachtelter Software sollen Bäume entstehen, die die Struktur korrekt wiedergeben und gleichzeitig übersichtlich sind. Überschneidungen sind zu vermeiden, da sonst die Struktur nicht eindeutig zu erkennen ist. Gleichzeitig sollen die Bäume stets natürlich wirken, was das intuitive Verständnis der Metapher fördert. Diesen Herausforderungen stellen sich die Algorithmen, die in Kapitel \ref{ch:layout} erarbeitet werden.
+
+Akzeptanzkriterium \ref{acc:s-thickness} erfordert die Unterstützung von aggregierten Verbindungen, was in Datenmodell berücksichtigt wird.
+
+\begin{userstory}[u:interaction]{Intuitive Erforschung (Statik)}
   Als \textit{Softwarearchitekt}\\
-  möchte ich \textit{einen intuitiven Drilldown haben},\\
-  um \textit{die Zusammenhänge auf verschiedener Pakte-Ebene zu verstehen}.
+  möchte ich \textit{den Wald intuitiv erforschen können},\\
+  um \textit{detaillierte Informationen zu erhalten}.
 \end{userstory}
 
 \setaccid
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 3} \\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:interaction}} \\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
-    \accid{acc:s-drilldown} & Wenn ich eine Kante auswähle, dann kann ich das repräsentierte Softwareartefakt als neuen Waldboden festlegen.\\
-    \accid{acc:s-reset} & Ich habe die Möglichkeit den Wald zurückzusetzen.\\
+	\accid{acc:u-identify} & Ich kann Elemente im Wald identifizieren.\\
+	\accid{acc:s-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für ein Blatt anzeigen lassen.\\
+	\accid{acc:s-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw.\ ausgehenden Verbindungen hervorheben.\\
+	\accid{acc:s-connection-count} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich sehen wie viele Verbindungen in welche Richtung fließen.\\
+    \accid{acc:s-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Verbindungen betroffenen Blättern hervorheben.\\
+    \accid{acc:s-drilldown} & Ich kann einen Knoten als neuen Waldboden festlegen.\\
+    \accid{acc:d-timestamp} & Ich kann den Zeitpunkt auswählen, auf die sich die dargestellten Daten beziehen.\\
+
 \end{tabularx}
 
-\begin{userstory}{Dynamische Metriken}
+User-Story \ref{u:interaction} ist mit der AR sehr gut umsetzbar. Durch die AR ist der Nutzer mitten in der Visualisierung, die greifbar wird. Die Akzeptanzkriterien \ref{acc:u-identify} - \ref{acc:s-drilldown} liefern für die Interaktion mit CodeLeaves eine wertvolle Basis und werden in Kapitel \ref{ch:interaction} aufgegriffen.
+
+\begin{userstory}[u:dynamic]{Dynamische Daten}
   Als \textit{Performance-Analyst}\\
   möchte ich \textit{Funktionsaufrufe, deren Antwortzeiten, Laufzeitfehler und Resourcen-Auslastung visualisiert haben},\\
   um \textit{das Laufzeitverhalten der Software in einem bestimmten Zeitraum explorativ bewerten zu können.}
@@ -403,19 +421,22 @@ Weitere Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit
 
 \setaccid
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 4} \\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:dynamic}} \\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
-    \accid{acc:d-metrics} & Ich kann Antwortzeiten und Laufzeitfehler auf die Blattfarbe anwenden.\\
+    \accid{acc:d-metrics} & Die Farbe der Blätter kann eine beliebige Metrik darstellen.\\
     \accid{acc:d-hotspots} & Ich kann Ausreißer der ausgewählten Metrik gut erkennen.\\
-    \accid{acc:d-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für eine bestimmte Klasse anzeigen lassen\\
-    \accid{acc:d-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw. ausgehenden Aufrufe hervorheben.\\
-    \accid{acc:d-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der dazugehörigen Aufrufe.\\
-    \accid{acc:d-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Aufrufen betroffenen Blättern hervorheben.\\
-    \accid{acc:d-connection-count} & Wenn ich eine Wurzel oder Kante anklicke, dann kann ich sehen wie viele Verbindungen in welche Richtung gehen.\\
+     \accid{acc:d-thickness} & Die Dicke einer Kante oder Wurzel zeigt mir die Anzahl der durchfließenden Verbindungen des ausgewählten Verbindungs-Typs.\\
+    \accid{acc:d-metric-value} & Ich kann mir die genaue Zahl der aktuellen Metrik für ein bestimmtes Blatt anzeigen lassen.\\
+    \accid{acc:d-leaf-connections} & Wenn ich ein Blatt auswähle, dann kann ich die ein- bzw.\ ausgehenden Verbindungen hervorheben.\\
+    \accid{acc:d-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Verbindungen betroffenen Blättern hervorheben.\\
+    \accid{acc:d-connection-count} & Wenn ich eine Wurzel oder Kante auswähle, dann kann ich sehen wie viele Verbindungen in welche Richtung gehen.\\
     \accid{acc:d-timespan} & Ich kann den Zeitraum auswählen, auf die sich die dargestellten Daten beziehen.\\
+    \accid{acc:d-add-info} & Ich kann zusätzliche Informationen über den Wald als Ganzes visualisieren.\\
 \end{tabularx}
 
-\begin{userstory}{Zustand der Software}
+Durch User-Story \ref{u:dynamic} wird deutlich, dass sich viele gleiche Akzeptanzkriterien aus statischen und dynamischen User-Storys ableiten lassen. Daran ist zu erkennen wie sinnvoll es ist diese beiden Sichten miteinander zu kombinieren. Ob es sich um statische oder dynamische Daten handelt, spielt für die Visualisierung großteils keine Rolle. Es ändert sich lediglich der betrachtete Zeitpunkt bei statischen Daten zu einem Zeitraum für dynamische Daten. Die Resourcen-Auslastung sind zusätzliche Informationen, die den Wald als Ganzes betreffen und werden im Datenmodell berücksichtigt.
+
+\begin{userstory}[u:overview]{Zustand der Software (Dynamik)}
   Als \textit{Systemverantwortlicher}\\
   möchte ich \textit{auf einen Blick den Zustand meiner Software erkennen},\\
   um \textit{bei Bedarf agieren zu können}.
@@ -423,41 +444,38 @@ Weitere Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit
 
 \setaccid
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 5} \label{tab:acceptance5}\\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:overview}} \label{tab:acceptance5}\\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
     \accid{acc:d-overview} & Wenn ich die Laubfarbe des Waldes betrachte, dann möchte ich eine möglichst gute Gesamtübersicht über die ausgewählte Metrik haben.\\
-    \accid{acc:d-no-intersections} & Die Struktur der Bäume ist möglichst übersichtlich und hat so wenig Überschneidungen wie möglich.\\
+    \accid{acc:d-overview} & Ich möchte möglichst viele Blätter gleichzeitig betrachten können.\\
 \end{tabularx}
 
-Es wird deutlich, dass sich viele Akzeptanzkriterien aus der statischen und dynamischen Analyse überschneiden. Das lässt erkennen wie sinnvoll es ist diese beiden Sichten miteinander zu kombinieren. Ob es sich um statische oder dynamische Metriken handelt, spielt für die Visualisierung keine Rolle. Genauso funktioniert die Aggregierung und die Interaktion mit Kanten und Wurzeln für beide Sichten gleich. Für den High-Fi Prototyp wird deshalb beispielhaft nur mit einer statischen Metrik gearbeitet. Mit dem Datenmodell, dass im Kapitel \ref{ch:data-layers} entworfen wird, und entsprechender Datenbeschaffung können aber genauso dynamische Metriken und Verbindungen visualisiert werden. 
-
-Ist also ein Akzeptanzkriterium aus der statischen Analyse erfüllt, kann aus Sicht der Visualisierung auch das Pendant der dynamischen Analyse als erfüllt angesehen werden.
+User-Story \ref{u:overview} weißt wiederum Ähnlichkeiten zu User-Story \ref{u:overview} auf. Die Laubfarbe ist auch für den Systemzustand sehr gut geeignet, da sie eine gute Übersicht liefert, aber gleichzeitig jede Klasse einzeln anzeigt. Die Metapher des Software-Waldes kommt auch hier besonders zur Geltung, da auf einen Blick ersichtlich wird, ob es der Software gut geht (sommerlicher Wald) oder schlecht (herbstlicher Wald).
 
 \subsubsection*{User-Storys zur Benutzbarkeit von CodeLeaves}
 
-Aus anfänglichem Prototyping mit der HoloLens sind weitere User-Story entstanden, ohne die die anderen nicht sinnvoll umsetzbar sind. Somit lautet die 6. User-Story wie folgt:
+Aus anfänglichem Prototyping mit in der AR sind weitere User-Story entstanden, ohne die die anderen erst gar nicht möglich sind. Somit werden User-Storys \ref{u:adjust} und \ref{u:project-selection} und deren Akzeptanzkriterien in Tabellen \ref{tab:acceptance6} und \ref{tab:acceptance7} im Folgenden beschrieben.
 
-\begin{userstory}{Anpassung im Raum und Orientierung}
-  Als \textit{Nutzer}\\
-  möchte ich \textit{den Wald meinen Räumlichkeiten anpassen und mich jederzeit darin orientieren können},\\
+\begin{userstory}[u:adjust]{Anpassung im Raum (Nutzbarkeit)}
+  Als \textit{Nutzer} in der AR\\
+  möchte ich \textit{den Wald meinen Räumlichkeiten und Wüschen anpassen können},\\
   um \textit{den Wald sinnvoll nutzen zu können}.
 \end{userstory}
 
 \setaccid
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 6} \label{tab:acceptance6}\\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:adjust}} \label{tab:acceptance6}\\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
     \accid{acc:u-place} & Ich kann den Wald im Raum platzieren.\\
     \accid{acc:u-scale} & Ich kann den Wald skalieren.\\
     \accid{acc:u-rotate} & Ich kann den Wald rotieren.\\
-    \accid{acc:u-identify} & Ich kann Elemente im Wald mit dem Namen der repräsentieren Softwareartefakte identifizieren.\\
 \end{tabularx}
 
-Akzeptanzkriterium 6.1 aus Tabelle \ref{tab:acceptance6} ist vor allem am Anfang wichtig, um den Wald dort zu platzieren, wo es am meisten Sinn macht. Ist der Wald initial von realen Objekten verdeckt, kann der Nutzer nicht damit arbeiten. Für den Wechsel zwischen Übersicht und die Betrachtung von Details ist auch Akzeptanzkriterium 6.2 essentiell. Akzeptanzkriterium 6.4 ist eine Funktionalität, die durchgängig benötigt wird. Zwar können Pakete durch die Struktur der Bäume Pakete erkannt werden, jedoch ist die Anzeige der Namen der Softwareartefakten unerlässlich, um genau zu wissen, welches Element des Waldes was repräsentiert.
+Vor allem am Anfang der Nutzung von CodeLeaves ist es wichtig den Wald dorthin zu platzieren, wo es am meisten Sinn macht. Ist der Wald initial von realen Objekten verdeckt, kann der Nutzer nicht damit arbeiten. Für den Wechsel zwischen Übersicht und der Betrachtung von Details ist es essentiell die Größe des Waldes jederzeit einfach anpassen zu können. Die Rotation des Waldes kann komfortabler sein, als um den ganzen Wald herum zu laufen.
 
-Vor der Platzierung des Waldes ist noch ein weiterer Schritt erforderlich. Es muss als erstes ein Projekt ausgewählt werden können, das dargestellt werden soll. Die letzte User-Story beschreibt deshalb die Auswahl bzw. den Import von Projekten und Tabelle \ref{tab:acceptance7} deren Akzeptanzkriterien.
+Vor der Platzierung des Waldes ist noch ein weiterer Schritt erforderlich. Es muss als erstes ein Projekt ausgewählt werden können, das dargestellt werden soll. Die letzte User-Story beschreibt deshalb die Auswahl bzw.\ den Import von Projekten und Tabelle \ref{tab:acceptance7} deren Akzeptanzkriterien.
 
-\begin{userstory}{Auswahl eines Projekts}
+\begin{userstory}[u:project-selection]{Auswahl eines Projekts (Nutzbarkeit)}
   Als \textit{Nutzer}\\
   möchte ich \textit{ein bestehendes Projekt öffnen und neue importieren können},\\
   um \textit{das Projekt zu betrachten, das mich interessiert}.
@@ -465,16 +483,16 @@ Vor der Platzierung des Waldes ist noch ein weiterer Schritt erforderlich. Es mu
 
 \setaccid
 \begin{tabularx}{\textwidth}{cX}
-	\caption{Akzeptanzkriterien zu User-Story 7} \label{tab:acceptance7}\\
+	\caption{Akzeptanzkriterien zu User-Story \ref{u:project-selection}} \label{tab:acceptance7}\\
 	\tableheader{2}{\textbf{ID} & \textbf{Beschreibung}}
     \accid{acc:u-project-selection} & Ich kann bereits gespeicherte Projekte öffnen.\\
     \accid{acc:u-import} & Ich kann ein neues Projekt aus unterstützen Datenquellen importieren.\\
     \accid{acc:u-add-data} & Ich kann Daten zu einem bereits gespeicherten Projekt aus unterstützen Daten hinzufügen.\\
 \end{tabularx}
 
-Alle Akzeptanzkriterien mit Priorität 1 werden im High-Fi Prototyp umgesetzt und ergeben gleichzeitig einen technischen Durchstich für CodeLeaves. Dabei wird besonders Wert auf das Layout des Waldes gelegt, das in Kapitel \ref{ch:layout} erarbeitet wird, da ohne die übersichtliche Struktur jegliche Weiterentwicklung von CodeLeaves sinnlos wäre.
+Akzeptanzkriterium \ref{acc:u-project-selection} ist für einen vollständigen technischen Durchstich wichtig, da so in der HoloLens Applikation ein Beispielprojekt geöffnet werden kann.
 
-Im weitern Verlauf des Textes wird bei der Umsetzung eines Akzeptanzkriteriums darauf in folgender Form verwiesen: \textit{(Akz. <ID>)}.
+User-Storys \ref{u:quality} - \ref{u:overview} sind auf High-Level-Ebene formuliert. Viele der Akzeptanzkriterien finden jedoch schon im Prototyping Anwendung. Im weitern Verlauf des Textes wird deshalb bei der Adressierung eines Akzeptanzkriteriums in folgender Form darauf verwiesen: \textit{(Akz. <ID>)}.
 
 Im nächsten Kapitel wird ein Datenmodell entworfen, mit dem alle vorgestellten User-Storys umgesetzt werden können.
 
@@ -483,37 +501,35 @@ Im nächsten Kapitel wird ein Datenmodell entworfen, mit dem alle vorgestellten 
 \section{Trennung in Schichten}
 \label{ch:data-layers}
 
-Das Datenmodell für CodeLeaves nimmt einen zentralen Baustein ein, auf den sich die Implementierung stützt. Bei dem Entwurfsmuster sind einige Prinzipien zu beachten. Wie Buschmann et al. in \cite{frank2007pattern} beschreibt, ist das Pattern \textit{Layers} ein Grundprinzip bei Software-Architekturen. Durch die \textit{Separation of concerns} werden einzelnen Schichten voneinander getrennt und können so später leichter ausgetauscht werden:
-
-``Using semi-independent parts [...] enables the easier exchange of individual parts at a later date.`` \cite{frank2007pattern}
+Das Datenmodell für CodeLeaves nimmt einen zentralen Baustein ein, auf den sich der Prototyp für die HoloLens stützt. Bei dem Entwurfsmuster wird ein wichtiges Prinzipien beachtet. Wie Buschmann et al. in \cite{frank2007pattern} beschreibt, ist das Pattern \textit{Layers} ein Grundprinzip bei Software-Architekturen. Durch die \textit{Separation of concerns} werden einzelnen Schichten voneinander getrennt und können so später leichter ausgetauscht werden: ``Using semi-independent parts [...] enables the easier exchange of individual parts at a later date.`` \cite{frank2007pattern}
 
 \subsubsection*{Backend}
-Gerade bei der Visualisierung von abstrakten Daten, wie es eine Software ist, ist eine Schichtentrennung besonders wichtig. CodeLeaves hat das Ziel eine beliebige objektorientierte Software darstellen zu können. Da aber nicht für jede Programmiersprache CodeLeaves angepasst werden soll und die Informationen über die Software aus unterschiedlichen Quellen stammen können, ist hier die erste Schicht \textit{Backend} sinnvoll. Im Backend Layer werden die Daten über eine Software aggregiert, seien es statische oder dynamische Informationen und in ein Sprach-agnostisches Format gebracht. Die Konnektoren, d.h. die Verbindungen zu den verschiedenen Datenquellen, können dann leicht ausgetauscht werden.
+Gerade bei der Visualisierung von abstrakten Daten, wie es eine Software ist, ist eine Schichtentrennung besonders wichtig. CodeLeaves hat das Ziel eine beliebige objektorientierte Software darstellen zu können. Da aber nicht für jede Programmiersprache CodeLeaves angepasst werden soll und die Informationen über die Software aus unterschiedlichen Quellen stammen können, ist hier die erste Schicht \textit{Backend} sinnvoll. In der Backend Schicht werden die Daten über eine Software aggregiert, seien es statische oder dynamische Informationen und in ein Sprach-agnostisches Format -- dem \textit{Software-Meta-Modell} -- gebracht. So können beliebig viele Konnektoren, d.h. die Verbindungen zu den verschiedenen Datenquellen, implementiert werden.
 
-Wie in Abschnitt \ref{sec:distinction} bereits festgehalten, soll der Schritt des Transfers der realen Software in deren Repräsentation jedoch nicht Schwerpunkt dieser Arbeit sein. Das Datenmodell ist hingegen sehr wohl zu definieren, um die Daten darstellen zu können.
+Wie in Abschnitt \ref{sec:distinction} bereits festgehalten, soll der Schritt des Transfers der realen Software in deren abstrakte Repräsentation jedoch nicht Schwerpunkt dieser Arbeit sein. Das Datenmodell ist hingegen sehr wohl zu definieren, um die Daten darstellen zu können.
 
-\subsubsection*{Application logic}
-Die Einteilung in Schichten geht nach der Transformation der Software in ein Meta-Modell aber noch weiter. CodeLeaves könnte neben Software prinzipiell auch jegliche anderen, hierarchisch strukturierten Informationen darstellen. Für die interne Datenhaltung wird deshalb in der Schicht \textit{Application logic} das Datenmodell weiter abstrahiert und in ein Format gebracht, dass sich stark an der Baumstruktur der Informatik orientiert. So könnten später auch leicht gänzlich andere Daten angebunden werden.
+\subsubsection*{Application-logic}
+Die Einteilung in Schichten geht nach der Transformation der Software in ein Meta-Modell weiter. CodeLeaves könnte neben Software prinzipiell auch jegliche anderen, hierarchisch strukturierten Informationen darstellen. Für die interne Datenhaltung wird deshalb in der Schicht \textit{Application-logic} das Datenmodell weiter abstrahiert und in ein Format gebracht, dass sich stark an der Baumstruktur der Informatik orientiert und nicht rein auf Software zugeschnitten ist. So könnten später auch leicht gänzlich andere Daten angebunden werden. Wir nennen das Datenmodell dieser Schicht das \textit{interne Datenmodell}.
 
 \subsubsection*{Presentation}
-Die letzte Schicht ist die der \textit{Presentation}. Das Datenmodell für hierarchische Informationen muss für die Darstellung der Bäume weiter verarbeitet werden. Zum Beispiel muss für die rekursive Generierung der Bäume die Höhe der Knoten bekannt sein. Nur so kann das Paket mit der tiefsten Schachtelung auch sinnvoll als Verlängerung des Stammes dargestellt werden. Auch die Aggregation der Verbindungen zwischen einzelnen Blättern findet in diesem Schritt statt, sodass in den Zeichenalgorithmen, mit denen die Bäume in Unity generiert werden, keine fachliche Logik mehr benötigt wird. Das entstehende UI-Datenmodell wird nur zum Rendern in Unity verwendet und ist unveränderlich.
+Die letzte Schicht ist die der \textit{Presentation}. Das interne Datenmodell wird für die Darstellung der Bäume weiter verarbeitet. Zum Beispiel muss für die Layout-Algorithmen die Höhe der einzelnen Knoten verfügbar sein. Dies sind aber Informationen, die nur von der UI benötigt werden und im internen Datenmodell nichts zu suchen haben. Auf der anderen Seite enthält das \textit{UI-Datenmodell} nur Informationen, die auch tatsächlich zum Rendern der 3D Objekte benötigt werden.
 
-Das bedeutet auch diese Schicht könnte wieder ausgetauscht werden und unterschiedliche Zeichenalgorithmen könnten unterstützt werden.
+Diese Schicht könnte wieder ausgetauscht werden und unterschiedliche Layout-Algorithmen könnten unterstützt werden.
 
 In Abbildung \ref{fig:data-layers} ist die Beziehung der Datenmodelle in den drei Schichten abgebildet.
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{\figdir/data-layers}
-  \caption{Schichten der Datenstrukturen}
+  \caption{Schichtentrennung im Datenmodell}
   \label{fig:data-layers}
 \end{figure}
 
-\section{Software Meta-Modell}
+\section{Software-Meta-Modell}
 \label{sec:software-model}
 
 \subsubsection*{Vorhandene Meta-Modelle}
 
-CodeCity verwendet als Meta-Modell für Software das sogenannte \textit{FAMIX}-Modell in Version 2.1. Dieses wird bis heute von \textit{Moose}, dem Software-Analyse-Tool, auf dem CodeCity basiert, protegiert und ist heut in Version 3.0 verfügbar und in \cite{merrill1916moose} beschrieben. Das Meta-Modell ist sehr umfangreich und beinhaltet 51 verschiedene Entities. Es wird in einem eigenen Dateiformat namens MSE, vergleichbar mit JSON, gespeichert. Da aber dynamische Informationen nicht im FAMIX-Modell enthalten sind, eignet sich das Format nicht um in CodeLeaves verwendet zu werden.
+CodeCity verwendet als Meta-Modell für Software das sogenannte \textit{FAMIX}-Modell in Version 2.1. Dieses wird bis heute von \textit{Moose}, dem Software-Analyse-Tool, auf dem CodeCity basiert, protegiert und ist heute in Version 3.0 verfügbar \cite{merrill1916moose}. Das Meta-Modell ist sehr umfangreich und beinhaltet 51 verschiedene Entities. Es wird in einem eigenen Dateiformat namens MSE, vergleichbar mit JSON oder XML, gespeichert. Da aber dynamische Informationen nicht im FAMIX-Modell enthalten sind, eignet sich das Format nicht um in CodeLeaves verwendet zu werden.
 
 Ein Meta-Modell, das dynamische und statische Informationen vereint, existiert nach heutigem Wissensstand nicht.
 
@@ -523,7 +539,7 @@ Für eine reine dynamische Analyse ist das Tool \textit{ExplorVis} sehr ausgerei
 
 Um uns vor Augen zu führen, welche Informationen relevant sind, rufen wir uns die User-Storys aus Kapitel \ref{ch:concept} in Erinnerung.
 
-Aus den User-Storys 1 und 4 ergeben sich folgende Metriken, die auf die Blattfarbe angewandt werden kann:
+Aus den User-Storys \ref{u:quality} und \ref{u:dynamic} ergeben sich folgende Metriken, die das Software-Meta-Modell unterstützen muss:
 
 \begin{itemize}
   \item Statische Metriken zur Code-Qualität
@@ -531,22 +547,24 @@ Aus den User-Storys 1 und 4 ergeben sich folgende Metriken, die auf die Blattfar
   \item Laufzeitfehler
 \end{itemize}
 
-Aus User-Story 1 und 3 lassen sich folgende mögliche Verbindungen ableiten:
+Aus User-Story \ref{u:structure} und \ref{u:dynamic} gehen folgende Verbindungen hervor:
 
 \begin{itemize}
   \item Statische Abhängigkeiten
   \item Dynamische Aufrufe
 \end{itemize}
 
-Diese Metriken und Verbindungen müssen auf die Struktur der Software, die in Userstrory 3 gefordert wird, abgebildet werden. Damit lässt sich das Modell einer Software, ob statisch oder dynamisch betrachtet, auf drei wesentliche Elemente reduzieren:
+Diese Metriken und Verbindungen müssen auf die Struktur der Software abgebildet werden. Damit lässt sich das Modell einer Software, ob statisch oder dynamisch betrachtet, auf drei wesentliche Elemente reduzieren:
 
 \begin{enumerate}
-  \item \textit{Struktur}
-  \item \textit{Metriken}
-  \item \textit{Verbindungen}
+  \item Struktur
+  \item Metriken
+  \item Verbindungen
 \end{enumerate}
 
-Diese drei Elemente sind in Abbildung \ref{fig:meta-model} mit den Klassen \textit{SoftwareArtefact}, \textit{Metric} und \textit{Association} zu finden. Die \textit{Metric}-Klasse ist ein Schlüssel-Wert-Paar, das durch \textit{Codesnippets} ergänzt werden kann. So ist es zum Beispiel möglich bei Laufzeitfehler zu sehen, an welcher Stelle die Fehler aufgetreten sind. Der Schlüssel identifiziert die Metrik, wie zum Beispiel statische Testabdeckung oder dynamische Laufzeitfehler und der Wert enthält die Zahl, die dann in die Farbe der Blätter umgewandelt werden kann.
+Diese drei Elemente sind in Abbildung \ref{fig:meta-model} mit den Klassen \texttt{SoftwareArtefact}, \texttt{Metric} und \texttt{Relation} zu finden. Für den besseren Lesefluss wird im Folgenden auf den Zusatz "`\dots-Klasse"' verzichtet.
+
+Die \texttt{Metric} ist ein Schlüssel-Wert-Paar, das durch \texttt{Codesnippets} ergänzt werden kann. So ist es zum Beispiel möglich bei Laufzeitfehler zu sehen, an welcher Stelle die Fehler aufgetreten sind. Der \texttt{Key} identifiziert die Metrik, wie zum Beispiel statische Testabdeckung oder dynamische Laufzeitfehler und der \textit{Value} enthält die Zahl, die dann in die Farbe der Blätter umgewandelt werden kann.
 
 %\begin{figure}[htb]
 %  \includegraphics[scale=0.5]{\figdir/meta-model}
@@ -574,45 +592,46 @@ Diese drei Elemente sind in Abbildung \ref{fig:meta-model} mit den Klassen \text
     Key \\
     Name \\
   }{}
-  \umlclass[y=-5, x=-6]{Association}{
+  \umlclass[y=-5, x=-6]{Relation}{
     Key \\
+    Type \\
     Start \\
     End \\
   }{}
   \umluniassoc[mult=0..*]{Software}{Record}
-  \umlinherit[geometry=-|-]{StaticRecord}{Record}
+  \umlinherit[geometry=-|-]{StaticRecord}{Record} 
   \umlinherit[geometry=-|-]{DynamicRecord}{Record}
   \umluniassoc[geometry=|-|, mult=1, pos=2.6]{Record}{SoftwareArtefact}
   \umluniassoc[mult=0..*]{SoftwareArtefact}{Metric}
-  \umluniassoc[geometry=|-|, mult=0..*, pos=2.6]{Record}{Association}
+  \umluniassoc[geometry=|-|, mult=0..*, pos=2.6]{Record}{Relation}
   \umluniassoc[mult=0..*, angle1=-120, angle2=180, loopsize=2cm]{SoftwareArtefact}{SoftwareArtefact}
 \end{tikzpicture}
 \caption{Meta-Modell einer Software}
 \label{fig:meta-model}
 \end{figure}
 
-Die Struktur wird im Software Meta-Modell nicht wie in den anderen beiden Schichten mit einem Kompositum-Muster entworfen, sondern mit der einzelnen Klasse \textit{SoftwareArtefact}, das eine Liste von Kindern hat. Diese Liste ist für ein Blatt leer. Grund für diese Modellierung ist die bessere Möglichkeit der Sterilisierung. Das Kompositum-Muster, wie es in Abbildungen \ref{fig:internal-model} und \ref{fig:ui-model} zu sehen ist, beinhaltet eine abstrakte Klasse, die das Blatt und das Kompositum spezialisieren. Für die Serialisierung müssten bei der Erzeugung von Objekten Zusatzinformationen angegeben werden, ob es sich um ein Blatt, oder ein Kompositum handelt. Mögliche Datenquellen wie SonarQube haben in ihrem Modell für die Struktur ebenfalls nur eine Klasse, wodurch die Logik beim Import der Daten möglichst gering gehalten wird.
+Die Struktur wird im Software-Meta-Modell nicht wie in den anderen beiden Schichten mit einem Kompositum-Muster entworfen, sondern nur mit dem \texttt{SoftwareArtefact}, das eine Liste von Kindern besitzt. Diese Liste ist für eine Klasse leer. Grund für diese Modellierung ist die leichtere Serialisierung. Das Kompositum-Muster, wie es in den andern beiden Schichten Verwendung findet, beinhaltet eine abstrakte Klasse, die das Blatt und das Kompositum spezialisieren. Für die Deserialisierung müssten bei der Erzeugung von Objekten Zusatzinformationen angegeben werden, ob es sich um ein Blatt, oder ein Kompositum handelt. Mögliche Datenquellen wie SonarQube haben in ihrem Modell für die Struktur ebenfalls nur eine Klasse, wodurch die Logik beim Import der Daten möglichst gering gehalten wird.
 
-Bei einem Softwareartefakt spielt es keine Rolle, wie die Software organisiert ist. Egal ob ein ganzes Projekt, Paket oder eine einzelne Methode, alles wird zu einem Softwareartefakt.
+Analog zur Definition \ref{def:softwareartefact} spielt es bei einem \texttt{SoftwareArtefact} keine Rolle, wie die Software organisiert ist. Egal ob ein ganzes Projekt, Paket oder eine einzelne Methode, alles wird zu einem Softwareartefakt.
 
-Jedes Objekt der Klasse \textit{SoftwareArtefact} hat einen eindeutigen Schlüssel, mit dem das Softwareartefakt eindeutig identifiziert werden kann und einen Namen, der für den Nutzer lesbar ist. Daneben kann bei einem Softwareartefakt beliebig viele Metriken gespeichert werden. Für die weiter Verarbeitung in CodeLeaves ergibt dies jedoch nur bei Softwareartefakten ohne weitere Kinder Sinn.
+Jedes \texttt{SoftwareArtefact} besitzt einen für den Nutzer lesbaren Namen und einen eindeutigen Schlüssel, mit dem es eindeutig identifiziert werden kann. Daneben beinhaltet ein \texttt{SoftwareArtefact} beliebig viele Objekte des Klasse \texttt{Metric}. Werden diese jedoch einem \texttt{SoftwareArtefact} mit Kinder, d.\,h.\ einem Paket zugeordnet, finden sie in der weiteren Verarbeitung keine Relevanz, da in CodeLeaves für innere Knoten keine Metriken vorgesehen sind.
 
-Mit der \textit{Association}-Klasse können jegliche Verbindungen wie statische Abhängigkeiten oder dynamische Aufrufe gespeichert werden. Es besteht keine direkte Assoziation mit der Klasse \textit{SoftwareArtefact} um zyklische Abhängigkeiten zu vermeiden. Stattdessen werden Start- und Endpunkt der Verbindung mit dem Schlüssel der zugehörigen Softwareartefakte angegeben.
+Mit der \texttt{Relation} können Verbindungen in einer Software wie statische Abhängigkeiten oder dynamische Aufrufe gespeichert werden. Der \texttt{Type} gibt die Art der Verbindung an. Eine \texttt{Relation} ist nicht direkt mit einem \texttt{SoftwareArtefact} assoziiert, um zyklische Abhängigkeiten im Datenmodell zu vermeiden. Stattdessen werden Start- und Endpunkt der Verbindung mit den Schlüsseln der verbundenen Klassen angegeben.
 
-Durch die Expertengespräche ging hervor, dass sowohl bei Metriken, als auch bei Verbindungen ein Bezug zum Code wichtig ist. Demnach beinhaltet die Klasse \textit{Association} ebenfalls die Möglichkeit \textit{Codesnippets} zu speichern, sodass ersichtlich wird, wo im Code die Verbindung ihren Ursprung hat.
+Durch die Expertengespräche ging hervor, dass sowohl bei Metriken als auch bei Verbindungen ein Bezug zum Code wichtig ist. Demnach beinhaltet die Klasse \texttt{Relation} ebenfalls die Möglichkeit \texttt{Codesnippets} zu speichern, sodass ersichtlich wird, wo im Code die Verbindung ihren Ursprung hat.
 
-Neben der Struktur, Metriken und den Verbindungen einer Software muss der Zeitraum bzw. der Zeitpunkt angegeben werden können, um die Software in unterschiedlichen Stadien betrachten zu können und somit die Evolution zu unterstützen.
+Neben Struktur, Metriken und Verbindungen einer Software muss der Zeitraum bzw.\ der Zeitpunkt angegeben werden können. Damit wird auch die Evolution einer Software zu unterstützt.
 
-Deshalb werden Struktur und Verbindungen in einem Datensatz -- der \textit{Record}-Klasse gespeichert. Eine Software wiederum kann beliebig viele Datensätze enthalten. Bei einem Datensatz muss zwischen einem statischem und einem dynamischen unterschieden werden. Bei statischen Daten wird nur ein bestimmter Zeitpunkt betrachtet, bei dynamischen ist es dagegen ein bestimmter Zeitraum. Daraus resultiert, dass ein \textit{Record} von einem \textit{StaticRecord} und einem \textit{DynamicRecord} spezialisiert werden.
+Deshalb werden Struktur und Verbindungen in einem Datensatz -- dem \texttt{Record} -- gespeichert. Eine Software wiederum kann beliebig viele Datensätze enthalten. Bei einem Datensatz muss zwischen einem statischem und einem dynamischen unterschieden werden. Bei statischen Daten wird nur ein bestimmter Zeitpunkt betrachtet, bei dynamischen ist es dagegen ein bestimmter Zeitraum. Daraus resultiert, dass ein \texttt{Record} von einem \texttt{StaticRecord} und einem \texttt{DynamicRecord} spezialisiert wird.
 
-Aus User-Story 1 geht hervor, dass es bei dynamischen Daten gilt auch die Ressourcen-Auslastung zu visualisieren. Die Informationen dazu können im \textit{DynamicRecord} in dem Attribut \textit{Utilization} gespeichert werden. 
+Aus User-Story 1 geht hervor, dass es bei dynamischen Daten gilt auch die Ressourcen-Auslastung zu visualisieren. Die Informationen dazu können im \texttt{DynamicRecord} in \texttt{Utilization} gespeichert werden.
 
 \section{Internes Datenmodell}
 \label{sec:app-model}
 
-Wie in Abbildung \ref{fig:internal-model} zu sehen, ist das interne Datenmodell sehr ähnlich zu dem des Software Meta-Modells. Das Modell ist zunächst die semantische Transformation einer Software in ein Format, das beliebige hierarchische Daten darstellt. So wird beispielsweise \textit{Software} zum \textit{Forest}, ein \textit{SoftwareArtefact} zum \textit{Node} und eine \textit{Metric} zu \textit{LeafData}.
+Wie in Abbildung \ref{fig:internal-model} zu sehen, ist das interne Datenmodell sehr ähnlich zu dem des Software-Meta-Modells. Das Modell ist zunächst die semantische Transformation einer Software in ein Format, das beliebige hierarchische Daten darstellt. So wird beispielsweise \texttt{Software} zum \texttt{Forest}, eine \texttt{Relation} zur \texttt{Connection} und eine \texttt{Metric} zu \texttt{LeafData}.
 
-Neben der semantischen Transformation wird das \textit{SoftwareArtefact} durch ein Kompositum-Pattern ersetzt. Dies reduziert die Logik von Algorithmen, indem nicht immer auf eine leere Liste getestet werden muss, sondern Logik in den Spezialisierungen realisiert werden kan. Die Metriken sind im internen Datenmodell auch nur noch bei Blättern verfügbar.
+Neben der semantischen Transformation wird das \texttt{SoftwareArtefact} durch ein Kompositum-Pattern mit \texttt{Node}, \texttt{InnerNode} und \texttt{Leaf} ersetzt. Mit der Methode \texttt{Find} wird das Suchen eines Knotens in den Spezialisierungen von \texttt{Node} implementiert. Die Metriken aus dem Software-Meta-Modell sind im internen Datenmodell nur noch bei Blättern verfügbar.
 
 \begin{figure}[htb]
 \begin{tikzpicture}
@@ -629,22 +648,29 @@ Neben der semantischen Transformation wird das \textit{SoftwareArtefact} durch e
   \umlclass[y=-5]{Node}{
     Key \\
     Name \\
-  }{}
-  \umlsimpleclass[y=-10, x=-1.8]{InnerNode}{
-  }{}
-  \umlsimpleclass[y=-10, x=1.8]{Leaf}{
-  }{}
+  }{
+    \textit{Find()}
+  }
+  \umlclass[y=-10, x=-1.8]{InnerNode}{
+  }{
+    Find()
+  }
+  \umlclass[y=-10, x=1.8]{Leaf}{
+  }{
+    Find()
+  }
   \umlclass[y=-10, x=5.7]{LeafData}{
     Key \\
     Value \\
     AdditionalData\\
   }{}
   \umlclass[y=-5, x=-5.7]{AggregatedConnection}{
+    Type \\
     Key \\
     Start \\
     End \\
   }{}
-  \umlclass[y=-10, x=-5.7]{DirectConnection}{
+  \umlclass[y=-10, x=-5.7]{Connection}{
     Key \\
     Start \\
     End \\
@@ -654,7 +680,7 @@ Neben der semantischen Transformation wird das \textit{SoftwareArtefact} durch e
   \umlinherit[geometry=-|-]{Period}{Record}
   \umluniassoc[geometry=|-|, mult=1, pos=2.5]{Record}{Node}
   \umluniassoc[geometry=|-|, mult=0..*, pos=2.5]{Record}{AggregatedConnection}
-  \umlunicompo[mult=1..*]{AggregatedConnection}{DirectConnection}
+  \umlunicompo[mult=1..*]{AggregatedConnection}{Connection}
   \umluniassoc[geometry=|-, mult=0..*, anchor1=120, anchor2=180]{InnerNode}{Node}
   \umlinherit[geometry=|-|]{InnerNode}{Node}
   \umlinherit[geometry=|-|]{Leaf}{Node}
@@ -664,20 +690,20 @@ Neben der semantischen Transformation wird das \textit{SoftwareArtefact} durch e
   \label{fig:internal-model}
 \end{figure}
 
-Beim Transfer in das interne Datenmodell werden ebenfalls die einzelnen Verbindungen aggregiert. Eine \textit{AggregatedConnection}, die genau eine Kante lang ist, besteht aus mindestens einer direkten Verbindung.
+Beim Transfer in das interne Datenmodell werden ebenfalls die einzelnen Verbindungen aggregiert. Eine \texttt{AggregatedConnection} besteht mindestens aus einer direkten Verbindung.
 
-Die \textit{Utilization} aus dem \textit{DynamicRecord} wandert als \textit{AdditionalData} in die Generalisierung, da bei andern hierarchischen Daten eventuell auch für einen Zeitpunkt zusätzliche Daten relevant sein können.
+Die \texttt{Utilization} aus dem \texttt{DynamicRecord} wandert als \texttt{AdditionalData} in die den abstrakten \texttt{Record}, da bei andern hierarchischen Daten eventuell auch für einen Zeitpunkt zusätzliche Daten relevant sein könnten.
 
-Die Multiplizität zwischen \textit{InnerNode} und \textit{Node} wird mit $0..*$ angegeben, was der klassischen Definition eines inneren Knoten (vgl. \ref{sec:naming}) widerspricht. Jedoch kann es auch bei Ausnahmefällen auch vorkommen, dass ein Softwareartefakt weder Daten, noch Kinder besitzt. Bei einem leeren Paket ohne weitere Unterpakete und Klassen wäre das der Fall. Mit der angegebenen Multiplizität kann das Datenmodell auch mit diesen Fällen umgehen.
+Die Multiplizität zwischen \texttt{InnerNode} und \texttt{Node} wird mit $0..*$ angegeben, was der klassischen Definition eines inneren Knoten (vgl. \ref{sec:naming}) widerspricht. Jedoch kann es auch bei Ausnahmefällen auch vorkommen, dass ein Softwareartefakt weder Daten, noch Kinder besitzt. Bei einem leeren Paket ohne weitere Unterpakete und Klassen wäre das der Fall. Mit der angegebenen Multiplizität kann das Datenmodell auch mit diesen Fällen umgehen. In der Visualisierung resultiert daraus eine Kante ohne Blatt.
 
 In Abbildung \ref{fig:internal-model} wurden nur Klassen berücksichtigt, die auch Daten zur Software enthalten. Über die Datensätze zur Software hinaus, werden für den internen Zustand von CodeLeaves weitere Informationen benötigt. Beispielsweise muss gespeichert werden, welche Metriken aktuell angezeigt werden. Einen Eindruck über die Einstellungen, die der Nutzer in CodeLeaves vornehmen kann, wird in Kapitel \ref{ch:interaction} ausgeführt.
 
 \section{UI-Datenmodell}
 \label{sec:hierarchical-model}
 
-Das UI-Datenmodell ist stark von der Praxis des Prototypings beeinflusst. Es wurde darauf geachtet, dass das Modell nur Daten beinhaltet, das auch zwangsläufig für das Rendern der Visualisierung nötig ist.
+Das UI-Datenmodell ist stark von der Praxis des Prototypings mit der HoloLens beeinflusst. Es wurde darauf geachtet, dass das Modell nur Daten beinhaltet, das auch zwangsläufig für das Rendern der Visualisierung nötig ist.
 
-Das ist bei einem Blatt die Farbe und bei einem inneren Knoten die Dicke der dazugehörigen Kante. Beide Spezialisierungen eines Knotens beinhalten zusätzlich einen beliebigen Text, der abhängig von der Interaktion des Nutzers ist. Zusätzlich sind mit \textit{isHighlighted} und \textit{isSelected} zwei Zustände gegeben, denen entsprechend die Darstellung des Knotens angepasst werden muss. Wie die Reaktion auf Zustandsänderungen im UI-Datenmodell technisch sinnvoll umgesetzt wird, ist mit reaktiver Programmierung in Kapitel \ref{ch:interaction-ar} zu finden.
+Das ist bei einem Blatt die Farbe und bei einem inneren Knoten die Dicke der dazugehörigen Kante. Beide Spezialisierungen eines \texttt{UiNode} beinhalten zusätzlich einen beliebigen Text, der abhängig von der Interaktion des Nutzers ist. Zusätzlich sind mit \texttt{isHighlighted} und \texttt{isSelected} zwei Zustände gegeben, denen entsprechend die Darstellung des Knotens angepasst werden muss. Wie die Reaktion auf Zustandsänderungen im UI-Datenmodell mit reaktiver Programmierung technisch sinnvoll umgesetzt werden kann, ist in Kapitel \ref{ch:interaction-ar} zu finden.
 
 In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
 
@@ -690,9 +716,6 @@ In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
 \begin{figure}[htb]
 \begin{tikzpicture}
   \umlsimpleclass[x=-8]{UiForest}
-  \umlclass[y=-5, x=-8, type=abstract]{UiFloor}{
-    Color \\
-  }{}
   \umlclass{UiNode}{
     Key \\
     Text \\
@@ -700,7 +723,7 @@ In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
     IsSelected \\
     \textit{Circle}
   }{
-    Find()\\
+    \textit{Find()}\\
     \textit{GetHeight()}\\
     \textit{GetDescendantsCount()}\\
     \textit{SortChildren()}\\
@@ -709,6 +732,7 @@ In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
     Thickness \\
     Circle \\
   }{
+    Find()
     GetHeight()\\
     GetDescendantsCount()\\
     SortChildren()\\
@@ -717,12 +741,12 @@ In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
     Color \\
     Circle
   }{
+    Find()
     GetHeight()\\
     GetDescendantsCount()\\
     SortChildren()\\
   }
-  \umluniassoc[mult=0..*]{UiForest}{UiFloor}
-  \umluniassoc[geometry=|-|, mult=0..*, anchor2=110, pos2=2.8]{UiForest}{UiInnerNode}
+  \umluniassoc[geometry=-|, mult=0..*, anchor2=110, pos2=2.8]{UiForest}{UiInnerNode}
   \umluniassoc[geometry=|-, mult=1..*, anchor2=180]{UiInnerNode}{UiNode}
   \umlinherit[geometry=|-|, arm1=0.5, anchor1=70]{UiInnerNode}{UiNode}
   \umlinherit[geometry=|-|, arm1=0.5, anchor1=110]{UiLeaf}{UiNode}
@@ -731,9 +755,9 @@ In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
 \label{fig:ui-model}
 \end{figure}
 
-Die \textit{AdditionalData} aus dem internen Datenmodell finden sich in dem Entwurf des UI-Datenmodells in der Farbe des Waldbodens wieder. Da diese zusätzlichen Informationen keine hohe Priorität haben, werden sie im Prototyping in Kapitel \ref{ch:layout} und \ref{ch:interaction} keine Relevanz finden.
+Die \texttt{AdditionalData} aus dem internen Datenmodell finden sich in dem Entwurf des UI-Datenmodells nicht wieder. Grund dafür ist, dass der Kern der Visualisierung davon nicht betroffen ist. Die Anzeige dieser Daten kann beliebig zum Wald dargestellt werden.
 
-Mit der Methode \textit{Find} der \textit{UiNode}-Klasse kann jeder Knoten im Ui-Modell anhand seines Schlüssels gefunden werden. Dies ist für die Interaktion mit Konten essentiell. Auf das Attribut \textit{Circle} bzw. dem \textit{Kreis} eines Knotens, wird im Zuge des Layout des Waldes im nächsten Kapitel eingegangen. Für das Layout ist es außerdem nötig die Knoten sortieren zu können. Die abstrakten Methoden der \textit{UiNode}-Klasse sind dazu erforderlich und werden entsprechend in der \textit{UiInnerNode}- und \textit{UiLeaf}-Klasse realisiert.
+Auf den \texttt{Circle} bzw.\ dem \textit{Kreis} eines Knotens, wird im Zuge des Layouts im nächsten Kapitel eingegangen. Für das Layout ist es außerdem nötig die Knoten sortieren zu können. Die abstrakten Methoden von \texttt{UiNode} sind dazu erforderlich und werden entsprechend in \texttt{UiInnerNode} und \texttt{UiLeaf} realisiert.
 
 % ----===== Chapter ====---- %
 \chapter{Modellierung und Layout des Waldes}
@@ -741,17 +765,25 @@ Mit der Methode \textit{Find} der \textit{UiNode}-Klasse kann jeder Knoten im Ui
 
 \section{Grundlegender Ansatz}
 
-CodeLeaves steht und fällt mit der korrekten und übersichtlichen Darstellung der Baumstruktur. Wegen Akzeptanzkriterien \ref{acc:s-overview} und \ref{acc:d-overview} ist die Struktur der Bäume so zu generieren, dass so viele Blätter wie möglich gleichzeitig im Blickfeld des Betrachters sind. Auf der anderen Seite gilt es wegen Akzeptanzkriteren \ref{acc:s-structure} und \ref{acc:d-no-intersections} die Struktur übersichtlich und deswegen mit so wenig Überschneidungen wie möglich zu generieren.
+CodeLeaves steht und fällt mit der korrekten und übersichtlichen Darstellung der Baumstruktur. Wegen Akzeptanzkriterien \ref{acc:s-overview} und \ref{acc:d-overview} ist die Struktur der Bäume so zu generieren, dass so viele Blätter wie möglich gleichzeitig im Blickfeld des Betrachters sind. Auf der anderen Seite gilt es wegen Akzeptanzkriteren \ref{acc:s-structure} und \ref{acc:d-overview} die Struktur übersichtlich und deswegen mit so wenig Überschneidungen wie möglich zu generieren. In Abschnitt \ref{sec:sunflower} und \ref{sec:Circle-packing} werden deshalb zwei Algorithmen vorgestellt, die zusammen eine solche Darstellung der Baumstruktur ermöglichen. 
 
-In Abschnitt \ref{sec:sunflower} und \ref{sec:circle-packing} werden deshalb zwei Algorithmen vorgestellt, die zusammen eine solche Darstellung der Baumstruktur ermöglicht. Für das Rendern in 3D müssen zunächst 3D Objekte entworfen werden, die die Knoten und Blätter repräsentieren. Dies wurde mithilfe der professionellen 3D Modellierungs-Software Maya\footnote{https://www.autodesk.de/products/maya/overview} von Audodesk erreicht.
+\subsubsection*{Prototypen}
+
+Die Algorithmen werden in einem \textit{High-Fi Prototyp}\footnote{englisch High Fidality, aus: high = hoch und fidelity = Genauigkeit; High-Fi Prototypen zeichnen sich durch eine High-Tech-Darstellung der Designkonzepte aus, die zu einer partiellen bis vollständigen Funktionalität führt \cite{egger2000fi}.} für die HoloLens implementiert. Der High-Fi Prototyp ist wichtig, da nur damit CodeLeaves in der AR erlebt werden kann. Auch die wichtigsten Interaktionen, die im Kapitel \ref{ch:interaction} beschrieben werden, können im High-Fi Prototyp schon getestet werden. Weitere Interaktions-Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit{Low-Fi Prototyp}\footnote{englisch Low Fidality, aus: low = gering und fidelity = Genauigkeit; Low-Fi Prototypen zeichnen sich durch eine schnelle und einfache Übersetzung von Designkonzepten auf hohem Niveau in greifbare und testbare Artefakte aus \cite{egger2000fi}.} ergänzt.
+
+Bei dem High-Fi Prototyp wird auf den Standard-Workflow der HoloLens-Entwicklung gesetzt. HoloLens-Applikationen werden in \textit{Unity}\footnote{https://unity3d.com/de} entwickelt. Unity ist eine platt\-form\-über\-grei\-fen\-de 2- und 3D Game-Engine und nach eigenen Angaben \textit{"`Die weltweit führende Software der Game-Industrie"'} \cite{unity2017public}. d
+
+Für die HoloLens wird die Position der Hauptkamera in Unity auf die Position der HoloLens übertragen. Hologramme entstehen durch normale 3D Objekte in Unity. Diesen Objekten können Skripte zugewiesen werden, die zur Laufzeit ausgeführt werden. Die verwendete Skript-Sprache im Prototyp von CodeLeaves is C\#.
+
+Für die Generierung von Bäumen mussten zunächst 3D Objekte entworfen werden, die die Knoten und Blätter repräsentieren. Dies wurde nicht in Unity, sondern mithilfe des professionellen 3D Modellierungs-Software Maya\footnote{https://www.autodesk.de/products/maya/overview} von Audodesk bewerkstelligt.
 
 \subsubsection*{3D Objekte}
 
-Die Bäume für CodeLeaves kommen mit den Objekten Kante und Blatt aus. Ein innerer Knoten wird der Baum Metapher folgend immer durch die Kante zum Elternteil bzw. zum Waldboden dargestellt. Ein Blatt - im Sinne der Begriffsdefinition von Abschnitt \ref{sec:naming} - wird demnach vom dem dazugehörigen Blatt-Objekt und dem Kanten-Objekt zum Elternteil repräsentiert.
+Die Bäume für CodeLeaves kommen mit den Objekten Kante und Blatt aus. Ein innerer Knoten wird der Baum Metapher folgend immer durch die Kante zum Elternteil bzw.\ zum Waldboden dargestellt.
 
-\paragraph{Kanten-Objekt} Eine Kanten-Objekt ist ein vertikal ausgerichteter, nach oben leicht zulaufender Zylinder was die Abbildung \ref{fig:edge} veranschaulicht. Die Pivots zur Position, Rotation und Skalierung wurden so gewählt, dass eine Manipulation des Objekts immer um den Mittelpunkt der Grundfläche der Kante erfolgt.\\
+\paragraph{Kanten-Objekt} Eine Kanten-Objekt ist ein vertikal ausgerichteter, nach oben leicht zulaufender Zylinder was die Abbildung \ref{fig:edge} veranschaulicht ist. Die Pivots zur Position, Rotation und Skalierung wurden so gewählt, dass eine Manipulation des Objekts immer um den Mittelpunkt der Grundfläche erfolgt.\\
 
-\paragraph{Blatt-Objekt} Das Blatt-Objekt wurde in Anlehnung an ein echtes Blatt modelliert und ist in Abbildung \ref{fig:leaf} zu sehen.\\
+\paragraph{Blatt-Objekt} Das Blatt-Objekt wurde als Abstraktion eines echten Blattes modelliert und ist in Abbildung \ref{fig:leaf} zu sehen.\\
 
 \setlength{\fwidth}{.3\textwidth}
 \begin{figure}[htb]
@@ -765,17 +797,17 @@ Die Bäume für CodeLeaves kommen mit den Objekten Kante und Blatt aus. Ein inne
   	\includegraphics[width=\textwidth]{figures/leaf}
   	\subcaption{Blatt} \label{fig:leaf}
   \end{subfigure}
-  \caption{3D Objekte für den Prototyp} \label{fig:3d-objects}
+  \caption{3D Objekte für den High-Fi Prototyp} \label{fig:3d-objects}
 \end{figure}
 
-Das Blatt-Objekt hat aufgrund der flachen Form die Eigenschaft, dass die sichtbare Fläche bei seitlicher Betrachtung deutlich geringer ist, als von vorne. Wir stellen uns einen Baum vor, bei dem der Betrachter nur die Kanten der Blätter sieht. Dadurch lassen sich die Farben der Blätter nur schwer miteinander vergleichen. Dies sollte aber aus jeder Postion möglich sein.
+Das Blatt-Objekt hat aufgrund der flachen Form die Eigenschaft, dass die sichtbare Fläche bei seitlicher Betrachtung deutlich geringer ist als von vorne. Wir stellen uns einen Baum vor, bei dem der Betrachter nur die Kanten der Blätter sieht. Dadurch lassen sich die Farben der Blätter nur schwer miteinander vergleichen. Dies sollte aber aus jedem Winkel möglich sein (Akz. \ref{acc:s-angle}).
 
-Eine Abhilfe könnte ein Blatt-Objekt sein, dass in allen Dimensionen gleich dick ist. Dies würde aber eher an eine Knospe erinnern und schaut wenig natürlich aus. Deshalb wird dem Blatt-Objekt in Unity eine Script hinzugefügt, dass das Blatt zur Laufzeit immer in die Richtung des Betrachters rotieren lässt. Ein 3D-Objekt mit einer solchen Verhalten wird \textit{Billboard} genannt. Mithilfe des Billboard-Verhaltens ist gewährleistet, dass der Nutzer von jedem Winkel aus immer eine optimale Übersicht über das Laubwerk besitzt.
+Eine Abhilfe könnte ein Blatt-Objekt sein, dass in allen Dimensionen gleich dick ist. Dies würde aber eher an eine Knospe erinnern und schaut wenig natürlich aus. Deshalb wird dem Blatt-Objekt in Unity eine Script hinzugefügt, dass das Blatt zur Laufzeit immer in die Richtung des Betrachters rotieren lässt. Ein 3D-Objekt mit einer solchen Verhalten wird \textit{Billboard} genannt. Mithilfe des Billboard-Verhaltens ist gewährleistet, dass der Nutzer von jedem Winkel aus immer eine optimale Übersicht über das Blätterdach besitzt.
 
 \subsubsection*{Beschaffung von realistischen Beispieldaten}
-Für die Generierung der Struktur im Prototyp wurde mit einem Beispielprojekt gearbeitet. Das Projekt lautet \textit{Air} und ist eines der größten Software-Projekte der QAware und wird seit rund 5 entwickelt.
+Für die Generierung der Struktur im Prototyp wurde mit einem Beispielprojekt gearbeitet. Das Projekt lautet \textit{Air} und ist eines der größten Software-Projekte der QAware und wird seit rund 5 Jahren entwickelt.
 
-In Tabelle \ref{tab:air} sind hinsichtlich der Struktur Eckdaten von Air angegeben.
+In Tabelle \ref{tab:air} sind hinsichtlich des entstehenden Waldes Eckdaten von Air angegeben.
 
 \begin{table}[htb]
   \caption{Eckdaten des Beispielprojekts Air}\label{tab:air}
@@ -786,13 +818,13 @@ In Tabelle \ref{tab:air} sind hinsichtlich der Struktur Eckdaten von Air angegeb
   \end{tabular}
 \end{table}
 
-Alle Projekte von QAware werden in SonarQube überwacht. SonarQube bietet eine Web-API, durch die die Struktur eines Projekts und unterstützte statische Metriken abgefragt werden können. Diese API wird im Prototyp genutzt um die benötigten Informationen für Struktur der Software und Farben der Blätter abzufragen. Die Struktur wird zur bei der Abfrage der API rekursiv zusammengebaut, da SonarQube immer nur die direkten Kinder eines Softwareartefakts liefert.
+Alle Projekte von QAware werden in SonarQube überwacht. SonarQube bietet eine Web-API, durch die die Struktur eines Projekts und unterstützte statische Metriken abgefragt werden können. Diese API wird im Prototyp genutzt, um die benötigten Informationen für Struktur der Software und eine Beispiel-Metrik abzufragen. Die Struktur wird bei der Abfrage der API rekursiv zusammengebaut, da SonarQube immer nur die direkten Kinder eines Pakets liefert.
 
-Das Format von SonarQube wird dabei schon in das generische Software-Meta-Modell von CodeLeaves transferiert, was durch andere Daten später ergänzt werden kann. Da bei Air sehr viele HTTP-Requests entstehen, wird das entstandene Meta-Modell lokal in eine Datei geschrieben, sodass dieses als Beispiel-Datensatz für den Prototypen dient. Prinzipiell können aber auch dynamisch andere Projekte geladen werden.
+Das Format von SonarQube wird dabei schon in das generische Software-Meta-Modell von CodeLeaves transferiert. Da bei Air sehr viele HTTP-Requests entstehen, wird das entstandene Meta-Modell lokal in eine Datei geschrieben, sodass dieses als Beispiel-Datensatz für den Prototypen dient. Prinzipiell können aber auch dynamisch andere Projekte geladen werden.
 
-Das Datenmodell des Backends wird in das Datenmodell der Application logic und weiter in das UI-Datenmodell transferiert.
+Das Datenmodell des Backends wird in das interne Datenmodell der Application-logic und weiter in das UI-Datenmodell transferiert.
 
-Nun liegt eine Struktur vor, die es gilt zu Bäumen zusammen zu bauen. Der Grundlegende Ablauf des Algorithmus zur Generierung eines Baumes mit Kronenansatz $K$ und dessen Kindern $\lbrace(K_i) \mid i=1,2\hdots n\rbrace$ lässt sich wie folgt beschreiben:
+Nun liegt eine Struktur vor, die es gilt in Bäume zu verwandeln. Der Grundlegende Ablauf des Algorithmus zur Generierung eines Baumes mit Knoten $K$ als Kronenansatz und dessen Kindern $\lbrace(K_i) \mid i=1,2\hdots N\rbrace$ lässt sich wie folgt beschreiben:
 
 \begin{enumerate}[(i), labelindent=0pt, align=left, itemsep=0pt, parsep=0pt, labelsep=.5em, leftmargin=!]
   \item Instanziiere eine Kanten-Objekt $E$ als Stamm des Baums.
@@ -800,14 +832,14 @@ Nun liegt eine Struktur vor, die es gilt zu Bäumen zusammen zu bauen. Der Grund
   \item Falls Knoten $K$ ein innerer Knoten ist ist, finde für jedes Kind $K_i$ eine passende Position, füge ein Kanten-Objekt $E_i$ zwischen dem Ende von $E$ und $K_i$ an, setze $K$ gleich $K_i$ und $E$ gleich $E_i$ und und geht zu (ii).
 \end{enumerate}
 
-Wie die Kinder eines Knotens sinnvoll verteilt werden und deren Kanten zum Elternteil rotiert und gestreckt werden soll im Folgenden erarbeitet werden.
+Wie die Kinder eines Knotens sinnvoll verteilt und deren Kanten entsprechend rotiert und gestreckt werden müssen, soll im Folgenden erarbeitet werden.
 
 Es stellt sich zunächst die Frage auf Grundlage welcher geometrischen Figur die Kinder verteilt werden. In Frage kommt eine Kugel und eine Kreisfläche.
 
 \subsubsection*{Verteilung von Kindern auf einer Kugel}
-Werden die Kinder gleichmäßig auf der Oberfläche einer Kugel verteilt, wird der 3D Raum maximal ausgenutzt. Das Ergebnis käme einem \textit{Fractal tree} sehr nahe. Diese Bäume werden rekursiv durch die Neigung der Aststücke konstruiert. Ein solcher Fractal tree ist in Abbildung \ref{fig:fractal-tree} dargestellt. Das Konzept ließe sich problemlos in die Dreidimensionalität übertragen. Das Problem dabei ist, dass bei diesem Ansatz die Aststücke auch rekursiv verkürzt werden. Dadurch wird gewährleistet, dass die Äste nicht in den Boden wachsen.
+Werden die Kinder gleichmäßig auf der Oberfläche einer Kugel verteilt, wird der 3D Raum maximal ausgenutzt. Das Ergebnis käme einem \textit{Fractal-tree} sehr nahe. Diese Bäume werden rekursiv durch die Neigung der Kanten konstruiert. Ein solcher Fractal-tree ist in Abbildung \ref{fig:fractal-tree} dargestellt. Das Konzept ließe sich ohne Schwierigkeiten auf die Dreidimensionalität übertragen. Das Problem dabei ist, dass bei diesem Ansatz die Kanten auch rekursiv verkürzt werden. Dadurch wird gewährleistet, dass die Äste nicht in den Boden wachsen.
 
-Für CodeLeaves wären immer kleiner werdende Kanten wenig sinnvoll, da so eine Interaktion mit den kleiner werdenden Kanten und Blättern kaum möglich wäre. Auch die Überschneidungen, die in Abbildung \ref{fig:fractal-tree} zu sehen sind, wären bei größeren Bäumen nur durch Neigung der Kanten nicht zu vermeiden. Die Kollisionen, die dadurch im 3D Raum entstünden, würden sich negativ auf die Übersichtlichkeit der Bäume auswirken und müssen deswegen vermieden werden.
+Für CodeLeaves wären immer kleiner werdende Kanten wenig sinnvoll, da so eine Interaktion mit Kanten und Blättern kaum möglich wäre. Auch wären die Überschneidungen, die in Abbildung \ref{fig:fractal-tree} zu sehen sind, bei größeren Bäumen nur durch Neigung der Kanten nicht zu vermeiden.
 
 \begin{figure}[htb]
   \includegraphics[width=.5\textwidth]{figures/fractal-tree}
@@ -816,28 +848,28 @@ Für CodeLeaves wären immer kleiner werdende Kanten wenig sinnvoll, da so eine 
 \end{figure}
 
 \subsubsection*{Verteilung von Kindern auf einer Kreisfläche}
-Werden die Kinder stattdessen auf gleicher Höhe auf einer Kreisfläche überhalb des Elternteils positioniert, muss die Länge der Kanten entsprechend angepasst werden. Dadurch entstehen drei Vorteile.
+Werden die Kinder stattdessen auf einer Kreisfläche überhalb des Elternteils positioniert, entstehen dadurch drei Vorteile.
 
-Erstens befinden sich Software-Artefakte mit der gleichen hierarchischen Tiefe auch auf gleicher Höhe, was sich positiv auf die Übersichtlichkeit auswirkt.
+Erstens befinden sich Softwareartefakte mit der gleichen hierarchischen Tiefe auch auf gleicher Höhe, was sich positiv auf die Übersichtlichkeit auswirkt.
 
-Zweitens wird das Laubdach primär am Ende des Baumes auf einer Ebene angezeigt, was aus der Vogelperspektive eine gute Betrachtung der Metriken verspricht und gleichzeitig von der Seite nicht den Blick auf die Struktur des Baumes versperrt.
+Zweitens wird das Blätterdach primär am Ende des Baumes auf einer Ebene angezeigt, was aus der Vogelperspektive eine gute Betrachtung der Metriken verspricht. Gleichzeitig wird von der Seite der Blick auf die Struktur des Baumes nicht versperrt.
 
-Drittens kann durch die Längenanpassung der Kanten Kollisionen von Ästen vermieden werden. Der Abstand zischen zwei Geschwister muss so groß gewählt werden, dass die Kanten der Nachfahren beider Geschwister nicht miteinander kollidieren.\\
+Drittens kann durch die erforderliche Längenanpassung der Kanten Kollisionen von Ästen vermieden werden. Der Abstand zischen zwei Geschwister muss so groß gewählt werden, dass die Kanten aller Nachfahren beider Geschwister nicht miteinander kollidieren.\\
 
 Der Prototyp von CodeLeaves verwendet aus genannten Gründen eine Kreisfläche für die Verteilung von Kinder eines Knotens.
 
 \section{Verteilung von Blättern mit dem Sonnenblumen-Algorithmus}
 \label{sec:sunflower}
 
-Betrachten wir nun zunächst den einfachen Fall eines inneren Knotens, der nur Blätter als Nachfahren besitzt. D.h. die Verteilung kann gleichmäßig erfolgen und muss die Breite nachfolgender Knoten nicht mit einbeziehen.
+Betrachten wir nun zunächst den Fall eines inneren Knotens, der nur Blätter als Nachfahren besitzt. D.\,h.\ die Verteilung kann gleichmäßig erfolgen und muss die Breite nachfolgender Knoten nicht miteinbeziehen.
 
-Dieser Fall tritt in realen Softwareprojekten häufig auf. In Air existieren 1154 solcher Knoten, was $85\%$ aller inneren Knoten ausmacht. Die Verteilung der Kinder eines Knotens mit inneren Knoten, wird im \ref{subsec:collision} behandelt.
+Dieser Fall tritt in realen Softwareprojekten häufig auf. In Air existieren 1154 solcher Knoten, was $85\%$ aller inneren Knoten ausmacht. Die Verteilung der Kinder eines inneren Knotens mit weiteren inneren Knoten, wird in Abschnitt \ref{subsec:collision} behandelt.
 
 \begin{quote}
   \textit{Es wird ein Algorithmus gesucht, bei dem Punkte auf einer Kreisfläche gleichmäßig verteilt werden.}
 \end{quote}
 
-Dazu liefert uns die Natur ein schönes Beispiel. Die kleinen inneren Blüten der Sonnenblume, die sogenannten Röhrenblüten, die nach Befruchtung die Sonnenblumenkerne ausbilden, nutzen den Platz innerhalb der gelben Zungenblüten optimal aus \cite{zimmermann2017sonnenblume}. Die spiralförmige Anordnung ist nicht nur ästhetisch, sondern folgt auch einem genauen Muster.
+Dazu liefert uns die Natur ein schönes Beispiel. Die kleinen inneren Blüten der Sonnenblume, die sogenannten Röhrenblüten, die nach ihrer Befruchtung die Sonnenblumenkerne ausbilden, nutzen den Platz innerhalb der gelben Zungenblüten optimal aus \cite{zimmermann2017sonnenblume}. Die spiralförmige Anordnung ist nicht nur schön anzusehen, sondern folgt auch einem genauen Muster.
 
 \begin{figure}[htb]
   \includegraphics[width=.5\textwidth]{figures/sunflower-seeds}
@@ -846,43 +878,43 @@ Dazu liefert uns die Natur ein schönes Beispiel. Die kleinen inneren Blüten de
 \end{figure}
 
 \subsubsection*{Der Goldene Winkel}
-Ausgehend von dem Mittelpunkt der Sonnenblume ist jede nachfolgender Blüte um rund \ang{137.5} um den Mittelpunkt rotiert. Dieser sogenannte \textit{Goldener Winkel} entsteht durch die Teilung des Vollkreises durch den \textit{Goldenen Schnitt}. Der goldene Schnitt ist ein Teilungsverhältnis das oft bei Größenverhältnissen von einfachen geometrischen Figuren vorkommt und ist wie folgt definiert:
+Ausgehend von dem Mittelpunkt der Sonnenblume ist jede nachfolgender Röhrenblüte um rund \ang{137.5} um den Mittelpunkt rotiert. Dieser sogenannte \textit{Goldener Winkel} entsteht durch die Teilung des Vollkreises durch den \textit{Goldenen Schnitt}. Der goldene Schnitt ist ein Teilungsverhältnis das oft bei Größenverhältnissen von einfachen geometrischen Figuren vorkommt und ist wie folgt definiert \cite{wolfram2017golden}:
 
 \begin{equation}
   \Phi = \frac{a}{b} = \frac{a + b}{a} = \frac{1 + \sqrt{5}}{2} \approx 1.618
 \end{equation}
 
-Wird der Vollwinkel durch den Goldenen Schnitt geteilt, entsteht folgender Winkel:
+Wird der Vollwinkel durch den Goldenen Schnitt geteilt, entsteht der Winkel
 
 \begin{equation}
-  \frac{2\pi}{\Phi} \approx \ang{222.5}
+  \frac{2\pi}{\Phi} \approx \ang{222.5} \,.
 \end{equation}
 
-Die Ergänzung zum Vollwinkel ist der Goldene Winkel:
+Die Ergänzung zum Vollwinkel ist der Goldene Winkel
 \begin{equation}
-  2\pi - \frac{2\pi}{\Phi} = \frac{2\pi}{\Phi^2} \approx \ang{137.5}
+  2\pi - \frac{2\pi}{\Phi} = \frac{2\pi}{\Phi^2} \approx \ang{137.5} \,.
 \end{equation}
 
-Dieser hat die Eigenschaft, dass er aufaddiert nie den selben Winkel ergibt. Diese Eigenschaft machen sich viele Pflanzen zu Nutze und kann auch in CodeLeaves Anwendung finden.
+Dieser hat die Eigenschaft, dass er aufaddiert nie den selben Winkel ergibt. Diese Eigenschaft machen sich viele Pflanzen zunutze und kann auch in CodeLeaves Anwendung finden.
 
 \subsubsection*{Berechnungen für das Hinzufügen eines Blattes}
-Mit dem Vielfachen des goldenen Winkels ist der Winkel $\varphi$ gegeben, um den eine neue Kante um die y-Ache rotiert wird. Für die Rotation und Skalierung einer Kante sind aber noch andere Größen zu berechnen.
+Mit dem Vielfachen des goldenen Winkels ist der Winkel $\varphi$ gegeben, um den eine neue Kante eines neuen Blattes um die Senkrechte rotiert werden muss. Für die Position eines neuen Blattes sind aber noch andere Größen zu berechnen.
 
-Wird eine Kante mit der Länge $l$ an einen Knoten angefügt, um die x-Achse mit dem Winkel $\theta$ geneigt und anschließend um die y-Achse mit den Winkel $\varphi$ rotiert, entsteht ein Kugelkoordinatensystem mit der Position des Elternteils als Ursprung $O$, der y-Achse als Polachse, der Position des $n$-ten Kindknoten als Punkt $P$, dem \emph{Polarwinkel} $\theta$ und dem \emph{Azimutwinkel} $\varphi$\cite{papula2001mathematik}.
+Angenommen eine Kante mit der endgültigen Länge $l$ wird an einen Knoten K angefügt, um die x-Achse mit dem Winkel $\theta$ geneigt und anschließend um die y-Achse mit den Winkel $\varphi$ rotiert, entsteht ein \textit{Kugelkoordinatensystem} mit der Position von K als Ursprung, der y-Achse als Polachse, der Position des $n$-ten Kindknoten als Punkt $P$, dem \emph{Polarwinkel} $\theta$ und dem \emph{Azimutwinkel} $\varphi$ \cite{papula2001mathematik}.
 
 \begin{figure}[htb]
   \input{tikzpictures/add-node}
-  \caption{Kugelkoordinatensystem mit den zu berechnenden Größen für das Hinzufügen eines neuen Knotens}
+  \caption{Kugelkoordinatensystem mit den zu berechnenden Größen für das Hinzufügen eines neuen Blattes}
   \label{fig:spherical-coordinates}
 \end{figure}
 
-Diese Größen sind in Abbildung \ref{fig:spherical-coordinates} dargestellt, wobei die Höhe $h$ als Standardhöhe einer Kante gegeben gilt und $E$ mit $(0, h, 0)$ die Position des $0$-ten Kindes ist.
+Diese Größen sind in Abbildung \ref{fig:spherical-coordinates} dargestellt, wobei die Höhe $h$ als Standardhöhe einer Kante gegeben gilt und $E$ mit $(0, h, 0)$ die Position des $0$-ten Kindes ist. Die y-Achse wird in Anlehnung an Unity in dieser Arbeit als Senkrechte verwendet. Der Waldboden liegt demnach in einer xz-Ebene.
 
-Der Abstand $d_n$ zwischen dem Punkt $E$ und $P$ berechnet sich für den $n$-ten Knoten nach \cite{vogel1979better} mit
+Der Abstand $a_n$ zwischen dem Punkt $E$ und $P$ berechnet sich für den $n$-ten Knoten nach \cite{vogel1979better} mit
 
 \begin{equation}
 \label{eq:r}
-  d_n = c \sqrt{n}\,,
+  a_n = c \sqrt{n} \,,
 \end{equation}
 
 wobei $c$ eine Konstante ist und den Abstand der Kindknoten untereinander beeinflusst.
@@ -893,7 +925,7 @@ Die Rotation um die y-Achse $\varphi$ ist wie oben hergeleitet das $n$-te Vielfa
   \varphi = \frac{2\pi \cdot n}{\Phi^{2}}
 \end{equation}
 
-Der Polwinkel $\theta$ lässt sich mithilfe von $h$ und $r$ berechnen.
+Der Polwinkel $\theta$ lässt sich mithilfe von $h$ und $r$ berechnen:
 
 \begin{equation}
   \theta = \tan^{-1} \left(\frac{r}{h}\right)
@@ -907,7 +939,7 @@ Die Länge $l$ der Kante kann mit
 
 berechnet werden.
 
-Für die Positionierung des Kindknotens muss der Punkt $P$ von den Kugelkoordinaten $(l, \theta, \varphi)$ in das kartesische Koordinatensystem umgerechnet werden. Dies wird durch die folgende Formel
+Für die Positionierung des Kindknotens muss der Punkt $P$ vom konstruierten Kugelkoordinatensystem in das kartesische Koordinatensystem umgerechnet werden. Dies wird durch die Formel
 
 \begin{equation}
   \vv{P} =
@@ -918,9 +950,9 @@ Für die Positionierung des Kindknotens muss der Punkt $P$ von den Kugelkoordina
   \end{pmatrix}
 \end{equation}
 
-erreicht.
+erreicht \cite{wolfram2017spherical}.
 
-Damit ist alles für den Algorithmus gegeben, der Kinder eines Knotens mit gleichmäßigem Abstand auf eine gegebene Höhe verteilt und die Kanten entsprechend rotieren und skalieren kann
+Damit ist alles für den Algorithmus gegeben, der Blätter eines Knotens mit gleichmäßigem Abstand auf eine gegebene Höhe verteilt und die Kanten entsprechend rotieren und skalieren kann.
 
 In Unity und C\# ist dieser Algorithmus in vereinfachter Form in Listing \ref{lst:addnode} zu sehen ist.
 
@@ -938,7 +970,7 @@ for (var i = 0; i < node.Children.Count; i++)
 }
 \end{codesnippet}
 
-Das Ergebnis ist in Abbildung \ref{fig:sunflower-algorithm} zu sehen. Auf der linken Seite (\ref{fig:sunflower-30}) sind 30 Blätter verteilt worden. Die Ähnlichkeit zur Verteilung der Röhrenblüten der Sonnenblume wird auf der rechen Seite (\ref{fig:sunflower-200}) mit der Extremsituation mit 200 Blättern und kleinem $c$ sichtbar.
+Das Ergebnis ist in Abbildung \ref{fig:sunflower-algorithm} zu sehen. Auf der linken Seite (\ref{fig:sunflower-30}) sind 30 Blätter verteilt worden. Die Ähnlichkeit zur Verteilung der Röhrenblüten der Sonnenblume wird auf der rechen Seite (\ref{fig:sunflower-200}) mit der Extremsituation mit 200 Blättern und kleiner Konstante $c$ sichtbar. Darin wurde um die Blätter ein Umrandung hinzugefügt, um die Blätter voneinander abgrenzen zu können.
 
 \setlength{\fwidth}{.49\textwidth}
 \begin{figure}[htb]
@@ -955,48 +987,48 @@ Das Ergebnis ist in Abbildung \ref{fig:sunflower-algorithm} zu sehen. Auf der li
   \caption{Sonnenblumen-Algorithmus zur Verteilung von Blättern} \label{fig:sunflower-algorithm}
 \end{figure}
 
-\section{Verteilung innerer Knoten mit Circle-Packing}
-\label{sec:circle-packing}
+\section{Verteilung innerer Knoten mit Circle-packing}
+\label{sec:Circle-packing}
 
 Die Verteilung mit dem Sonnenblumen-Algorithmus beruht auf der Tatsache, dass die Kinder des Knotens mit gleichmäßigem Abstand zueinander verteilt werden können. Dies ist bei inneren Knoten, die wiederum innere Knoten als Kinder besitzen, nicht gegeben. In diesem Fall muss die Breite der Kinder mit berücksichtigt werden, sodass die Äste der einzelnen Kinder nicht kollidieren.
 
-Für die Verteilung der inneren Knoten mit einer minimalen Höhe von 1, führen wir ein weiteres Merkmal ein.
+Für die Verteilung der inneren Knoten führen wir ein weiteres Merkmal ein.
 
-\begin{defbox}{Kreis und Radius eines inneren Knotens}{radius}
-   Der Radius eines inneren Knotens ist der Radius des Kreises, aus dem alle Nachfahren des Knotens von oben betrachtet nicht hinaus ragen.
+\begin{defbox}{Kreis eines inneren Knotens}{radius}
+   Der Kreis eines inneren Knotens ist der Kreis, aus dem alle Nachfahren des Knotens von oben betrachtet nicht hinaus ragen.
 \end{defbox}
 
-Bei einem inneren Knoten, dessen Kinder nach dem Sonnenblumen-Algorithmus verteilt wurden, kann dessen Radius leicht berechnet werden. Der Radius $r$ des inneren Knoten ist gleich dem Abstand $a_n$ des $n$-ten Kindes, der nach Formel \ref{eq:r} mit $a_n = c \sqrt{n}$ berechnet werden kann.
+Bei einem inneren Knoten, dessen $N$ Kinder nach dem Sonnenblumen-Algorithmus verteilt wurden, kann der Radius seines Kreises leicht berechnet werden. Der Radius $r$ ist gleich dem Abstand $a_N$ des $N$-ten Blattes, der nach Formel \ref{eq:r} mit $a_N = c \sqrt{N}$ berechnet werden kann.
 
 Werden nun alle inneren Knoten so verteilt, dass sich von oben betrachtet die Kreise der Kinder nicht überschneiden, sind alle Äste eines Baumes kollisionsfrei verteilt und alle Blätter sind von oben sichtbar.
 
-Das Problem der Verteilung von inneren Knoten kann demnach auf 2D reduziert werden.\\
+Das Problem der Verteilung von inneren Knoten kann demnach auf jeder Ebene eines Baumes auf 2D reduziert werden.\\
 
 \textit{Es wird ein Algorithmus gesucht, der Kreise unterschiedlicher Größe auf möglichst kleinem Raum überschneidungsfrei positioniert.}\\
 
-Diese Aufgabenstellung wird vom sogenannten \textit{Circle-Packing} gelöst.
+Diese Aufgabenstellung wird vom sogenannten \textit{Circle-packing} gelöst.
 
-Dazu hat Wang in \cite{wang2006visualization} 2006 einen Algorithmus entworfen, der seitdem von vielen adaptiert worden ist. Zum Beispiel in der populären JavaScript Library \textit{d3.js} zur Datenvisualisierung verwendet Bostock, der Schöpfer von d3.js diesen Algorithmus \cite{bostock2017abetter}.
+Dazu hat W.\ Wang in \cite{wang2006visualization} 2006 einen Algorithmus entworfen, der seitdem von vielen adaptiert worden ist. Zum Beispiel verwendet M.\ Bostock, der Schöpfer in der populären JavaScript Library \textit{d3.js} zur Datenvisualisierung, diesen Circle-packing-Algorithmus in d3.js \cite{bostock2017abetter}. In 3D wurde er jedoch noch nicht angewandt.
 
-Der Algorithmus muss noch an die Gegebenheiten von CodeLeaves angepasst werden. Bei Wang's Version startet der Algorithmus bereits mit drei tangentialen Kreisen. Der Mittelpunkt, um den zusätzliche Kreise positioniert werden, befindet sich zwischen den drei initialen Kreisen. Bei CodeLeaves sind aber nicht zwangsläufig bei jedem Knoten mindestens drei Kindknoten zu verteilen und als Mittelpunkt für die Verteilung der Kreise ist der Mittelpunkt des $0$-ten Kreises sinnvoll, da sich so immer ein Hauptstamm für einen Baum ergibt.
+Der Algorithmus muss noch an die Gegebenheiten von CodeLeaves angepasst werden. Bei Wang's Version startet der Algorithmus bereits mit drei tangentialen Kreisen. Der Mittelpunkt, um den zusätzliche Kreise positioniert werden, befindet sich zwischen den drei initialen Kreisen. Bei CodeLeaves sind aber nicht zwangsläufig bei jedem Knoten mindestens drei Kindknoten zu verteilen und als Mittelpunkt für die Verteilung der Kreise ist der Mittelpunkt des $0$-ten Kreises sinnvoll, da sich so immer eine Verlängerung des Stammes ergibt.
 
-Ist nur ein Knoten zu verteilen, wird der Mittelpunkt seines Kreises von oben gesehen (in der XZ-Ebene) in den Ursprung gelegt. Der Kreis eines zweiten Knotens wird in einem zufälligen Winkel tangential zum Kreis des ersten Knotens positioniert. Bereits bei einem dritten Kreis kann Wangs's Algorithmus Anwendung finden.
+Ist nur ein Knoten zu verteilen, wird der Mittelpunkt seines Kreises von oben gesehen (in der xz-Ebene) in den Ursprung gelegt. Der Kreis eines zweiten Knotens wird in einem zufälligen Winkel tangential zum Kreis des ersten Knotens positioniert. Bereits bei einem dritten Kreis kann Wangs's Algorithmus Anwendung finden.
 
-Es wird eine sogenannte \textit{Front-Chain} verwendet, eine zyklische Liste, die alle Kreise enthält, an die potentiell ein neuer Kreis angefügt werden könnte. Die Front-Chain ist in Abbildung \ref{fig:circle-packing} als dickere Linie dargestellt. Bei der Positionierung des ersten bzw. des zweiten Kreises werden diese zur Front-Chain hinzugefügt.
+Es wird eine sogenannte \textit{Front-chain} verwendet, eine zyklische Liste, die alle Kreise enthält, an die potentiell ein neuer Kreis angefügt werden könnte. Die Front-chain ist in Abbildung \ref{fig:Circle-packing} als dickere Linie dargestellt. Bei der Positionierung des ersten bzw.\ des zweiten Kreises werden diese zur Front-chain hinzugefügt.
 
-Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\lbrace C_i \mid i = 1, 2 \cdots n \rbrace$ im Folgenden beschrieben:
+Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\lbrace C_i \mid i = 0, 2 \cdots N \rbrace$ im Folgenden beschrieben:
 
-\subsubsection*{Abgewandelte Form von Wang's Circle-Packing-Algorithmus (nach \cite{wang2006visualization})}
+\subsubsection*{Abgewandelte Form von Wang's Circle-packing-Algorithmus (nach \cite{wang2006visualization})}
 
 \begin{enumerate}[(i), labelindent=0pt, align=left, itemsep=0pt, parsep=0pt, labelsep=.5em, leftmargin=!]
-  \item Falls $n >= 1$ setzte den Mittelpunkt von $C_0$ in den Ursprung und füge $C_0$ zur Front-Chain hinzu.
-  \item Falls $n >= 2$ setzte den Mittelpunkt von $C_1$ so, dass $C_1$ in einem zufälligen Winkel tangential zu $C_0$ ist und füge $C_1$ zur Front-Chain hinzu.
-  \item Für $1 < i < N$ suche $C_m$, der Kreis dessen Mittelpunkt am nächsten zum Ursprung ist. $C_n$ ist der Kreis in der Front-Chain nach $C_m$.
+  \item Falls $i = 0$ setzte den Mittelpunkt von $C_0$ in den Ursprung und füge $C_0$ zur Front-chain hinzu.
+  \item Falls $i = 1$ setzte den Mittelpunkt von $C_1$ so, dass $C_1$ in einem zufälligen Winkel tangential zu $C_0$ ist und füge $C_1$ zur Front-chain hinzu.
+  \item Für $1 < i < N$ suche $C_m$, der Kreis dessen Mittelpunkt am nächsten zum Ursprung ist. $C_n$ ist der Kreis in der Front-chain nach $C_m$ ($n=m+1$).
   \item Berechne den Mittelpunkt von $C_i$ so, dass er tangential zu $C_m$ und $C_n$ ist.
   \item Suche einen Kreis $C_j$ der sich mit $C_i$ überschneidet.
   \item Falls der $C_j$ nicht existiert, setze $C_i$ gleich $C_{i+1}$ und gehe zu (iii).
-  \item Falls $C_j$ in der Front-Chain näher an $C_m$ als an $C_n$ ist, lösche alle Kreise aus der Front-Chain, die zwischen $C_j$ und $C_n$ liegen. Setze $C_m$ gleich $C_j$ und gehe zu (iv).
-  \item Falls $C_j$ in der Front-Chain näher an $C_n$ als an $C_m$ ist, lösche alle Kreise aus der Front-Chain, die zwischen $C_m$ und $C_j$ liegen. Setze $C_n$ gleich $C_j$ und gehe zu (iv).
+  \item Falls $C_j$ in der Front-chain näher an $C_m$ als an $C_n$ ist, lösche alle Kreise aus der Front-chain, die zwischen $C_j$ und $C_n$ liegen. Setze $C_m$ gleich $C_j$ und gehe zu (iv).
+  \item Falls $C_j$ in der Front-chain näher an $C_n$ als an $C_m$ ist, lösche alle Kreise aus der Front-chain, die zwischen $C_m$ und $C_j$ liegen. Setze $C_n$ gleich $C_j$ und gehe zu (iv).
 \end{enumerate}
 
 \label{subsec:collision}\setlength{\fwidth}{.4\textwidth}
@@ -1009,19 +1041,19 @@ Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\
   \hspace{1cm}
   \begin{subfigure}[t]{\fwidth}
   	\includegraphics[width=150px]{figures/update-frontchain}
-  	\subcaption{Anpassung der Front-Chain und erneutes Platzieren} \label{fig:update-frontchain}
+  	\subcaption{Anpassung der Front-chain und erneutes Platzieren} \label{fig:update-frontchain}
   \end{subfigure}
   \caption{Wang's Circle Packing Algorithmus (nach \cite{bostock2017abetter})}
-  \label{fig:circle-packing}
+  \label{fig:Circle-packing}
 \end{figure}
 
-In Abbildung \ref{fig:circle-packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-Chain entfernt und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
+In Abbildung \ref{fig:Circle-packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-chain entfernt und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
 
 Werden die Knoten vor der Durchführung des Algorithmus nach deren Radien sortiert, befindet sich der Knoten mit dem größten Kreis genau über dem Stamm und nach außen hin werden die Äste kleiner, was einem natürlichem Wuchs am nächsten kommt. Durch die zufällige Positionierung des $1$-ten Knotens, wächst der Baum nicht bei jedem Knoten "`in die gleiche Richtung"' was das natürliche Bild des Waldes ebenfalls fördert.
 
-Der oben beschriebene Algorithmus setzt in (ii) und in (iv) die Berechnung eines Mittelpunktes voraus, sodass dessen Kreis tangential zu einem bzw. zwei weiteren Kreisen ist.
+Der oben beschriebene Algorithmus setzt in (ii) und in (iv) die Berechnung eines Mittelpunktes voraus, sodass dessen Kreis tangential zu einem bzw.\ zwei weiteren Kreisen ist.
 
-Bei dem $1$-ten Kreis mit Radius $r_1$ und Mittelpunkt $M_1$, der nur tangential zu dem $0$-ten Kreis mit $r_0$ und $M_0 = (0,0)$ ist und mit dem zufälligen Winkel Polarwinkel $\alpha$ platziert wird, ergibt sich für die XZ-Ebene folgende Koordinate:
+Bei dem $1$-ten Kreis mit Radius $r_1$ und Mittelpunkt $M_1$, der nur tangential zu dem $0$-ten Kreis mit $r_0$ und $M_0 = (0,0)$ ist und mit dem zufälligen Winkel Polarwinkel $\alpha$ platziert wird, ergibt sich für die xz-Ebene folgende Koordinate:
 
 \begin{equation}
   \vv{M}_1 =
@@ -1035,7 +1067,7 @@ Bei allen weitern Kreisen $C_i$ ist die Berechnung komplexer. Der Sachverhalt is
 
 \begin{figure}[htb]
   \includegraphics[width=261.593px]{figures/tangent-circle}
-  \caption{Berechnung der Position eines Kreises, tangent zu zwei anderen Kreisen}
+  \caption{Berechnung des Mittelpunktes eines Kreises, tangential zu zwei anderen Kreisen}
   \label{fig:tangent-circle}
 \end{figure}
 
@@ -1060,11 +1092,11 @@ und $D_1$ lässt sich durch Umformen der Gleichung \ref{equ:h} mit
 
 darstellen.
 
-Mit diesen Gleichungen kann der Circle-Packing Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die Y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
+Mit diesen Gleichungen kann der Circle-packing Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die Y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
 
 \subsubsection*{Knoten mit gemischten Kindern}
 
-Für den Fall, dass ein Paket innere Knoten \textbf{und} Blätter enthält, kann der Circle-Packing-Algorithmus ebenfalls angewandt werden. Dafür muss lediglich einem Blatt ein Radius zugewiesen werden. Mit der Verwendung der Konstante $c$ aus dem Sonnenblumen-Algorithmus als Radius, haben die Blätter bei beiden Verteilungs-Algorithmen den gleichen Abstand zueinander. Lediglich die Ausbreitung der Blätter um den Ursprung erfolgt weniger natürlich, als beim Sonnenblumen-Algorithmus.
+Für den Fall, dass ein Paket innere Knoten \textbf{und} Blätter enthält, kann der Circle-packing-Algorithmus ebenfalls angewandt werden. Dafür muss lediglich einem Blatt ein Radius zugewiesen werden. Mit der Verwendung der Konstante $c$ aus dem Sonnenblumen-Algorithmus als Radius, haben die Blätter bei beiden Verteilungs-Algorithmen den gleichen Abstand zueinander. Lediglich die Ausbreitung der Blätter um den Ursprung erfolgt weniger natürlich, als beim Sonnenblumen-Algorithmus.
 
 \subsubsection*{Hierarchische Anwendung}
 
@@ -1072,29 +1104,29 @@ Für die Anwendung auf mehreren Ebenen ist nach der Verteilung von Kindern eines
 
 Der Radius des Kreises von Knoten $K$ (mit Mittelpunkt an der Position von $K$), der alle Kreise der Kinder von $K$ umschließt und mindestens zu einem Kreis der Kinder tangential ist, ist der Abstand vom $0$-ten Kind zum $n$-ten Kind zuzüglich des Radius des $n$-ten Kindes. Diese Methode ist nicht der kleinste umschließende Kreis, reicht für die Generierung von überschneidungsfreien Bäume jedoch aus. Wir nennen den Kreis dieser Methode den \textit{größten umschließenden Kreis}.
 
-Für die vollständige hierarchische Anwendung des Circle-Packing wird für jeden Knoten rekursiv das Circle-Packing durchgeführt und anschließend der eigene Radius gesetzt. Abbruchbedingung für die Rekursion ist, dass der Knoten ein Blatt, oder ein innerer Knoten mit ausschließlich Blättern ist. In letzterem Fall greift der Sonnenblumen-Algorithmus.
+Für die vollständige hierarchische Anwendung des Circle-packing wird für jeden Knoten rekursiv das Circle-packing durchgeführt und anschließend der eigene Radius gesetzt. Abbruchbedingung für die Rekursion ist, dass der Knoten ein Blatt, oder ein innerer Knoten mit ausschließlich Blättern ist. In letzterem Fall greift der Sonnenblumen-Algorithmus.
 
 Das heißt der Algorithmus fängt mit dem Knoten mit der größten Tiefe an und arbeitet sich über Geschwister und Elternteile bis hin zum Kronenansatz fort, bis alle Knoten eines Baumes verteilt sind.
 
 \subsubsection*{Verteilung von Bäumen}
 
-Die Verteilung der einzelnen Bäume kann durch das Circle-Packing sehr leicht umgesetzt werden. Nachdem der Kronenansatz einen Radius besitzt, ist damit auch die Radius des ganzen Baumes bekannt. Damit können die Bäume beliebig platziert werden, ohne dass sich deren Äste überschneiden würden. Es wäre zum Beispiel eine Verteilung in einem Gitter möglich, was dann an eine Baumschule mit Baumreihen erinnern würde. Es ist jedoch auch ganz einfach möglich die Bäume ebenfalls mit Circle-Packing anzuordnen. Damit entsteht ein runder Wald und die Bäume nehmen möglichst wenig Platz ein.
+Die Verteilung der einzelnen Bäume kann durch das Circle-packing sehr leicht umgesetzt werden. Nachdem der Kronenansatz einen Radius besitzt, ist damit auch die Radius des ganzen Baumes bekannt. Damit können die Bäume beliebig platziert werden, ohne dass sich deren Äste überschneiden würden. Es wäre zum Beispiel eine Verteilung in einem Gitter möglich, was dann an eine Baumschule mit Baumreihen erinnern würde. Es ist jedoch auch ganz einfach möglich die Bäume ebenfalls mit Circle-packing anzuordnen. Damit entsteht ein runder Wald und die Bäume nehmen möglichst wenig Platz ein.
 
-Mit den beiden beschriebenen Algorithmen können Bäume garantiert überschneidungsfrei generiert und verteilt werden. Ein Auszug aus einem so entstanden Wald ist von der Seite in Abbildung \ref{fig:layout-side} und von oben in \ref{fig:layout-top} zu sehen. Die Kreise in Abbildung \ref{fig:layout-top} sind die Visualisierungen der durch das Circle-Packing entstehenden Kreise. Aus der Vogelperspektive ist gut zu erkennen, wie die Blätter innerhalb ihrer Eltern mithilfe des Sonnenblumen-Algorithmus sehr gleichmäßig verteilt werden.
+Mit den beiden beschriebenen Algorithmen können Bäume garantiert überschneidungsfrei generiert und verteilt werden. Ein Auszug aus einem so entstanden Wald ist von der Seite in Abbildung \ref{fig:layout-side} und von oben in \ref{fig:layout-top} zu sehen. Die Kreise in Abbildung \ref{fig:layout-top} sind die Visualisierungen der durch das Circle-packing entstehenden Kreise. Aus der Vogelperspektive ist gut zu erkennen, wie die Blätter innerhalb ihrer Eltern mithilfe des Sonnenblumen-Algorithmus sehr gleichmäßig verteilt werden.
 
 %\begin{figure}[htb]
 %  \includegraphics[width=\textwidth]{figures/layout}
 %  \caption{Layout des Waldes von der Seite}
-%  \label{fig:circle-packing-code-leaves}
+%  \label{fig:Circle-packing-code-leaves}
 %\end{figure}
 %
 %\begin{figure}[htb]
-%  \includegraphics[width=\textwidth]{figures/circle-packing}
-%  \caption{Layout des Waldes aus der Vogelperspektive mit visualisierten Circle-Packing}
+%  \includegraphics[width=\textwidth]{figures/Circle-packing}
+%  \caption{Layout des Waldes aus der Vogelperspektive mit visualisierten Circle-packing}
 %  \label{fig:layout}
 %\end{figure}
 
-Auch das Circle-Packing ist durch die Kreise gut zu sehen. Jedoch lässt sich feststellen, dass durch die Wahl des größten umschließenden Kreises Platz "verschenkt" wird. Besonders in der Mitte der Abbildung wird dies durch die große Fläche deutlich, in der keine weiteren Knoten platziert sind, deutlich.
+Auch das Circle-packing ist durch die Kreise gut zu sehen. Jedoch lässt sich feststellen, dass durch die Wahl des größten umschließenden Kreises Platz "verschenkt" wird. Besonders in der Mitte der Abbildung wird dies durch die große Fläche deutlich, in der keine weiteren Knoten platziert sind, deutlich.
 
 Um das zu umgehen müsste anstelle des größten umschließenden Kreises, der kleinste umschließende Kreis verwendet werden. Dies ist ein weiteres mathematisches Problem und als Teil des \textit{Appollonius} Problem bekannt \cite{dergiades2007soddy}.
 
@@ -1110,15 +1142,15 @@ Für den Prototyp ist die Umsetzung des kleinsten umschließenden Kreises für C
   \par\bigskip
   \begin{subfigure}[t]{\textwidth}
     \centering
-  	\includegraphics[width=\textwidth]{figures/circle-packing}
-  	\subcaption{Vogelperspektive mit visualisierten Circle-Packing} \label{fig:layout-top}
+  	\includegraphics[width=\textwidth]{figures/Circle-packing}
+  	\subcaption{Vogelperspektive mit visualisierten Circle-packing} \label{fig:layout-top}
   \end{subfigure}
   \caption{Layout des Waldes} \label{fig:layout}
 \end{figure}
 
 \section{Verwendete Algorithmen in der Praxis}
 
-Für die Praxis in Unity ist bei der Verteilung der Bäume noch zu beachten, dass deren Radien erst verfügbar sind, nachdem der Circle-Packing-Algorithmus für alle Bäume vollständig durchlaufen wurde. Das heißt, dass bei der Generierung der einzelnen Bäume noch nicht bekannt ist, an welcher Position die Bäume letztendlich gesetzt werden müssen und zunächst zum Beispiel an der gleichen Stelle generiert werden müssen. Das bedeutet wiederum, dass bei asynchroner Programmierung und großen Projekten wie Air zunächst die Bäume überlagernd gerendert werden und dies auch durchaus für einige Sekunden für den Nutzer sichtbar ist, bevor sich die Bäume verteilen.
+Für die Praxis in Unity ist bei der Verteilung der Bäume noch zu beachten, dass deren Radien erst verfügbar sind, nachdem der Circle-packing-Algorithmus für alle Bäume vollständig durchlaufen wurde. Das heißt, dass bei der Generierung der einzelnen Bäume noch nicht bekannt ist, an welcher Position die Bäume letztendlich gesetzt werden müssen und zunächst zum Beispiel an der gleichen Stelle generiert werden müssen. Das bedeutet wiederum, dass bei asynchroner Programmierung und großen Projekten wie Air zunächst die Bäume überlagernd gerendert werden und dies auch durchaus für einige Sekunden für den Nutzer sichtbar ist, bevor sich die Bäume verteilen.
 
 Bei Air dauert die Generierung der 40 Bäume im Unity Editor auf einer Hardware mit 2.3 GHz Intel Core i7 CPU und 16 GB 1600 MHz DDR3 RAM bei 10 Messungen zwischen 6,5 und 6,8 Sekunden. Auf der HoloLens stehen keine genauen Messdaten zur Verfügung, die Generierung dauert aber noch etwas länger.
 
@@ -1132,7 +1164,7 @@ In Abbildung \ref{fig:layout} waren bereits unterschiedliche Blattfarben zu sehe
 
 \subsubsection*{Farbe der Blätter}
 
-In den Abbildung \ref{fig:layout} - \ref{fig:root} wird mit der Blattfarbe die Testabdeckung im Projekt Air visualisiert. Damit ist es möglich eine beliebige Metrik darzustellen, die im Software Meta-Modell vorliegt (Akz. \ref{acc:s-metrics} und \ref{acc:d-metrics}). Die Metrik kann in einem stufenlosen Farbverlauf dargestellt werden, im Beispiel der Testabdeckung von Rot (0\%) über Gelb (50\%) bis hin zu Grün (100\%). Klassen, bei denen im Beispiel-Datensatz keine Testabdeckung verfügbar ist, erscheinen in Grau.
+In den Abbildung \ref{fig:layout} - \ref{fig:root} wird mit der Blattfarbe die Testabdeckung im Projekt Air visualisiert. Damit ist es möglich eine beliebige Metrik darzustellen, die im Software-Meta-Modell vorliegt (Akz. \ref{acc:s-metrics} und \ref{acc:d-metrics}). Die Metrik kann in einem stufenlosen Farbverlauf dargestellt werden, im Beispiel der Testabdeckung von Rot (0\%) über Gelb (50\%) bis hin zu Grün (100\%). Klassen, bei denen im Beispiel-Datensatz keine Testabdeckung verfügbar ist, erscheinen in Grau.
 
 In Abbildung \ref{fig:leaf-color} ist schön zu sehen, dass die Testabdeckung im Durchschnitt sehr gut ist, obwohl immer wieder Klassen dabei sind, bei denen keine Testabdeckung vorhanden ist. Im linken oberen Eck der Abbildung ist ein Ast zu sehen, bei dem alle Blätter keine gute Testabdeckung vorweisen können. Ausreißer der aktuellen Metrik und ganze Hotspots sind demnach gut zu erkennen (Akz. \ref{acc:s-hotspots} und \ref{acc:d-hotspots}).
 
@@ -1144,7 +1176,7 @@ In Abbildung \ref{fig:leaf-color} ist schön zu sehen, dass die Testabdeckung im
 
 \subsubsection*{Dicke der Kanten}
 
-Die Dicke der Kanten lässt sich ebenfalls leicht anpassen. Die Standard-Dicke kann je nach Anzahl der direkten Verbindungen mit einer Konstante multipliziert werden. Da der Beispiel-Datensatz von Air jedoch keine Verbindungen wie Abhängigkeiten aufweist, wird in Abbildung \ref{fig:thickness} ein Baum gezeigt, der mit zunehmender Höhe der Knoten entsprechend dickere Kanten besitzt. Dies ist für richtige Verbindungen wie Abhängigkeiten natürlich wenig realistisch, zeigt aber das Potential dieser Darstellung. Die Beschaffung und der Transfer von Daten über Abhängigkeiten in Air in das Software Meta-Modell ist keine triviale Aufgabe und muss außerhalb dieser Arbeit bewältigt werden.
+Die Dicke der Kanten lässt sich ebenfalls leicht anpassen. Die Standard-Dicke kann je nach Anzahl der direkten Verbindungen mit einer Konstante multipliziert werden. Da der Beispiel-Datensatz von Air jedoch keine Verbindungen wie Abhängigkeiten aufweist, wird in Abbildung \ref{fig:thickness} ein Baum gezeigt, der mit zunehmender Höhe der Knoten entsprechend dickere Kanten besitzt. Dies ist für richtige Verbindungen wie Abhängigkeiten natürlich wenig realistisch, zeigt aber das Potential dieser Darstellung. Die Beschaffung und der Transfer von Daten über Abhängigkeiten in Air in das Software-Meta-Modell ist keine triviale Aufgabe und muss außerhalb dieser Arbeit bewältigt werden.
 
 Akzeptanzkriterium \ref{acc:s-thickness} und \ref{acc:d-thickness} wird demnach zwar im High-Fi Prototyp technisch erfüllt, muss aber mit realistischen Beispieldaten noch evaluiert werden. Es muss herausgefunden werden welche mathematische Funktion für die Dick der Kanten geeignet ist.
 
@@ -1177,7 +1209,7 @@ In den frühen 70er-Jahren wurden erste Modelle der Computermaus entwickelt und 
 
 Neben der zeigerbasierten Eingabe hat sich mit dem Einzug von Smartphones und Tablets die touchbasierte Eingabe etabliert. Diese kann für Monitor basierte AR verwendet werden. Bei dieser Art von Mit dem AR-Kit von Apple ab der iOS Version 11 sind solche Applikationen einfach zu realisieren.
 
-Für die AR mit Head Mounted Displays (HMD) Devices, wie es die HoloLens ist und die wie der Name schon sagt, vom Nutzer getragen werden, ergeben sich neue Möglichkeiten mit Anwendungen zu interagieren. Auch wenn z.B. die HoloLens die Eingabe durch eine Bluetooth-Maus unterstützt, bieten sich in AR zusätzliche Eingabemöglichkeiten an.
+Für die AR mit Head Mounted Displays (HMD) Devices, wie es die HoloLens ist und die wie der Name schon sagt, vom Nutzer getragen werden, ergeben sich neue Möglichkeiten mit Anwendungen zu interagieren. Auch wenn z.\,B. die HoloLens die Eingabe durch eine Bluetooth-Maus unterstützt, bieten sich in AR zusätzliche Eingabemöglichkeiten an.
 
 Es ergeben sich folgende Eingabemöglichkeiten für HMD-Devices:
 
@@ -1196,7 +1228,7 @@ Nachdem bei HDM-Devices Hologramme im realen Raum platziert werden, ist Gestenst
 
 Allgemein kann zischen zwei Arten von Gesten unterschieden werden.
 
-\paragraph{Diskrete Gesten} sind solche, in denen die Ausführung der Geste einen binären Status besitzt. D.h. die Ausführung der Geste ist die Information selbst und trägt keine weiteren Informationen. Diese Gesten lassen sich mit einem Klick einer Computermaus vergleichen.
+\paragraph{Diskrete Gesten} sind solche, in denen die Ausführung der Geste einen binären Status besitzt. D.\,h\ die Ausführung der Geste ist die Information selbst und trägt keine weiteren Informationen. Diese Gesten lassen sich mit einem Klick einer Computermaus vergleichen.
 
 \paragraph{Kontinuierliche Gesten} sind solche, bei denen das Ausmaß der Geste eine Rolle spielt. Das Ausmaß bestimmt die Größe der Ausgabe. Vergleichen wir diese Gesten mit einer Computermaus, wäre das die Mausbewegung.\\
 
@@ -1217,7 +1249,7 @@ Die HoloLens kann zwischen linker und rechtem Hand unterscheiden. Das bedeutet, 
 \subsubsection*{Sprache}
 Neben den Gesten kann auch durch Sprachsteuerung mit Hologrammen interagiert werden. In einer Applikation können beliebige Sprachbefehle definiert werden, die dann von der HoloLens automatisch erkannt werden.
 
-Da die Interaktion mit Gesten auf Dauer für die Arme ermüdend sein kann, bietet sich an, die Spracherkennung zur Unterstützung der Gestensteuerung zu verwenden. Beide Eingabemethoden können auch gut miteinander kombiniert werden. So kann z.B. mithilfe von Sprachbefehlen zwischen unterschiedlichen Interaktionsmodi umgeschalten werden. Dadurch können unterschiedliche Interaktionen wie Skalieren und Rotieren mit der gleichen Geste durchgeführt werden.
+Da die Interaktion mit Gesten auf Dauer für die Arme ermüdend sein kann, bietet sich an, die Spracherkennung zur Unterstützung der Gestensteuerung zu verwenden. Beide Eingabemethoden können auch gut miteinander kombiniert werden. So kann z.\,B. mithilfe von Sprachbefehlen zwischen unterschiedlichen Interaktionsmodi umgeschalten werden. Dadurch können unterschiedliche Interaktionen wie Skalieren und Rotieren mit der gleichen Geste durchgeführt werden.
 
 \subsubsection*{Controller}
 Die vierte Möglichkeit der Interaktion mit HMD-Devices sind Controller. Die meisten VR-Headsets sind nur mit solchen Controllern zu bedienen. In der aktuellen Version unterstütz die HoloLens jedoch kein Controller. Bei anderen Windows Mixed Reality Geräten wie die \textit{Immersive} Headsets von Acer und HP\footnote{\url{https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_hardware_details}} kann mit den \textit{Motion} Controllern, ähnlich wie bei Gaming Konsolen, mit verschiedenen Tasten unterschiedliche Eingaben tätigen. Bei der HoloLens steht lediglich der \textit{Clicker} zur Verfügung, ein kleines Bluetooth-Gerät, dass durch physisches Klicken den Air-tap ersetzen kann. Bei Dauerhafter Eingabe von Air-tap-Gesten ist der Einsatz vom Clicker angenehm, da man die Hand nicht im Sichtfeld der HoloLens halten muss.
@@ -1240,27 +1272,27 @@ Es kann auch mit zusätzlichen Objekten gearbeitet werden, die dem Nutzer darauf
 
 \subsubsection*{UI von anderen Objekten verdeckt}
 
-Ein Problem, das in vielen HoloLens-Applikationen auftritt, ist dass UI Elemente von anderen Hologrammen, die näher am Nutzer positioniert sind, verdeckt werden können.
+Ein Problem, das in vielen HoloLens-Applikationen auftritt, ist dass UI-Elemente von anderen Hologrammen, die näher am Nutzer positioniert sind, verdeckt werden können.
 
 Das Problem ist in Abbildung \ref{fig:occlusion} illustriert. Darin wird in CodeLeaves das Menu zu Interaktion mit dem Wald der "`Move"'-Button von einem Stamm verdeckt.
 
 \begin{figure}[htb]
   \includegraphics[width=.6\textwidth]{\figdir/occlusion}
-  \caption{Verdeckung eines Buttons}
+  \caption{Verdeckung von UI-Elementen}
   \label{fig:occlusion}
 \end{figure}
 
-Analog zum 2D Popups ist es natürlich möglich UI Elemente vor allen anderen Elementen zu platzieren. In 3D bedeutet das, dass das UI Element vor dem Hologramm erscheinen muss, dass sich am nächsten am Nutzer befindet. Die UI Elemente würde dadurch vom eigentlichen interagierten Objekt losgelöst werden, was eine wenig intuitive Interaktion darstellt. Dies kann aber zu Folge haben, dass der Nutzer irritiert wird, weil er mit etwas weiter weg interagiert und die UI deutlich weiter vorne erscheinen kann.
+Analog zum 2D Popups ist es natürlich möglich UI-Elemente vor allen anderen Elementen zu platzieren. In 3D bedeutet das, dass das UI-Element vor dem Hologramm erscheinen muss, dass sich am nächsten am Nutzer befindet. Die UI-Elemente würde dadurch vom eigentlichen interagierten Objekt losgelöst werden, was eine wenig intuitive Interaktion darstellt. Dies kann aber zu Folge haben, dass der Nutzer irritiert wird, weil er mit etwas weiter weg interagiert und die UI deutlich weiter vorne erscheinen kann.
 
-Eine Abhilfe kann ein \textit{Shine-through}-Effekt schaffen, wie er bei HoloStudio Verwendung findet. Dabei bleiben UI Elemente an dem Hologramm angeheftet, mit dem interagiert wird, jedoch scheinen sie durch davor liegende Hologramme durch.
+Eine Abhilfe kann ein \textit{Shine-through}-Effekt schaffen, wie er bei HoloStudio Verwendung findet. Dabei bleiben UI-Elemente an dem Hologramm angeheftet, mit dem interagiert wird, jedoch scheinen sie durch davor liegende Hologramme durch.
 
 \begin{figure}[htb]
   \includegraphics[width=.6\textwidth]{\figdir/shine-through}
-  \caption{Shine-through-Effect von UI Elementen in HoloStudio \cite{windows2017casestudy3}}
+  \caption{Shine-through-Effect von UI-Elementen in HoloStudio \cite{windows2017casestudy3}}
   \label{fig:shine-through}
 \end{figure}
 
-Diese Methode funktioniert jedoch schlecht, wenn die UI Elemente Texte sind und von davor liegenden Texten verdeckt werden. Dadurch werden beide Texte unleserlich. Dieses Problem tritt z.B. zwangsläufig bei der Beschriftung von Blättern in CodeLeaves auf und lässt sich nur vermeiden, indem einer der beiden Texte verschwindet oder zumindest verblasst.
+Diese Methode funktioniert jedoch schlecht, wenn die UI-Elemente Texte sind und von davor liegenden Texten verdeckt werden. Dadurch werden beide Texte unleserlich. Dieses Problem tritt z.\,B. zwangsläufig bei der Beschriftung von Blättern in CodeLeaves auf und lässt sich nur vermeiden, indem einer der beiden Texte verschwindet oder zumindest verblasst.
 
 Die betrachteten Herausforderungen von 3D Interaktion und deren mögliche Lösungsansätze finden sich im Interaktionskonzept von CodeLeaves wieder und werden in Abschnitt \ref{sec:interaction} aufgegriffen.
 
@@ -1287,7 +1319,7 @@ Diese Interaktion ist in Abbildung \ref{fig:leaf-interaction} veranschaulicht.
   	\includegraphics[width=\textwidth]{figures/leaf-clicked}
   	\subcaption{Angeklicktes Blatt} \label{fig:leaf-clicked}
   \end{subfigure}
-  \caption{Anzeige des Klassennamens durch Klick auf ein Blatt} \label{fig:leaf-interaction}
+  \caption{Beispielhafte Interaktion mit einem Blatt} \label{fig:leaf-interaction}
 \end{figure}
 
 Bei der Generierung des Baumes wird zu jedem Blatt ein Label hinzugefügt, in dem der Klassenname gespeichert werden kann. Das Anzeigen Namens ist demnach kein Problem und würde wie folgt funktionieren:
@@ -1326,7 +1358,7 @@ Betrachten wir in Abbildung \ref{fig:label-stream} konkret das Beispiel den Text
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/label-stream}
-  \caption{Datenstrom des Labels}
+  \caption{Datenstrom eines Labels für reaktive Programmierung}
   \label{fig:label-stream}
 \end{figure}
 
@@ -1336,7 +1368,7 @@ Bei der Generierung des Baumes muss dann lediglich der Label-Wert observiert und
 
 \subsubsection*{Verwendung in Unity}
 
-In Unity steht für reaktive Programmierung das Open-Source-Projekt \textit{UniRx}\footnote{\url{https://github.com/neuecc/UniRx}} zur Verfügung, das die Funktionalität der reaktiven .NET Library \textit{Rx} für Unity zugänglich macht. UniRx implementiert z.B. \textit{ReactiveProperties}, mit denen eine einfache Verwendung des Observer-Pattern möglich ist. Darüber hinaus bietet die API hilfreiche Stream-Funktionen wie filter, map, merge oder join.
+In Unity steht für reaktive Programmierung das Open-Source-Projekt \textit{UniRx}\footnote{\url{https://github.com/neuecc/UniRx}} zur Verfügung, das die Funktionalität der reaktiven .NET Library \textit{Rx} für Unity zugänglich macht. UniRx implementiert z.\,B. \textit{ReactiveProperties}, mit denen eine einfache Verwendung des Observer-Pattern möglich ist. Darüber hinaus bietet die API hilfreiche Stream-Funktionen wie filter, map, merge oder join.
 
 In unserem Beispiel von oben wird der Text eines Blattes des UI-Models zu einer ReactiveProperty und bei jeder Änderung wird der Text des Labels angepasst. Auch das aktivieren des Labels wird über eine ReactiveProperty realisiert. So ist zum Beispiel das deaktivieren von allen Labels gleichzeitig leicht möglich.
 
@@ -1370,7 +1402,7 @@ Im \textit{NodeInputHandler} wird nun nicht mehr direkt auf die UI zugegriffen, 
 \chapter{Interaktion mit CodeLeaves}
 \label{ch:interaction}
 
-CodeLeaves kann ohne Interaktion die Struktur einer Software, eine Metrik und Verbindungen zwischen Softwareartefakten darstellen. Damit kann bereits einen Überblick über die Software geschaffen werden. Der wirklichen Mehrwert von CodeLeaves wird aber erst erreicht, wenn mit dem Software-Wald interagiert wird. Die intuitive Bedienung von CodeLeaves ist demnach essentiell für eine gute User Experience und damit ein tieferes Verständnis der visualisierten Informationen.
+CodeLeaves kann ohne Interaktion die Struktur einer Software, eine Metrik und Verbindungen zwischen Klassen darstellen. Damit kann bereits einen Überblick über die Software geschaffen werden. Der wirklichen Mehrwert von CodeLeaves wird aber erst erreicht, wenn mit dem Software-Wald interagiert wird. Die intuitive Bedienung von CodeLeaves ist demnach essentiell für eine gute User Experience und damit ein tieferes Verständnis der visualisierten Informationen.
 
 In diesem Kapitel wird deswegen ein Konzept entwickelt, mit dem es möglich ist alle Informationen zugänglich zu machen, die CodeLeaves zur Verfügung stellen kann. Es besteht jedoch kein Anspruch auf vollständiges Interaction Design nach \cite{goodwin2011designing} oder \cite{cooper2014face}. Vielmehr soll im Zuge dieser Arbeit Prototyping betrieben werden, durch das CodeLeaves bedienbar ist und der Mehrwert von CodeLeaves beurteilt werden kann. Dennoch werden 
 
@@ -1385,7 +1417,7 @@ Grundlegend muss der gesamte Wald einige \textit{Basisinteraktionen} unterstütz
   \item Rotieren
 \end{itemize}
 
-Das Platzieren ist von Anfang an notwendig um den Wald im Raum dahin zu setzten, wo es für den Nutzer am meisten Sinn macht. Bequemerweise kann das z.B. auf einem Tisch sein, oder wenn ein solcher nicht zur Verfügung steht auch auf dem Fußboden. Wenig hilfreich wäre es aber wenn er über dem Benutzer schwebt.
+Das Platzieren ist von Anfang an notwendig um den Wald im Raum dahin zu setzten, wo es für den Nutzer am meisten Sinn macht. Bequemerweise kann das z.\,B. auf einem Tisch sein, oder wenn ein solcher nicht zur Verfügung steht auch auf dem Fußboden. Wenig hilfreich wäre es aber wenn er über dem Benutzer schwebt.
 
 Das Skalieren ist auch unterlässlich. Gerade bei großen Systemen kann auch der Wald sehr groß werden. Daher muss die Größe des Waldes auf die Gegebenheiten der Räumlichkeiten angepasst werden können.
 
@@ -1397,7 +1429,7 @@ Das Repository "`Mixed Reality Design Labs"' bietet für genau diese Interaktion
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/bounding-box}
-  \caption{Bounding Box zum Platzieren, Skalieren und Rotieren von Objekten \cite{microsoft2017mixed}}
+  \caption{Bounding Box als Option für die Basisinteraktionen \cite{microsoft2017mixed}}
   \label{fig:bounding-box}
 \end{figure}
 
@@ -1447,7 +1479,7 @@ Das Kontextmenü für den Waldboden im Prototypen ist in Abbildung \ref{fig:cont
   	\includegraphics[height=2.5cm]{figures/context-menu-side}
   	\subcaption{Kontextmenü von der Seite} \label{fig:context-menu-side}
   \end{subfigure}
-  \caption{Kontextmenü des Waldbodens im HoloLens Prototyp} \label{fig:context-menu}
+  \caption{Kontextmenü für den Waldboden im High-Fi Prototyp} \label{fig:context-menu}
 \end{figure}
 
 In Abbildung \ref{fig:context-menu-side} ist zu erkennen, dass der fokussierte Button räumlich hervorgehoben ist. Dies ist eine vor der Augmented Reality noch nicht dagewesene Möglichkeit dem Nutzer Feedback zu geben. Angenommen $\vv{g}$ ist der Normalvektor der Blickrichtung des Nutzers, dann wird ein Button beim Fokussieren um $-\vv{g} \cdot x$ transformiert, wobei $x$ ein beliebiger Faktor ist. Bei der Ausführung der Air-tap-Geste wird beim Schließen der Finger der Button um $\vv{g} \cdot x$ transformiert, sodass er wieder in seine Ausgangsposition gelangt. Sobald der Nutzer mit dem Öffnen der Finger den Air-tap beendet, wird der Button wieder um $-\vv{g} \cdot x$ transformiert. Verlässt der Fokus den Button, wird er ebenfalls wieder in seine Ausgangsposition versetzt.
@@ -1486,7 +1518,7 @@ Für dieses Menü wurde sich an herkömmlichen Fenstern orientiert, wie sie bei 
 
 \subsubsection*{Positionierung}
 
-Initial dient das App-Menü dazu ein Projekt auszuwählen bzw. eines von einer unterstützen Datenquelle auszuwählen. Deshalb sollte das Menü nach dem Start der App in jedem Fall im Fokus des Nutzers platzieret werden, sodass der Nutzer sofort mit CodeLeaves arbeiten kann. Dies kann mit dem in Abschnitt \ref{sec:interaction-hololens} vorgestellten Tag-along-Effekt bewerkstelligt werden. Für den initialen Zustand ist der Tag-along-Effekt des App-Menüs als nicht störend zu bewerten, da der Nutzer in jedem Fall mit dem Menü interagieren möchte und noch keine andren Inhalte vorhanden sind, die das Menü verdecken würde.
+Initial dient das App-Menü dazu ein Projekt auszuwählen bzw.\ eines von einer unterstützen Datenquelle auszuwählen. Deshalb sollte das Menü nach dem Start der App in jedem Fall im Fokus des Nutzers platzieret werden, sodass der Nutzer sofort mit CodeLeaves arbeiten kann. Dies kann mit dem in Abschnitt \ref{sec:interaction-hololens} vorgestellten Tag-along-Effekt bewerkstelligt werden. Für den initialen Zustand ist der Tag-along-Effekt des App-Menüs als nicht störend zu bewerten, da der Nutzer in jedem Fall mit dem Menü interagieren möchte und noch keine andren Inhalte vorhanden sind, die das Menü verdecken würde.
 
 Nach der Auswahl eines Projekts muss der Tag-along-Effekt aber als störend empfunden werden, da er das Menü im Vordergrund hält und die Sicht auf den Wald versperrt. Das Fenster des App-Menüs muss demnach die Möglichkeit unterstützen stationär im Raum platziert zu werden oder ganz geschlossen zu werden.
 
@@ -1515,7 +1547,7 @@ Für die produktive Einsetzung von CodeLeaves ist ein Import von neuen Projekten
   	\includegraphics[width=.8\textwidth]{figures/title-bar}
   	\subcaption{Titelleiste mit deaktivierem Tag-along} \label{fig:title-bar}
   \end{subfigure}
-  \caption{High-Fi Prototyp des App-Menüs} \label{fig:app-menu}
+  \caption{High-Fi Prototyp der Projektauswahl im App-Menüs} \label{fig:app-menu}
 \end{figure}
 
 Bei den hier vorgestellten Low-Fi Prototyp Darstellungen besteht kein Anspruch auf Vollständigkeit. Vielmehr müsste der Low-Fi Prototyp eine Evaluations-Phase mit Probanden durchlaufen, um diesen zu Bewerten und bei Bedarf zu überarbeiten. Auf diese Phase wird im Rahmen dieser Arbeit jedoch verzichtet, da es vor allem um das Design neuer Konzepte in der AR und das Grobkonzept gehen soll.
@@ -1528,7 +1560,7 @@ Bei der Projektauswahl hat der Nutzer die Wahl zwischen zwei Haupt-Tasks: Der Au
   \label{fig:project-selection-mockup}
 \end{figure}
 
-Ist ein Projekt ausgewählt bzw. importiert, wird der Wald nach dem Layout generiert, das in Kapitel \ref{ch:layout} erarbeitet wurde. Danach wird dem Nutzer die Möglichkeit geboten, den Wald so anzupassen, dass er genau die Informationen zeigt, die der Nutzer sucht.
+Ist ein Projekt ausgewählt bzw.\ importiert, wird der Wald nach dem Layout generiert, das in Kapitel \ref{ch:layout} erarbeitet wurde. Danach wird dem Nutzer die Möglichkeit geboten, den Wald so anzupassen, dass er genau die Informationen zeigt, die der Nutzer sucht.
 
 \subsubsection*{Einstellungen}
 
@@ -1557,7 +1589,7 @@ Zum einen hat er die Möglichkeit den verfügbaren Eingabemöglichkeiten eine Ak
 Zum anderen ist in den "`Advanced Settings"' die Einstellung "`Display circles at"' zu finden, die durch das Prototyping des High-Fi Prototyp entstanden ist.
 
 \subsubsection*{Umschließende Kreise zur erleichterten Bedienung}
-Die Kreise, die zur Visualisierung des Circle-Packings im Abbildung \ref{fig:circle-packing} dargestellt sind, haben sich auch für die Interaktion als überaus hilfreich erwiesen. CodeLeaves hat auf der HoloLens mit folgendem Problem umzugehen:
+Die Kreise, die zur Visualisierung des Circle-packings im Abbildung \ref{fig:Circle-packing} dargestellt sind, haben sich auch für die Interaktion als überaus hilfreich erwiesen. CodeLeaves hat auf der HoloLens mit folgendem Problem umzugehen:
 
 \begin{quote}
   \textit{Je kleiner der Wald skaliert wird, desto schwieriger wird die Interaktion mit einzelnen Blättern oder Kanten.}
@@ -1612,7 +1644,7 @@ In der Tabelle \ref{tab:actions} können alle verfügbaren Aktionen betrachtet w
 \begin{tabularx}{\textwidth}{lm{1cm}L*{3}{C{2cm}}}
   \caption{Mögliche Aktionen und deren Erreichbarkeit}\label{tab:actions} \\
   \tableheader{6}{\textbf{ID} & \multicolumn{2}{l}{\textbf{Aktion}} & \textbf{Blatt} & \textbf{innerer Knoten} & \textbf{Wurzel}}
-   1 & \icon{info} & Name der Klasse, des Pakets bzw.
+   1 & \icon{info} & Name der Klasse, des Pakets bzw.\
            der verbundenen Pakete anzeigen (Akz. \ref{acc:u-identify})& Fokus        & Fokus         & Fokus        \\
    2 & \icon{context-menu} & Kontextmenü aufrufen                     & Tap-and-hold & Tap-and-hold  & Tap-and-hold \\
    3 & \icon{metric} & Wert der aktuellen Metrik anzeigen
@@ -1667,7 +1699,7 @@ Führt der Nutzer ein Air-tap auf eine Kante mit bereits hervorgehobener Verbind
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{figures/root-interaction}
-  \caption{Darstellung der Anzahl, Richtung und Hervorhebung der aggregierten Verbindungen einer Wurzel}
+  \caption{Hervorhebung und Anzeige der Anzahl und Richtung von einzelnen Verbindungen einer Wurzel}
   \label{fig:root-interaction}
 \end{figure}
 
@@ -1720,7 +1752,7 @@ Im Zuge dieser Arbeit wurde ein High-Fi Prototyp für die HoloLens entwickelt. P
 
 Die verwendeten Algorithmen und die dafür nötige Mathematik wird in \ref{ch:layout} beschrieben. Es wird gezeigt wie sich Verhalten in der Natur mit Fibonacci-Zahlen und dem Goldenen Schnitt auf die Bäume von CodeLeaves übertragen lassen. Mit dem Sonnenblumen-Algorithmus werden Blätter eines Elternteils gleichmäßig auf einer Kreisfläche verteilt, sodass sie den gleichen Abstand zueinander haben.
 
-Durch hierarchisches Circle-Packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
+Durch hierarchisches Circle-packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
 
 Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde zudem praxisnah erläutert, wie Interaktionen in Unity sinnvoll umgesetzt werden.
 
@@ -1738,7 +1770,7 @@ Für dynamische Daten lässt sich zum Beispiel das Software-EKG der QAware verwe
 
 \paragraph{Umsetzung der Aggregation}
 
-Liegen ausreichend Daten für die aggregierte Verbindungen in Form des Software Meta-Modells vor, müssen die Anzahl der Einzelverbindungen auf die Dicke der Kanten und Wurzeln übertragen werden. Die Erweiterung des Prototypen für Unterstützung dieser Funktionalität ist gering, da der Prototyp bereits unterschiedliche Dicken von Kanten und Wurzeln generieren kann.
+Liegen ausreichend Daten für die aggregierte Verbindungen in Form des Software-Meta-Modells vor, müssen die Anzahl der Einzelverbindungen auf die Dicke der Kanten und Wurzeln übertragen werden. Die Erweiterung des Prototypen für Unterstützung dieser Funktionalität ist gering, da der Prototyp bereits unterschiedliche Dicken von Kanten und Wurzeln generieren kann.
 
 \paragraph{Evaluierung des Interaktionskonzepts}
 

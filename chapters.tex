@@ -16,7 +16,7 @@ Diese Arbeit wird sich mit einer Anwendung der AR beschäftigen -- der Softwarev
 
 \paragraph{VR} ist eine Umgebung, in der der Betrachter vollkommen von einer computergenerierten Welt umgeben ist, die oft die reale Welt imitiert, aber auch rein fiktiv sein kann \cite{milgram1995augmented}.\\
 
-Obwohl der Begriff AR zunehmend in der Industrie Verwendung findet, entbehrt er doch einer einheitlichen Definition. In \cite{azuma1997survey} wird AR als \emph{"`Variation"'} von VR betrachtet. Dagegen vermittelt Milgrim in \cite{milgram1995augmented} ein vollständigeres Verständnis, weshalb sich die Begrifflichkeiten in dieser Arbeit daran anlehnen sollen. Nach Milgrim existieren die beiden entgegengesetzten Extreme der Realität und der Virtualität. Alles dazwischen ist die sogenannte \emph{Mixed Reality (MR)}.
+Obwohl der Begriff AR zunehmend in der Industrie Verwendung findet, entbehrt er doch einer einheitlichen Definition. In \cite{azuma1997survey} wird AR als \emph{"`Variation"'} von VR betrachtet. Dagegen vermittelt P.\ Milgrim in \cite{milgram1995augmented} ein vollständigeres Verständnis, weshalb sich die Begrifflichkeiten in dieser Arbeit daran anlehnen sollen. Nach Milgrim existieren die beiden entgegengesetzten Extreme der Realität und der Virtualität. Alles dazwischen ist die sogenannte \emph{Mixed Reality (MR)}.
 
 \paragraph{MR} ist eine Umgebung, in der Elemente der realen und einer virtuellen Welt zusammen dargestellt werden \cite{kato1999marker}.\\
 
@@ -77,7 +77,7 @@ Mit diesem Datenmodell kann der Wald für CodeLeaves generiert werden, was Thema
 
 Kapitel \ref{ch:interaction-ar} behandelt Grundlagen der Interaktion in der AR, die bei der Interaktion mit CodeLeaves Anwendung finden. Es wird auch beschrieben wie mit reaktiver Programmierung die Interaktion technisch sinnvoll umgesetzt werden kann.
 
-Die Interaktion mit CodeLeaves ist Thema des Kapitels \ref{ch:interaction}. Es wird gezeigt wie CodeLeaves mit den zur Verfügung stehenden Eigabemöglichkeiten bis ins Detail exploriert werden kann.
+Die Interaktion mit CodeLeaves ist Thema des Kapitels \ref{ch:interaction}. Es wird gezeigt wie CodeLeaves mit den zur Verfügung stehenden Eingabemöglichkeiten bis ins Detail exploriert werden kann.
 
 Das Kapitel \ref{ch:conclusion} fasst die Ergebnisse der Arbeit zusammen und ein Ausblick auf weiterführende Arbeiten runden die Arbeit ab.
 
@@ -183,7 +183,7 @@ Da sich aber nicht alle Begriffe der Datenstruktur auf die Elemente von CodeLeav
 \begin{itemize}
   \item Ein \textit{Baum} (engl.: \textit{tree}) besteht aus einer Menge von \textit{Knoten}, die so durch \textit{Kanten} so verbunden sind, dass keine Kreise auftreten (Abgewandelt aus \cite{gumm2009einfuehrung, ernst2016grundkurs}).
   \item Ein \textit{Knoten} beinhaltet Informationen zu sich selbst und hat $0$ bis $n$ \textit{Kinder} (engl.: \textit{childs}).
-  \item Ein Knoten mit keinen Kindern wird als \textit{Blatt} (engl.: \textit{leaf}) bezeichnet. Alle anderen Knoten heißen \textit{innere Knoten} (engl.: \textit{innerNode}) \cite{gumm2009einfuehrung}.
+  \item Ein Knoten mit keinen Kindern wird als \textit{Blatt} (engl.: \textit{leaf}) bezeichnet. Alle anderen Knoten heißen \textit{innere Knoten} (engl.: \textit{inner nodes}) \cite{gumm2009einfuehrung}.
   \item Kinder des selben Knotens werden \textit{Geschwister} (engl.: \textit{siblings}) genannt.
   \item Alle Kinder und Kindeskinder eines Knoten werden \textit{Nachfahren} (engl.: \textit{descendants}) des Knotens genannt.
 \end{itemize}
@@ -269,7 +269,7 @@ In Abbildung \ref{fig:survey} ist zu sehen, wie oft welche Informationen genannt
 
 \paragraph{Statik} sind die Informationen, die ohne die Ausführung der Software generiert werden können \cite{diehl2007software}. Als Metriken wurden Lines-of-Code (LOC), Komplexität, Testabdeckung und Code-Violations genannt. Letzteres sind Verletzungen von vereinbarten \emph{Code-Conventions}. Komplizierter zu visualisieren sind Struktur einer Software und Abhängigkeiten darin. Aus Abbildung \ref{fig:survey} geht hervor, dass diese Informationen gleichzeitig am meisten von Interesse sind.
 
-\paragraph{Dynamik} beschreibt die Informationen, die zur Laufzeit einer Software generiert werden können \cite{diehl2007software}. Besonders oft wurden Ausführungszeiten und Anzahl von Aufrufen genannt. Mit der Kombination aus beiden Informationen können \emph{Bottlenecks} identifiziert werden. Auch die Visualisierung der Laufzeitfehler einer fehlerhaften Software ist für deren Analyse von Vorteil. Die Resourcen-Auslastung ist dabei ebenfalls hilfreich, wirkt sich jedoch wenig auf das 3D Modell der Softwarevisualisierung aus, da diese Informationen parallel zur eigentlichen Software existieren.
+\paragraph{Dynamik} beschreibt die Informationen, die zur Laufzeit einer Software generiert werden können \cite{diehl2007software}. Besonders oft wurden Ausführungszeiten und Anzahl von Aufrufen genannt. Mit der Kombination aus beiden Informationen können \emph{Bottlenecks} identifiziert werden. Auch die Visualisierung der Laufzeitfehler einer fehlerhaften Software ist für deren Analyse von Vorteil. Die Ressourcen-Auslastung ist dabei ebenfalls hilfreich, wirkt sich jedoch wenig auf das 3D Modell der Softwarevisualisierung aus, da diese Informationen parallel zur eigentlichen Software existieren.
 
 \paragraph{Evolution} beschreibt den zeitlichen Verlauf einer Software und stellt den Entwicklungsprozess in den Vordergrund \cite{diehl2007software}. Beispielsweise kann die Entwicklung statischer Metriken verfolgt werden.
 
@@ -291,7 +291,7 @@ Bei dem Kriterium Drilldown wurde bewertet, wie gut eine Visualisierung ihre Inf
 Bei der technischen Machbarkeit wurde berücksichtigt, ob eine existierende Softwarevisualisierung für die HoloLens verwendbar ist. In Abbildung \ref{fig:alternatives} sind die untersuchten Alternativen abgebildet, darunter auch ein erster Entwurf von CodeLeaves.
 
 \subsubsection*{CodeCity}
-2007 stellten Wettel et al. \textit{CodeCity} vor, die mithilfe der \textit{Stadt-Metapher} dreidimensionale Städte visualisiert. Darin werden Klassen als Gebäude und Pakete als Stadtviertel dargestellt \cite{wettel2007program, wettel2008visual, wettel2011software}. Für die Breite und Tiefe der Gebäude wurde für die Anzahl der Attribute (engl. \emph{number of attributes (NOA)}) und für die Höhe die Anzahl der Methoden (engl. \emph{number of methods (NOM)}) einer Klasse gewählt.
+2007 stellten R.\ Wettel et al. \textit{CodeCity} vor, die mithilfe der \textit{Stadt-Metapher} dreidimensionale Städte visualisiert. Darin werden Klassen als Gebäude und Pakete als Stadtviertel dargestellt \cite{wettel2007program, wettel2008visual, wettel2011software}. Für die Breite und Tiefe der Gebäude wurde für die Anzahl der Attribute (engl. \emph{number of attributes (NOA)}) und für die Höhe die Anzahl der Methoden (engl. \emph{number of methods (NOM)}) einer Klasse gewählt.
 
 Die CodeCity ist als Konzept sehr durchdacht, bietet durch die Metapher gute Habitability und unterstützt die Darstellung der Evolution. Auch soll nach Wettel et al. die CodeCity die Analyse von Software im Vergleich zu herkömmlichen Analyse-Werkzeugen signifikant verbessern \cite{wettel2011software}.
 
@@ -342,11 +342,11 @@ Die betrachteten Alternativen und andere haben gemein, dass sie Struktur, Dynami
 \section{Anforderungen an CodeLeaves}
 \label{sec:requirements}
 
-Die Umfrage, die in Abschnitt \ref{sec:comparison} vorgestellt wurde, ergab einen gutes Stimmungsbarometer über die Wünsche im Bezug auf zu visualisierend Informationen. In diesem Abschnitt soll genauer auf die Anforderungen an einen Code-Leaves eingegangen werden. Dazu wurde das Konzept von CodeLeaves zwei Experten der Softwareanalyse vorgestellt und befragt was sie von CodeLeaves erwarten würden. Durch die Expertengespräche werden User-Storys gesammelt und Akzeptanzkriterien abgeleitet.
+Die Umfrage, die in Abschnitt \ref{sec:comparison} vorgestellt wurde, ergab einen gutes Stimmungsbarometer über die Wünsche im Bezug auf zu visualisierend Informationen. In diesem Abschnitt soll genauer auf die Anforderungen an einen CodeLeaves eingegangen werden. Dazu wurde das Konzept von CodeLeaves zwei Experten der Softwareanalyse vorgestellt und befragt was sie von CodeLeaves erwarten würden. Durch die Expertengespräche werden User-Storys gesammelt und Akzeptanzkriterien abgeleitet.
 
-Aus der dynamischen Analyse wurde der promovierende Performance-Analyst F. Lautenschlager interviewed. Dieser hat im Zuge seiner Dissertation eine hochperformante Zeitreihendatenbank zur Speicherung und Auswertung von dynamischen Daten einer Software erarbeitet. Er ist führend auf diesem Gebiet und ist unter anderem als Sprecher auf internationalen Konferenzen geladen.
+Aus der dynamischen Analyse wurde der promovierende Performance-Analyst F.\ Lautenschlager interviewt. Dieser hat im Zuge seiner Dissertation eine hochperformante Zeitreihendatenbank zur Speicherung und Auswertung von dynamischen Daten einer Software erarbeitet. Er ist führend auf diesem Gebiet und ist unter anderem als Sprecher auf internationalen Konferenzen geladen.
 
-Als Experte der statischen Analyse wurde J. Weigend interviewed. Dieser ist "`Chefarchitekt, Geschäftsführer und Mitgründer der QAware. Er studierte Informatik mit Schwerpunkt \enquote*{Verteilte Systeme} an der Hochschule Rosenheim und hält dort seit 2001 Vorlesungen."' \cite{qaware2017johannes}
+Als Experte der statischen Analyse wurde J.\ Weigend interviewt. Dieser ist "`Chefarchitekt, Geschäftsführer und Mitgründer der QAware. Er studierte Informatik mit Schwerpunkt \enquote*{Verteilte Systeme} an der Hochschule Rosenheim und hält dort seit 2001 Vorlesungen."' \cite{qaware2017johannes}
 
 Die Expertengespräche werden unter Anwendung der Methoden aus \cite{cohn2004user} in User-Storys 1 - 5 zusammengefasst. Tabellen \ref{tab:acceptance1} -- \ref{tab:acceptance5} beinhalten die abgeleiteten Akzeptanzkriterien.
 
@@ -371,7 +371,7 @@ Die Blätter in CodeLeaves ermöglichen eine hervorragende Umsetzungsmöglichkei
 Für diese User-Story ist es besonders wichtig ein Layout für den Wald zu entwickeln, dass die Blätter so verteilt, dass sie sich so wenig wie möglich überlappen. Dieser Ansatz fließt in Kapitel \ref{ch:layout} mit ein.
 
 \begin{userstory}[u:structure]{Kopplung und Struktur (Statik)}
-  Als \textit{Softwarearchiteckt}\\
+  Als \textit{Softwarearchitekt}\\
   möchte ich \textit{die Kopplung und Struktur einer großen Software überblicken können},\\
   um \textit{die Zusammenhänge zu verstehen}.
 \end{userstory}
@@ -415,7 +415,7 @@ User-Story \ref{u:interaction} ist mit der AR sehr gut umsetzbar. Durch die AR i
 
 \begin{userstory}[u:dynamic]{Dynamische Daten}
   Als \textit{Performance-Analyst}\\
-  möchte ich \textit{Funktionsaufrufe, deren Antwortzeiten, Laufzeitfehler und Resourcen-Auslastung visualisiert haben},\\
+  möchte ich \textit{Funktionsaufrufe, deren Antwortzeiten, Laufzeitfehler und Ressourcen-Auslastung visualisiert haben},\\
   um \textit{das Laufzeitverhalten der Software in einem bestimmten Zeitraum explorativ bewerten zu können.}
 \end{userstory}
 
@@ -434,7 +434,7 @@ User-Story \ref{u:interaction} ist mit der AR sehr gut umsetzbar. Durch die AR i
     \accid{acc:d-add-info} & Ich kann zusätzliche Informationen über den Wald als Ganzes visualisieren.\\
 \end{tabularx}
 
-Durch User-Story \ref{u:dynamic} wird deutlich, dass sich viele gleiche Akzeptanzkriterien aus statischen und dynamischen User-Storys ableiten lassen. Daran ist zu erkennen wie sinnvoll es ist diese beiden Sichten miteinander zu kombinieren. Ob es sich um statische oder dynamische Daten handelt, spielt für die Visualisierung großteils keine Rolle. Es ändert sich lediglich der betrachtete Zeitpunkt bei statischen Daten zu einem Zeitraum für dynamische Daten. Die Resourcen-Auslastung sind zusätzliche Informationen, die den Wald als Ganzes betreffen und werden im Datenmodell berücksichtigt.
+Durch User-Story \ref{u:dynamic} wird deutlich, dass sich viele gleiche Akzeptanzkriterien aus statischen und dynamischen User-Storys ableiten lassen. Daran ist zu erkennen wie sinnvoll es ist diese beiden Sichten miteinander zu kombinieren. Ob es sich um statische oder dynamische Daten handelt, spielt für die Visualisierung großteils keine Rolle. Es ändert sich lediglich der betrachtete Zeitpunkt bei statischen Daten zu einem Zeitraum für dynamische Daten. Die Ressourcen-Auslastung sind zusätzliche Informationen, die den Wald als Ganzes betreffen und werden im Datenmodell berücksichtigt.
 
 \begin{userstory}[u:overview]{Zustand der Software (Dynamik)}
   Als \textit{Systemverantwortlicher}\\
@@ -765,7 +765,7 @@ Auf den \texttt{Circle} bzw.\ dem \textit{Kreis} eines Knotens, wird im Zuge des
 
 \section{Grundlegender Ansatz}
 
-CodeLeaves steht und fällt mit der korrekten und übersichtlichen Darstellung der Baumstruktur. Wegen Akzeptanzkriterien \ref{acc:s-overview} und \ref{acc:d-overview} ist die Struktur der Bäume so zu generieren, dass so viele Blätter wie möglich gleichzeitig im Blickfeld des Betrachters sind. Auf der anderen Seite gilt es wegen Akzeptanzkriteren \ref{acc:s-structure} und \ref{acc:d-overview} die Struktur übersichtlich und deswegen mit so wenig Überschneidungen wie möglich zu generieren. In Abschnitt \ref{sec:sunflower} und \ref{sec:Circle-packing} werden deshalb zwei Algorithmen vorgestellt, die zusammen eine solche Darstellung der Baumstruktur ermöglichen. 
+CodeLeaves steht und fällt mit der korrekten und übersichtlichen Darstellung der Baumstruktur. Wegen Akzeptanzkriterien \ref{acc:s-overview} und \ref{acc:d-overview} ist die Struktur der Bäume so zu generieren, dass so viele Blätter wie möglich gleichzeitig im Blickfeld des Betrachters sind. Auf der anderen Seite gilt es wegen Akzeptanzkriterien \ref{acc:s-structure} und \ref{acc:d-overview} die Struktur übersichtlich und deswegen mit so wenig Überschneidungen wie möglich zu generieren. In Abschnitt \ref{sec:sunflower} und \ref{sec:Circle-Packing} werden deshalb zwei Algorithmen vorgestellt, die zusammen eine solche Darstellung der Baumstruktur ermöglichen. 
 
 \subsubsection*{Prototypen}
 
@@ -810,7 +810,7 @@ Für die Generierung der Struktur im Prototyp wurde mit einem Beispielprojekt ge
 In Tabelle \ref{tab:air} sind hinsichtlich des entstehenden Waldes Eckdaten von Air angegeben.
 
 \begin{table}[htb]
-  \caption{Eckdaten des Beispielprojekts Air}\label{tab:air}
+  \caption{Eckdaten des Beispielprojektes Air}\label{tab:air}
   \begin{tabular}{*{4}{C{2cm}}}
     Bäume & Knoten & Blätter & innere Knoten\\
     \hline
@@ -837,14 +837,14 @@ Wie die Kinder eines Knotens sinnvoll verteilt und deren Kanten entsprechend rot
 Es stellt sich zunächst die Frage auf Grundlage welcher geometrischen Figur die Kinder verteilt werden. In Frage kommt eine Kugel und eine Kreisfläche.
 
 \subsubsection*{Verteilung von Kindern auf einer Kugel}
-Werden die Kinder gleichmäßig auf der Oberfläche einer Kugel verteilt, wird der 3D Raum maximal ausgenutzt. Das Ergebnis käme einem \textit{Fractal-tree} sehr nahe. Diese Bäume werden rekursiv durch die Neigung der Kanten konstruiert. Ein solcher Fractal-tree ist in Abbildung \ref{fig:fractal-tree} dargestellt. Das Konzept ließe sich ohne Schwierigkeiten auf die Dreidimensionalität übertragen. Das Problem dabei ist, dass bei diesem Ansatz die Kanten auch rekursiv verkürzt werden. Dadurch wird gewährleistet, dass die Äste nicht in den Boden wachsen.
+Werden die Kinder gleichmäßig auf der Oberfläche einer Kugel verteilt, wird der 3D Raum maximal ausgenutzt. Das Ergebnis käme einem \textit{Fractal-Tree} sehr nahe. Diese Bäume werden rekursiv durch die Neigung der Kanten konstruiert. Ein solcher Fractal-Tree ist in Abbildung \ref{fig:Fractal-Tree} dargestellt. Das Konzept ließe sich ohne Schwierigkeiten auf die Dreidimensionalität übertragen. Das Problem dabei ist, dass bei diesem Ansatz die Kanten auch rekursiv verkürzt werden. Dadurch wird gewährleistet, dass die Äste nicht in den Boden wachsen.
 
-Für CodeLeaves wären immer kleiner werdende Kanten wenig sinnvoll, da so eine Interaktion mit Kanten und Blättern kaum möglich wäre. Auch wären die Überschneidungen, die in Abbildung \ref{fig:fractal-tree} zu sehen sind, bei größeren Bäumen nur durch Neigung der Kanten nicht zu vermeiden.
+Für CodeLeaves wären immer kleiner werdende Kanten wenig sinnvoll, da so eine Interaktion mit Kanten und Blättern kaum möglich wäre. Auch wären die Überschneidungen, die in Abbildung \ref{fig:Fractal-Tree} zu sehen sind, bei größeren Bäumen nur durch Neigung der Kanten nicht zu vermeiden.
 
 \begin{figure}[htb]
-  \includegraphics[width=.5\textwidth]{figures/fractal-tree}
+  \includegraphics[width=.5\textwidth]{figures/Fractal-Tree}
   \caption{Fractal tree \cite{rocchini2017fractal}}
-  \label{fig:fractal-tree}
+  \label{fig:Fractal-Tree}
 \end{figure}
 
 \subsubsection*{Verteilung von Kindern auf einer Kreisfläche}
@@ -987,8 +987,8 @@ Das Ergebnis ist in Abbildung \ref{fig:sunflower-algorithm} zu sehen. Auf der li
   \caption{Sonnenblumen-Algorithmus zur Verteilung von Blättern} \label{fig:sunflower-algorithm}
 \end{figure}
 
-\section{Verteilung innerer Knoten mit Circle-packing}
-\label{sec:Circle-packing}
+\section{Verteilung innerer Knoten mit Circle-Packing}
+\label{sec:Circle-Packing}
 
 Die Verteilung mit dem Sonnenblumen-Algorithmus beruht auf der Tatsache, dass die Kinder des Knotens mit gleichmäßigem Abstand zueinander verteilt werden können. Dies ist bei inneren Knoten, die wiederum innere Knoten als Kinder besitzen, nicht gegeben. In diesem Fall muss die Breite der Kinder mit berücksichtigt werden, sodass die Äste der einzelnen Kinder nicht kollidieren.
 
@@ -1006,19 +1006,19 @@ Das Problem der Verteilung von inneren Knoten kann demnach auf jeder Ebene eines
 
 \textit{Es wird ein Algorithmus gesucht, der Kreise unterschiedlicher Größe auf möglichst kleinem Raum überschneidungsfrei positioniert.}\\
 
-Diese Aufgabenstellung wird vom sogenannten \textit{Circle-packing} gelöst.
+Diese Aufgabenstellung wird vom sogenannten \textit{Circle-Packing} gelöst.
 
-Dazu hat W.\ Wang in \cite{wang2006visualization} 2006 einen Algorithmus entworfen, der seitdem von vielen adaptiert worden ist. Zum Beispiel verwendet M.\ Bostock, der Schöpfer in der populären JavaScript Library \textit{d3.js} zur Datenvisualisierung, diesen Circle-packing-Algorithmus in d3.js \cite{bostock2017abetter}. In 3D wurde er jedoch noch nicht angewandt.
+Dazu hat W.\ Wang in \cite{wang2006visualization} 2006 einen Algorithmus entworfen, der seitdem von vielen adaptiert worden ist. Zum Beispiel verwendet M.\ Bostock, der Schöpfer in der populären JavaScript Library \textit{d3.js} zur Datenvisualisierung, diesen Circle-Packing-Algorithmus in d3.js \cite{bostock2017abetter}. In 3D wurde er jedoch noch nicht angewandt.
 
 Der Algorithmus muss noch an die Gegebenheiten von CodeLeaves angepasst werden. Bei Wang's Version startet der Algorithmus bereits mit drei tangentialen Kreisen. Der Mittelpunkt, um den zusätzliche Kreise positioniert werden, befindet sich zwischen den drei initialen Kreisen. Bei CodeLeaves sind aber nicht zwangsläufig bei jedem Knoten mindestens drei Kindknoten zu verteilen und als Mittelpunkt für die Verteilung der Kreise ist der Mittelpunkt des $0$-ten Kreises sinnvoll, da sich so immer eine Verlängerung des Stammes ergibt.
 
 Ist nur ein Knoten zu verteilen, wird der Mittelpunkt seines Kreises von oben gesehen (in der xz-Ebene) in den Ursprung gelegt. Der Kreis eines zweiten Knotens wird in einem zufälligen Winkel tangential zum Kreis des ersten Knotens positioniert. Bereits bei einem dritten Kreis kann Wangs's Algorithmus Anwendung finden.
 
-Es wird eine sogenannte \textit{Front-Chain} verwendet, eine zyklische Liste, die alle Kreise enthält, an die potentiell ein neuer Kreis angefügt werden könnte. Die Front-Chain ist in Abbildung \ref{fig:Circle-packing} als dickere Linie dargestellt. Bei der Positionierung des ersten bzw.\ des zweiten Kreises werden diese zur Front-Chain hinzugefügt.
+Es wird eine sogenannte \textit{Front-Chain} verwendet, eine zyklische Liste, die alle Kreise enthält, an die potentiell ein neuer Kreis angefügt werden könnte. Die Front-Chain ist in Abbildung \ref{fig:circle-packing} als dickere Linie dargestellt. Bei der Positionierung des ersten bzw.\ des zweiten Kreises werden diese zur Front-Chain hinzugefügt.
 
 Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\lbrace C_i \mid i = 0, 2 \cdots N \rbrace$ im Folgenden beschrieben:
 
-\subsubsection*{Abgewandelte Form von Wang's Circle-packing-Algorithmus (nach \cite{wang2006visualization})}
+\subsubsection*{Abgewandelte Form von Wang's Circle-Packing-Algorithmus (nach \cite{wang2006visualization})}
 
 \begin{enumerate}[(i), labelindent=0pt, align=left, itemsep=0pt, parsep=0pt, labelsep=.5em, leftmargin=!]
   \item Falls $i = 0$ setzte den Mittelpunkt von $C_0$ in den Ursprung und füge $C_0$ zur Front-Chain hinzu.
@@ -1044,10 +1044,10 @@ Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\
   	\subcaption{Anpassung der Front-Chain und erneutes Platzieren} \label{fig:update-frontchain}
   \end{subfigure}
   \caption{Wang's Circle Packing Algorithmus (nach \cite{bostock2017abetter})}
-  \label{fig:Circle-packing}
+  \label{fig:circle-packing}
 \end{figure}
 
-In Abbildung \ref{fig:Circle-packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-Chain entfernt (im Beispiel nur $C_m$) und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
+In Abbildung \ref{fig:Circle-Packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-Chain entfernt (im Beispiel nur $C_m$) und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
 
 Werden die Knoten vor der Durchführung des Algorithmus nach deren Radien sortiert, befindet sich der Knoten mit dem größten Kreis genau über dem Stamm und nach außen hin werden die Äste kleiner, was einem natürlichem Wuchs am nächsten kommt. Durch die zufällige Positionierung des $1$-ten Knotens, wächst der Baum nicht bei jedem Knoten "`in die gleiche Richtung"' was das natürliche Bild des Waldes ebenfalls fördert.
 
@@ -1092,11 +1092,11 @@ und $D_1$ lässt sich durch Umformen der Gleichung \ref{equ:h} mit
 
 darstellen.
 
-Mit diesen Gleichungen kann der Circle-packing-Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
+Mit diesen Gleichungen kann der Circle-Packing-Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
 
 \subsubsection*{Knoten mit gemischten Kindern}
 
-Für den Fall, dass ein Paket innere Knoten \textbf{und} Blätter enthält, kann der Circle-packing-Algorithmus ebenfalls angewandt werden. Dafür muss lediglich einem Blatt ein Radius zugewiesen werden. Mit der Verwendung der Konstante $c$ aus dem Sonnenblumen-Algorithmus als Radius, haben die Blätter bei beiden Verteilungs-Algorithmen den gleichen Abstand zueinander. Lediglich die Ausbreitung der Blätter um den Ursprung erfolgt weniger natürlich, als beim Sonnenblumen-Algorithmus.
+Für den Fall, dass ein Paket innere Knoten \textbf{und} Blätter enthält, kann der Circle-Packing-Algorithmus ebenfalls angewandt werden. Dafür muss lediglich einem Blatt ein Radius zugewiesen werden. Mit der Verwendung der Konstante $c$ aus dem Sonnenblumen-Algorithmus als Radius, haben die Blätter bei beiden Verteilungs-Algorithmen den gleichen Abstand zueinander. Lediglich die Ausbreitung der Blätter um den Ursprung erfolgt weniger natürlich, als beim Sonnenblumen-Algorithmus.
 
 \subsubsection*{Hierarchische Anwendung}
 
@@ -1104,18 +1104,18 @@ Für die Anwendung auf mehreren Ebenen ist nach der Verteilung von Kindern eines
 
 Der Kreis von Knoten $K$, mit Mittelpunkt an der Position von $K$, der alle Kreise der Kinder von $K$ umschließt und mindestens zu einem Kreis eines Kindes tangential ist, nennen wird den \textit{größten umschließenden Kreis}. Sein Radius ist der Abstand vom $0$-ten Kind zum $n$-ten Kind, zuzüglich des Radius des $n$-ten Kindes. Diese Methode ist nicht der \textit{kleinste umschließende Kreis}, reicht für die Generierung von überschneidungsfreien Bäume jedoch aus.
 
-Für die vollständige hierarchische Anwendung des Circle-packing wird für jeden Knoten das Circle-packing rekursiv durchgeführt und anschließend der Radius des eigenen Kreises gesetzt. Abbruchbedingung für die Rekursion ist, dass der Knoten ein Blatt oder ein innerer Knoten mit ausschließlich Blättern ist. In letzterem Fall greift der Sonnenblumen-Algorithmus.
+Für die vollständige hierarchische Anwendung des Circle-Packing wird für jeden Knoten das Circle-Packing rekursiv durchgeführt und anschließend der Radius des eigenen Kreises gesetzt. Abbruchbedingung für die Rekursion ist, dass der Knoten ein Blatt oder ein innerer Knoten mit ausschließlich Blättern ist. In letzterem Fall greift der Sonnenblumen-Algorithmus.
 
 Das heißt der Algorithmus fängt mit dem Knoten mit der maximalen Tiefe an und arbeitet sich über Geschwister und Elternteile bis hin zum Kronenansatz fort, bis alle Knoten eines Baumes verteilt sind.
 
 \subsubsection*{Verteilung von Bäumen}
 
 
-Nachdem die Kronenansätze Kreise besitzen, sind damit auch die Radien der ganzen Bäume bekannt. Damit können die Bäume prinzipiell beliebig platziert werden, ohne dass sich deren Äste überschneiden. Es wäre zum Beispiel eine Verteilung in einem Gitter möglich, was dann an eine Baumschule mit Baumreihen erinnern würde. Es ist jedoch auch ganz einfach möglich die Bäume ebenfalls mit Circle-packing anzuordnen. Damit entsteht ein runder Wald und die Bäume nehmen möglichst wenig Platz ein.
+Nachdem die Kronenansätze Kreise besitzen, sind damit auch die Radien der ganzen Bäume bekannt. Damit können die Bäume prinzipiell beliebig platziert werden, ohne dass sich deren Äste überschneiden. Es wäre zum Beispiel eine Verteilung in einem Gitter möglich, was dann an eine Baumschule mit Baumreihen erinnern würde. Es ist jedoch auch ganz einfach möglich die Bäume ebenfalls mit Circle-Packing anzuordnen. Damit entsteht ein runder Wald und die Bäume nehmen möglichst wenig Platz ein.
 
-Mit den beiden beschriebenen Algorithmen können Bäume garantiert überschneidungsfrei generiert und verteilt werden. Der damit generierte Wald des Projektes Air ist von der Seite in Abbildung \ref{fig:layout-side} und von oben in \ref{fig:layout-top} zu sehen. Die Kreise in Abbildung \ref{fig:layout-top} sind die Visualisierungen der durch das Circle-packing entstehenden Kreise. Aus der Vogelperspektive ist gut zu erkennen, wie die Blätter innerhalb ihrer Eltern mithilfe des Sonnenblumen-Algorithmus sehr gleichmäßig verteilt werden. Die Farben der Blätter werden in Abschnitt \ref{sec:data} aufgegriffen.
+Mit den beiden beschriebenen Algorithmen können Bäume garantiert überschneidungsfrei generiert und verteilt werden. Der damit generierte Wald des Projektes Air ist von der Seite in Abbildung \ref{fig:layout-side} und von oben in \ref{fig:layout-top} zu sehen. Die Kreise in Abbildung \ref{fig:layout-top} sind die Visualisierungen der durch das Circle-Packing entstehenden Kreise. Aus der Vogelperspektive ist gut zu erkennen, wie die Blätter innerhalb ihrer Eltern mithilfe des Sonnenblumen-Algorithmus sehr gleichmäßig verteilt werden. Die Farben der Blätter werden in Abschnitt \ref{sec:data} aufgegriffen.
 
-Auch das Circle-packing ist durch die Kreise gut zu sehen. Jedoch lässt sich feststellen, dass durch die Wahl des größten umschließenden Kreises Platz "verschenkt" wird. Besonders in der Mitte der Abbildung wird dies durch die große Fläche deutlich, in der keine weiteren Knoten platziert sind.
+Auch das Circle-Packing ist durch die Kreise gut zu sehen. Jedoch lässt sich feststellen, dass durch die Wahl des größten umschließenden Kreises Platz "verschenkt" wird. Besonders in der Mitte der Abbildung wird dies durch die große Fläche deutlich, in der keine weiteren Knoten platziert sind.
 
 Um das zu umgehen, müsste anstelle des größten umschließenden Kreises der kleinste umschließende Kreis verwendet werden. Dies ist ein weiteres mathematisches Problem und als Teil des \textit{Appollonius} Problem bekannt \cite{dergiades2007soddy}.
 
@@ -1131,15 +1131,15 @@ Für den Prototyp ist die Umsetzung des kleinsten umschließenden Kreises für C
   \par\bigskip
   \begin{subfigure}[t]{\textwidth}
     \centering
-  	\includegraphics[width=\textwidth]{figures/Circle-packing}
-  	\subcaption{Vogelperspektive mit visualisierten Circle-packing} \label{fig:layout-top}
+  	\includegraphics[width=\textwidth]{figures/Circle-Packing}
+  	\subcaption{Vogelperspektive mit visualisierten Circle-Packing} \label{fig:layout-top}
   \end{subfigure}
   \caption{Layout des Waldes} \label{fig:layout}
 \end{figure}
 
 \section{Verwendete Algorithmen in der Praxis}
 
-Für die Praxis in Unity ist bei der Verteilung der Bäume noch zu beachten, dass deren Radien erst verfügbar sind, nachdem der Circle-packing-Algorithmus für alle Bäume vollständig durchlaufen wurde. Das heißt, dass bei der Generierung der einzelnen Bäume noch nicht bekannt ist, an welcher Position die Bäume letztendlich gesetzt werden müssen und zunächst zum Beispiel an der gleichen Stelle generiert werden müssen. Das bedeutet wiederum, dass bei nicht blockierendem Rendern und großen Projekten wie Air zunächst die Bäume überlagernd gerendert werden und dies auch durchaus für einige Sekunden für den Nutzer sichtbar ist, bevor sich die Bäume verteilen.
+Für die Praxis in Unity ist bei der Verteilung der Bäume noch zu beachten, dass deren Radien erst verfügbar sind, nachdem der Circle-Packing-Algorithmus für alle Bäume vollständig durchlaufen wurde. Das heißt, dass bei der Generierung der einzelnen Bäume noch nicht bekannt ist, an welcher Position die Bäume letztendlich gesetzt werden müssen und zunächst zum Beispiel an der gleichen Stelle generiert werden müssen. Das bedeutet wiederum, dass bei nicht blockierendem Rendern und großen Projekten wie Air zunächst die Bäume überlagernd gerendert werden und dies auch durchaus für einige Sekunden für den Nutzer sichtbar ist, bevor sich die Bäume verteilen.
 
 Bei Air dauert die Generierung der 40 Bäume im Unity Editor auf einer Hardware mit 2.3 GHz Intel Core i7 CPU und 16 GB 1600 MHz DDR3 RAM bei 10 Messungen zwischen 6,5 und 6,8 Sekunden. Auf der HoloLens stehen keine genauen Messdaten zur Verfügung, die Generierung dauert aber noch etwas länger.
 
@@ -1246,7 +1246,7 @@ Die vierte Möglichkeit der Interaktion mit HMD-Devices sind Controller. Die mei
 
 \section{Herausforderungen}
 
-Bei der Entwicklung von AR-Applikationen sind einige Herausforderungen zu beachten, die auch für CodeLeaves von Relevanz sind. Im Zuge der Entwicklung von der HoloLens-Anwendung HoloStudio hat Senior Holographic Designer Ghaly in \cite{windows2017casestudy3} eine Case Study veröffentlicht. Mitunter traten die im Folgenden betrachteten Herausforderungen auf.
+Bei der Entwicklung von AR-Applikationen sind einige Herausforderungen zu beachten, die auch für CodeLeaves von Relevanz sind. Im Zuge der Entwicklung von der HoloLens-Anwendung HoloStudio hat Senior Holographic Designer M.\ Ghaly in \cite{windows2017casestudy3} eine Case Study veröffentlicht. Mitunter traten die im Folgenden betrachteten Herausforderungen auf.
 
 \subsubsection*{Hologramme außerhalb des Sichtfelds}
 
@@ -1256,9 +1256,9 @@ Eine Variante dies zu umgehen, ist es \textit{Tag-along}-Objekte zu verwenden. D
 
 In der Case Study aus \cite{windows2017casestudy3} wurde festgestellt, dass die Probanden sich von solchen Tag-along-Objekten in manchen Fällen bedrängt fühlen und sollten deshalb sparsam verwendet werden.
 
-Eine andere Möglichkeit ist es auf Hologramme, die sich außerhalb des Sichtfelds befinden, gezielt aufmerksam zu machen. Das kann mit verschiedenen Techniken erreicht werden. Eine davon ist die Verwendung von \textit{Spacial-sound}, was bedeutet, dass Geräusche ebenfalls im Raum platziert werden können und vom Nutzer dreidimensional mit Richtung und Entfernung wahrgenommen werden können. Dies bietet sich vor allem bei Spielen mit bewegten Charakteren an. Bei statischem Content wie CodeLeaves, sind Geräusche nicht besonders intuitiv.
+Eine andere Möglichkeit ist es auf Hologramme, die sich außerhalb des Sichtfelds befinden, gezielt aufmerksam zu machen. Das kann mit verschiedenen Techniken erreicht werden. Eine davon ist die Verwendung von \textit{Spacial-Sound}, was bedeutet, dass Geräusche ebenfalls im Raum platziert werden können und vom Nutzer dreidimensional mit Richtung und Entfernung wahrgenommen werden können. Dies bietet sich vor allem bei Spielen mit bewegten Charakteren an. Bei statischem Content wie CodeLeaves, sind Geräusche nicht besonders intuitiv.
 
-Es kann auch mit zusätzlichen Objekten gearbeitet werden, die dem Nutzer darauf hinweisen, wo seine Aufmerksamkeit erfordert wird. Solche Hilfs-Objekte werden in der HoloLens-Entwicklung \textit{Direction-indicators}. Diese können unterschiedliche Gestalt annehmen. Bei anderen HoloLens-Applikationen sind Pfeile, Licht oder Denkblasen im Einsatz.
+Es kann auch mit zusätzlichen Objekten gearbeitet werden, die dem Nutzer darauf hinweisen, wo seine Aufmerksamkeit erfordert wird. Solche Hilfs-Objekte werden in der HoloLens-Entwicklung \textit{Direction-Indicators}. Diese können unterschiedliche Gestalt annehmen. Bei anderen HoloLens-Applikationen sind Pfeile, Licht oder Denkblasen im Einsatz.
 
 \subsubsection*{UI von anderen Objekten verdeckt}
 
@@ -1272,7 +1272,7 @@ Das Problem ist in Abbildung \ref{fig:occlusion} illustriert. Darin wird in Code
   \label{fig:occlusion}
 \end{figure}
 
-Analog zum 2D Popups ist es möglich UI-Elemente vor allen anderen Elementen zu platzieren. In 3D bedeutet das, dass das UI-Element vor dem Hologramm erscheinen muss, dass sich am nächsten am Nutzer befindet. Dabei ist zu beachten, dass durch den räumlichen Versatz der Bezug zum fokussierten Objekt nicht verloren gehen darf.
+Analog zum 2D Pop-ups ist es möglich UI-Elemente vor allen anderen Elementen zu platzieren. In 3D bedeutet das, dass das UI-Element vor dem Hologramm erscheinen muss, dass sich am nächsten am Nutzer befindet. Dabei ist zu beachten, dass durch den räumlichen Versatz der Bezug zum fokussierten Objekt nicht verloren gehen darf.
 
 Ein alternativer Lösungsansatz ist der \textit{Shine-through}-Effekt, wie er bei HoloStudio Verwendung findet und in Abbildung \ref{fig:shine-through} veranschaulicht wird. Dabei bleiben UI-Elemente räumlich bei dem fokussiertem Objekt, jedoch scheinen sie durch davor liegende Hologramme durch. Diese Variante ist auch für anzuzeigenden Text gut geeignet.
 
@@ -1336,7 +1336,7 @@ Woher weiß die Funktion jetzt was angezeigt werden soll?
 
 Das eigentliche Problem bei der beschriebenen Situation ist, dass Businesslogik und UI eng gekoppelt wurde. Dies sollte tunlichst vermieden werden. Bei einem Klick auf einem Blatt sollte nicht die UI entscheiden was zu tun ist, sondern die Businesslogik. Die Entkopplung von UI und Logik, ist mit reaktiver Programmierung möglich.
 
-Was ist reaktive Programmierung? Staltz beschreibt es in \cite{staltz2016introduction} als "`Programmierung mit asynchronen Datenströmen."' Dies trifft den Kern. Es geht darum auf Änderungen von Werten zu reagieren, die durch \textit{Streams} propagiert werden.
+Was ist reaktive Programmierung? A.\ Staltz beschreibt es in \cite{staltz2016introduction} als "`Programmierung mit asynchronen Datenströmen."' Dies trifft den Kern. Es geht darum auf Änderungen von Werten zu reagieren, die durch \textit{Streams} propagiert werden.
 
 Streams sind nichts anderes als \textit{Observables}, die bei jeder Änderung ihrer Werte allen registrierten \textit{Subscribers} den neuen Wert mitteilen.
 
@@ -1390,7 +1390,7 @@ Im \texttt{NodeInputHandler} wird nun die Ui nicht mehr direkt manipuliert, sond
 
 CodeLeaves kann ohne Interaktion die Struktur einer Software, eine Metrik und einen Verbindungs-Typ zwischen Klassen darstellen. Damit kann bereits einen Überblick über die Software geschaffen werden. Der größere Mehrwert von CodeLeaves wird aber erst erreicht, wenn mit dem Software-Wald interagiert werden kann. Die intuitive Bedienung von CodeLeaves ist essentiell für ein tieferes Verständnis der visualisierten Informationen.
 
-In diesem Kapitel wird deswegen ein Konzept entwickelt, mit dem es möglich ist alle Informationen zugänglich zu machen, die CodeLeaves zur Verfügung stellen kann. Es besteht jedoch kein Anspruch auf vollständiges Interaction Design nach \cite{goodwin2011designing} oder \cite{cooper2014face}. Vielmehr soll im Zuge dieser Arbeit Prototyping betrieben werden, durch das CodeLeaves bedienbar ist und der Mehrwert von CodeLeaves beurteilt werden kann.
+In diesem Kapitel wird deswegen ein Konzept entwickelt, mit dem es möglich ist alle Informationen zugänglich zu machen, die CodeLeaves zur Verfügung stellen kann. Es besteht jedoch kein Anspruch auf vollständiges Interactions Design nach \cite{goodwin2011designing} oder \cite{cooper2014face}. Vielmehr soll im Zuge dieser Arbeit Prototyping betrieben werden, durch das CodeLeaves bedienbar ist und der Mehrwert von CodeLeaves beurteilt werden kann.
 
 Für eine weiterführende Realisierung von CodeLeaves müsste das Interaktionskonzept in einer Evaluations-Phase durch Nutzerbefragungen validiert werden und bei Bedarf verfeinert oder angepasst werden.
 
@@ -1427,10 +1427,10 @@ Für CodeLeaves ist dieser Ansatz jedoch aus einem einfachen Grund schwierig. De
 
 Eine Alternative muss daher gefunden werden. Es stellt sich die Frage, was immer im Sichtfeld des Nutzers ist und den Wald für den Nutzer als Ganzes repräsentiert. Die Antwort auf diese Frage liegt auf der Hand -- der Waldboden. Dieser ist auch bei näherer Betrachtung von Ausschnitten des Waldes immer präsent und da alles aus ihm wächst, ist eine Interaktion mit ihm für die Basisinteraktionen intuitiv.
 
-Damit steht das Ziel der Interaktion fest, jedoch können mit der begrenzten Anzahl an Gesten nicht alle Basisinteraktionen bedient werden. Daher wird bei einem Air-Tap ein Kontextmenü dargestellt, mit dem der Nutzer zwischen den drei verschiedenen Basisinteraktionen wählen kann. Bei der Auswahl der Modi Skalieren und Rotieren kann der Nutzer mithilfe der Manipulation-Geste den Wald entsprechend manipulieren. Die Ausführung dieser Geste werden näher im Abschnitt \ref{subsec:Manipulation-Indicators} ausgeführt.
+Damit steht das Ziel der Interaktion fest, jedoch können mit der begrenzten Anzahl an Gesten nicht alle Basisinteraktionen bedient werden. Daher wird bei einem Air-Tap ein Kontextmenü dargestellt, mit dem der Nutzer zwischen den drei verschiedenen Basisinteraktionen wählen kann. Bei der Auswahl der Modi Skalieren und Rotieren kann der Nutzer mithilfe der Manipulation-Geste den Wald entsprechend manipulieren. Die Ausführung dieser Geste werden näher im Abschnitt \ref{subsec:manipulation-indicators} ausgeführt.
 
 \subsubsection*{Interaktion mit Spacial Mapping}
-Für den Plazierungs-Modus bietet sich für die HoloLens die Nutzung des \textit{Spacial-Mapping} an. Die HoloLens ist fähig den Raum, in dem sie sich befindet, zur Laufzeit zu erfassen und einer Applikation zur Verfügung zu stellen \cite{windows2017spacial}. Mit diesen Informationen ist es Möglich ein Spatial-Mapping-Mesh darzustellen, das über die reale Oberfläche des Raumes gelegt wird. Damit können Hologramme mit der Oberfläche des Raumes kollidieren und entsprechend der Umgebung platziert werden. So ist es zum Beispiel möglich den Wald komfortabel auf einen Tisch oder auf den Boden zu positionieren.
+Für den Platzierungs-Modus bietet sich für die HoloLens die Nutzung des \textit{Spatial-Mapping} an. Die HoloLens ist fähig den Raum, in dem sie sich befindet, zur Laufzeit zu erfassen und einer Applikation zur Verfügung zu stellen \cite{windows2017spacial}. Mit diesen Informationen ist es Möglich ein Spatial-Mapping-Mesh darzustellen, das über die reale Oberfläche des Raumes gelegt wird. Damit können Hologramme mit der Oberfläche des Raumes kollidieren und entsprechend der Umgebung platziert werden. So ist es zum Beispiel möglich den Wald komfortabel auf einen Tisch oder auf den Boden zu positionieren.
 
 Bei aktivem Platzieren des Waldes wird das Spatial-Mapping-Mesh angezeigt, sodass der Nutzer sieht, wo genau der Waldboden mit der Umgebung kollidiert. Die Platzierung selbst wird nicht mit der Manipulation-Geste ausgeführt, sondern mithilfe der Blickrichtung. Der Wald folgt der Blickrichtung des Nutzers und wird immer dort platziert, wo die Blickrichtung das Spatial-Mapping-Mesh trifft. Die Manipulation-Geste ist besonders für die Eingabe eines Deltas geeignet. Für die Eingabe einer bestimmten Richtung, die für Kollision mit dem Spatial-Mapping-Mesh benötigt wird, ist die Blickrichtung die bessere Wahl. Zudem ist der "`Transport"' des Waldes auf diese Weise auch über größere Strecken komfortabel möglich, da die Hand des Nutzers nicht dauerhaft oben gehalten werden muss, wie es bei der Manipulation-Geste nötig ist. 
 
@@ -1438,7 +1438,7 @@ Der Platzierungs-Modus wird durch einen Air-Tap auf den Wald beendet. Der aktive
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/spatial-mapping}
-  \caption{Spacial Mapping beim Platzieren des Waldes}
+  \caption{Spatial Mapping beim Platzieren des Waldes}
   \label{fig:spatial-mapping}
 \end{figure}
 
@@ -1447,7 +1447,7 @@ Das Kontextmenü, mit dem die verschiedenen Interaktionsmodi für den gesamten W
 
 Die kreissegmentförmige Anordnung der Buttons hat den Vorteil, dass der Interaktionspunkt für das öffnen des Kontextmenüs im Zentrum des Kreises ist und daher eine Verbindung mit dem fokussieren Objekt schafft. Darüber hinaus sind alle Buttons vom Cursor gleich weit entfernt und daher schnellstmöglich mithilfe der Blickrichtung erreichbar.
 
-Die Distanz des Kontextmenüs ist den Umständen entsprechend anzupassen. Ist der fokussierte Punkt bereits näher als die Distanz, in der eine Darstellung von Interaktionselementen empfohlen wird\footnote{Die Distanz, in der Microsoft empfiehlt Hologramme zu platzieren, liegt bei 2,0 Metern \cite{windows2017interaction}.}, sollte das Kontextmenü nicht noch näher an dem Nutzer platziert werden. Bei größerem Abstand sollte der Abstand zum Kontextmenü auf die empfohlene Distanz reduziert werden, sodass der Nutzer noch komfortabel mit dem Menü interagieren kann. Auf diese Weise ist die Überdeckung des Kontextmenüs durch andere Elemente sehr unwahrscheinlich.
+Die Distanz des Kontextmenüs ist den Umständen entsprechend anzupassen. Ist der fokussierte Punkt bereits näher als die Distanz, in der eine Darstellung von Interaktions-Elementen empfohlen wird\footnote{Die Distanz, in der Microsoft empfiehlt Hologramme zu platzieren, liegt bei 2,0 Metern \cite{windows2017interaction}.}, sollte das Kontextmenü nicht noch näher an dem Nutzer platziert werden. Bei größerem Abstand sollte der Abstand zum Kontextmenü auf die empfohlene Distanz reduziert werden, sodass der Nutzer noch komfortabel mit dem Menü interagieren kann. Auf diese Weise ist die Überdeckung des Kontextmenüs durch andere Elemente sehr unwahrscheinlich.
 
 In dem Fall, dass das Kontextmenü direkt an der fokussierten Position erscheint, muss das Kreissegment des Kontextmenüs so angepasst werden, dass die Buttons nicht in das fokussierte Objekt hinein ragen. Für den Waldboden ist daher ein nach oben orientiertes Kreissegment eine gute Wahl. Würde aber zum Beispiel mit einer Wand interagiert werden, sollte das Kontextmenü von der Wand weg orientiert sein.
 
@@ -1473,7 +1473,7 @@ In Abbildung \ref{fig:context-menu-side} ist zu erkennen, dass der fokussierte B
 Mit diesem Prinzip wird einem Button ein haptisches Feedback verliehen und der Nutzer kann ihn räumlich "`eindrücken"'. Das Prinzip findet auch beim Windows-Menü der HoloLens Anwendung und zieht sich durch die gesamte UI des High-Fi Prototypen.
 
 \section{Manipulation-Indicators}
-\label{subsec:Manipulation-Indicators}
+\label{subsec:manipulation-indicators}
 Mit dem Kontext-Menü des Waldbodens kann zwischen den beiden Interaktionsmodi umgeschalten werden, die mit der Manipulation-Geste ausgeführt werden. Bei der Manipulation-Geste weiß der Nutzer aber ohne weiter Hilfe nicht, wie er seine Hand bewegen muss, um die gewünschte Manipulation zu erreichen. Der Nutzer weiß nicht in welche Richtung der Wald vergrößert und in welche er verkleinert wird. Zudem sind mehrere Bewegungsachsen wie horizontal, vertikal oder diagonal denkbar. Deswegen ist es unerlässlich dem Nutzer Feedback zu geben. Dies wird mit den -- wie wir sie nennen -- \textit{Manipulation-Indicators} erreicht. Diese tauchen auf, sobald der Air-Tap gehalten wird und indizieren die möglichen Richtungen und deren Auswirkungen.
 
 In Abbildung \ref{fig:manipulation} sind Manipulation-Indicators für das Beispiel des Skalierens dargestellt.
@@ -1512,7 +1512,7 @@ Zweiteres kann mit einem Schließen-Button in einer Titelleiste realisiert werde
 
 Die Funktion des stationären Platzierens kann ebenfalls in der Titelleiste untergebracht werden. Analog zum "`Vollbild"' eines Desktop-Fensters, bei dem der Nutzer sich ausschließlich auf dieses konzentrieren möchte, wird neben dem Schließen-Button ein \textit{Tag-along-Button} eingeführt, der für das Ein- und Ausschalten des Tag-along-Effekts zuständig ist. Damit kann der Nutzer das Fenster jederzeit dort platzieren, wo es sich gerade befindet. Wird das App-Menü aus einem Kontextmenü aufgerufen, wird der Tag-along-Effekt aktiviert, sodass der Nutzer das Fenster nicht suchen muss, sondern es zu ihm kommt, sobald er es braucht.
 
-Die Titelleiste kann für eine weitere Funktion genutzt werden. Wird bei Desktop-Sytemen ein Drag-and-drop der Titelleiste durchgeführt, lässt das zugehörige Fenster verschieben. Dies ist in 3D ebenfalls möglich. Wird die Manipulation-Geste bei fokussierter Titelleiste durchgeführt, wird das Fenster des App-Menüs entsprechen im Raum verschoben. Durch die dreidimensionale Eingabe der Manipulation-Geste, kann der Drag-and-drop im Zweidimensionalen einfach in drei Dimensionen übertragen werden.
+Die Titelleiste kann für eine weitere Funktion genutzt werden. Wird bei Desktop-Systemen ein Drag-and-drop der Titelleiste durchgeführt, lässt das zugehörige Fenster verschieben. Dies ist in 3D ebenfalls möglich. Wird die Manipulation-Geste bei fokussierter Titelleiste durchgeführt, wird das Fenster des App-Menüs entsprechen im Raum verschoben. Durch die dreidimensionale Eingabe der Manipulation-Geste, kann der Drag-and-drop im Zweidimensionalen einfach in drei Dimensionen übertragen werden.
 
 In dem High-Fi Prototyp wurden die beschriebenen Funktionen des App-Menüs bereits umgesetzt. In Abbildung \ref{fig:app-menu} kann das erstellte Menü betrachtet werden. Die Auswahl eines Projekts beschränkt sich dabei auf gespeicherte Beispielprojekte (Akz. \ref{acc:u-project-selection}).
 
@@ -1525,13 +1525,13 @@ Für die produktive Einsetzung von CodeLeaves ist ein Import von neuen Projekten
   \begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=.8\textwidth]{figures/project-selection}
-    \subcaption{Initialzustand zur Auswahl eines Beispielprojekts und aktivem Tag-along} \label{fig:project-selection}
+    \subcaption{Initialzustand zur Auswahl eines Beispielprojektes und aktivem Tag-along} \label{fig:project-selection}
   \end{subfigure}
   \par\bigskip
   \begin{subfigure}[t]{\textwidth}
     \centering
   	\includegraphics[width=.8\textwidth]{figures/title-bar}
-  	\subcaption{Titelleiste mit deaktivierem Tag-along} \label{fig:title-bar}
+  	\subcaption{Titelleiste mit deaktiviertem Tag-along} \label{fig:title-bar}
   \end{subfigure}
   \caption{High-Fi Prototyp der Projektauswahl im App-Menüs} \label{fig:app-menu}
 \end{figure}
@@ -1575,7 +1575,7 @@ Zum einen hat er die Möglichkeit den verfügbaren Eingabemöglichkeiten eine Ak
 Zum anderen ist in den "`Advanced Settings"' die Einstellung "`Display circles at"' zu finden, die durch das Prototyping des High-Fi Prototyp entstanden ist.
 
 \subsubsection*{Umschließende Kreise zur erleichterten Bedienung}
-Die Kreise, die zur Visualisierung des Circle-packings im Abbildung \ref{fig:Circle-packing} dargestellt sind, haben sich auch für die Interaktion als überaus hilfreich erwiesen. CodeLeaves hat auf der HoloLens mit folgendem Problem umzugehen:
+Die Kreise, die zur Visualisierung des Circle-Packings im Abbildung \ref{fig:Circle-Packing} dargestellt sind, haben sich auch für die Interaktion als überaus hilfreich erwiesen. CodeLeaves hat auf der HoloLens mit folgendem Problem umzugehen:
 
 \begin{quote}
   \textit{Je kleiner der Wald skaliert wird, desto schwieriger wird die Interaktion mit einzelnen Blättern oder Kanten.}
@@ -1735,7 +1735,7 @@ Im Zuge dieser Arbeit wurde ein High-Fi Prototyp für die HoloLens entwickelt. P
 
 Die verwendeten Algorithmen und die dafür nötige Mathematik wird in Kapitel \ref{ch:layout} beschrieben. Es wird gezeigt wie sich Verhalten in der Natur mit dem Goldenen Schnitt auf die Bäume von CodeLeaves übertragen lassen. Mit dem Sonnenblumen-Algorithmus werden Blätter eines Elternteils gleichmäßig auf einer Kreisfläche verteilt, sodass sie den gleichen Abstand zueinander haben.
 
-Durch hierarchisches Circle-packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
+Durch hierarchisches Circle-Packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
 
 Im Zuge des High-Fi Prototypen wurde auch festgestellt, dass sich die HoloLens in der aktuellen Entwickler-Version nicht für die Betrachtung von sehr großen Software-Systemen eignet, da die Visualisierung sonst nicht mehr flüssig gerendert wird.
 

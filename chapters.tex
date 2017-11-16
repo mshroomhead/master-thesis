@@ -1047,7 +1047,7 @@ Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\
   \label{fig:circle-packing}
 \end{figure}
 
-In Abbildung \ref{fig:Circle-Packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-Chain entfernt (im Beispiel nur $C_m$) und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
+In Abbildung \ref{fig:circle-packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-Chain entfernt (im Beispiel nur $C_m$) und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
 
 Werden die Knoten vor der Durchführung des Algorithmus nach deren Radien sortiert, befindet sich der Knoten mit dem größten Kreis genau über dem Stamm und nach außen hin werden die Äste kleiner, was einem natürlichem Wuchs am nächsten kommt. Durch die zufällige Positionierung des $1$-ten Knotens, wächst der Baum nicht bei jedem Knoten "`in die gleiche Richtung"' was das natürliche Bild des Waldes ebenfalls fördert.
 
@@ -1498,7 +1498,7 @@ Durch die Pfeile wird die Achse der Manipulation angegeben. In unserem Beispiel 
 \section{Das App-Menü}
 \label{sec:app-menu}
 
-Bisher wurden Interaktionen behandelt, die nur bei einem vorhanden Wald relevant sind. Der Nutzer von CodeLeaves muss jedoch zuvor auswählen können, welche Software er überhaupt visualisieren möchte (Akz. \ref{acc:u-project-selection}). Auch müssen die dargestellten Informationen nach der Auswahl eines Projekts konfiguriert werden können (Akz. \ref{acc:s-metrics}, \ref{acc:s-thickness}, \ref{acc:d-metrics} und \ref{d-thickness}). Dafür wird ein zentrales \textit{App-Menü} eingeführt.
+Bisher wurden Interaktionen behandelt, die nur bei einem vorhanden Wald relevant sind. Der Nutzer von CodeLeaves muss jedoch zuvor auswählen können, welche Software er überhaupt visualisieren möchte (Akz. \ref{acc:u-project-selection}). Auch müssen die dargestellten Informationen nach der Auswahl eines Projekts konfiguriert werden können (Akz. \ref{acc:s-metrics}, \ref{acc:s-thickness}, \ref{acc:d-metrics} und \ref{acc:d-thickness}). Dafür wird ein zentrales \textit{App-Menü} eingeführt.
 
 Für dieses Menü wurde sich an herkömmlichen Fenstern orientiert, wie sie bei Desktop-Systemen zu finden sind. Bevor näher auf den Inhalt des App-Menüs eingegangen wird, muss zunächst auf die Positionierung des Fensters im Raum eingegangen werden.
 
@@ -1558,7 +1558,7 @@ Dies kann er ebenfalls mit dem App-Menu erreichen, das sich nun in eine Schaltze
   \label{fig:settings}
 \end{figure}
 
-Der Nutzer muss eine Metrik für die Farbe der Blätter (Akz. \ref{acc:s-metrics} und \ref{acc:d-metrics}) und ein Verbindungs-Typ für die Dicke der Wurzeln und Kanten (Akz. \ref{acc:s-thickness},  und \ref{d-thickness}) angeben können. Die Zuordnung von Metriken für die Farbe der Blätter und die Stärke der Verbindungen nehmen deshalb als Drop-down-Menüs zentrale Elemente in den Einstellungen ein.
+Der Nutzer muss eine Metrik für die Farbe der Blätter (Akz. \ref{acc:s-metrics} und \ref{acc:d-metrics}) und ein Verbindungs-Typ für die Dicke der Wurzeln und Kanten (Akz. \ref{acc:s-thickness},  und \ref{acc:d-thickness}) angeben können. Die Zuordnung von Metriken für die Farbe der Blätter und die Stärke der Verbindungen nehmen deshalb als Drop-down-Menüs zentrale Elemente in den Einstellungen ein.
 
 Die zur Auswahl stehenden Metriken sind davon abhängig, ob der Nutzer gerade dynamische oder statische Daten betrachten möchte.
 
@@ -1575,7 +1575,7 @@ Zum einen hat er die Möglichkeit den verfügbaren Eingabemöglichkeiten eine Ak
 Zum anderen ist in den "`Advanced Settings"' die Einstellung "`Display circles at"' zu finden, die durch das Prototyping des High-Fi Prototyp entstanden ist.
 
 \subsubsection*{Umschließende Kreise zur erleichterten Bedienung}
-Die Kreise, die zur Visualisierung des Circle-Packings im Abbildung \ref{fig:Circle-Packing} dargestellt sind, haben sich auch für die Interaktion als überaus hilfreich erwiesen. CodeLeaves hat auf der HoloLens mit folgendem Problem umzugehen:
+Die Kreise, die zur Visualisierung des Circle-Packings im Abbildung \ref{fig:circle-packing} dargestellt sind, haben sich auch für die Interaktion als überaus hilfreich erwiesen. CodeLeaves hat auf der HoloLens mit folgendem Problem umzugehen:
 
 \begin{quote}
   \textit{Je kleiner der Wald skaliert wird, desto schwieriger wird die Interaktion mit einzelnen Blättern oder Kanten.}

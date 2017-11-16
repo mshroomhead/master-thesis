@@ -407,7 +407,7 @@ Akzeptanzkriterium \ref{acc:s-thickness} erfordert die Unterstützung von aggreg
 	\accid{acc:s-connection-count} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich sehen wie viele Verbindungen in welche Richtung fließen.\\
     \accid{acc:s-connection-highlight} & Wenn ich eine Kante oder Wurzel auswähle, dann kann ich die von den Verbindungen betroffenen Blättern hervorheben.\\
     \accid{acc:s-drilldown} & Ich kann einen Knoten als neuen Waldboden festlegen.\\
-    \accid{acc:d-timestamp} & Ich kann den Zeitpunkt auswählen, auf die sich die dargestellten Daten beziehen.\\
+    \accid{acc:s-timestamp} & Ich kann den Zeitpunkt auswählen, auf die sich die dargestellten Daten beziehen.\\
 
 \end{tabularx}
 
@@ -1014,21 +1014,21 @@ Der Algorithmus muss noch an die Gegebenheiten von CodeLeaves angepasst werden. 
 
 Ist nur ein Knoten zu verteilen, wird der Mittelpunkt seines Kreises von oben gesehen (in der xz-Ebene) in den Ursprung gelegt. Der Kreis eines zweiten Knotens wird in einem zufälligen Winkel tangential zum Kreis des ersten Knotens positioniert. Bereits bei einem dritten Kreis kann Wangs's Algorithmus Anwendung finden.
 
-Es wird eine sogenannte \textit{Front-chain} verwendet, eine zyklische Liste, die alle Kreise enthält, an die potentiell ein neuer Kreis angefügt werden könnte. Die Front-chain ist in Abbildung \ref{fig:Circle-packing} als dickere Linie dargestellt. Bei der Positionierung des ersten bzw.\ des zweiten Kreises werden diese zur Front-chain hinzugefügt.
+Es wird eine sogenannte \textit{Front-Chain} verwendet, eine zyklische Liste, die alle Kreise enthält, an die potentiell ein neuer Kreis angefügt werden könnte. Die Front-Chain ist in Abbildung \ref{fig:Circle-packing} als dickere Linie dargestellt. Bei der Positionierung des ersten bzw.\ des zweiten Kreises werden diese zur Front-Chain hinzugefügt.
 
 Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\lbrace C_i \mid i = 0, 2 \cdots N \rbrace$ im Folgenden beschrieben:
 
 \subsubsection*{Abgewandelte Form von Wang's Circle-packing-Algorithmus (nach \cite{wang2006visualization})}
 
 \begin{enumerate}[(i), labelindent=0pt, align=left, itemsep=0pt, parsep=0pt, labelsep=.5em, leftmargin=!]
-  \item Falls $i = 0$ setzte den Mittelpunkt von $C_0$ in den Ursprung und füge $C_0$ zur Front-chain hinzu.
-  \item Falls $i = 1$ setzte den Mittelpunkt von $C_1$ so, dass $C_1$ in einem zufälligen Winkel tangential zu $C_0$ ist und füge $C_1$ zur Front-chain hinzu.
-  \item Für $1 < i < N$ suche $C_m$, der Kreis dessen Mittelpunkt am nächsten zum Ursprung ist. $C_n$ ist der Kreis in der Front-chain nach $C_m$ ($n=m+1$).
+  \item Falls $i = 0$ setzte den Mittelpunkt von $C_0$ in den Ursprung und füge $C_0$ zur Front-Chain hinzu.
+  \item Falls $i = 1$ setzte den Mittelpunkt von $C_1$ so, dass $C_1$ in einem zufälligen Winkel tangential zu $C_0$ ist und füge $C_1$ zur Front-Chain hinzu.
+  \item Für $1 < i < N$ suche $C_m$, der Kreis dessen Mittelpunkt am nächsten zum Ursprung liegt. $C_n$ ist der Kreis in der Front-Chain nach $C_m$ ($n=m+1$).
   \item Berechne den Mittelpunkt von $C_i$ so, dass er tangential zu $C_m$ und $C_n$ ist.
   \item Suche einen Kreis $C_j$ der sich mit $C_i$ überschneidet.
   \item Falls der $C_j$ nicht existiert, setze $C_i$ gleich $C_{i+1}$ und gehe zu (iii).
-  \item Falls $C_j$ in der Front-chain näher an $C_m$ als an $C_n$ ist, lösche alle Kreise aus der Front-chain, die zwischen $C_j$ und $C_n$ liegen. Setze $C_m$ gleich $C_j$ und gehe zu (iv).
-  \item Falls $C_j$ in der Front-chain näher an $C_n$ als an $C_m$ ist, lösche alle Kreise aus der Front-chain, die zwischen $C_m$ und $C_j$ liegen. Setze $C_n$ gleich $C_j$ und gehe zu (iv).
+  \item Falls $C_j$ in der Front-Chain näher an $C_m$ als an $C_n$ liegt, lösche alle Kreise aus der Front-Chain, die zwischen $C_j$ und $C_n$ liegen. Setze $C_m$ gleich $C_j$ und gehe zu (iv).
+  \item Falls $C_j$ in der Front-Chain näher an $C_n$ als an $C_m$ liegt, lösche alle Kreise aus der Front-Chain, die zwischen $C_m$ und $C_j$ liegen. Setze $C_n$ gleich $C_j$ und gehe zu (iv).
 \end{enumerate}
 
 \label{subsec:collision}\setlength{\fwidth}{.4\textwidth}
@@ -1041,19 +1041,19 @@ Im Ganzen ist der leicht modifizierte Algorithmus für eine Menge von Kreisen $\
   \hspace{1cm}
   \begin{subfigure}[t]{\fwidth}
   	\includegraphics[width=150px]{figures/update-frontchain}
-  	\subcaption{Anpassung der Front-chain und erneutes Platzieren} \label{fig:update-frontchain}
+  	\subcaption{Anpassung der Front-Chain und erneutes Platzieren} \label{fig:update-frontchain}
   \end{subfigure}
   \caption{Wang's Circle Packing Algorithmus (nach \cite{bostock2017abetter})}
   \label{fig:Circle-packing}
 \end{figure}
 
-In Abbildung \ref{fig:Circle-packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-chain entfernt und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
+In Abbildung \ref{fig:Circle-packing} ist ein Ausschnitt aus dem Algorithmus visualisiert. Auf der linken Seite (\ref{fig:add-circle}) ist Schritt (iv) dargestellt, wobei $C_j$ existiert und und näher an $C_m$, als an $C_n$ liegt. Demnach werden alle Knoten zwischen $C_j$ und $C_n$ aus der Front-Chain entfernt (im Beispiel nur $C_m$) und $C_i$ wird erneut platziert. Das Resultat ist auf der rechten Seite (\ref{fig:update-frontchain}) zu sehen.
 
 Werden die Knoten vor der Durchführung des Algorithmus nach deren Radien sortiert, befindet sich der Knoten mit dem größten Kreis genau über dem Stamm und nach außen hin werden die Äste kleiner, was einem natürlichem Wuchs am nächsten kommt. Durch die zufällige Positionierung des $1$-ten Knotens, wächst der Baum nicht bei jedem Knoten "`in die gleiche Richtung"' was das natürliche Bild des Waldes ebenfalls fördert.
 
 Der oben beschriebene Algorithmus setzt in (ii) und in (iv) die Berechnung eines Mittelpunktes voraus, sodass dessen Kreis tangential zu einem bzw.\ zwei weiteren Kreisen ist.
 
-Bei dem $1$-ten Kreis mit Radius $r_1$ und Mittelpunkt $M_1$, der nur tangential zu dem $0$-ten Kreis mit $r_0$ und $M_0 = (0,0)$ ist und mit dem zufälligen Winkel Polarwinkel $\alpha$ platziert wird, ergibt sich für die xz-Ebene folgende Koordinate:
+Bei dem $1$-ten Kreis mit Radius $r_1$ und Mittelpunkt $M_1$, der nur tangential zu dem $0$-ten Kreis mit $r_0$ und $M_0 = (0,0)$ ist und mit dem zufälligen Winkel $\alpha$ platziert wird, ergibt sich für die xz-Ebene folgende Koordinate:
 
 \begin{equation}
   \vv{M}_1 =
@@ -1071,7 +1071,7 @@ Bei allen weitern Kreisen $C_i$ ist die Berechnung komplexer. Der Sachverhalt is
   \label{fig:tangent-circle}
 \end{figure}
 
-$M_3$ befindet sich genau an einem Schnittpunkt der beiden Kreise $\lbrace X \in XZ \mid \overline{M_1 X} = r_1 + r_3 \rbrace$ und $\lbrace X \in XZ \mid \overline{M_2 X} = r_2 + r_3 \rbrace$, die in Abbildung \ref{fig:tangent-circle} gestrichelt veranschaulicht sind. Diese Schnittpunkte lassen sich mithilfe von Vektorrechnung wie folgt errechnen:
+$M_3$ befindet sich genau an einem Schnittpunkt der beiden Kreise $\lbrace X \in XZ \mid \overline{M_1 X} = r_1 + r_3 \rbrace$ und $\lbrace X \in XZ \mid \overline{M_2 X} = r_2 + r_3 \rbrace$, die in Abbildung \ref{fig:tangent-circle} gestrichelt veranschaulicht sind. Diese Schnittpunkte lassen sich mithilfe von Vektorrechnung nach \cite{wikipedia2017schnitt} wie folgt errechnen:
 
 \begin{equation}
   \vv{M}_{3_{1/2}} = \vv{M}_1 + \vv{D}_{1} \pm h \cdot \vv{e}
@@ -1081,7 +1081,7 @@ Dabei ist $e$ ein zu $M_2 - M_1$ orthogonaler Einheitsvektor, für $h$ gilt
 
 \begin{equation}
 \label{equ:h}
-  h = \sqrt{r_1^2 - \vert d_1 \vert^2} = \sqrt{r_2^2 - \vert d_2 \vert^2}
+  h = \sqrt{r_1^2 - \vert \vv{D_1} \vert^2} = \sqrt{r_2^2 - \vert \vv{D_2} \vert^2}
 \end{equation}
 
 und $D_1$ lässt sich durch Umformen der Gleichung \ref{equ:h} mit
@@ -1092,7 +1092,7 @@ und $D_1$ lässt sich durch Umformen der Gleichung \ref{equ:h} mit
 
 darstellen.
 
-Mit diesen Gleichungen kann der Circle-packing Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die Y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
+Mit diesen Gleichungen kann der Circle-packing-Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
 
 \subsubsection*{Knoten mit gemischten Kindern}
 
@@ -1100,35 +1100,24 @@ Für den Fall, dass ein Paket innere Knoten \textbf{und} Blätter enthält, kann
 
 \subsubsection*{Hierarchische Anwendung}
 
-Für die Anwendung auf mehreren Ebenen ist nach der Verteilung von Kindern eines Knotens $K$ auf Ebene $n$ die Berechnung des Radius von $K$ nötig, dass in Ebene $n - 1$ die Generation von $K$ verteilt werden kann.
+Für die Anwendung auf mehreren Ebenen ist nach der Verteilung von Kindern eines Knotens $K$ auf Ebene $n$ die Berechnung des Kreises von $K$ nötig, dass in Ebene $n - 1$ die Generation von $K$ verteilt werden kann.
 
-Der Radius des Kreises von Knoten $K$ (mit Mittelpunkt an der Position von $K$), der alle Kreise der Kinder von $K$ umschließt und mindestens zu einem Kreis der Kinder tangential ist, ist der Abstand vom $0$-ten Kind zum $n$-ten Kind zuzüglich des Radius des $n$-ten Kindes. Diese Methode ist nicht der kleinste umschließende Kreis, reicht für die Generierung von überschneidungsfreien Bäume jedoch aus. Wir nennen den Kreis dieser Methode den \textit{größten umschließenden Kreis}.
+Der Kreis von Knoten $K$, mit Mittelpunkt an der Position von $K$, der alle Kreise der Kinder von $K$ umschließt und mindestens zu einem Kreis eines Kindes tangential ist, nennen wird den \textit{größten umschließenden Kreis}. Sein Radius ist der Abstand vom $0$-ten Kind zum $n$-ten Kind, zuzüglich des Radius des $n$-ten Kindes. Diese Methode ist nicht der \textit{kleinste umschließende Kreis}, reicht für die Generierung von überschneidungsfreien Bäume jedoch aus.
 
-Für die vollständige hierarchische Anwendung des Circle-packing wird für jeden Knoten rekursiv das Circle-packing durchgeführt und anschließend der eigene Radius gesetzt. Abbruchbedingung für die Rekursion ist, dass der Knoten ein Blatt, oder ein innerer Knoten mit ausschließlich Blättern ist. In letzterem Fall greift der Sonnenblumen-Algorithmus.
+Für die vollständige hierarchische Anwendung des Circle-packing wird für jeden Knoten das Circle-packing rekursiv durchgeführt und anschließend der Radius des eigenen Kreises gesetzt. Abbruchbedingung für die Rekursion ist, dass der Knoten ein Blatt oder ein innerer Knoten mit ausschließlich Blättern ist. In letzterem Fall greift der Sonnenblumen-Algorithmus.
 
-Das heißt der Algorithmus fängt mit dem Knoten mit der größten Tiefe an und arbeitet sich über Geschwister und Elternteile bis hin zum Kronenansatz fort, bis alle Knoten eines Baumes verteilt sind.
+Das heißt der Algorithmus fängt mit dem Knoten mit der maximalen Tiefe an und arbeitet sich über Geschwister und Elternteile bis hin zum Kronenansatz fort, bis alle Knoten eines Baumes verteilt sind.
 
 \subsubsection*{Verteilung von Bäumen}
 
-Die Verteilung der einzelnen Bäume kann durch das Circle-packing sehr leicht umgesetzt werden. Nachdem der Kronenansatz einen Radius besitzt, ist damit auch die Radius des ganzen Baumes bekannt. Damit können die Bäume beliebig platziert werden, ohne dass sich deren Äste überschneiden würden. Es wäre zum Beispiel eine Verteilung in einem Gitter möglich, was dann an eine Baumschule mit Baumreihen erinnern würde. Es ist jedoch auch ganz einfach möglich die Bäume ebenfalls mit Circle-packing anzuordnen. Damit entsteht ein runder Wald und die Bäume nehmen möglichst wenig Platz ein.
 
-Mit den beiden beschriebenen Algorithmen können Bäume garantiert überschneidungsfrei generiert und verteilt werden. Ein Auszug aus einem so entstanden Wald ist von der Seite in Abbildung \ref{fig:layout-side} und von oben in \ref{fig:layout-top} zu sehen. Die Kreise in Abbildung \ref{fig:layout-top} sind die Visualisierungen der durch das Circle-packing entstehenden Kreise. Aus der Vogelperspektive ist gut zu erkennen, wie die Blätter innerhalb ihrer Eltern mithilfe des Sonnenblumen-Algorithmus sehr gleichmäßig verteilt werden.
+Nachdem die Kronenansätze Kreise besitzen, sind damit auch die Radien der ganzen Bäume bekannt. Damit können die Bäume prinzipiell beliebig platziert werden, ohne dass sich deren Äste überschneiden. Es wäre zum Beispiel eine Verteilung in einem Gitter möglich, was dann an eine Baumschule mit Baumreihen erinnern würde. Es ist jedoch auch ganz einfach möglich die Bäume ebenfalls mit Circle-packing anzuordnen. Damit entsteht ein runder Wald und die Bäume nehmen möglichst wenig Platz ein.
 
-%\begin{figure}[htb]
-%  \includegraphics[width=\textwidth]{figures/layout}
-%  \caption{Layout des Waldes von der Seite}
-%  \label{fig:Circle-packing-code-leaves}
-%\end{figure}
-%
-%\begin{figure}[htb]
-%  \includegraphics[width=\textwidth]{figures/Circle-packing}
-%  \caption{Layout des Waldes aus der Vogelperspektive mit visualisierten Circle-packing}
-%  \label{fig:layout}
-%\end{figure}
+Mit den beiden beschriebenen Algorithmen können Bäume garantiert überschneidungsfrei generiert und verteilt werden. Der damit generierte Wald des Projektes Air ist von der Seite in Abbildung \ref{fig:layout-side} und von oben in \ref{fig:layout-top} zu sehen. Die Kreise in Abbildung \ref{fig:layout-top} sind die Visualisierungen der durch das Circle-packing entstehenden Kreise. Aus der Vogelperspektive ist gut zu erkennen, wie die Blätter innerhalb ihrer Eltern mithilfe des Sonnenblumen-Algorithmus sehr gleichmäßig verteilt werden. Die Farben der Blätter werden in Abschnitt \ref{sec:data} aufgegriffen.
 
-Auch das Circle-packing ist durch die Kreise gut zu sehen. Jedoch lässt sich feststellen, dass durch die Wahl des größten umschließenden Kreises Platz "verschenkt" wird. Besonders in der Mitte der Abbildung wird dies durch die große Fläche deutlich, in der keine weiteren Knoten platziert sind, deutlich.
+Auch das Circle-packing ist durch die Kreise gut zu sehen. Jedoch lässt sich feststellen, dass durch die Wahl des größten umschließenden Kreises Platz "verschenkt" wird. Besonders in der Mitte der Abbildung wird dies durch die große Fläche deutlich, in der keine weiteren Knoten platziert sind.
 
-Um das zu umgehen müsste anstelle des größten umschließenden Kreises, der kleinste umschließende Kreis verwendet werden. Dies ist ein weiteres mathematisches Problem und als Teil des \textit{Appollonius} Problem bekannt \cite{dergiades2007soddy}.
+Um das zu umgehen, müsste anstelle des größten umschließenden Kreises der kleinste umschließende Kreis verwendet werden. Dies ist ein weiteres mathematisches Problem und als Teil des \textit{Appollonius} Problem bekannt \cite{dergiades2007soddy}.
 
 Für den Prototyp ist die Umsetzung des kleinsten umschließenden Kreises für CodeLeaves aber nicht essentiell. Entscheidend ist, dass die Struktur der visualisierten Software ohne Überschneidungen dargestellt wird, was auch mit dem größten umschließenden Kreis möglich ist. Die Umstellung auf den kleinsten umschließenden Kreis ist deshalb eine weiterführende Aufgabe.
 
@@ -1150,15 +1139,16 @@ Für den Prototyp ist die Umsetzung des kleinsten umschließenden Kreises für C
 
 \section{Verwendete Algorithmen in der Praxis}
 
-Für die Praxis in Unity ist bei der Verteilung der Bäume noch zu beachten, dass deren Radien erst verfügbar sind, nachdem der Circle-packing-Algorithmus für alle Bäume vollständig durchlaufen wurde. Das heißt, dass bei der Generierung der einzelnen Bäume noch nicht bekannt ist, an welcher Position die Bäume letztendlich gesetzt werden müssen und zunächst zum Beispiel an der gleichen Stelle generiert werden müssen. Das bedeutet wiederum, dass bei asynchroner Programmierung und großen Projekten wie Air zunächst die Bäume überlagernd gerendert werden und dies auch durchaus für einige Sekunden für den Nutzer sichtbar ist, bevor sich die Bäume verteilen.
+Für die Praxis in Unity ist bei der Verteilung der Bäume noch zu beachten, dass deren Radien erst verfügbar sind, nachdem der Circle-packing-Algorithmus für alle Bäume vollständig durchlaufen wurde. Das heißt, dass bei der Generierung der einzelnen Bäume noch nicht bekannt ist, an welcher Position die Bäume letztendlich gesetzt werden müssen und zunächst zum Beispiel an der gleichen Stelle generiert werden müssen. Das bedeutet wiederum, dass bei nicht blockierendem Rendern und großen Projekten wie Air zunächst die Bäume überlagernd gerendert werden und dies auch durchaus für einige Sekunden für den Nutzer sichtbar ist, bevor sich die Bäume verteilen.
 
 Bei Air dauert die Generierung der 40 Bäume im Unity Editor auf einer Hardware mit 2.3 GHz Intel Core i7 CPU und 16 GB 1600 MHz DDR3 RAM bei 10 Messungen zwischen 6,5 und 6,8 Sekunden. Auf der HoloLens stehen keine genauen Messdaten zur Verfügung, die Generierung dauert aber noch etwas länger.
 
-Soll vermieden werden, dass der Nutzer zunächst die überlagernde Generierung mit ansieht, dürften die Bäume erst sichtbar werden, nachdem alle Bäume fertig generiert und verteilt worden sind. Jedoch ist zu beachten, dass währenddessen dem Benutzer angezeigt wird, dass der Aufbau des Waldes im Hintergrund läuft. Mehr zu diesem Thema ist im nächsten Kapitel zu finden
+Soll vermieden werden, dass der Nutzer zunächst die überlagernde Generierung mit ansieht, dürften die Bäume erst sichtbar werden, nachdem alle Bäume fertig generiert und verteilt worden sind.
 
-Ein weiterer zu beachtender Punkt ist, dass bei beschriebener Vorgehensweise einzelne Blätter theoretisch auf die gleiche Position gelangen könnten. Grund dafür ist, dass der Radius eines Knotens mit ausschließlich Blätter gleich $a_n$ gesetzt wurde. Daraus resultiert, dass bei zwei Geschwister solcher Knoten deren $n$-ten Kinder genau auf dem Schnittpunkt der Kreise liegen könnten. In diesem Fall würden sich die Blätter überschneiden. In der Praxis ist dies jedoch sehr unwahrscheinlich, besonders wenn für den Azimutwinkel des Sonnenblumen-Algorithmus ein zufälliger initialer Wert gesetzt wird, auf den dann ein Vielfaches des goldenen Winkel aufaddiert wird. In unserem Beispielprojekt mit 5373 Blättern, trat dieser Fall nicht auf.
+Ein weiterer zu beachtender Punkt ist die Leistungsfähigkeit der HoloLens. Für Air werden über 12 Tausend 3D Objekte gleichzeitig gerendert. Die aktuelle Entwickler-Version der HoloLens ist für diese Summe an zu rendernden Objekten nicht ausgelegt. Bei Generierung des Waldes wird das Bild zunächst kurz schwarz und stockt während und auch nach fertiger Generierung merklich. Auch bei kontinuierlichen Interaktionen wie das Skalieren reagiert die HoloLens erst nach beendeter Eingabe. Die Nutzung von so großen Software-Projekten wie Air ist demnach mit der aktuellen Entwickler-Version der HoloLens möglich, aber nicht besonders angenehm. Dagegen laufen kleinere Projekte, oder ein Ausschnitt von Air mit z.\,B.\ nur 5 statt den eigentlichen 40 Bäumen flüssig.
 
 \section{Abbildung von Daten auf die Struktur}
+\label{sec:data}
 
 In Abbildung \ref{fig:layout} waren bereits unterschiedliche Blattfarben zu sehen. Mit der Generierung des Waldes ist das schwierigste geschafft. Das Färben der Blätter und das Anpassen der Dicke der Kanten und Wurzeln ist dagegen trivial.
 
@@ -1166,7 +1156,7 @@ In Abbildung \ref{fig:layout} waren bereits unterschiedliche Blattfarben zu sehe
 
 In den Abbildung \ref{fig:layout} - \ref{fig:root} wird mit der Blattfarbe die Testabdeckung im Projekt Air visualisiert. Damit ist es möglich eine beliebige Metrik darzustellen, die im Software-Meta-Modell vorliegt (Akz. \ref{acc:s-metrics} und \ref{acc:d-metrics}). Die Metrik kann in einem stufenlosen Farbverlauf dargestellt werden, im Beispiel der Testabdeckung von Rot (0\%) über Gelb (50\%) bis hin zu Grün (100\%). Klassen, bei denen im Beispiel-Datensatz keine Testabdeckung verfügbar ist, erscheinen in Grau.
 
-In Abbildung \ref{fig:leaf-color} ist schön zu sehen, dass die Testabdeckung im Durchschnitt sehr gut ist, obwohl immer wieder Klassen dabei sind, bei denen keine Testabdeckung vorhanden ist. Im linken oberen Eck der Abbildung ist ein Ast zu sehen, bei dem alle Blätter keine gute Testabdeckung vorweisen können. Ausreißer der aktuellen Metrik und ganze Hotspots sind demnach gut zu erkennen (Akz. \ref{acc:s-hotspots} und \ref{acc:d-hotspots}).
+In Abbildung \ref{fig:leaf-color} ist schön zu sehen, dass die Testabdeckung im Durchschnitt sehr gut ist, obwohl immer wieder Klassen dabei sind, bei denen die Testabdeckung gering ist. Im linken oberen Eck der Abbildung ist ein Ast zu sehen, bei dem alle Blätter keine gute Testabdeckung vorweisen können. Ausreißer der aktuellen Metrik und ganze Hotspots sind demnach im Prototyp gut zu erkennen (Akz. \ref{acc:s-hotspots} und \ref{acc:d-hotspots}).
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{figures/leaf-color}
@@ -1176,9 +1166,9 @@ In Abbildung \ref{fig:leaf-color} ist schön zu sehen, dass die Testabdeckung im
 
 \subsubsection*{Dicke der Kanten}
 
-Die Dicke der Kanten lässt sich ebenfalls leicht anpassen. Die Standard-Dicke kann je nach Anzahl der direkten Verbindungen mit einer Konstante multipliziert werden. Da der Beispiel-Datensatz von Air jedoch keine Verbindungen wie Abhängigkeiten aufweist, wird in Abbildung \ref{fig:thickness} ein Baum gezeigt, der mit zunehmender Höhe der Knoten entsprechend dickere Kanten besitzt. Dies ist für richtige Verbindungen wie Abhängigkeiten natürlich wenig realistisch, zeigt aber das Potential dieser Darstellung. Die Beschaffung und der Transfer von Daten über Abhängigkeiten in Air in das Software-Meta-Modell ist keine triviale Aufgabe und muss außerhalb dieser Arbeit bewältigt werden.
+Die Dicke der Kanten lässt sich ebenfalls leicht anpassen. Die Standard-Dicke kann je nach Anzahl der direkten Verbindungen mit einer geeigneten mathematischen Funktion erhöht werden. Da der Beispiel-Datensatz von Air jedoch keine Verbindungen wie Abhängigkeiten aufweist, wird in Abbildung \ref{fig:thickness} ein Baum gezeigt, der mit zunehmender Höhe der Knoten entsprechend dickere Kanten besitzt. Dies ist für richtige Verbindungen wie Abhängigkeiten natürlich wenig realistisch, zeigt aber das Potential dieser Darstellung. Die Beschaffung und der Transfer von Daten über Abhängigkeiten in Air in das Software-Meta-Modell ist keine triviale Aufgabe und muss außerhalb dieser Arbeit bewältigt und vor allem auch automatisiert werden.
 
-Akzeptanzkriterium \ref{acc:s-thickness} und \ref{acc:d-thickness} wird demnach zwar im High-Fi Prototyp technisch erfüllt, muss aber mit realistischen Beispieldaten noch evaluiert werden. Es muss herausgefunden werden welche mathematische Funktion für die Dick der Kanten geeignet ist.
+Akzeptanzkriterium \ref{acc:s-thickness} und \ref{acc:d-thickness} wird demnach im High-Fi Prototyp bereits technisch erfüllt. Es muss aber mit realistischen Beispieldaten noch evaluiert werden, welche mathematische Funktion für die Dick der Kanten geeignet ist.
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{figures/thickness}
@@ -1188,7 +1178,7 @@ Akzeptanzkriterium \ref{acc:s-thickness} und \ref{acc:d-thickness} wird demnach 
 
 \subsubsection*{Wurzeln}
 
-Bislang haben wir nur Wälder ohne Wurzeln gesehen. Eine realistische Darstellung vom Wurzelgeflecht ist aufgrund der unzureichenden Beispieldaten ebenfalls nicht möglich. Jedoch werden Wurzeln im High-Fi Prototyp prinzipiell  unterstützt. In Abbildung \ref{fig:root} ist eine Beispiel-Wurzel zu sehen, die zwei Bäume miteinander verbindet. Für eine Wurzel wird als 3D Objekt ein Zylinder verwendet, sodass die Wurzel auch von der Seite gut erkennbar ist. Der Zylinder wird so skaliert, dass er so lang ist wie der Abstand zwischen den beiden Stammbasen und so dick wie der breitere Stamm.
+Bislang haben wir nur Wälder ohne Wurzeln gesehen. Eine realistische Darstellung vom Wurzelgeflecht ist aufgrund der unzureichenden Beispieldaten ebenfalls nicht möglich. Jedoch werden Wurzeln im High-Fi Prototyp prinzipiell  unterstützt. In Abbildung \ref{fig:root} ist eine Beispiel-Wurzel zu sehen, die zwei Bäume miteinander verbindet. Für eine Wurzel wird als 3D Objekt ein Zylinder verwendet, sodass Wurzeln auch von der Seite gut erkennbar sind.
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{figures/root}
@@ -1202,16 +1192,14 @@ Die Struktur des Waldes kann nun generiert, die Blätter gefärbt und die Dicke 
 \chapter{Grundlagen der Interaktion in der AR}
 \label{ch:interaction-ar}
 
-\section{Interaktionsmöglichkeiten der HoloLens}
+\section{Eingabemöglichkeiten in der AR und mit der HoloLens}
 \label{sec:interaction-hololens}
 
 In den frühen 70er-Jahren wurden erste Modelle der Computermaus entwickelt und mit Apple's Lisa aus dem Jahr 1983 wurde sie zum Markterfolg. Heute ist die zeigerbasierte Interaktion mit Computer nicht mehr weg zu denken.
 
-Neben der zeigerbasierten Eingabe hat sich mit dem Einzug von Smartphones und Tablets die touchbasierte Eingabe etabliert. Diese kann für Monitor basierte AR verwendet werden. Bei dieser Art von Mit dem AR-Kit von Apple ab der iOS Version 11 sind solche Applikationen einfach zu realisieren.
+Neben der zeigerbasierten Eingabe hat sich mit dem Einzug von Smartphones und Tablets die auch die touchbasierte Eingabe etabliert. Diese Art der Eingabe kann für Monitor-basierte AR verwendet werden. Ein Beispiel dafür sind iOS Geräte, die Apple's AR-Kit unterstützen.
 
-Für die AR mit Head Mounted Displays (HMD) Devices, wie es die HoloLens ist und die wie der Name schon sagt, vom Nutzer getragen werden, ergeben sich neue Möglichkeiten mit Anwendungen zu interagieren. Auch wenn z.\,B. die HoloLens die Eingabe durch eine Bluetooth-Maus unterstützt, bieten sich in AR zusätzliche Eingabemöglichkeiten an.
-
-Es ergeben sich folgende Eingabemöglichkeiten für HMD-Devices:
+Für die AR mit \textit{Head-Mounted-Displays} (HMD) Devices, die wie die HoloLens vom Nutzer als Brille getragen werden, ergeben sich neue Möglichkeiten mit Anwendungen zu interagieren. Dies sind folgende:
 
 \begin{enumerate}
   \item Blickrichtung
@@ -1221,60 +1209,62 @@ Es ergeben sich folgende Eingabemöglichkeiten für HMD-Devices:
 \end{enumerate}
 
 \subsubsection*{Blickrichtung}
-Bei der HoloLens ist die \textit{Blickrichtung} (engl.: \textit{Gaze}) ein elementarer Bestandteil der Bedienung der HoloLens \cite{windows2017interaction}. Die Blickrichtung wird im Normalfall mithilfe eines Cursors visualisiert, der der Kopfbewegung des Nutzers folgt und so immer zentral im Sichtfeld der Hololens bleibt. Der Cursor wird so positioniert und orientiert, dass er sich auf der Oberfläche des Objekts befindet, das sich in Blickrichtung befindet und dem Nutzer am nächsten ist. Dieses Ziel der Blickrichtung nennen wir \textit{fokussiertes} Objekt.
+Bei der HoloLens ist die \textit{Blickrichtung} (engl.: \textit{Gaze}) ein elementarer Bestandteil der Bedienung der HoloLens \cite{windows2017interaction}. Die Blickrichtung wird im Normalfall mithilfe eines Cursors visualisiert, der der Kopfbewegung des Nutzers folgt und so immer zentral im Sichtfeld der Hololens bleibt. Der Cursor wird so positioniert und orientiert, dass er sich auf der Oberfläche des Objekts befindet, das sich in Blickrichtung befindet und dem Nutzer am nächsten ist. Das Ziel der Blickrichtung nennen wir \textit{fokussiertes} Objekt.
 
 \subsubsection*{Gesten}
 Nachdem bei HDM-Devices Hologramme im realen Raum platziert werden, ist Gestensteuerung eine intuitive Eingabemöglichkeit. Beispielsweise muss die Möglichkeit der Auswahl, Platzierung, Skalierung oder Rotation von Hologrammen ermöglicht werden.
 
-Allgemein kann zischen zwei Arten von Gesten unterschieden werden.
+Allgemein kann zischen zwei Arten von Gesten unterschieden werden \cite{windows2017gesture}.
 
 \paragraph{Diskrete Gesten} sind solche, in denen die Ausführung der Geste einen binären Status besitzt. D.\,h\ die Ausführung der Geste ist die Information selbst und trägt keine weiteren Informationen. Diese Gesten lassen sich mit einem Klick einer Computermaus vergleichen.
 
-\paragraph{Kontinuierliche Gesten} sind solche, bei denen das Ausmaß der Geste eine Rolle spielt. Das Ausmaß bestimmt die Größe der Ausgabe. Vergleichen wir diese Gesten mit einer Computermaus, wäre das die Mausbewegung.\\
+\paragraph{Kontinuierliche Gesten} sind solche, bei denen das Ausmaß der Geste eine Rolle spielt. Das Ausmaß bestimmt die Größe der Eingabe. Vergleichen wir diese Gesten mit einer Computermaus, wäre das die Mausbewegung.\\
 
-Theoretisch sind beliebig viele Gesten denkbar. Zum Beispiel könnte für das Rotieren von Objekten die Rotation der Hände verwendet werden. Mit Produkten wie zum Beispiel Kinetic\footnote{\url{https://developer.microsoft.com/de-de/windows/kinect}} können solche Gesten auch erkannt werden. Bei der HoloLens sind die unterstützen Gesten jedoch stark begrenzt. Es existieren insgesamt drei verschiedene Gesten, die von der HoloLens als solche identifiziert werden können. Die sogenannte \textit{Bloom}-Geste ruft das Windows Menü auf. Sie wird ausgeführt, indem der Nutzer alle Fingerspitzen zusammen führt und dann die Hand öffnet und eine aufgehende Blume imitiert.
+Theoretisch sind beliebig viele Gesten denkbar. Zum Beispiel könnte für das Rotieren von Objekten die Rotation einer Hand verwendet werden. Mit Produkten wie zum Beispiel Kinetic\footnote{\url{https://developer.microsoft.com/de-de/windows/kinect}} können solche Gesten auch erkannt werden. Bei der HoloLens sind die unterstützen Gesten jedoch stark begrenzt. Es existieren insgesamt fünf verschiedene Gesten, die von der HoloLens als solche identifiziert werden können. Die sogenannte \textit{Bloom}-Geste ist für das Windows-Menü reserviert. Sie wird ausgeführt, indem der Nutzer alle Fingerspitzen zusammen führt und dann die Hand öffnet und eine aufgehende Blume imitiert.
 
-Als weitere diskrete Geste kann der \textit{Air-tap} verwendet werden. Dieser ist in Abbildung \ref{fig:air-tap} veranschaulicht. In Verbindung mit der Blickrichtung können so Hologramme angeklickt werden.
+Als weitere diskrete Geste kann der \textit{Air-Tap} verwendet werden. Dieser ist in Abbildung \ref{fig:Air-Tap} veranschaulicht. In Verbindung mit der Blickrichtung können so Hologramme angeklickt werden.
 
 \begin{figure}[htb]
-  \includegraphics[width=.8\textwidth]{\figdir/air-tap}
-  \caption{Air-tap \cite{windows2017gesture}}
-  \label{fig:air-tap}
+  \includegraphics[width=.8\textwidth]{\figdir/Air-Tap}
+  \caption{Air-Tap \cite{windows2017gesture}}
+  \label{fig:Air-Tap}
 \end{figure}
 
-Mit der \textit{Manipulation} Geste stellt Microsoft eine kontinuierliche Geste zur Verfügung. Wird ein Air-tap gehalten und die Hand anschließend bewegt, so kann als Ausgabe die Positionsänderung der Hand verwendet werden. Damit ist beispielsweise ein Drag and Drop von Hologrammen möglich.
+Neben dem Air-Tap werden auch der \textit{Double-Tap} und die \textit{Tap-and-hold}-Geste erkannt.
 
-Die HoloLens kann zwischen linker und rechtem Hand unterscheiden. Das bedeutet, dass auch eine Interaktion mit der Verwendung von beiden Händen möglich ist.
+Mit der \textit{Manipulation}-Geste stellt Microsoft eine kontinuierliche Geste zur Verfügung. Wird ein Air-Tap gehalten und die Hand anschließend bewegt, so kann als Eingabe die Positionsänderung der Hand verwendet werden. Damit ist beispielsweise ein Drag-and-Drop von Hologrammen möglich.
+
+Die HoloLens kann zwischen linker und rechtem Hand unterscheiden. Das bedeutet, dass auch eine Interaktion mit der Verwendung von beiden Händen denkbar sind.
 
 \subsubsection*{Sprache}
-Neben den Gesten kann auch durch Sprachsteuerung mit Hologrammen interagiert werden. In einer Applikation können beliebige Sprachbefehle definiert werden, die dann von der HoloLens automatisch erkannt werden.
+Neben den Gesten kann auch durch Sprachsteuerung mit Hologrammen interagiert werden. In einer Applikation können beliebige Befehle definiert werden, die dann von der HoloLens automatisch erkannt werden.
 
-Da die Interaktion mit Gesten auf Dauer für die Arme ermüdend sein kann, bietet sich an, die Spracherkennung zur Unterstützung der Gestensteuerung zu verwenden. Beide Eingabemethoden können auch gut miteinander kombiniert werden. So kann z.\,B. mithilfe von Sprachbefehlen zwischen unterschiedlichen Interaktionsmodi umgeschalten werden. Dadurch können unterschiedliche Interaktionen wie Skalieren und Rotieren mit der gleichen Geste durchgeführt werden.
+Da die Interaktion mit Gesten auf Dauer für die Arme ermüdend sein kann, bietet sich die Sprachsteuerung zur Unterstützung der Gestensteuerung an. Beide Eingabemethoden können auch gut miteinander kombiniert werden. So kann z.\,B. mithilfe von Sprachbefehlen zwischen unterschiedlichen Interaktionsmodi umgeschalten werden. Dadurch können unterschiedliche Interaktionen wie Skalieren und Rotieren mit der gleichen Geste durchgeführt werden.
 
 \subsubsection*{Controller}
-Die vierte Möglichkeit der Interaktion mit HMD-Devices sind Controller. Die meisten VR-Headsets sind nur mit solchen Controllern zu bedienen. In der aktuellen Version unterstütz die HoloLens jedoch kein Controller. Bei anderen Windows Mixed Reality Geräten wie die \textit{Immersive} Headsets von Acer und HP\footnote{\url{https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_hardware_details}} kann mit den \textit{Motion} Controllern, ähnlich wie bei Gaming Konsolen, mit verschiedenen Tasten unterschiedliche Eingaben tätigen. Bei der HoloLens steht lediglich der \textit{Clicker} zur Verfügung, ein kleines Bluetooth-Gerät, dass durch physisches Klicken den Air-tap ersetzen kann. Bei Dauerhafter Eingabe von Air-tap-Gesten ist der Einsatz vom Clicker angenehm, da man die Hand nicht im Sichtfeld der HoloLens halten muss.
+Die vierte Möglichkeit der Interaktion mit HMD-Devices sind Controller. Die meisten VR-Headsets sind nur mit solchen Controllern zu bedienen. In der aktuellen Version unterstütz die HoloLens jedoch kein Controller. Bei anderen Windows Mixed Reality Geräten wie die \textit{Immersive} Headsets von Acer und HP\footnote{\url{https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_hardware_details}} können mit den \textit{Motion} Controllern, ähnlich wie bei Gaming Konsolen, mit verschiedenen Tasten unterschiedliche Eingaben getätigt werden. Bei der HoloLens steht lediglich der \textit{Clicker} zur Verfügung, ein kleines Bluetooth-Gerät, das durch physisches Klicken den Air-Tap ersetzen kann. Bei Dauerhafter Eingabe von Air-Tap-Gesten ist der Einsatz vom Clicker angenehm, da man die Hand nicht im Sichtfeld der HoloLens halten muss.
 
 \section{Herausforderungen}
 
-Bei der Entwicklung von AR-Applikationen sind einige Herausforderungen zu beachten, die auch für CodeLeaves von Relevanz sind. Im Zuge der Entwicklung von der HoloLens-Anwendung HoloStudio hat der Senior Holographic Designer Ghaly in \cite{windows2017casestudy3} eine Case Study veröffentlicht. Mitunter traten die im Folgenden betrachteten Herausforderungen auf.
+Bei der Entwicklung von AR-Applikationen sind einige Herausforderungen zu beachten, die auch für CodeLeaves von Relevanz sind. Im Zuge der Entwicklung von der HoloLens-Anwendung HoloStudio hat Senior Holographic Designer Ghaly in \cite{windows2017casestudy3} eine Case Study veröffentlicht. Mitunter traten die im Folgenden betrachteten Herausforderungen auf.
 
 \subsubsection*{Hologramme außerhalb des Sichtfelds}
 
 Da Hologramme im ganzen Raum, in dem sich der Betrachter befindet, platziert werden können, ist nicht immer gewährleistet, dass sie sich auch im Blickfeld des Betrachters befinden. Besonders bei der aktuellen Entwickler-Version der HoloLens ist das Sichtfeld, in dem Hologramme angezeigt werden können, mit rund 30 Grad \cite{czerulla2017microsoft} gering.
 
-Eine Variante dies zu umgehen, ist es \textit{Tag-along}-Objekte zu verwenden. Diese Objekte bleiben immer im Blickfeld des Betrachters. Schaut der Nutzer in eine andere Richtung, wird das Objekt neu positioniert, sodass es wieder im Blickfeld gelangt. Innerhalb des Blickfelds bleiben Tag-along-Objekte aber stationär, sodass der Nutzer mit der Blickrichtung weiterhin mit ihnen interagieren kann. Das Windows-Startmenü der HoloLens ist ein solches Tag-along-Objekt.
+Eine Variante dies zu umgehen, ist es \textit{Tag-along}-Objekte zu verwenden. Diese Objekte bleiben immer im Blickfeld des Betrachters. Schaut der Nutzer in eine andere Richtung, wird das Objekt neu positioniert, sodass es wieder ins Blickfeld des Nutzers gelangt. Innerhalb des Blickfelds bleiben Tag-along-Objekte aber stationär, sodass der Nutzer mit der Blickrichtung weiterhin mit ihnen interagieren kann. Das Windows-Startmenü der HoloLens ist ein solches Tag-along-Objekt.
 
-In der Case Study aus \cite{windows2017casestudy3} wurde festgestellt, dass die Probanden sich von solchen Tag-along-Objekten in vielen Fällen bedrängt fühlen und instinktiv versuchen davon weg zu kommen.
+In der Case Study aus \cite{windows2017casestudy3} wurde festgestellt, dass die Probanden sich von solchen Tag-along-Objekten in manchen Fällen bedrängt fühlen und sollten deshalb sparsam verwendet werden.
 
-Eine andere Möglichkeit ist es die Hologramme stationär im Raum zu platzieren und die Aufmerksamkeit des Nutzers gezielt zu lenken. Das kann mit verschiedenen Techniken erreicht werden. Eine davon ist die Verwendung von \textit{Spacial Sound}, was bedeutet, dass Geräusche ebenfalls im Raum platziert werden können und vom Nutzer dreidimensional mit Richtung und Entfernung warngenommen werden können. Dies bietet sich vor allem bei Spielen mit bewegten Charakteren an. Bei statischem Content wie CodeLeaves, sind Geräusche nicht besonders intuitiv.
+Eine andere Möglichkeit ist es auf Hologramme, die sich außerhalb des Sichtfelds befinden, gezielt aufmerksam zu machen. Das kann mit verschiedenen Techniken erreicht werden. Eine davon ist die Verwendung von \textit{Spacial-sound}, was bedeutet, dass Geräusche ebenfalls im Raum platziert werden können und vom Nutzer dreidimensional mit Richtung und Entfernung wahrgenommen werden können. Dies bietet sich vor allem bei Spielen mit bewegten Charakteren an. Bei statischem Content wie CodeLeaves, sind Geräusche nicht besonders intuitiv.
 
-Es kann auch mit zusätzlichen Objekten gearbeitet werden, die dem Nutzer darauf hinweisen, wo sich etwas befindet, was seine Aufmerksamkeit erfordert. Solche Hilfs-Objekte nennen wir \textit{Direction Indicators}. Diese können unterschiedliche Gestalt annehmen. Bei anderen HoloLens-Applikationen sind Pfeile, Licht oder Denkblasen im Einsatz.
+Es kann auch mit zusätzlichen Objekten gearbeitet werden, die dem Nutzer darauf hinweisen, wo seine Aufmerksamkeit erfordert wird. Solche Hilfs-Objekte werden in der HoloLens-Entwicklung \textit{Direction-indicators}. Diese können unterschiedliche Gestalt annehmen. Bei anderen HoloLens-Applikationen sind Pfeile, Licht oder Denkblasen im Einsatz.
 
 \subsubsection*{UI von anderen Objekten verdeckt}
 
 Ein Problem, das in vielen HoloLens-Applikationen auftritt, ist dass UI-Elemente von anderen Hologrammen, die näher am Nutzer positioniert sind, verdeckt werden können.
 
-Das Problem ist in Abbildung \ref{fig:occlusion} illustriert. Darin wird in CodeLeaves das Menu zu Interaktion mit dem Wald der "`Move"'-Button von einem Stamm verdeckt.
+Das Problem ist in Abbildung \ref{fig:occlusion} illustriert. Darin wird in CodeLeaves ein Button eines Kontextmenüs (siehe Abschnitt \ref{ch:interaction} von einem Stamm verdeckt.
 
 \begin{figure}[htb]
   \includegraphics[width=.6\textwidth]{\figdir/occlusion}
@@ -1282,9 +1272,9 @@ Das Problem ist in Abbildung \ref{fig:occlusion} illustriert. Darin wird in Code
   \label{fig:occlusion}
 \end{figure}
 
-Analog zum 2D Popups ist es natürlich möglich UI-Elemente vor allen anderen Elementen zu platzieren. In 3D bedeutet das, dass das UI-Element vor dem Hologramm erscheinen muss, dass sich am nächsten am Nutzer befindet. Die UI-Elemente würde dadurch vom eigentlichen interagierten Objekt losgelöst werden, was eine wenig intuitive Interaktion darstellt. Dies kann aber zu Folge haben, dass der Nutzer irritiert wird, weil er mit etwas weiter weg interagiert und die UI deutlich weiter vorne erscheinen kann.
+Analog zum 2D Popups ist es möglich UI-Elemente vor allen anderen Elementen zu platzieren. In 3D bedeutet das, dass das UI-Element vor dem Hologramm erscheinen muss, dass sich am nächsten am Nutzer befindet. Dabei ist zu beachten, dass durch den räumlichen Versatz der Bezug zum fokussierten Objekt nicht verloren gehen darf.
 
-Eine Abhilfe kann ein \textit{Shine-through}-Effekt schaffen, wie er bei HoloStudio Verwendung findet. Dabei bleiben UI-Elemente an dem Hologramm angeheftet, mit dem interagiert wird, jedoch scheinen sie durch davor liegende Hologramme durch.
+Ein alternativer Lösungsansatz ist der \textit{Shine-through}-Effekt, wie er bei HoloStudio Verwendung findet und in Abbildung \ref{fig:shine-through} veranschaulicht wird. Dabei bleiben UI-Elemente räumlich bei dem fokussiertem Objekt, jedoch scheinen sie durch davor liegende Hologramme durch. Diese Variante ist auch für anzuzeigenden Text gut geeignet.
 
 \begin{figure}[htb]
   \includegraphics[width=.6\textwidth]{\figdir/shine-through}
@@ -1292,14 +1282,10 @@ Eine Abhilfe kann ein \textit{Shine-through}-Effekt schaffen, wie er bei HoloStu
   \label{fig:shine-through}
 \end{figure}
 
-Diese Methode funktioniert jedoch schlecht, wenn die UI-Elemente Texte sind und von davor liegenden Texten verdeckt werden. Dadurch werden beide Texte unleserlich. Dieses Problem tritt z.\,B. zwangsläufig bei der Beschriftung von Blättern in CodeLeaves auf und lässt sich nur vermeiden, indem einer der beiden Texte verschwindet oder zumindest verblasst.
-
-Die betrachteten Herausforderungen von 3D Interaktion und deren mögliche Lösungsansätze finden sich im Interaktionskonzept von CodeLeaves wieder und werden in Abschnitt \ref{sec:interaction} aufgegriffen.
-
 \section{Technische Umsetzung von Interaktionen mit Reaktiver UI}
 
 \subsubsection*{Motivation}
-Eine der offensichtlichen Interaktionen mit CodeLeaves ist das Anklicken von Knoten, seien es Blätter oder die dazugehörigen Kanten. Der Nutzer erwartet damit nähere Informationen zu einem Paket oder einer Klasse zu erfahren. Betrachten wir zunächst eine sehr einfaches Szenario:
+Eine der offensichtlichen Interaktionen mit CodeLeaves ist das Anklicken von Knoten. Der Nutzer erwartet damit nähere Informationen zu einem Paket oder einer Klasse zu erfahren. Betrachten wir zunächst eine sehr einfaches Szenario:
 
 \begin{quotation}
   \textit{Wenn der Nutzer auf ein Blatt klickt, soll daraufhin der Name der repräsentierten Klasse über dem Blatt erscheinen.}
@@ -1322,7 +1308,7 @@ Diese Interaktion ist in Abbildung \ref{fig:leaf-interaction} veranschaulicht.
   \caption{Beispielhafte Interaktion mit einem Blatt} \label{fig:leaf-interaction}
 \end{figure}
 
-Bei der Generierung des Baumes wird zu jedem Blatt ein Label hinzugefügt, in dem der Klassenname gespeichert werden kann. Das Anzeigen Namens ist demnach kein Problem und würde wie folgt funktionieren:
+Bei der Generierung des Baumes wird zu jedem Blatt ein Label hinzugefügt, in dem beliebiger Text gespeichert werden kann. Das Anzeigen des Namens ist demnach kein Problem und könnte wie folgt implementiert werden:
 
 \begin{codesnippet}{Direkte Manipulation (Negativbeispiel)}{lst:direct-manipulation}
 public class NodeInputHandler : MonoBehaviour, IInputClickHandler
@@ -1338,7 +1324,7 @@ public class NodeInputHandler : MonoBehaviour, IInputClickHandler
 }
 \end{codesnippet}
 
-Im traditionellen Ansatz könnte also auf das Ereignis des Air-taps auf einfachste Weise reagiert werden. Wird das Blatt angeklickt, wird das Label-Objekt des Blattes aktiviert und der Name wird damit sichtbar. Entsprechend kann bei erneutem Klick das Label-Objekt wieder deaktiviert werden. Wird die Businesslogik aber komplexer, kommt dieser Ansatz schnell an seine Grenzen.
+Mit diesem Ansatz könnte also auf das Ereignis des Air-Taps auf einfachste Weise reagiert werden. Wird das Blatt angeklickt, wird das Label-Objekt des Blattes aktiviert und der Name wird damit sichtbar. Entsprechend kann bei erneutem Klick das Label-Objekt wieder deaktiviert werden. Wird die Businesslogik aber komplexer, kommt dieser Ansatz schnell an seine Grenzen.
 
 Eventuell könnte sich zum Beispiel folgende Einstellung in der Applikation als sinnvoll erweisen:
 
@@ -1352,9 +1338,9 @@ Das eigentliche Problem bei der beschriebenen Situation ist, dass Businesslogik 
 
 Was ist reaktive Programmierung? Staltz beschreibt es in \cite{staltz2016introduction} als "`Programmierung mit asynchronen Datenströmen."' Dies trifft den Kern. Es geht darum auf Änderungen von Werten zu reagieren, die durch \textit{Streams} propagiert werden.
 
-Streams sind nichts anderes als \textit{Observables} die bei jeder Änderung ihrer Werte allen registrierten \textit{Subscribers} den neuen Wert mitteilen.
+Streams sind nichts anderes als \textit{Observables}, die bei jeder Änderung ihrer Werte allen registrierten \textit{Subscribers} den neuen Wert mitteilen.
 
-Betrachten wir in Abbildung \ref{fig:label-stream} konkret das Beispiel den Text, der im Label eines Blattes steht.
+Betrachten wir in Abbildung \ref{fig:label-stream} konkret das Beispiel des Textes, der im Label eines Blattes steht.
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/label-stream}
@@ -1362,17 +1348,17 @@ Betrachten wir in Abbildung \ref{fig:label-stream} konkret das Beispiel den Text
   \label{fig:label-stream}
 \end{figure}
 
-Über die Zeit hinweg, kann sich durch die Businesslogik der darzustellende Text verändern. Im Beispiel soll der Klassenname, dann vielleicht Laufzeitfehler, Coverage und dann wieder der Klassenname dargestellt werden.
+Über die Zeit hinweg, kann sich durch die Businesslogik der darzustellende Text verändern. Im Beispiel soll der Klassenname, dann vielleicht Laufzeitfehler, Testabdeckung und dann wieder der Klassenname dargestellt werden.
 
 Bei der Generierung des Baumes muss dann lediglich der Label-Wert observiert und der Text entsprechend gesetzt werden.
 
 \subsubsection*{Verwendung in Unity}
 
-In Unity steht für reaktive Programmierung das Open-Source-Projekt \textit{UniRx}\footnote{\url{https://github.com/neuecc/UniRx}} zur Verfügung, das die Funktionalität der reaktiven .NET Library \textit{Rx} für Unity zugänglich macht. UniRx implementiert z.\,B. \textit{ReactiveProperties}, mit denen eine einfache Verwendung des Observer-Pattern möglich ist. Darüber hinaus bietet die API hilfreiche Stream-Funktionen wie filter, map, merge oder join.
+In Unity steht für reaktive Programmierung das Open-Source-Projekt \textit{UniRx}\footnote{\url{https://github.com/neuecc/UniRx}} zur Verfügung, das die Funktionalität der reaktiven .NET Library \textit{Rx} für Unity zugänglich macht. UniRx implementiert z.\,B. \textit{ReactiveProperties}, mit denen eine einfache Verwendung des Observer-Pattern möglich ist. Darüber hinaus bietet die API hilfreiche Stream-Funktionen wie \texttt{filter}, \texttt{map}, \texttt{merge} oder \texttt{join}.
 
 In unserem Beispiel von oben wird der Text eines Blattes des UI-Models zu einer ReactiveProperty und bei jeder Änderung wird der Text des Labels angepasst. Auch das aktivieren des Labels wird über eine ReactiveProperty realisiert. So ist zum Beispiel das deaktivieren von allen Labels gleichzeitig leicht möglich.
 
-In Listing \ref{lst:reactive-property} wird gezeigt, wie eine ReactiveProperty für den Status \texttt{isSelected} eines UI-Knotens definiert wird. Im \texttt{TreeBuilder} (Zeile 9) wird das Label bei Aktualisierung von \texttt{isSelected} entsprechend aktiviert.
+In Listing \ref{lst:reactive-property} wird gezeigt, wie eine ReactiveProperty für den Status \texttt{isSelected} eines \textit{UiNodes} definiert wird. Im \texttt{TreeBuilder} (Zeile 9) wird das Label bei Aktualisierung von \texttt{isSelected} entsprechend aktiviert.
 
 \begin{codesnippet}{Observieren von Werten}{lst:reactive-property}
 public abstract class UiNode
@@ -1397,14 +1383,14 @@ public class NodeInputHandler : MonoBehaviour, IInputClickHandler
 }
 \end{codesnippet}
 
-Im \textit{NodeInputHandler} wird nun nicht mehr direkt auf die UI zugegriffen, sondern es wird ein Funktion aufgerufen, die sich darum kümmert, dass das UI-Model editiert.
+Im \texttt{NodeInputHandler} wird nun die Ui nicht mehr direkt manipuliert, sondern es wird eine Funktion des \texttt{InteractionManagers} aufgerufen, die sich darum kümmert, das UI-Model entsprechend zu aktualisieren.
 
 \chapter{Interaktion mit CodeLeaves}
 \label{ch:interaction}
 
-CodeLeaves kann ohne Interaktion die Struktur einer Software, eine Metrik und Verbindungen zwischen Klassen darstellen. Damit kann bereits einen Überblick über die Software geschaffen werden. Der wirklichen Mehrwert von CodeLeaves wird aber erst erreicht, wenn mit dem Software-Wald interagiert wird. Die intuitive Bedienung von CodeLeaves ist demnach essentiell für eine gute User Experience und damit ein tieferes Verständnis der visualisierten Informationen.
+CodeLeaves kann ohne Interaktion die Struktur einer Software, eine Metrik und einen Verbindungs-Typ zwischen Klassen darstellen. Damit kann bereits einen Überblick über die Software geschaffen werden. Der größere Mehrwert von CodeLeaves wird aber erst erreicht, wenn mit dem Software-Wald interagiert werden kann. Die intuitive Bedienung von CodeLeaves ist essentiell für ein tieferes Verständnis der visualisierten Informationen.
 
-In diesem Kapitel wird deswegen ein Konzept entwickelt, mit dem es möglich ist alle Informationen zugänglich zu machen, die CodeLeaves zur Verfügung stellen kann. Es besteht jedoch kein Anspruch auf vollständiges Interaction Design nach \cite{goodwin2011designing} oder \cite{cooper2014face}. Vielmehr soll im Zuge dieser Arbeit Prototyping betrieben werden, durch das CodeLeaves bedienbar ist und der Mehrwert von CodeLeaves beurteilt werden kann. Dennoch werden 
+In diesem Kapitel wird deswegen ein Konzept entwickelt, mit dem es möglich ist alle Informationen zugänglich zu machen, die CodeLeaves zur Verfügung stellen kann. Es besteht jedoch kein Anspruch auf vollständiges Interaction Design nach \cite{goodwin2011designing} oder \cite{cooper2014face}. Vielmehr soll im Zuge dieser Arbeit Prototyping betrieben werden, durch das CodeLeaves bedienbar ist und der Mehrwert von CodeLeaves beurteilt werden kann.
 
 Für eine weiterführende Realisierung von CodeLeaves müsste das Interaktionskonzept in einer Evaluations-Phase durch Nutzerbefragungen validiert werden und bei Bedarf verfeinert oder angepasst werden.
 
@@ -1417,38 +1403,38 @@ Grundlegend muss der gesamte Wald einige \textit{Basisinteraktionen} unterstütz
   \item Rotieren
 \end{itemize}
 
-Das Platzieren ist von Anfang an notwendig um den Wald im Raum dahin zu setzten, wo es für den Nutzer am meisten Sinn macht. Bequemerweise kann das z.\,B. auf einem Tisch sein, oder wenn ein solcher nicht zur Verfügung steht auch auf dem Fußboden. Wenig hilfreich wäre es aber wenn er über dem Benutzer schwebt.
+Das Platzieren ist von Anfang an notwendig um den Wald im Raum dahin zu setzten, wo es für den Nutzer am meisten Sinn macht. Bequemerweise kann das z.\,B. auf einem Tisch sein, oder wenn ein solcher nicht zur Verfügung steht auch auf dem Fußboden.
 
-Das Skalieren ist auch unterlässlich. Gerade bei großen Systemen kann auch der Wald sehr groß werden. Daher muss die Größe des Waldes auf die Gegebenheiten der Räumlichkeiten angepasst werden können.
+Das Skalieren ist auch unerlässlich. Gerade bei großen Systemen kann auch der Wald sehr groß werden. Daher muss die Größe des Waldes auf die Gegebenheiten der Räumlichkeiten angepasst werden können.
 
-Ist der Wald einmal platziert und skaliert, möchte der Nutzer sich den Wald von allen Seiten anschauen können. Er kann natürlich darum herumlaufen, aber vielleicht reicht der Platz dazu nicht aus, oder ein Drehen des Waldes selbst ist bequemer.
+Ist der Wald einmal platziert und skaliert, möchte der Nutzer sich den Wald von allen Seiten anschauen können. Er kann natürlich darum herumlaufen, aber vielleicht reicht der Platz dazu nicht aus, oder ein Drehen des Waldes ist einfach bequemer.
 
-\subsubsection*{Bounding Box}
+\subsubsection*{Bounding-Box}
 
-Das Repository "`Mixed Reality Design Labs"' bietet für genau diese Interaktionen eine Lösung. Die \textit{Bounding Box}, wie sie in Abbildung \ref{fig:bounding-box} zu sehen ist, rendert ein 3D Rahmen um das zu manipulierende Objekt. Das Platzieren des Objekts kann mit einer Manipulation auf den gesamten Bereich der Bounding Box erreicht werden. Mit den kleinen Würfeln an den Ecken der Bounding Box kann skaliert werden und die kleine Kugeln auf den vertikalen Kanten der Bounding Box ist für das Rotieren vorgesehen.
+Das Repository "`Mixed Reality Design Labs"'\footnote{\url{https://github.com/Microsoft/MRDesignLabs_Unity}} bietet für genau diese Interaktionen eine Lösung. Die \textit{Bounding-Box}, wie sie in Abbildung \ref{fig:Bounding-Box} zu sehen ist, rendert ein 3D Rahmen um das zu manipulierende Objekt. Das Platzieren des Objekts kann mit einer Manipulation auf den gesamten Bereich der Bounding-Box erreicht werden. Mit den kleinen Würfeln an den Ecken der Bounding-Box kann skaliert werden und die kleine Kugeln auf den vertikalen Kanten der Bounding-Box ist für das Rotieren vorgesehen.
 
 \begin{figure}[htb]
-  \includegraphics[width=.8\textwidth]{\figdir/bounding-box}
-  \caption{Bounding Box als Option für die Basisinteraktionen \cite{microsoft2017mixed}}
-  \label{fig:bounding-box}
+  \includegraphics[width=.8\textwidth]{\figdir/Bounding-Box}
+  \caption{Bounding-Box als Option für die Basisinteraktionen \cite{microsoft2017mixed}}
+  \label{fig:Bounding-Box}
 \end{figure}
 
-Dieser Ansatz hat den Vorteil, dass dem Nutzer ein Interface angeboten wird, das ihm aus dem Zweidimensionalen wohl bekannt ist. In den meisten Applikationen mitunter in den Bereichen Text- und Bild- oder Grafikverarbeitung ist die Bounding Box Standard. In die Dreidimensionalität übertragen kennt der Nutzer das Prinzip und weiß was er für eine gewünschtes Ziel zu tun hat.
+Dieser Ansatz hat den Vorteil, dass dem Nutzer ein Interface angeboten wird, das ihm aus dem Zweidimensionalen wohl bekannt ist. In vielen Bereichen wie Text- und Bild- oder Grafikverarbeitung ist die Bounding-Box Standard. In die Dreidimensionalität übertragen kennt der Nutzer das Prinzip und weiß was er für eine gewünschtes Ziel zu tun hat.
 
 \subsubsection*{Interaktionsmodi}
 
-Für CodeLeaves ist dieser Ansatz jedoch aus einem einfachen Grund schwierig. Der Wald muss nicht zwangsläufig in seiner Gänze im Blickfeld des Nutzers sein. Angenommen der Nutzer interessiert sich vor allem für ein bestimmten Baum, möchte er diesen genauer betrachten und vergrößert den Wald soweit, dass andere Bäume aus dem Sichtfeld verschwinden. Möchte er dann den Wald wieder verkleinern, müsste er erst soweit zurück gehen, bis er die Bounding Box nutzen kann. Das ist aber aufgrund der Räumlichkeiten vielleicht gar nicht möglich und wenn doch nicht besonders benutzerfreundlich.
+Für CodeLeaves ist dieser Ansatz jedoch aus einem einfachen Grund schwierig. Der Wald muss nicht zwangsläufig in seiner Gänze im Blickfeld des Nutzers sein. Angenommen der Nutzer interessiert sich vor allem für ein bestimmten Baum, möchte er diesen genauer betrachten und vergrößert den Wald soweit, dass andere Bäume aus dem Sichtfeld verschwinden. Möchte er dann den Wald wieder verkleinern, müsste er erst soweit zurück gehen, bis er die Bounding-Box nutzen kann. Das ist aber aufgrund der Räumlichkeiten vielleicht gar nicht möglich und wenn doch, nicht besonders benutzerfreundlich.
 
-Eine Alternative muss daher gefunden werden. Es stellt sich die Frage, was immer im Sichtfeld des Nutzers ist und den Wald für den Nutzer als Ganzes repräsentiert. Der Waldboden als Antwort auf diese Frage leuchtet ein. Er ist auch bei näherer Betrachtung einzelner Teile von CodeLeaves immer präsent und da alles aus ihm wächst ist eine Interaktion mit ihm für die Basisinteraktionen intuitiv.
+Eine Alternative muss daher gefunden werden. Es stellt sich die Frage, was immer im Sichtfeld des Nutzers ist und den Wald für den Nutzer als Ganzes repräsentiert. Die Antwort auf diese Frage liegt auf der Hand -- der Waldboden. Dieser ist auch bei näherer Betrachtung von Ausschnitten des Waldes immer präsent und da alles aus ihm wächst, ist eine Interaktion mit ihm für die Basisinteraktionen intuitiv.
 
-Damit steht das Ziel der Interaktion fest, jedoch können mit der begrenzten Anzahl an Gesten nicht alle Basisinteraktionen mit dem gleichen Ziel bedient werden. Daher wird bei einem Air-tap ein Kontextmenü dargestellt, mit dem der Nutzer zwischen den drei verschiedenen Basisinteraktionen wählen kann. Bei der Auswahl der Modi Skalieren und Rotieren kann der Nutzer mithilfe der Manipulation-Geste und fokussiertem Waldboden den Wald entsprechend manipulieren. Die Ausführung dieser Geste werden näher im Abschnitt \ref{subsec:manipulation-indicators} ausgeführt.
+Damit steht das Ziel der Interaktion fest, jedoch können mit der begrenzten Anzahl an Gesten nicht alle Basisinteraktionen bedient werden. Daher wird bei einem Air-Tap ein Kontextmenü dargestellt, mit dem der Nutzer zwischen den drei verschiedenen Basisinteraktionen wählen kann. Bei der Auswahl der Modi Skalieren und Rotieren kann der Nutzer mithilfe der Manipulation-Geste den Wald entsprechend manipulieren. Die Ausführung dieser Geste werden näher im Abschnitt \ref{subsec:Manipulation-Indicators} ausgeführt.
 
 \subsubsection*{Interaktion mit Spacial Mapping}
-Für den Plazierungs-Modus bietet sich für die HoloLens die Nutzung des \textit{Spacial Mapping} an. Die HoloLens ist fähig den Raum, in dem sie sich befindet, zur Laufzeit zu erfassen und einer Applikation zur Verfügung zu stellen \cite{windows2017spacial}. Mit diesen Informationen ist es Möglich ein Spatial Mapping Mesh darzustellen, das über die reale Oberfläche des Raumes gelegt wird. Damit können Hologramme mit der Oberfläche des Raumes kollidieren und entsprechend der Umgebung platziert werden. So ist es zum Beispiel möglich den Wald auf einen Tisch oder auf den Boden zu positionieren.
+Für den Plazierungs-Modus bietet sich für die HoloLens die Nutzung des \textit{Spacial-Mapping} an. Die HoloLens ist fähig den Raum, in dem sie sich befindet, zur Laufzeit zu erfassen und einer Applikation zur Verfügung zu stellen \cite{windows2017spacial}. Mit diesen Informationen ist es Möglich ein Spatial-Mapping-Mesh darzustellen, das über die reale Oberfläche des Raumes gelegt wird. Damit können Hologramme mit der Oberfläche des Raumes kollidieren und entsprechend der Umgebung platziert werden. So ist es zum Beispiel möglich den Wald komfortabel auf einen Tisch oder auf den Boden zu positionieren.
 
-Bei aktivem Platzieren des Waldes wird des Spatial Mapping Mesh angezeigt, sodass der Nutzer sieht, wo genau der Waldboden mit der Umgebung kollidiert. Die Positionierung selbst wird nicht mit der Manipulation-Geste ausgeführt, sondern mithilfe der Blickrichtung. Der Wald folgt der Blickrichtung des Nutzers und wird immer dort platziert, wo die Blickrichtung das Spatial Mapping Mesh trifft. Die Manipulation-Geste ist besonders für die Eingabe eines Deltas geeignet. Für den Input einer bestimmten Richtung, die für Kollision mit dem Spatial Mapping Mesh benötigt wird, ist die Blickrichtung die bessere Wahl. Zudem ist der "`Transport"' des Waldes auf diese Weise auch über größere Strecken komfortabel, da die Hand des Nutzers nicht dauerhaft oben gehalten werden muss, wie es bei der Manipulation nötig wäre. 
+Bei aktivem Platzieren des Waldes wird das Spatial-Mapping-Mesh angezeigt, sodass der Nutzer sieht, wo genau der Waldboden mit der Umgebung kollidiert. Die Platzierung selbst wird nicht mit der Manipulation-Geste ausgeführt, sondern mithilfe der Blickrichtung. Der Wald folgt der Blickrichtung des Nutzers und wird immer dort platziert, wo die Blickrichtung das Spatial-Mapping-Mesh trifft. Die Manipulation-Geste ist besonders für die Eingabe eines Deltas geeignet. Für die Eingabe einer bestimmten Richtung, die für Kollision mit dem Spatial-Mapping-Mesh benötigt wird, ist die Blickrichtung die bessere Wahl. Zudem ist der "`Transport"' des Waldes auf diese Weise auch über größere Strecken komfortabel möglich, da die Hand des Nutzers nicht dauerhaft oben gehalten werden muss, wie es bei der Manipulation-Geste nötig ist. 
 
-Der Modus des Platzieren wird durch einen Air-tap auf den Wald beendet. Der aktive Modus mit dem Spatial Mapping Mesh kann in Abbildung \ref{fig:spatial-mapping} betrachtet werden.
+Der Platzierungs-Modus wird durch einen Air-Tap auf den Wald beendet. Der aktive Modus mit dem Spatial-Mapping-Mesh kann in Abbildung \ref{fig:spatial-mapping} betrachtet werden.
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/spatial-mapping}
@@ -1457,15 +1443,15 @@ Der Modus des Platzieren wird durch einen Air-tap auf den Wald beendet. Der akti
 \end{figure}
 
 \section{Das Kontextmenü}
-Das Kontextmenü, mit dem die verschiedenen Interaktionsmodi für den gesamten Wald ausgewählt werden können, lässt sich aber nicht nur für die Interaktion mit dem Waldboden anwenden. Auch für andere fokussierte Objekte ist eine vom Kontext abhängige Auswahl von möglichen Funktionen allgemeingültig sinnvoll. In herkömmlichen 2D User Interfaces ist dies mit einem Rechtsklick zu vergleichen. In 3D kann um den Punkt, den der Nutzer beim Aufruf des Kontextmenüs fokussiert hatte, das Kontextmenü als Buttons in einer kreissegmentförmigen Anordnung dargestellt werden.
+Das Kontextmenü, mit dem die verschiedenen Interaktionsmodi für den gesamten Wald ausgewählt werden können, lässt sich aber nicht nur für die Interaktion mit dem Waldboden anwenden. Auch für andere fokussierte Objekte ist eine vom Kontext abhängige Auswahl von möglichen Funktionen allgemeingültig sinnvoll. In herkömmlichen 2D Benutzeroberflächen ist dies mit einem Rechtsklick zu vergleichen. In 3D kann um den Punkt, den der Nutzer beim Aufruf des Kontextmenüs fokussiert hatte, das Kontextmenü in Form von Buttons in einer kreissegmentförmigen Anordnung dargestellt werden.
 
 Die kreissegmentförmige Anordnung der Buttons hat den Vorteil, dass der Interaktionspunkt für das öffnen des Kontextmenüs im Zentrum des Kreises ist und daher eine Verbindung mit dem fokussieren Objekt schafft. Darüber hinaus sind alle Buttons vom Cursor gleich weit entfernt und daher schnellstmöglich mithilfe der Blickrichtung erreichbar.
 
-Die Distanz des Kontextmenüs ist den Umständen entsprechend anzupassen. Ist der fokussierte Punkt bereits näher als die Distanz, in der eine Darstellung von Interaktionselementen empfohlen wird\footnote{Die Distanz, in der es empfohlen ist Hologramme zu platzieren, liegt bei 2,0 Metern \cite{windows2017interaction}}, sollte das Kontextmenü nicht noch näher an dem Nutzer platziert werden. Bei größerem Abstand sollte der Abstand zum Kontextmenü auf die empfohlene Distanz reduziert werden, sodass der Nutzer noch komfortabel mit dem Menü interagieren kann.
+Die Distanz des Kontextmenüs ist den Umständen entsprechend anzupassen. Ist der fokussierte Punkt bereits näher als die Distanz, in der eine Darstellung von Interaktionselementen empfohlen wird\footnote{Die Distanz, in der Microsoft empfiehlt Hologramme zu platzieren, liegt bei 2,0 Metern \cite{windows2017interaction}.}, sollte das Kontextmenü nicht noch näher an dem Nutzer platziert werden. Bei größerem Abstand sollte der Abstand zum Kontextmenü auf die empfohlene Distanz reduziert werden, sodass der Nutzer noch komfortabel mit dem Menü interagieren kann. Auf diese Weise ist die Überdeckung des Kontextmenüs durch andere Elemente sehr unwahrscheinlich.
 
 In dem Fall, dass das Kontextmenü direkt an der fokussierten Position erscheint, muss das Kreissegment des Kontextmenüs so angepasst werden, dass die Buttons nicht in das fokussierte Objekt hinein ragen. Für den Waldboden ist daher ein nach oben orientiertes Kreissegment eine gute Wahl. Würde aber zum Beispiel mit einer Wand interagiert werden, sollte das Kontextmenü von der Wand weg orientiert sein.
 
-Das Kontextmenü für den Waldboden im Prototypen ist in Abbildung \ref{fig:context-menu} zu sehen. Mit dem vierten Button von links ist das App-Menü aufrufbar, dass in \ref{subsec:app-menu} vorgestellt wird. 
+Das Kontextmenü für den Waldboden im High-Fi Prototypen ist in Abbildung \ref{fig:context-menu} zu sehen. Mit dem vierten Button von links ist das App-Menü aufrufbar, dass in \ref{sec:app-menu} vorgestellt wird. 
 
 \begin{figure}[htb]
   \centering
@@ -1482,15 +1468,15 @@ Das Kontextmenü für den Waldboden im Prototypen ist in Abbildung \ref{fig:cont
   \caption{Kontextmenü für den Waldboden im High-Fi Prototyp} \label{fig:context-menu}
 \end{figure}
 
-In Abbildung \ref{fig:context-menu-side} ist zu erkennen, dass der fokussierte Button räumlich hervorgehoben ist. Dies ist eine vor der Augmented Reality noch nicht dagewesene Möglichkeit dem Nutzer Feedback zu geben. Angenommen $\vv{g}$ ist der Normalvektor der Blickrichtung des Nutzers, dann wird ein Button beim Fokussieren um $-\vv{g} \cdot x$ transformiert, wobei $x$ ein beliebiger Faktor ist. Bei der Ausführung der Air-tap-Geste wird beim Schließen der Finger der Button um $\vv{g} \cdot x$ transformiert, sodass er wieder in seine Ausgangsposition gelangt. Sobald der Nutzer mit dem Öffnen der Finger den Air-tap beendet, wird der Button wieder um $-\vv{g} \cdot x$ transformiert. Verlässt der Fokus den Button, wird er ebenfalls wieder in seine Ausgangsposition versetzt.
+In Abbildung \ref{fig:context-menu-side} ist zu erkennen, dass der fokussierte Button räumlich hervorgehoben ist. Dies ist eine vor der AR noch nicht dagewesene Möglichkeit dem Nutzer haptisches Feedback zu geben. Angenommen $\vv{g}$ ist der Normalvektor der Blickrichtung des Nutzers, dann wird ein Button beim Fokussieren um $-\vv{g} \cdot x$ transformiert, wobei $x$ ein beliebiger Faktor ist. Bei der Ausführung der Air-Tap-Geste wird beim Schließen der Finger der Button um $\vv{g} \cdot x$ transformiert, sodass er wieder in seine Ausgangsposition gelangt. Sobald der Nutzer mit dem Öffnen der Finger den Air-Tap beendet, wird der Button wieder um $-\vv{g} \cdot x$ transformiert. Verlässt der Fokus den Button, wird er ebenfalls wieder in seine Ausgangsposition versetzt.
 
-Mit diesem Prinzip wird einem Button ein haptisches Feedback verliehen und der Nutzer kann ihn räumlich "`eindrücken"'. Das Prinzip findet auch beim Windows-Menü der HoloLens Anwendung und zieht sich durch die gesamte UI des Prototypen.
+Mit diesem Prinzip wird einem Button ein haptisches Feedback verliehen und der Nutzer kann ihn räumlich "`eindrücken"'. Das Prinzip findet auch beim Windows-Menü der HoloLens Anwendung und zieht sich durch die gesamte UI des High-Fi Prototypen.
 
-\section{Manipulation-indicators}
-\label{subsec:manipulation-indicators}
-Mit dem Kontext-Menü des Waldbodens kann zwischen den beiden Interaktionsmodi umgeschalten werden, die mit der Manipulation-Geste ausgeführt werden. Bei der Manipulation-Geste weiß der Nutzer aber ohne weiter Hilfe nicht, wie er seine Hand bewegen muss, um die gewünschte Manipulation zu erreichen. Möchte der Nutzer beispielsweise den Wald verkleinern, weiß er nicht in welche Richtung der Wald vergrößert wird und in welche verkleinert. Zudem sind mehrere Bewegungsachsen wie horizontal, vertikal oder diagonal denkbar. Deswegen ist es unerlässlich dem Nutzer Feedback zu geben. Dies wird mit den -- wie wir sie nennen -- \textit{Manipulation-indicators} erreicht. Diese tauchen auf, sobald der Air-tap gehalten wird und indizieren die möglichen Richtungen und deren Auswirkung.
+\section{Manipulation-Indicators}
+\label{subsec:Manipulation-Indicators}
+Mit dem Kontext-Menü des Waldbodens kann zwischen den beiden Interaktionsmodi umgeschalten werden, die mit der Manipulation-Geste ausgeführt werden. Bei der Manipulation-Geste weiß der Nutzer aber ohne weiter Hilfe nicht, wie er seine Hand bewegen muss, um die gewünschte Manipulation zu erreichen. Der Nutzer weiß nicht in welche Richtung der Wald vergrößert und in welche er verkleinert wird. Zudem sind mehrere Bewegungsachsen wie horizontal, vertikal oder diagonal denkbar. Deswegen ist es unerlässlich dem Nutzer Feedback zu geben. Dies wird mit den -- wie wir sie nennen -- \textit{Manipulation-Indicators} erreicht. Diese tauchen auf, sobald der Air-Tap gehalten wird und indizieren die möglichen Richtungen und deren Auswirkungen.
 
-In Abbildung \ref{fig:manipulation} sind Manipulation-indicators für das Beispiel des Skalieren dargestellt.
+In Abbildung \ref{fig:manipulation} sind Manipulation-Indicators für das Beispiel des Skalierens dargestellt.
 
 \begin{figure}[htb]
   \centering
@@ -1504,7 +1490,7 @@ In Abbildung \ref{fig:manipulation} sind Manipulation-indicators für das Beispi
   	\includegraphics[height=1.5cm]{figures/manipulation-drag}
   	\subcaption{Darstellung des Deltas durch Bewegung der Pfeile} \label{fig:manipulation-drag}
   \end{subfigure}
-  \caption{Manipulation-indicators am Beispiel des Interaktions-Modus Skalieren} \label{fig:manipulation}
+  \caption{Manipulation-Indicators am Beispiel des Interaktions-Modus Skalieren} \label{fig:manipulation}
 \end{figure}
 
 Durch die Pfeile wird die Achse der Manipulation angegeben. In unserem Beispiel wird die Horizontale für die Skalierung verwendet. Durch die Symbole wird dem Nutzer eindeutig angezeigt, welche Richtung welche Auswirkung hat. Durch die Verschiebung der Pfeile um das Delta der Handposition, wird dem Nutzer zudem das Ausmaß seiner Eingabe widergespiegelt.
@@ -1512,27 +1498,27 @@ Durch die Pfeile wird die Achse der Manipulation angegeben. In unserem Beispiel 
 \section{Das App-Menü}
 \label{sec:app-menu}
 
-Bisher wurden Interaktionen behandelt, die nur bei einem vorhanden Wald relevant sind. Der Nutzer von CodeLeaves muss jedoch zuvor auswählen können, welche Software er überhaupt visualisieren möchte. Auch müssen die dargestellten Informationen nach der Auswahl eines Projekts konfiguriert werden können. Dafür wird ein zentrales \textit{App-Menü} eingeführt.
+Bisher wurden Interaktionen behandelt, die nur bei einem vorhanden Wald relevant sind. Der Nutzer von CodeLeaves muss jedoch zuvor auswählen können, welche Software er überhaupt visualisieren möchte (Akz. \ref{acc:u-project-selection}). Auch müssen die dargestellten Informationen nach der Auswahl eines Projekts konfiguriert werden können (Akz. \ref{acc:s-metrics}, \ref{acc:s-thickness}, \ref{acc:d-metrics} und \ref{d-thickness}). Dafür wird ein zentrales \textit{App-Menü} eingeführt.
 
 Für dieses Menü wurde sich an herkömmlichen Fenstern orientiert, wie sie bei Desktop-Systemen zu finden sind. Bevor näher auf den Inhalt des App-Menüs eingegangen wird, muss zunächst auf die Positionierung des Fensters im Raum eingegangen werden.
 
 \subsubsection*{Positionierung}
 
-Initial dient das App-Menü dazu ein Projekt auszuwählen bzw.\ eines von einer unterstützen Datenquelle auszuwählen. Deshalb sollte das Menü nach dem Start der App in jedem Fall im Fokus des Nutzers platzieret werden, sodass der Nutzer sofort mit CodeLeaves arbeiten kann. Dies kann mit dem in Abschnitt \ref{sec:interaction-hololens} vorgestellten Tag-along-Effekt bewerkstelligt werden. Für den initialen Zustand ist der Tag-along-Effekt des App-Menüs als nicht störend zu bewerten, da der Nutzer in jedem Fall mit dem Menü interagieren möchte und noch keine andren Inhalte vorhanden sind, die das Menü verdecken würde.
+Initial dient das App-Menü dazu ein Projekt auszuwählen bzw.\ eines von einer unterstützen Datenquelle zu importieren. Deshalb sollte das Menü nach dem Start der App in jedem Fall im Fokus des Nutzers platzieret werden, sodass dieser sofort mit CodeLeaves arbeiten kann. Dies kann mit dem in Abschnitt \ref{sec:interaction-hololens} vorgestellten Tag-along-Effekt bewerkstelligt werden. Für den initialen Zustand ist der Tag-along-Effekt des App-Menüs als nicht störend zu bewerten, da der Nutzer in jedem Fall mit dem Menü interagieren möchte und noch keine andren Inhalte vorhanden sind, die das Menü verdecken würde.
 
-Nach der Auswahl eines Projekts muss der Tag-along-Effekt aber als störend empfunden werden, da er das Menü im Vordergrund hält und die Sicht auf den Wald versperrt. Das Fenster des App-Menüs muss demnach die Möglichkeit unterstützen stationär im Raum platziert zu werden oder ganz geschlossen zu werden.
+Nach der Auswahl eines Projekts kann der Tag-along-Effekt aber durchaus als störend empfunden werden, da er das Menü im Vordergrund hält und die Sicht auf den Wald versperrt. Das Fenster des App-Menüs muss demnach die Möglichkeit unterstützen stationär im Raum platziert oder ganz geschlossen zu werden.
 
-Zweiteres kann mit einem Schließen-Button in einer Titelleiste realisiert werden, was dem Nutzer aus bekannten Systemen vertraut ist. Das erneute Öffnen kann und muss durch das Kontextmenü möglich sein. In Abbildung \ref{fig:context-menu} ist diese Möglichkeit im Kontextmenü des Waldbodens bereits zu sehen gewesen. Auch im Kontextmenü eines Blattes oder eines inneren Knotens sollte das App-Menü aufrufbar sein, da der Nutzer damit Eigenschaften der Blätter und inneren Knoten verändern kann.
+Zweiteres kann mit einem Schließen-Button in einer Titelleiste realisiert werden, was dem Nutzer aus bekannten Systemen vertraut ist. Das erneute Öffnen kann und muss durch das Kontextmenü von Objekten des Waldes möglich sein. In Abbildung \ref{fig:context-menu} ist diese Möglichkeit im Kontextmenü des Waldbodens bereits zu sehen gewesen. Auch im Kontextmenü eines Blattes oder eines inneren Knotens sollte das App-Menü aufrufbar sein, da der Nutzer damit Eigenschaften der Blätter und inneren Knoten verändern kann.
 
-Die Funktion des stationären Platzierens kann ebenfalls in der Titelleiste untergebracht werden. Analog zum "`Vollbild"' eines Desktop-Fensters, bei dem der Nutzer sich ausschließlich auf dieses konzentrieren möchte, wird neben dem Schließen-Button ein neuer \textit{Tag-along-Button} eingeführt, der für das Ein- und Ausschalten des Tag-along-Effekts zuständig ist. Damit kann der Nutzer das Fenster jederzeit dort platzieren, wo es sich gerade befindet. Wurde das App-Menü zuvor geschlossen, wird beim erneuten Öffnen des Fensters durch das Kontextmenü der Tag-along-Effekt aktiviert, sodass der Nutzer das Fenster nicht suchen muss, sondern zu ihm kommt, sobald er es braucht.
+Die Funktion des stationären Platzierens kann ebenfalls in der Titelleiste untergebracht werden. Analog zum "`Vollbild"' eines Desktop-Fensters, bei dem der Nutzer sich ausschließlich auf dieses konzentrieren möchte, wird neben dem Schließen-Button ein \textit{Tag-along-Button} eingeführt, der für das Ein- und Ausschalten des Tag-along-Effekts zuständig ist. Damit kann der Nutzer das Fenster jederzeit dort platzieren, wo es sich gerade befindet. Wird das App-Menü aus einem Kontextmenü aufgerufen, wird der Tag-along-Effekt aktiviert, sodass der Nutzer das Fenster nicht suchen muss, sondern es zu ihm kommt, sobald er es braucht.
 
-Die Titelleiste kann für eine weitere Funktion genutzt werden. Wird bei Desktop-Sytemen ein Drag-and-drop der Titelleiste durchgeführt, lässt das zugehörige Fenster verschieben. Dies ist in 3D ebenfalls möglich. Wird die Manipulation-Geste bei fokussierter Titelleiste durchgeführt, wird das Fenster des App-Menüs entsprechen im Raum verschoben. Durch die dreidimensionale Eingabe der Manipulation und Faktor, kann der Drag-and-drop im Zweidimensionalen einfach in drei Dimensionen übertragen werden.
+Die Titelleiste kann für eine weitere Funktion genutzt werden. Wird bei Desktop-Sytemen ein Drag-and-drop der Titelleiste durchgeführt, lässt das zugehörige Fenster verschieben. Dies ist in 3D ebenfalls möglich. Wird die Manipulation-Geste bei fokussierter Titelleiste durchgeführt, wird das Fenster des App-Menüs entsprechen im Raum verschoben. Durch die dreidimensionale Eingabe der Manipulation-Geste, kann der Drag-and-drop im Zweidimensionalen einfach in drei Dimensionen übertragen werden.
 
-In dem High-Fi Prototyp wurden die beschriebenen Funktionen des App-Menüs bereits umgesetzt. In Abbildung \ref{fig:app-menu} kann das erstellte Menü betrachtet werden. Die Auswahl eines Projekts beschränkt sich dabei auf Beispielprojekte (siehe Akzeptanzkriterium 7.1).
+In dem High-Fi Prototyp wurden die beschriebenen Funktionen des App-Menüs bereits umgesetzt. In Abbildung \ref{fig:app-menu} kann das erstellte Menü betrachtet werden. Die Auswahl eines Projekts beschränkt sich dabei auf gespeicherte Beispielprojekte (Akz. \ref{acc:u-project-selection}).
 
 \subsubsection*{Projektauswahl}
 
-Für die produktive Einsetzung von CodeLeaves ist ein Import von neuen Projekten nötig (siehe Akzeptanzkriterium 7.2). In dem Low-Fi Papier Prototyp in Abbildung \ref{fig:project-selection-mockup} ist die Interaktion mit zusätzlicher Import-Möglichkeit dargestellt.
+Für die produktive Einsetzung von CodeLeaves ist ein Import von neuen Projekten nötig (Akz. \ref{acc:u-import}). In dem Low-Fi Papier Prototyp in Abbildung \ref{fig:project-selection-mockup} ist die Interaktion mit zusätzlicher Import-Möglichkeit dargestellt.
 
 \begin{figure}[htb]
   \centering
@@ -1550,9 +1536,9 @@ Für die produktive Einsetzung von CodeLeaves ist ein Import von neuen Projekten
   \caption{High-Fi Prototyp der Projektauswahl im App-Menüs} \label{fig:app-menu}
 \end{figure}
 
-Bei den hier vorgestellten Low-Fi Prototyp Darstellungen besteht kein Anspruch auf Vollständigkeit. Vielmehr müsste der Low-Fi Prototyp eine Evaluations-Phase mit Probanden durchlaufen, um diesen zu Bewerten und bei Bedarf zu überarbeiten. Auf diese Phase wird im Rahmen dieser Arbeit jedoch verzichtet, da es vor allem um das Design neuer Konzepte in der AR und das Grobkonzept gehen soll.
+%Bei den hier vorgestellten Low-Fi Prototyp Darstellungen besteht kein Anspruch auf Vollständigkeit. Vielmehr müsste der Low-Fi Prototyp eine Evaluations-Phase mit Probanden durchlaufen, um diesen zu Bewerten und bei Bedarf zu überarbeiten. Auf diese Phase wird im Rahmen dieser Arbeit jedoch verzichtet, da es vor allem um das Design neuer Konzepte in der AR und das Grobkonzept gehen soll.
 
-Bei der Projektauswahl hat der Nutzer die Wahl zwischen zwei Haupt-Tasks: Der Auswahl eines bereits betrachteten Projekten und den Import von neuen Projekten. Die Interaktion bei einem Import ist für SonarQube beispielhaft im Anhang zu finden.
+Bei der Projektauswahl hat der Nutzer die Wahl zwischen zwei Haupt-Tasks: Der Auswahl eines bereits betrachteten Projektes und dem Import von neuen Projekten. Die Interaktion bei einem Import ist für SonarQube beispielhaft im Anhang zu finden.
 
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{\figdir/project-selection-mockup}
@@ -1564,7 +1550,7 @@ Ist ein Projekt ausgewählt bzw.\ importiert, wird der Wald nach dem Layout gene
 
 \subsubsection*{Einstellungen}
 
-Dies kann er ebenfalls mit dem App-Menu erreichen, das sich nun in eine Schaltzentrale mit allen nötigen Einstellungen verwandelt. Im High-Fi Prototyp wurden nur essentielle Eistellungen eingebaut, die für die Nutzung des Prototyps unerlässlich sind. In Abbildung \ref{fig:app-menu-mockup} ist dagegen wiederum eine vollständige Low-Fi Prototyp Zeichnung zu sehen.
+Dies kann er ebenfalls mit dem App-Menu erreichen, das sich nun in eine Schaltzentrale mit allen nötigen Einstellungen verwandelt. Im High-Fi Prototyp wurden nur essentielle Eistellungen eingebaut, die für die Nutzung des Prototyps unerlässlich sind. In Abbildung \ref{fig:settings} ist dagegen wiederum eine vollständige Low-Fi Prototyp Zeichnung zu sehen.
 
 \begin{figure}[htb]
   \includegraphics[width=.9\textwidth]{\figdir/app-menu-mockup}
@@ -1572,17 +1558,17 @@ Dies kann er ebenfalls mit dem App-Menu erreichen, das sich nun in eine Schaltze
   \label{fig:settings}
 \end{figure}
 
-Der Nutzer muss eine Metrik für die Farbe der Blätter (siehe Akzeptanzkriterium \ref{acc:s-metrics} und \ref{acc:d-metrics}) und ein Verbindungs-Typ für die Dicke der Wurzeln und Kanten (siehe Akzeptanzkriterium \ref{acc:s-thickness} und \ref{acc:d-thickness}) angeben können. Die Zuordnung von Metriken für die Farbe der Blätter und die Stärke der Verbindungen nehmen deshalb als Drop-down-Menüs zentrale Elemente in den Einstellungen ein.
+Der Nutzer muss eine Metrik für die Farbe der Blätter (Akz. \ref{acc:s-metrics} und \ref{acc:d-metrics}) und ein Verbindungs-Typ für die Dicke der Wurzeln und Kanten (Akz. \ref{acc:s-thickness},  und \ref{d-thickness}) angeben können. Die Zuordnung von Metriken für die Farbe der Blätter und die Stärke der Verbindungen nehmen deshalb als Drop-down-Menüs zentrale Elemente in den Einstellungen ein.
 
-Die zur Auswahl stehenden Metriken sind davon abhängig, ob der Nutzer gerade dynamische oder statische Daten betrachten möchte. Dynamische Daten beziehen sich immer auf einen bestimmten Zeitraum, wohingegen statische Informationen den Zustand eines Systems zu einem bestimmen Zeitpunkt widerspiegeln.
+Die zur Auswahl stehenden Metriken sind davon abhängig, ob der Nutzer gerade dynamische oder statische Daten betrachten möchte.
 
-Deshalb wird als erstes die Wahl angeboten, ob statische oder dynamische Informationen betrachtet werden sollen. Mit dem "`Add"' neben dieser Auswahl kann der Nutzer Daten zu dem geladenen Projekt hinzufügen (Akz. \ref{acc:u-add-data}). Je nach dem welche Auswahl getroffen ist, kann der Nutzer darunter entweder einen Zeitpunkt -- in diesem Fall wird nur \textbf{ein} Schieberegler angezeigt -- oder einen Zeitraum angeben (Akz \ref{acc:s-timestamp} und \ref{acc:d-timespan}).
+Deshalb wird als erstes die Wahl angeboten, ob statische oder dynamische Informationen betrachtet werden sollen. Mit dem "`Add"' neben dieser Auswahl kann der Nutzer Daten zu dem geladenen Projekt hinzufügen (Akz. \ref{acc:u-add-data}). Je nachdem welche Auswahl getroffen wird, kann der Nutzer darunter entweder einen Zeitpunkt -- in diesem Fall wird nur \textbf{ein} Schieberegler angezeigt -- oder einen Zeitraum angeben (Akz \ref{acc:s-timestamp} und \ref{acc:d-timespan}).
 
-Die Drop-down-Menüs für die dargestellten Metriken passen sich ebenfalls der Auswahl von "`Data"' an. Damit sind die wichtigsten Einstellungsmöglichkeiten schon abgedeckt und der Nutzer die aktuell dargestellten Daten interaktiv erforschen.
+Die Drop-down-Menüs für die dargestellten Metriken passen sich ebenfalls der Auswahl von "`Data"' an. Damit sind die wichtigsten Einstellungsmöglichkeiten schon abgedeckt und der Nutzer kann die aktuell dargestellten Daten interaktiv erforschen.
 
-Norman stellt im Interaction Design Klassiker \textit{The Design of Everyday Things} sieben allgemeingültige Prinzipien für gutes Interaction Design auf. Nach dem siebten Prinzip \textit{Constraints} sollten die möglichen Aktionen des Nutzers eigeschränkt werden, um die Aktionen zu lenken und den Nutzer nicht zu überfordern \cite{norman2013design}. Dies lässt sich auch auf die Einstellungen für CodeLeaves anwenden.
+D.\ Norman stellt im Interaction Design Klassiker \textit{The Design of Everyday Things} sieben allgemeingültige Prinzipien für gutes Interaction Design auf. Nach dem siebten Prinzip \textit{Constraints} sollten die möglichen Aktionen des Nutzers eigeschränkt werden, um die Aktionen zu lenken und den Nutzer nicht zu überfordern \cite{norman2013design}. Dies lässt sich auch auf die Einstellungen für CodeLeaves anwenden.
 
-Mit den bisher beschriebenen Einstellungen ist der Nutzer bereits in der Lage den Wald als Ganzes zu konfigurieren. Weitere optionale Einstellungen werden deswegen in "`Advanced Settings"' gekapselt, sodass sich der Nutzer damit nicht auseinandersetzten muss. Der fortgeschrittene Nutzer findet dort jedoch nützliche Anpassungen.
+Mit den bisher beschriebenen Einstellungen ist der Nutzer bereits in der Lage den Wald als Ganzes zu konfigurieren. Weitere optionale Einstellungen werden deswegen in "`Advanced Settings"' gekapselt, sodass sich der Nutzer damit nicht auseinandersetzten muss, wenn er das nicht möchte. Der fortgeschrittene Nutzer findet dort jedoch nützliche Anpassungen.
 
 Zum einen hat er die Möglichkeit den verfügbaren Eingabemöglichkeiten eine Aktion zuzuweisen (mehr dazu in Abschnitt \ref{sec:object-interaction}).
 
@@ -1597,7 +1583,7 @@ Die Kreise, die zur Visualisierung des Circle-packings im Abbildung \ref{fig:Cir
 
 Abhilfe schaffen die umschließenden Kreise, die als Ziel der Interaktion dienen können. Ein Knoten besitzt bei aktivierten Kreisen als Alternative zur Kante für die Interaktion auch seinen Kreis, der deutlich mehr Fläche für die Interaktion bietet.
 
-Abbildung \ref{fig:circle-hover} zeigt die Fokussierung eines Knotens mithilfe der Interaktion mit seinem Kreis. Auf die Fokus-Aktion wird im nächsten Abchnitt eingegangen.
+Abbildung \ref{fig:circle-hover} zeigt die Interaktion mit einem Kreis am Beispiel der Fokussierung. Auf diese Aktion wird im nächsten Abschnitt eingegangen.
  
 \begin{figure}[htb]
   \includegraphics[width=.8\textwidth]{figures/circle-hover}
@@ -1614,8 +1600,8 @@ Mit dem App-Menü haben wir die Möglichkeit die Daten auszuwählen, die der Wal
 
 \begin{itemize}
   \item Fokus
-  \item Tap (Air-tap)
-  \item Double-tap
+  \item Tap (Air-Tap)
+  \item Double-Tap
   \item Tap-and-hold
 \end{itemize}
 
@@ -1625,19 +1611,19 @@ Bevor wir eine Übersicht aller Aktionen und deren mögliche Zuordnung betrachte
 
 \subsubsection*{Fokus}
 
-Cooper ist  der Meinung, dass ``constant [...] feedback is exactly what users need'' \cite{cooper2014face}. So sollte abgesehen von weiteren Auswirkungen dem Nutzer immer Feedback zum aktuellen Fokus gegeben werden. Der Nutzer muss zu jeder Zeit wissen, welches Objekt er gerade fokussiert, was dazu gehört und dass er damit interagieren kann. In CodeLeaves wird dies durch einen farbigen Umriss erreicht. Bei inneren Knoten werden auch alle Nachfahren hervorgehoben, da auf fachlicher Ebene alle Unterpakete auch Teil eines Pakets sind. So ist zum Beispiel auch immer zu erkennen welche Äste zu welchem Baum gehören, auch wenn die Bäume hintereinander stehen.
+A. Cooper ist in \cite{cooper2014face} der Meinung, dass ``constant [...] feedback is exactly what users need''. So sollte abgesehen von weiteren Auswirkungen dem Nutzer immer Feedback zum aktuellen Fokus gegeben werden. Der Nutzer muss zu jeder Zeit wissen, welches Objekt er gerade fokussiert, was dazu gehört und dass er damit interagieren kann. In CodeLeaves wird dies bei Objekten des Waldes durch einen farbigen Umriss erreicht. Bei inneren Knoten werden auch alle Nachfahren hervorgehoben, da auf fachlicher Ebene alle Unterpakete auch Teil eines Pakets sind. So ist zum Beispiel auch immer zu erkennen welche Äste zu welchem Baum gehören, auch wenn die Bäume hintereinander stehen.
 
-Wird die Hervorhebung aber sofort aktiv, sobald die Blickrichtung ein Objekt trifft, hat das zur Folge, dass beim "`Blick schweifen lassen"' die Knoten und Wurzeln nur kurz aufflackern. Bei der Entwicklung des High-Fi Prototyps konnte festgestellt werden, dass diese Art der Hervorhebung zu schnell und damit unangenehm ist.
+Wird die Hervorhebung aber sofort aktiv, sobald die Blickrichtung ein Objekt trifft, hat das zur Folge, dass beim "`Blick schweifen lassen"' die Objekte nur kurz aufflackern. Bei der Entwicklung des High-Fi Prototyps konnte festgestellt werden, dass diese Art der Hervorhebung zu schnell und unangenehm ist.
 
-Um das zu vermeiden, wird das Feedback des Fokus verzögert, sodass es erst sichtbar wird, sobald der Fokus einen bestimmten Zeitraum gleich bleibt. Ein passendes Pendant bei Desktop-Anwendungen wären Tooltips, die erst angezeigt werden, wenn der Mauszeiger über einem Element verweilt.
+Um das zu vermeiden, wird das Feedback des Fokus verzögert, sodass es erst sichtbar wird, sobald der Fokus einen bestimmten Zeitraum auf demselben Objekt verweilt. Ein passendes Pendant bei Desktop-Anwendungen wären Tooltips, die erst angezeigt werden, wenn der Mauszeiger über einem Element verweilt.
 
 Für den festzulegenden Zeitraum wurde sich an den Arbeiten \cite{miller1956magical} und \cite{mishunov2015why} orientiert. Dort ist von der sogenannten \textit{Immediate Behaviour} die Rede, die in einem Zeitraum von 0,5 bis 1 Sekunde statt finden sollte. Dieser Zeitraum ist die Zeit, die ein Gesprächspartner gewöhnlich benötigt, um in einer Mensch-zu-Mensch Kommunikation zu antworten und die auch in Mensch-zu-Maschine Kommunikation eingehalten werden sollte.
 
 Mit dieser Lösung ist es möglich sich im Wald in Ruhe umzuschauen und sobald der Fokus länger auf einem Objekt bleibt, wird das Objekt hervorgehoben. So weiß der Nutzer zu jeder Zeit mit welchem Objekt er gerade interagiert.
 
-\subsubsection*{Übersicht}
+\subsubsection*{Übersicht über mögliche Aktionen}
 
-In der Tabelle \ref{tab:actions} können alle verfügbaren Aktionen betrachtet werden. Das Icons in der ersten Spalte befinden sich zur Wiedererkennung zum Teil auch in den nachfolgenden Abbildungen des Low-Fi Prototypen. In den letzten drei Spalten ist zu finden mit welcher Eingabe die Aktion für welches Objekt aufrufbar ist. Ist eine Zelle darin leer, ist die Aktion für das entsprechende Objekt nicht möglich. "`KM"' steht dafür, dass die Aktion über das Kontextmenü aufrufbar.
+In der Tabelle \ref{tab:actions} können alle verfügbaren Aktionen betrachtet werden. Die Icons in der zweiten Spalte befinden sich zur Wiedererkennung zum Teil auch in den Abbildungen des Low-Fi Prototypen der Kontextmenüs. In den letzten drei Spalten ist zu finden mit welcher Eingabe die Aktion für welches Objekt aufrufbar ist. Ist eine Zelle darin leer, ist die Aktion für das entsprechende Objekt nicht möglich. "`KM"' steht dafür, dass die Aktion über das Kontextmenü aufrufbar ist.
 
 \renewcommand\tabularxcolumn[1]{m{#1}}
 \newcommand{\icon}[1]{\vspace{-8px}\includegraphics[width=24px]{figures/icons/#1}}
@@ -1657,7 +1643,7 @@ In der Tabelle \ref{tab:actions} können alle verfügbaren Aktionen betrachtet w
         (Akz. \ref{acc:s-leaf-connections},
         \ref{acc:d-leaf-connections},
         \ref{acc:s-connection-highlight} und
-        \ref{acc:d-connection-highlight})                             & Double-tap   & Double-tap    & Double-tap   \\
+        \ref{acc:d-connection-highlight})                             & Double-Tap   & Double-Tap    & Double-Tap   \\
    7 & \icon{connections-in} & Eingehende Verbindungen hervorheben    & KM           & KM            &              \\
    8 & \icon{connections-out} & Ausgehende Verbindungen hervorheben   & KM           & KM            &              \\
    9 & \icon{right} & Verbindungen nach Rechts hervorheben            &              &               & KM           \\
@@ -1670,32 +1656,29 @@ In der Tabelle \ref{tab:actions} können alle verfügbaren Aktionen betrachtet w
        (Akz. \ref{acc:s-drilldown})                                   &              & KM            &              \\
 \end{tabularx}
 
-Die Zuordnung der Aktionen zu den vorhanden Eingabemöglichkeiten kann, wie in Abschnitt \ref{sec:app-menu}, Abbildung \ref{fig:settings} zu sehen, bei Bedarf vom Nutzer angepasst werden. Dies ist sinnvoll, wenn der Nutzer mit der einer anderen Zuweisung schneller oder komfortabler an gesuchte Informationen gelangt.
-
-Möchte der Nutzer zum Beispiel nur Klassen mit niedriger Coverage identifizieren, ist es sinnvoll wie in Tabelle \ref{tab:actions} angegeben bei einem Air-tap auf ein Blatt den Wert der Coverage anzuzeigen. Ist der Nutzer jedoch ausschließlich an statischen Abhängigkeiten interessiert, kann er anstatt den standardmäßigen Double-tap auch einen einfachen Air-tap für die Anzeige der zugehörigen Verbindungen verwenden.
+Die Zuordnung der Aktionen zu den vorhanden Eingabemöglichkeiten kann, wie in Abschnitt \ref{sec:app-menu}, Abbildung \ref{fig:settings} zu sehen, bei Bedarf vom Nutzer angepasst werden. Dies ist sinnvoll, wenn der Nutzer mit einer anderen Zuweisung schneller oder komfortabler an gesuchte Informationen gelangt. Möchte der Nutzer zum Beispiel nur Klassen mit niedriger Testabdeckung identifizieren, ist es sinnvoll wie in Tabelle \ref{tab:actions} angegeben bei einem Air-Tap auf ein Blatt den Wert der Testabdeckung anzuzeigen. Ist der Nutzer jedoch ausschließlich an statischen Abhängigkeiten interessiert, kann er anstatt den standardmäßigen Double-Tap auch einen einfachen Air-Tap für die Anzeige der zugehörigen Verbindungen verwenden.
 
 Im Folgenden werden einige Aktionen noch genauer beschrieben. \\
 
 \newcommand{\inlineicon}[1]{
   \setlength\intextsep{0pt}
   \begin{wrapfigure}[2]{l}{24px}
+    \vspace{-2px}
     \includegraphics[width=24px]{figures/icons/#1}
   \end{wrapfigure}
 }
 
 \begingroup
 
-\inlineicon{info}\noindent Die Anzeige der Namen von Klassen und Paketen ist für deren Identifikation besonders wichtig, da der Nutzer nur so weiß, welchen Teil der Software er vor sich sieht. Der Fokus ist dafür komfortabel, da ein fokussiertes Objekt zwangsläufig immer das ist, wofür sich der Nutzer interessiert und der Nutzer nicht dauerhaft Air-taps durchführen muss, um sich um zu schauen. Der angezeigte Name befindet sich aus Nutzersicht immer über dem Cursor und wird dem Abstand entsprechend so skaliert, dass der Text immer gleich groß erscheint. Wichtig ist dass der Text in der Entfernung des fokussierten Objekts angezeigt wird, und nicht etwa wie das Kontextmenü innerhalb von zwei Metern, da der Nutzer sonst immer zwischen unterschiedlichen Raumtiefen hin- und herschauen muss.\\
+\inlineicon{info}\noindent Die Anzeige der Namen von Klassen und Paketen ist für deren Identifikation besonders wichtig, da der Nutzer nur so weiß, welchen Teil der Software er vor sich sieht. Der Fokus ist dafür komfortabel, da ein fokussiertes Objekt zwangsläufig immer das ist, wofür sich der Nutzer interessiert und der Nutzer nicht dauerhaft Air-Taps durchführen muss, um sich umzuschauen. Der angezeigte Name befindet sich aus Nutzersicht immer über dem Cursor und wird dem Abstand entsprechend so skaliert, dass der Text immer gleich groß erscheint. Wichtig ist dass der Text in der Entfernung des fokussierten Objekts angezeigt wird, und nicht etwa wie das Kontextmenü innerhalb von zwei Metern, da der Nutzer sonst immer zwischen unterschiedlichen Raumtiefen hin- und herschauen muss.\\
 
-\inlineicon{context-menu}\noindent Das Kontextmenü ist für jedes Objekt aufrufbar, da nur so alle Aktionen erreichbar sind. Die Tap-and-hold-Geste eignet sich für das Kontextmenü, da sie dem Nutzer durch Touch-basierten Eingabegeräte bereits vertraut ist.\\
+\inlineicon{context-menu}\noindent Das Kontextmenü ist für jedes Objekt aufrufbar, da nur so alle Aktionen erreichbar sind. Die Tap-and-hold-Geste eignet sich für das Kontextmenü, da diese Eingabe bei touchbasierten Eingabegeräten ebenfalls oft für Kontextmenüs verwendet wird.\\
 
-\inlineicon{metric}\noindent Beim Blatt kann der genaue Wert einer Metrik durch einen einfachen Air-tap aufgerufen werden. Durch die Liste aller Metriken, die der Nutzer über das Kontextmenü aufrufen kann, kann der Nutzer eine bestimmte Klasse genauer untersuchen, ohne die aktuelle Metrik umstellen zu müssen.\\
+\inlineicon{metric}\noindent Beim Blatt kann der genaue Wert einer Metrik durch einen einfachen Air-Tap aufgerufen werden. Durch die Liste aller Metriken, die der Nutzer über das Kontextmenü aufrufen kann, kann der Nutzer eine bestimmte Klasse genauer untersuchen, ohne die aktuelle Metrik umstellen zu müssen.\\
 
 \inlineicon{direction-count}\noindent Mit der Anzahl der Verbindungen ist ersichtlich wie die Dicke der Verbindung zustande kommt.\\
 
-\inlineicon{connections}\noindent Durch das Hervorheben der Verbindungen kann der Nutzer sehen, zu welchen Blättern die Verbindungen gehören. Die Anzahl der Verbindungen können dabei ebenfalls angezeigt werden. Dieser Fall ist am Beispiel einer Wurzel in Abbildung \ref{fig:root-interaction} illustriert. 
-
-Führt der Nutzer ein Air-tap auf eine Kante mit bereits hervorgehobener Verbindung aus, werden nur die Verbindungen hervorgehoben, die in der vorherigen Auswahl enthalten waren und die durch die ausgewählte Kante fließen. Mit diesem Prinzip kann jede Verbindung immer feiner Untersucht werden.\\
+\inlineicon{connections}\noindent Durch das Hervorheben der Verbindungen kann der Nutzer sehen, zu welchen Blättern die Verbindungen gehören. Die Anzahl der Verbindungen können dabei ebenfalls angezeigt werden. Dieser Fall ist am Beispiel einer Wurzel in Abbildung \ref{fig:root-interaction} illustriert. Führt der Nutzer ein Air-Tap auf eine Kante mit bereits hervorgehobener Verbindung aus, werden nur die Verbindungen hervorgehoben, die in der vorherigen Auswahl enthalten waren und die durch die ausgewählte Kante fließen. Mit diesem Prinzip kann jede Verbindung immer feiner Untersucht werden.\\
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{figures/root-interaction}
@@ -1703,7 +1686,7 @@ Führt der Nutzer ein Air-tap auf eine Kante mit bereits hervorgehobener Verbind
   \label{fig:root-interaction}
 \end{figure}
 
-\inlineicon{connections-in}\noindent Mit den Aktionen 7 - 10 ist es möglich eine Vorauswahl der hervorgehobenen Verbindungen zu treffen. Zum Beispiel würden im Szenario aus Abbildung \ref{fig:root-interaction} mit Aktion 9 nur die 3 Verbindungen gezeigt, die von Package 1 nach Package 2 fließen. Der Aufruf dieser Aktionen ist nicht nur im Kontextmenü, sondern auch durch den Air-tap auf die Pfeile für die Richtungsangaben möglich. \\
+\inlineicon{connections-in}\noindent Mit den Aktionen 7 - 10 ist es möglich eine Vorauswahl der hervorgehobenen Verbindungen zu treffen. Zum Beispiel würden im Szenario aus Abbildung \ref{fig:root-interaction} mit Aktion 9 nur die 3 Verbindungen gezeigt, die von Package 1 nach Package 2 fließen. Der Aufruf dieser Aktionen ist nicht nur im Kontextmenü, sondern auch durch den Air-Tap auf die Pfeile für die Richtungsangaben möglich. \\
 
 \inlineicon{web}\noindent Jedes Objekt hat im Kontextmenü die Option die gerade ausgewählten Verbindungen auch direkt als Spinnweben anzuzeigen.\\
 
@@ -1713,7 +1696,7 @@ Führt der Nutzer ein Air-tap auf eine Kante mit bereits hervorgehobener Verbind
 
 \endgroup
 
-Abschließend zu Interaktion mit Blättern, Kanten und Wurzeln, ist in \ref{fig:leaf-contextmenu} das Kontextmenü für  Blätter dargestellt. Auf der rechten Seit (\ref{fig:leaf-contextmenu-connections}) sehen wir eine Unterauswahl, die aufgeht, sobald der Nutzer auf das Symbol der Verbindungen tippt.
+Abschließend zu Interaktion mit Blättern, Kanten und Wurzeln, ist in \ref{fig:leaf-contextmenu} das Kontextmenü für  Blätter dargestellt. Auf der rechten Seit (\ref{fig:leaf-contextmenu-connections}) sehen wir eine Unterauswahl, die aufgeht, sobald der Nutzer auf das Symbol der Verbindungen tippt. Auf diese Weise sind auch gruppierte Kontextmenüs möglich.
 
 Die Kontextmenüs für Kanten und Wurzeln sind im Anhang zu finden.
 
@@ -1738,25 +1721,27 @@ Die Kontextmenüs für Kanten und Wurzeln sind im Anhang zu finden.
 
 \section{Zusammenfassung}
 
-Zu Beginn haben wir uns dem Thema AR genähert und evaluiert, wieso AR besonders gut für 3D Softwarevisualisierung geeignet ist. Auf dieser Basis wurde im Kapitel \ref{ch:concept} CodeLeaves vorgestellt, um das neue Konzept zu erfassen und dessen Stärken kennen zu lernen. Mit der Wald-Metapher können Software-Strukturen mit Bäumen hervorragend visualisiert werden. Die ausgewählte Software wird zum Wald, Pakete zu Bäumen und Ästen und Klassen werden zu Blättern.
+Zu Beginn haben wir uns dem Thema AR genähert und evaluiert, wieso AR gut für 3D Softwarevisualisierung geeignet ist. Auf dieser Basis wurde im \ref{ch:concept}.\ Kapitel CodeLeaves vorgestellt, um das neue Konzept zu erfassen und dessen Stärken kennen zu lernen. Mit der Wald-Metapher können Software-Strukturen mit Bäumen hervorragend visualisiert werden. Die ausgewählte Software wird zum Wald, Pakete zu Bäumen und Ästen und Klassen werden zu Blättern. Ein Wurzelgeflecht verbindet einzelne Bäume.
 
-Auf das Laubdach lassen sich ausgezeichnet verschiedene Metriken anwenden. Mit einem sommerlichen Grün bis hin zu einem herbstlichen Rot verschafft der Wald mit einem Blick eine Übersicht über die gesamte Software. Besonders Bäume oder Äste mit rötlicher Lauffärbung stechen in einem sonst grünen Wald besonders gut hervor.
+Auf das Blätterdach lassen sich ausgezeichnet verschiedene Metriken anwenden. Mit einem sommerlichen Grün bis hin zu einem herbstlichen Rot verschafft der Wald mit einem Blick eine Übersicht über die gesamte Software. Besonders Bäume oder Äste mit rötlicher Laubfärbung stechen in einem sonst grünen Wald besonders gut hervor.
 
-Nicht nur Metriken lassen sich mit CodeLeaves darstellen, auch Verbindungen zwischen einzelnen Klassen. Seien es statische Abhängigkeiten, oder dynamische Aufrufe -- CodeLeaves kann Verbindungen durch die vorhandenen Baumstrukturen aggregieren und so übersichtlich anzeigen. Was bei anderen Visualisierungen ein undurchdringliches Dickicht an Pfeilen ist, wird zur Stamm- und Ast-Dicke der Bäume. Je mehr aggregierte Verbindungen durch ein Stamm oder Ast fließen, desto dicker wird dieser. Durch diese Darstellung kann schon ohne jegliche Interaktion eine gute Übersicht über die Kopplung einer Software geschaffen werden. Durch Wurzeln können die aggregierten Verbindungen auch zwischen einzelnen Bäumen dargestellt werden.
+Nicht nur Metriken lassen sich mit CodeLeaves darstellen, auch Verbindungen zwischen einzelnen Klassen. Seien es statische Abhängigkeiten, oder dynamische Aufrufe -- CodeLeaves kann Verbindungen durch die vorhandenen Baumstrukturen aggregieren und so übersichtlich anzeigen. Was bei anderen Visualisierungen ein undurchdringliches Dickicht an Pfeilen ist, wird zur Dick der Kanten und Wurzeln. Je mehr aggregierte Verbindungen durch eine Kante oder Wurzel fließen, desto dicker wird sie. Durch diese Darstellung kann schon ohne jegliche Interaktion eine gute Übersicht über die Kopplung einer Software geschaffen werden.
 
-Verbindungen können aber ebenfalls direkt angezeigt werden und fügen sich als Spinnweben zwischen den Bäumen nahtlos in die Metapher des Waldes ein.
+Verbindungen können interaktiv ebenfalls direkt angezeigt werden und fügen sich als Spinnweben zwischen den Bäumen nahtlos in die Metapher des Waldes ein.
 
-In Kapitel \ref{ch:data-model} werden Datenmodelle entwickelt, die einerseits Schichtentrennung zwischen Backend, Business Logik und Frontend ermöglichen und andererseits die Visualisierung von statischen und dynamischen Daten ermöglichen. Diese Möglichkeit ist ein Alleinstellungsmerkmal von CodeLeaves.
+In Kapitel \ref{ch:data-model} wird ein Datenmodell entwickelt, das einerseits Schichtentrennung zwischen Backend, Business-logic und Presentation ermöglicht und andererseits die Visualisierung von statischen und dynamischen Daten ermöglichen. Diese Möglichkeit ist ein Alleinstellungsmerkmal von CodeLeaves.
 
 Im Zuge dieser Arbeit wurde ein High-Fi Prototyp für die HoloLens entwickelt. Primäres Ziel dabei war es Algorithmen für die Generierung der 3D Baumstrukturen zu suchen und grundlegende Interaktionen zu implementieren.
 
-Die verwendeten Algorithmen und die dafür nötige Mathematik wird in \ref{ch:layout} beschrieben. Es wird gezeigt wie sich Verhalten in der Natur mit Fibonacci-Zahlen und dem Goldenen Schnitt auf die Bäume von CodeLeaves übertragen lassen. Mit dem Sonnenblumen-Algorithmus werden Blätter eines Elternteils gleichmäßig auf einer Kreisfläche verteilt, sodass sie den gleichen Abstand zueinander haben.
+Die verwendeten Algorithmen und die dafür nötige Mathematik wird in Kapitel \ref{ch:layout} beschrieben. Es wird gezeigt wie sich Verhalten in der Natur mit dem Goldenen Schnitt auf die Bäume von CodeLeaves übertragen lassen. Mit dem Sonnenblumen-Algorithmus werden Blätter eines Elternteils gleichmäßig auf einer Kreisfläche verteilt, sodass sie den gleichen Abstand zueinander haben.
 
 Durch hierarchisches Circle-packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
 
-Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde zudem praxisnah erläutert, wie Interaktionen in Unity sinnvoll umgesetzt werden.
+Im Zuge des High-Fi Prototypen wurde auch festgestellt, dass sich die HoloLens in der aktuellen Entwickler-Version nicht für die Betrachtung von sehr großen Software-Systemen eignet, da die Visualisierung sonst nicht mehr flüssig gerendert wird.
 
-Zu guter Letzt wurden die im High-Fi Prototypen bereits umgesetzten Interaktionen in Kapitel \ref{ch:interaction} aufgegriffen und durch ein Low-Fi Prototypen ergänzt. Mit dem universellen Kontextmenü und den Manipulations-Indikatoren wurden Interaktions-Elemente eingeführt, die auch in anderen Anwendungen ausgezeichnet Verwendung finden können. Das erarbeitete Interaktions-Konzept ermöglicht es den Wald interaktiv bis ins Detail zu erkunden.
+Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde zudem praxisnah erläutert, wie Interaktionen in Unity sinnvoll umgesetzt werden können.
+
+Zu guter Letzt wurden die im High-Fi Prototypen bereits umgesetzten Interaktionen in Kapitel \ref{ch:interaction} aufgegriffen und durch ein Low-Fi Prototypen ergänzt. Mit dem universellen Kontextmenü und den Manipulation-Indikators wurden Interaktions-Elemente eingeführt, die auch in anderen Anwendungen ausgezeichnet Verwendung finden können. Das erarbeitete Interaktions-Konzept ermöglicht es den Wald interaktiv bis ins Detail zu erkunden.
 
 \section{Ausblick}
 
@@ -1764,13 +1749,13 @@ Mit dem High-Fi Prototyp wurden bereits die wichtigsten Schritte für eine einsa
 
 \paragraph{Datenanbindung} 
 
-Der Import von Daten benötigt ein Interface, wie es in Abbildung \ref{fig:project-selection-mockup} und \ref{fig:sonarqube-import} skizziert ist. Neben SonarQube für die Struktur der Software und deren statischen Metriken gilt es weiter Import-Möglichkeiten anzubieten. Für statische Abhängigkeiten bietet sich \textit{strucute101}\footnote{Structure101 ist eine agile Architektur-Entwicklungs-Umgebung (ADE), mit der das Software-Entwicklungsteam eine Codebasis organisieren kann (aus dem Englischen aus \cite{headway2017structure101}).} an. Mit structure101 sind Abhängigkeiten auf Klassenebene verfügbar. Der Export der Daten von structure101 wurde bereits erfolgreich getestet und muss als nächsten Schritt in das Modell von CodeLeaves gebracht werden.
+Der Import von Daten benötigt ein Interface, wie es in Abbildung \ref{fig:project-selection-mockup} und \ref{fig:sonarqube-import} skizziert ist. Neben SonarQube für die Struktur der Software und deren statischen Metriken gilt es weitere Import-Möglichkeiten anzubieten. Für statische Abhängigkeiten bietet sich \textit{strucute101}\footnote{Structure101 ist eine agile Architektur-Entwicklungs-Umgebung (ADE), mit der das Software-Entwicklungsteam eine Codebasis organisieren kann (aus dem Englischen aus \cite{headway2017structure101}).} an. Mit structure101 sind Abhängigkeiten auf Klassenebene verfügbar. Der Export der Daten von structure101 wurde bereits erfolgreich getestet und muss als nächsten Schritt in das Modell von CodeLeaves gebracht werden.
 
 Für dynamische Daten lässt sich zum Beispiel das Software-EKG der QAware verwenden. Die EKG-Kollektoren sammeln dynamische Daten aus unterschiedlichen Datenquellen wie der Programmschnittstelle JMX und Windows Performance Counter \cite{weigend2011dynamische}. Das Software-EKG besitzt eine eigene UI zur Darstellung der gesammelten Daten. Statt dieser Visualisierung müssten die Daten in CodeLeaves importiert und auf die Struktur der Software übertragen werden.
 
-\paragraph{Umsetzung der Aggregation}
+\paragraph{Evaluation der Aggregation}
 
-Liegen ausreichend Daten für die aggregierte Verbindungen in Form des Software-Meta-Modells vor, müssen die Anzahl der Einzelverbindungen auf die Dicke der Kanten und Wurzeln übertragen werden. Die Erweiterung des Prototypen für Unterstützung dieser Funktionalität ist gering, da der Prototyp bereits unterschiedliche Dicken von Kanten und Wurzeln generieren kann.
+Liegen ausreichend Testdaten für Verbindungen in Form des Software-Meta-Modells vor, muss die Anzahl der Einzelverbindungen auf die Dicke der Kanten und Wurzeln übertragen werden. Die Erweiterung des Prototypen für Unterstützung dieser Funktionalität ist gering, da der Prototyp bereits unterschiedliche Dicken von Kanten und Wurzeln generieren kann. Jedoch muss diese Funktionalität mit realistischen Daten evaluiert werden.
 
 \paragraph{Evaluierung des Interaktionskonzepts}
 
@@ -1780,18 +1765,12 @@ Mit dem Import von Daten, der Umsetzung der aggregierten Verbindungen und der vo
 
 \paragraph*{Sprachsteuerung}
 
-Durch die Sprachsteuerung, die in die HoloLens integriert ist, könnten einige Interaktionen eventuell noch komfortabler gestaltet werden. Die Arbeit mit dem Air-tap kann für den Arm des Nutzers auf Dauer ermüdend sein. Die Sprachsteuerung kann daher für einige Interaktionen sinnvoll als Alternative zum Air-tap genutzt werden. Auch zusätzliche Aktionen wie "`Zeige mir die Klasse \enquote*{ExampleClass}"' sind mit Sprachsteuerung möglich und besonders komfortabel.
+Durch die Sprachsteuerung, die in die HoloLens integriert ist, könnten einige Interaktionen eventuell noch komfortabler gestaltet werden. Die Arbeit mit dem Air-Tap kann für den Arm des Nutzers auf Dauer ermüdend sein. Die Sprachsteuerung kann daher für einige Interaktionen sinnvoll als Alternative zum Air-Tap genutzt werden. Auch zusätzliche Aktionen wie "`Zeige mir die Klasse \enquote*{ExampleClass}"' sind mit Sprachsteuerung möglich und besonders komfortabel.
 
 \paragraph*{Nutzung für mehrere Nutzer}
-Die Möglichkeit holographische Inhalte gleichzeitig mit anderen Nutzern teilen zu können, ist einer der Vorteile der AR. Diese muss jedoch auch in CodeLeaves implementiert werden. Microsoft stellt dafür die \textit{HoloToolkit.Sharing}-Bibliothek zur Verfügung. Diese Bibliothek wurde ursprünglich für das Projekt \textit{OnSight} entwickelt, eine Zusammenarbeit zwischen einem Microsoft Studio und NASA, um das Rover-Planungstool der NASA durch die Nutzung von HoloLens Geräten zu erweitern. Die Apps laufen auf mehreren HoloLens Geräten gleichzeitig und kommunizieren und synchronisieren sich in Echtzeit, sodass Nutzer gemeinsam an einer Aufgabe arbeiten können \cite{microsoft2017sharing}.
+Die Möglichkeit holographische Inhalte gleichzeitig mit anderen Nutzern teilen zu können, ist ein großer Vorteil der AR. Diese muss jedoch auch in HoloLens-Applikationen implementiert werden. Microsoft stellt dafür die \textit{HoloToolkit.Sharing}-Bibliothek zur Verfügung. Diese Bibliothek wurde ursprünglich für das Projekt \textit{OnSight} entwickelt, eine Zusammenarbeit zwischen einem Microsoft Studio und der NASA, um das Rover-Planungstool der NASA durch die Nutzung von HoloLens Geräten zu erweitern. Apps, die das Teilen unterstützen, laufen auf mehreren HoloLens Geräten gleichzeitig und kommunizieren und synchronisieren sich in Echtzeit, sodass Nutzer gemeinsam an einer Aufgabe arbeiten können \cite{microsoft2017sharing}.
 
-Das Teilen erfolgt so, dass die App, die als erstes startet, einen Welt-Ankerpunkt definiert. Der Nutzer muss eine Session eröffnen, der andere Nutzer beitreten können. Die Verbindung kann mit visuellem Pairing durch QR-Codes erfolgen. Nach dem Beitreten einer Session wird der bestehende Welt-Ankerpunkt geladen und so die Position von geteilten Hologrammen synchronisiert.
-
-Der Zustand einer App, die Sharing unterstützt, kann ebenfalls geteilt werden. Dies wäre für CodeLeaves besonders wichtig, da nur so zum Beispiel Gemeinsam Verbindungen genauer untersucht werden können.
-
-Für die Synchronisation des Zustandes müssen spezielle Datentypen verwendet werden.
-
-Der Einbau von Sharing wäre eine überaus spannende weiterführende Aufgabe, die CodeLeaves noch attraktiver machen würde.\\
+Der Einbau der Möglichkeit den Wald gemeinsam zu erkunden, wäre eine überaus spannende weiterführende Aufgabe, die CodeLeaves noch attraktiver machen würde.\\
 
 
   

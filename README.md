@@ -1,2 +1,2 @@
 # master-thesis
-HoloTrees als 3D Softwarevisualisierung für die HoloLens
+CodeLeaves als neues Konzept der 3D Softwarevisualisierung und dessen Umsetzug für die Augmented Reality

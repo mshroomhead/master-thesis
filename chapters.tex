@@ -45,11 +45,11 @@ Die Technologie der AR bietet uns viele neue Möglichkeiten. Eine Motivation die
 
 Niemand konnte bislang unser Sonnensystem von außen betrachten. Dennoch haben wir alle eine ziemlich gute Vorstellung wie dieses aufgebaut ist. Durch die Visualisierung der Planeten und der Sonne entsteht in uns ein geistiges Abbild der Realität. Das Konzept, komplexe Realitäten zu abstrahieren und zu visualisieren, um dadurch die Realität besser verstehen zu können, ist in vielen Disziplinen der Wissenschaft vertreten.
 
-Neben Wissenschaften wie Physik, Chemie oder Biologie, nimmt Visualisierung auch besonders in der Informatik eine wichtige Rolle ein. In vielen Bereichen müssen Informationen in eine visuelle Form gebracht werden, die für das menschliche Auge besser zu lesen sind.
+Neben Wissenschaften wie Physik, Chemie oder Biologie, nimmt Visualisierung auch besonders in der Informatik eine wichtige Rolle ein. In vielen Bereichen müssen Informationen in eine visuelle Form gebracht werden, die für einen menschlichen Betrachter leicht zu verstehen und interpretieren sind.
 
 Gerade bei komplexen Software-Systemen ist das der Fall. Soll zum Beispiel die zu Grunde liegende Struktur einer Software Außenstehenden erklärt werden, gelingt das mit einem visuellen Modell wie einem UML-Diagramm sicherlich besser, als nur in den Source-Code zu schauen.
 
-So wie UML-Diagramme, war die Darstellungsform der Softwarevisualisierung bislang meist zweidimensional. Mit AR wird dieser Disziplin der Visualisierung jedoch wortwörtlich ein neuer Raum an Möglichkeiten eröffnet und diese Arbeit soll damit beginnen, den Raum ausfüllen.
+Angefangen bei UML-Diagramme waren die meisten Darstellungsformen der Softwarevisualisierung bislang meist zweidimensional. Mit AR wird dieser Disziplin der Visualisierung jedoch wortwörtlich ein neuer Raum an Möglichkeiten eröffnet und diese Arbeit soll damit beginnen, den Raum ausfüllen.
 
 \section{Zielsetzung der Arbeit}
 Für die Zielsetzung einer 3D Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die "`visualization of artifacts related to software and its development process"' \cite{diehl2007software}. Diese Definition ist sehr breit gefasst. Wird der Fokus mehr auf die Nutzerorientierung gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
@@ -70,6 +70,7 @@ Der Praktische Teil dieser Arbeit soll die prototypische Entwicklung von CodeLea
 
 \section{Aufbau der Arbeit}
 Im nächsten Kapitel wird das Konzept von CodeLeaves zunächst auf High-Level-Ebene vorgestellt, um es anschließend detaillierter zu erörtern. Es werden Begriffe definiert, die für weitere Inhalte ein einheitliches Verständnis schaffen. Nachdem das Konzept verstanden wurde, werden Unterschiede und Vorteile von CodeLeaves zu alternativen 3D Softwarevisualisierungen hervorgehoben. Die Befragung von Experten der Softwareanalyse und die daraus abgeleiteten Anforderungen an CodeLeaves \ref{sec:requirements} schließen das erste Kapitel ab.
+%RHU: Was genau soll die Referenz zu sec:requirements mitten im Text?
 
 Das Kapitel \ref{ch:data-model} beschäftigt sich mit der Entwicklung eines geeigneten Datenmodells für CodeLeaves. Nachdem vorhandene Datenmodelle auf Tauglichkeit für CodeLeaves überprüft wurden, wird ein neues, in Schichten getrenntes Datenmodell entwickelt.
 
@@ -450,6 +451,7 @@ Durch User-Story \ref{u:dynamic} wird deutlich, dass sich viele gleiche Akzeptan
     \accid{acc:d-overview} & Ich möchte möglichst viele Blätter gleichzeitig betrachten können.\\
 \end{tabularx}
 
+%RHU: US5 weißt wiederum Ähnlichkeiten zu US5 auf. Say whaat? Bitte fixen :)
 User-Story \ref{u:overview} weißt wiederum Ähnlichkeiten zu User-Story \ref{u:overview} auf. Die Laubfarbe ist auch für den Systemzustand sehr gut geeignet, da sie eine gute Übersicht liefert, aber gleichzeitig jede Klasse einzeln anzeigt. Die Metapher des Software-Waldes kommt auch hier besonders zur Geltung, da auf einen Blick ersichtlich wird, ob es der Software gut geht (sommerlicher Wald) oder schlecht (herbstlicher Wald).
 
 \subsubsection*{User-Storys zur Benutzbarkeit von CodeLeaves}
@@ -586,7 +588,6 @@ Die \texttt{Metric} ist ein Schlüssel-Wert-Paar, das durch \texttt{Codesnippets
   \umlclass[y=-5, x=6]{Metric}{
     Key \\
     Value \\
-    Codesnippets \\
   }{}
   \umlclass[y=-5]{SoftwareArtefact}{
     Key \\
@@ -597,6 +598,8 @@ Die \texttt{Metric} ist ein Schlüssel-Wert-Paar, das durch \texttt{Codesnippets
     Type \\
     Start \\
     End \\
+    Codesnippets \\
+%RHU: Ich bin mir nicht sicher, aber sagt der Text unten drunter nicht, dass die Codesnippets an der Relation hängen?
   }{}
   \umluniassoc[mult=0..*]{Software}{Record}
   \umlinherit[geometry=-|-]{StaticRecord}{Record}
@@ -754,6 +757,7 @@ In Abbildung \ref{fig:ui-model} ist das UI-Datenmodell zu sehen.
 \caption{UI-Datenmodell}
 \label{fig:ui-model}
 \end{figure}
+%RHU: Zumindest in dem PDF, das ich gedruckt habe, war direkt unter dem Kasten für UiInnerNode das 0..* sichtbar und nicht wie erwartet oben bei der eigentlichen Verbindung???
 
 Die \texttt{AdditionalData} aus dem internen Datenmodell finden sich in dem Entwurf des UI-Datenmodells nicht wieder. Grund dafür ist, dass der Kern der Visualisierung davon nicht betroffen ist. Die Anzeige dieser Daten kann beliebig zum Wald dargestellt werden.
 
@@ -805,7 +809,7 @@ Das Blatt-Objekt hat aufgrund der flachen Form die Eigenschaft, dass die sichtba
 Eine Abhilfe könnte ein Blatt-Objekt sein, dass in allen Dimensionen gleich dick ist. Dies würde aber eher an eine Knospe erinnern und schaut wenig natürlich aus. Deshalb wird dem Blatt-Objekt in Unity eine Script hinzugefügt, dass das Blatt zur Laufzeit immer in die Richtung des Betrachters rotieren lässt. Ein 3D-Objekt mit einer solchen Verhalten wird \textit{Billboard} genannt. Mithilfe des Billboard-Verhaltens ist gewährleistet, dass der Nutzer von jedem Winkel aus immer eine optimale Übersicht über das Blätterdach besitzt.
 
 \subsubsection*{Beschaffung von realistischen Beispieldaten}
-Für die Generierung der Struktur im Prototyp wurde mit einem Beispielprojekt gearbeitet. Das Projekt lautet \textit{Air} und ist eines der größten Software-Projekte der QAware und wird seit rund 5 Jahren entwickelt.
+Für die Generierung der Struktur im Prototyp wurde mit einem Beispielprojekt gearbeitet: Das Projekt \textit{Air} ist eines der größten Software-Projekte der QAware GmbH. Es wird seit rund fünf Jahren entwickelt. Dank seiner Größe und Komplexität ist es somit ein geeigneter Benchmark für die Entwicklung der UI-Schicht von CodeLeaves.
 
 In Tabelle \ref{tab:air} sind hinsichtlich des entstehenden Waldes Eckdaten von Air angegeben.
 
@@ -818,9 +822,9 @@ In Tabelle \ref{tab:air} sind hinsichtlich des entstehenden Waldes Eckdaten von 
   \end{tabular}
 \end{table}
 
-Alle Projekte von QAware werden in SonarQube überwacht. SonarQube bietet eine Web-API, durch die die Struktur eines Projekts und unterstützte statische Metriken abgefragt werden können. Diese API wird im Prototyp genutzt, um die benötigten Informationen für Struktur der Software und eine Beispiel-Metrik abzufragen. Die Struktur wird bei der Abfrage der API rekursiv zusammengebaut, da SonarQube immer nur die direkten Kinder eines Pakets liefert.
+Alle Projekte von QAware werden in SonarQube überwacht. SonarQube bietet eine Web-API, durch die die Struktur eines Projekts und unterstützte statische Metriken abgefragt werden können. Diese API wird im Prototyp genutzt, um die benötigten Informationen für Struktur der Software und eine Beispiel-Metrik abzufragen. Die Struktur wird bei der Abfrage der API rekursiv zusammengebaut, da SonarQube pro Aufruf der Daten einer Komponente bzw. eines Pakets immer nur die direkten Kinder eines liefert.
 
-Das Format von SonarQube wird dabei schon in das generische Software-Meta-Modell von CodeLeaves transferiert. Da bei Air sehr viele HTTP-Requests entstehen, wird das entstandene Meta-Modell lokal in eine Datei geschrieben, sodass dieses als Beispiel-Datensatz für den Prototypen dient. Prinzipiell können aber auch dynamisch andere Projekte geladen werden.
+Das Format von SonarQube wird dabei schon in das generische Software-Meta-Modell von CodeLeaves transferiert. Da bei einem Projekt in der Größenordnung von \textit{Air} sehr viele HTTP-Requests entstehen können, wurde für die Entwicklung das entstandene Meta-Modell lokal in eine Datei geschrieben, sodass dieses als Beispiel-Datensatz für den Prototypen dient. Prinzipiell können aber auch dynamisch andere Projekte geladen werden.
 
 Das Datenmodell des Backends wird in das interne Datenmodell der Application-logic und weiter in das UI-Datenmodell transferiert.
 
@@ -1329,12 +1333,12 @@ Mit diesem Ansatz könnte also auf das Ereignis des Air-Taps auf einfachste Weis
 Eventuell könnte sich zum Beispiel folgende Einstellung in der Applikation als sinnvoll erweisen:
 
 \begin{quotation}
-  \textit{Der Nutzer kann einstellen, ob bei einem Klick auf ein Blatt der Klassenname oder die Zahl der gerade visualisierten Metrik angezeigt wird.}
+  \textit{Der Nutzer kann einstellen, ob bei einem Klick auf ein Blatt der Klassenname oder der Wert der gerade visualisierten Metrik angezeigt wird.}
 \end{quotation}
 
-Das eigentliche Problem bei der beschriebenen Situation ist, dass Businesslogik und UI-Logik zu eng gekoppelt wurden. Diese Art enger Kopplung sollte tunlichst vermieden werden. Bei einem Klick auf einem Blatt sollte nicht die UI entscheiden was zu tun ist, sondern die Businesslogik. Die Entkopplung von UI und Logik, ist mit reaktiver Programmierung möglich.
+Das eigentliche Problem bei der beschriebenen Situation ist, dass Businesslogik und UI-Logik zu eng gekoppelt wurden. Diese Art enger Kopplung sollte tunlichst vermieden werden. Der Code in der UI-Schicht, der auf das tatsächliche Event reagiert, das durch den Nutzer ausgelöst wurde, sollte keine fachlichen Entscheidungen treffen, sondern dem Business-Kern der Anwendung lediglich eine entsprechende Nachricht zukommen lassen. Die Businesslogik hingegen sollte sich nicht mit der konkreten Event-Behandlung in der UI beschäftigen, sondern lediglich die Veränderung des System-Zustands im Verlauf der Zeit steuern. Dieser Zustand wiederum steht sozusagen für sich selbst. Die UI muss über Änderungen am Zustand in geeigneter Form benachrichtigt werden und sich selbst entsprechend aktualisieren.
 
-Was ist reaktive Programmierung? A.\ Staltz beschreibt es in \cite{staltz2016introduction} als "`Programmierung mit asynchronen Datenströmen."' Dies trifft den Kern. Es geht darum, auf Änderungen von Werten zu reagieren, die durch \textit{Streams} propagiert werden.
+Ein besonders in UI-lastigen Anwendungen bekanntes und erfolgreiches Pattern, mit dem sich der zuvor genannte Ablauf umsetzen lässt, ist das der reaktiven Programmierung. A.\ Staltz beschreibt es in \cite{staltz2016introduction} als "`Programmierung mit asynchronen Datenströmen."' und trifft damit den Kern. Es geht darum, auf Änderungen von Werten zu reagieren, die durch \textit{Streams} propagiert werden.
 
 Streams sind nichts anderes als \textit{Observables}, die bei jeder Änderung ihrer Werte allen registrierten \textit{Subscribers} den neuen Wert mitteilen.
 
@@ -1441,7 +1445,7 @@ Der Platzierungs-Modus wird durch einen Air-Tap auf den Wald beendet. Der aktive
 \end{figure}
 
 \section{Das Kontextmenü}
-Das Kontextmenü, mit dem die verschiedenen Interaktionsmodi für den gesamten Wald ausgewählt werden können, lässt sich nicht nur für die Interaktion mit dem Waldboden anwenden. Auch für andere fokussierte Objekte ist eine vom Kontext abhängige Auswahl von möglichen Funktionen allgemeingültig sinnvoll. In herkömmlichen 2D Benutzeroberflächen ist dies mit einem Rechtsklick zu vergleichen. In 3D kann um den Punkt, den der Nutzer beim Aufruf des Kontextmenüs fokussiert hatte, das Kontextmenü in Form von Buttons in einer kreissegmentförmigen Anordnung dargestellt werden.
+Das Kontextmenü, mit dem die verschiedenen Interaktionsmodi für den gesamten Wald ausgewählt werden können, lässt sich nicht nur für die Interaktion mit dem Waldboden anwenden. Auch für andere fokussierte Objekte ist eine vom Kontext abhängige Auswahl von möglichen Funktionen allgemeingültig sinnvoll. In herkömmlichen 2D Benutzeroberflächen ist dies mit einem Rechtsklick zu vergleichen. In 3D kann um den Punkt bzw. das Objekt, den der Nutzer beim Aufruf des Kontextmenüs fokussiert hatte, das Kontextmenü beispielsweise in Form von Buttons in einer kreissegmentförmigen Anordnung dargestellt werden.
 
 Die kreissegmentförmige Anordnung der Buttons hat den Vorteil, dass der Interaktionspunkt für das öffnen des Kontextmenüs im Zentrum des Kreises ist und daher eine Verbindung mit dem fokussieren Objekt schafft. Darüber hinaus sind alle Buttons vom Cursor gleich weit entfernt und daher schnellstmöglich mithilfe der Blickrichtung erreichbar.
 
@@ -1737,7 +1741,7 @@ Durch hierarchisches Circle-Packing werden die Knoten der Bäume so verteilt, da
 
 Im Zuge des High-Fi Prototypen wurde auch festgestellt, dass sich die HoloLens in der aktuellen Entwickler-Version nicht für die Betrachtung von sehr großen Software-Systemen eignet, da die Visualisierung sonst nicht mehr flüssig gerendert wird.
 
-Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde zudem praxisnah erläutert, wie Interaktionen in Unity sinnvoll umgesetzt werden können.
+Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde die Trennung der Interaktion mit Unity-Objketen von der Zustandsänderung der Anwendung selbst sowie von dem ggf. notwendigen Re-rendering der UI sinnvoll umgesetzt werden kann.
 
 Zu guter Letzt wurden die im High-Fi Prototypen bereits umgesetzten Interaktionen in Kapitel \ref{ch:interaction} aufgegriffen und durch ein Low-Fi Prototypen ergänzt. Mit dem universellen Kontextmenü und den Manipulation-Indikators wurden Interaktions-Elemente eingeführt, die auch in anderen Anwendungen Verwendung finden können. Das erarbeitete Interaktions-Konzept ermöglicht es, den Wald interaktiv bis ins Detail zu erkunden.
 

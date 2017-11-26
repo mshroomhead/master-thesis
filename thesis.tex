@@ -144,20 +144,20 @@
   }
 }
 
-\newtcbtheorem[number within=chapter]{defbox}{Definition}{
+\newtcbtheorem[auto counter, number within=chapter]{defbox}{Definition}{
   basestyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries
 }{def}
 
-\newtcbtheorem[number within=chapter]{defboxfullwidth}{Definition}{
+\newtcbtheorem[use counter from=defbox]{defboxfullwidth}{Definition}{
   basestyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries,
   width=\textwidth
 }{def}
 
-\newtcbtheorem[number within=chapter]{splitbox}{Definition}{
+\newtcbtheorem[use counter from=defbox]{splitbox}{Definition}{
   basestyle,
   fonttitle=\sffamily\bfseries,
   description font=\mdseries,

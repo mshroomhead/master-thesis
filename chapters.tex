@@ -499,31 +499,47 @@ Im nächsten Kapitel wird ein Datenmodell entworfen, mit dem alle vorgestellten 
 
 \chapter{Architektur und Datenmodellierung}
 \label{ch:data-model}
-\section{Trennung in Schichten}
+\section{Architektur}
 \label{ch:data-layers}
 
-Die Datenmodellierung für CodeLeaves nimmt einen zentralen Baustein ein im Prototyp für die HoloLens ein. Bei dem Entwurfsmuster wird ein wichtiges Prinzip beachtet: Wie Buschmann \textit{et al.}\ in \cite{frank2007pattern} beschreiben, ist das Pattern \textit{Layers} ein Grundprinzip bei Software-Architekturen. Durch die \textit{Separation of concerns} werden einzelnen Schichten voneinander getrennt und können so später leichter ausgetauscht werden: \textit{``Using semi-independent parts [...] enables the easier exchange of individual parts at a later date.``} \cite{frank2007pattern}
+\subsubsection*{Prototypische Umsetzung von CodeLeaves}
+
+Das Konzept CodeLeaves wird prototypisch in einem \textit{High-Fi-Prototyp}
+\footnote{englisch High Fidelity, aus: high = hoch und fidelity = Genauigkeit; High-Fi-Prototypen zeichnen sich durch eine High-Tech-Darstellung der Designkonzepte aus, die zu einer partiellen bis vollständigen Funktionalität führt \cite{egger2000fi}.} 
+für die HoloLens umgesetzt. Der High-Fi-Prototyp ist wichtig, da nur damit CodeLeaves in der AR erlebt werden kann. Auch die wichtigsten Interaktionen, die im Kapitel \ref{ch:interaction} beschrieben werden, können im High-Fi-Prototyp schon getestet werden. Weitere Interaktions-Elemente werden konzeptionell in Kapitel \ref{ch:interaction} mit einem \textit{Low-Fi-Prototyp}
+\footnote{englisch Low Fidelity, aus: low = gering und fidelity = Genauigkeit; Low-Fi-Prototypen zeichnen sich durch eine schnelle und einfache Übersetzung von Designkonzepten auf hohem Niveau in greifbare und testbare Artefakte aus \cite{egger2000fi}.}
+ergänzt.
+
+Bei dem High-Fi-Prototyp wird auf den Standard-Workflow der HoloLens-Entwicklung gesetzt. HoloLens-Applikationen werden in \textit{Unity}\footnote{\url{https://unity3d.com/de}} entwickelt. Unity ist eine platt\-form\-über\-grei\-fen\-de 2- und 3D-Game-Engine und nach eigenen Angaben \textit{"`Die weltweit führende Software der Game-Industrie"'} \cite{unity2017public}.
+
+\begin{figure}[htb]
+  \includegraphics{\figdir/big-picture}
+  \caption{Architektur mit Schichtentrennung}
+  \label{fig:architecture}
+\end{figure}
+
+Für die HoloLens wird die Position der Hauptkamera in Unity auf die Position der HoloLens übertragen. Hologramme entstehen durch normale 3D-Objekte in Unity. Diesen Objekten können Skripte zugewiesen werden, die zur Laufzeit ausgeführt werden. Die verwendete Skript-Sprache im Prototyp von CodeLeaves is C\#.
+
+\subsubsection*{Übersicht}
+
+Die Architektur einer möglichen Umsetzung von CodeLeaves kann Abbildung \ref{fig:architecture} entnommen werden. Der High-Fi-Prototyp ist nach dieser Architektur aufgebaut, jedoch teilweise etwas vereinfacht. CodeLeaves kann durch von Unity zur Verfügung gestellte Bibliotheken mit der HoloLens kommunizieren. Der Zyklus, der zwischen den Komponenten \textit{3D-Szene}, \textit{Interaktions-Management} und \textit{Anwendungs-Management} entsteht, lässt sich durch reaktive Programmierung aufbrechen, deren Implementierung beispielhaft in Kapitel \ref{ch:interaction} gezeigt wird.
+
+Bei der Architektur wird ein wichtiges Prinzip beachtet: Wie Buschmann \textit{et al.}\ in \cite{frank2007pattern} beschreiben, ist das Pattern \textit{Layers} ein Grundprinzip bei Software-Architekturen. Durch die \textit{Separation of concerns} werden einzelnen Schichten voneinander getrennt und können so später leichter ausgetauscht werden: \textit{``Using semi-independent parts [...] enables the easier exchange of individual parts at a later date.``} \cite{frank2007pattern}
+
+In jeder Schicht von CodeLeaves wird ein Datenmodell definiert, dass semantisch zwischen den Schichten transferiert wird. Im Folgenden wird mit dem Fokus des Datenmodells näher auf die drei Schichten eingegangen.
 
 \subsubsection*{Backend}
-Gerade bei der Visualisierung von abstrakten Daten wie die einer Software, ist eine Schichtentrennung besonders wichtig. CodeLeaves hat das Ziel, eine beliebige objektorientierte Software darstellen zu können. Da aber nicht für jede Programmiersprache CodeLeaves angepasst werden soll und die Informationen über die Software aus unterschiedlichen Quellen stammen können, ist hier die erste Schicht \textit{Backend} sinnvoll. In der Backend-Schicht werden die Daten über eine Software aggregiert, seien es statische oder dynamische Informationen und in ein sprach-agnostisches Format -- das \textit{Software-Meta-Modell} -- gebracht. So können beliebig viele Konnektoren, d.h. die Verbindungen zu den verschiedenen Datenquellen, implementiert werden.
+Gerade bei der Visualisierung von abstrakten Daten wie die einer Software, ist eine Schichtentrennung besonders wichtig. CodeLeaves hat das Ziel, eine beliebige objektorientierte Software darstellen zu können. Da aber nicht für jede Programmiersprache CodeLeaves angepasst werden soll und die Informationen über die Software aus unterschiedlichen Datenquellen stammen können, ist hier die erste Schicht \textit{Backend} sinnvoll. In der Backend-Schicht werden die Daten über eine Software aggregiert, seien es statische oder dynamische Informationen und in ein sprach-agnostisches Format -- das \textit{Software-Meta-Modell} -- gebracht. So können beliebig viele Konnektoren, d.h. die Verbindungen zu den verschiedenen Datenquellen, implementiert werden. Alle Konnektoren stellen dem Anwendungs-Management das Software-Meta-Modell zur Verfügung.
 
-Wie in Abschnitt \ref{sec:distinction} bereits festgehalten, soll der Schritt des Transfers der realen Software in deren abstrakte Repräsentation in dieser Arbeit nur am Rande betrachtet werden. Das Datenmodell ist hingegen sehr wohl zu definieren, um die Daten der nächsten Schicht zur Verfügung zu stellen.
+Wie in Abschnitt \ref{sec:distinction} bereits festgehalten, wird die Anbindung an Datenquellen und nur am Rande betrachtet werden. Das Datenmodell ist hingegen sehr wohl zu definieren, um die Daten der Anwendungslogik zur Verfügung zu stellen.
 
 \subsubsection*{Anwendungslogik}
-CodeLeaves könnte neben Software prinzipiell auch jegliche andere, hierarchisch strukturierte Informationen darstellen. Für die interne Datenhaltung wird deshalb in der Schicht \textit{Anwendungslogik} das Datenmodell weiter abstrahiert und in ein Format gebracht, dass sich stark an der Baumstruktur der Informatik orientiert und nicht rein auf Software zugeschnitten ist. So könnten später auch leicht gänzlich andere Daten angebunden werden. Wir nennen das Datenmodell dieser Schicht das \textit{interne Datenmodell}.
+CodeLeaves könnte neben Software prinzipiell auch jegliche andere, hierarchisch strukturierte Informationen darstellen. Für die interne Datenhaltung im \textit{Applikations-Management} wird deshalb in der Schicht \textit{Anwendungslogik} das Datenmodell weiter abstrahiert und in ein Format gebracht, dass sich stark an der Baumstruktur der Informatik orientiert und nicht rein auf Software zugeschnitten ist. So könnten später auch leicht gänzlich andere Daten angebunden werden. Wir nennen das Datenmodell dieser Schicht das \textit{interne Datenmodell}.
 
 \subsubsection*{UI}
 Die letzte Schicht ist die der \textit{UI}. Das interne Datenmodell wird für die Darstellung der Bäume weiter verarbeitet. Zum Beispiel muss für die Layout-Algorithmen die Höhe der einzelnen Knoten verfügbar sein. Dies sind aber Informationen, die nur von der UI benötigt werden und im internen Datenmodell nichts zu suchen haben. Auf der anderen Seite enthält das \textit{UI-Datenmodell} nur Informationen, die auch tatsächlich zum Rendern der 3D-Objekte benötigt werden.
 
 Diese Schicht könnte wieder ausgetauscht werden und unterschiedliche Layout-Algorithmen könnten unterstützt werden.
-
-In Abbildung \ref{fig:data-layers} ist die Beziehung der Datenmodelle in den drei Schichten abgebildet.
-
-\begin{figure}[htb]
-  \includegraphics[width=\textwidth]{\figdir/data-layers}
-  \caption{Schichtentrennung im Datenmodell}
-  \label{fig:data-layers}
-\end{figure}
 
 \section{Software-Meta-Modell}
 \label{sec:software-model}
@@ -763,20 +779,12 @@ Die \texttt{AdditionalData} aus dem internen Datenmodell finden sich in dem Entw
 Auf den \texttt{Circle} bzw.\ dem \textit{Kreis} eines Knotens, wird im Zuge des Layouts im nächsten Kapitel eingegangen. Für das Layout ist es außerdem nötig, die Knoten sortieren zu können. Die abstrakten Methoden von \texttt{UiNode} sind dazu erforderlich und werden entsprechend in \texttt{UiInnerNode} und \texttt{UiLeaf} realisiert.
 
 % ----===== Chapter ====---- %
-\chapter{Modellierung und Layout des Waldes}
+\chapter{3D-Modellierung und Layout des Waldes}
 \label{ch:layout}
 
 \section{Grundlegender Ansatz}
 
 Das Konzept CodeLeaves steht und fällt mit der korrekten und übersichtlichen Darstellung der Baumstruktur. Wegen der Akzeptanzkriterien \ref{acc:s-overview} und \ref{acc:d-overview} ist die Struktur der Bäume so zu generieren, dass so viele Blätter wie möglich gleichzeitig im Blickfeld des Betrachters sind. Auf der anderen Seite gilt es, wegen Akzeptanzkriterien \ref{acc:s-structure} und \ref{acc:d-overview} die Struktur übersichtlich und deswegen mit so wenig Überschneidungen wie möglich zu generieren. In Abschnitt \ref{sec:sunflower} und \ref{sec:Circle-Packing} werden deshalb zwei Algorithmen vorgestellt, die zusammen eine solche Darstellung der Baumstruktur ermöglichen.
-
-\subsubsection*{Prototypen}
-
-Die Algorithmen werden in einem \textit{High-Fi-Prototyp}\footnote{englisch High Fidelity, aus: high = hoch und fidelity = Genauigkeit; High-Fi-Prototypen zeichnen sich durch eine High-Tech-Darstellung der Designkonzepte aus, die zu einer partiellen bis vollständigen Funktionalität führt \cite{egger2000fi}.} für die HoloLens implementiert. Der High-Fi-Prototyp ist wichtig, da nur damit CodeLeaves in der AR erlebt werden kann. Auch die wichtigsten Interaktionen, die im Kapitel \ref{ch:interaction} beschrieben werden, können im High-Fi-Prototyp schon getestet werden. Weitere Interaktions-Elemente werden in Kapitel \ref{ch:interaction} mit einem Papier \textit{Low-Fi-Prototyp}\footnote{englisch Low Fidelity, aus: low = gering und fidelity = Genauigkeit; Low-Fi-Prototypen zeichnen sich durch eine schnelle und einfache Übersetzung von Designkonzepten auf hohem Niveau in greifbare und testbare Artefakte aus \cite{egger2000fi}.} ergänzt.
-
-Bei dem High-Fi-Prototyp wird auf den Standard-Workflow der HoloLens-Entwicklung gesetzt. HoloLens-Applikationen werden in \textit{Unity}\footnote{\url{https://unity3d.com/de}} entwickelt. Unity ist eine platt\-form\-über\-grei\-fen\-de 2- und 3D-Game-Engine und nach eigenen Angaben \textit{"`Die weltweit führende Software der Game-Industrie"'} \cite{unity2017public}.
-
-Für die HoloLens wird die Position der Hauptkamera in Unity auf die Position der HoloLens übertragen. Hologramme entstehen durch normale 3D-Objekte in Unity. Diesen Objekten können Skripte zugewiesen werden, die zur Laufzeit ausgeführt werden. Die verwendete Skript-Sprache im Prototyp von CodeLeaves is C\#.
 
 Für die Generierung von Bäumen mussten zunächst 3D-Objekte entworfen werden, die die Knoten und Blätter repräsentieren. Dies wurde nicht in Unity, sondern mithilfe des professionellen 3D-Modellierungs-Software Maya\footnote{\url{https://www.autodesk.de/products/maya/overview}} von Audodesk bewerkstelligt.
 

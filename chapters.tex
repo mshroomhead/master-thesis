@@ -1087,26 +1087,27 @@ Bei allen weitern Kreisen $C_i$ ist die Berechnung komplexer. Der Sachverhalt is
   \label{fig:tangent-circle}
 \end{figure}
 
-$M_3$ befindet sich genau an einem Schnittpunkt der beiden Kreise $\lbrace X \in E \mid \overline{M_1 X} = r_1 + r_3 \rbrace$ und $\lbrace X \in E \mid \overline{M_2 X} = r_2 + r_3 \rbrace$, die in Abbildung \ref{fig:tangent-circle} gestrichelt veranschaulicht sind. Diese Schnittpunkte lassen sich mithilfe von Vektorrechnung nach \cite{wikipedia2017schnitt} wie folgt errechnen:
+$M_3$ befindet sich genau an einem Schnittpunkt der beiden Kreise $\lbrace X \in E \mid \overline{M_1 X} = r_1 + r_3 \rbrace$ und $\lbrace X \in E \mid \overline{M_2 X} = r_2 + r_3 \rbrace$, die in Abbildung \ref{fig:tangent-circle} gestrichelt veranschaulicht sind. Diese Schnittpunkte lassen sich mithilfe von Vektorrechnung nach \cite{bourke2017intersection, wolfram2017circle} wie folgt errechnen:
 
 \begin{equation}
-  \vv{M}_{3_{1/2}} = \vv{M}_1 + \vv{D}_{1} \pm h \cdot \vv{e}
+  \vv{M}_{3_{1/2}} = \vv{M}_1 + d_1 \cdot \vv{e}_1 \pm h \cdot \vv{e}_2
 \end{equation}
 
-Dabei ist $e$ ein zu $M_2 - M_1$ orthogonaler Einheitsvektor, für $h$ gilt
+Dabei ist $\vv{e}_1$ der Einheitsvektor, der von $M_1$ Richtung $M_2$ zeigt und $\vv{e}_2$ ein orthogonaler Einheitsvektor zu $\vv{M}_{2} - \vv{M}_1$. Mit $r_1 + r_3 = a$ und $r_2 + r_3 = b$ gilt
 
 \begin{equation}
 \label{equ:h}
-  h = \sqrt{r_1^2 - \vert \vv{D_1} \vert^2} = \sqrt{r_2^2 - \vert \vv{D_2} \vert^2}
-\end{equation}
+  h = \sqrt{a^2 - d_1^2} = \sqrt{b^2 - d_2^2} \,.
+\end{equation}.
 
-und $D_1$ lässt sich durch Umformen der Gleichung \ref{equ:h} mit
+Auflösung mithilfe von $d_1 + d_2 = d = \vert \vv{M}_2 - \vv{M}_1 \vert$ nach $d_1$ ergibt
 
 \begin{equation}
-  \vv{D}_1 = \frac{1}{2} \cdot \left( \frac{r_1^2 - r_2^2}{\vert \vv{M}_2 - \vv{M}_1 \vert} + 1 \right)
+\label{equ:d1}
+  d_1 = \frac{a^2 - b^2 + d^2}{2d} \,,
 \end{equation}
 
-darstellen.
+was sich zurück in Gleichung \ref{equ:h} einsetzen lässt.
 
 Mit diesen Gleichungen kann der Circle-Packing-Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
 
@@ -1735,35 +1736,37 @@ Die Kontextmenüs für Kanten und Wurzeln sind im Anhang zu finden.
 
 Zu Beginn haben wir uns dem Thema AR genähert und evaluiert, wieso AR gut für 3D-Softwarevisualisierung geeignet ist. Auf dieser Basis wurde im \ref{ch:concept}.\ Kapitel CodeLeaves vorgestellt, um das neue Konzept zu erfassen und dessen Stärken kennen zu lernen. Mit der Wald-Metapher können Software-Strukturen mit Bäumen hervorragend visualisiert werden. Die ausgewählte Software wird zum Wald, Pakete zu Bäumen und Ästen und Klassen zu Blättern. Ein Wurzelgeflecht verbindet einzelne Bäume.
 
-Auf das Blätterdach lassen sich verschiedene Metriken anwenden. Mit einem sommerlichen grün bis hin zu einem herbstlichen rot verschafft der Wald mit einem Blick eine Übersicht über die gesamte Software. Besonders Bäume oder Äste mit rötlicher Laubfärbung stechen in einem sonst grünen Wald besonders gut hervor.
+Auf das Blätterdach lassen sich verschiedene Metriken anwenden. Mit einem sommerlichen grün bis hin zu einem herbstlichen rot verschafft der Wald mit einem Blick eine Übersicht über die gesamte Software. Besonders Bäume oder Äste mit rötlicher Laubfärbung stechen in einem sonst grünen Wald gut hervor.
 
 Nicht nur Metriken lassen sich mit CodeLeaves darstellen, auch Verbindungen zwischen einzelnen Klassen. Seien es statische Abhängigkeiten oder dynamische Aufrufe -- CodeLeaves kann Verbindungen durch die vorhandenen Baumstrukturen aggregieren und so übersichtlich anzeigen. Was bei anderen Visualisierungen ein undurchdringliches Dickicht an Pfeilen ist, wird zur Dicke der Kanten und Wurzeln. Je mehr aggregierte Verbindungen durch eine Kante oder Wurzel fließen, desto dicker wird sie. Durch diese Darstellung kann schon ohne jegliche Interaktion eine gute Übersicht über die Kopplung einer Software geschaffen werden.
 
 Verbindungen können interaktiv ebenfalls direkt angezeigt werden und fügen sich als Spinnweben zwischen den Bäumen nahtlos in die Metapher des Waldes ein.
 
-In Kapitel \ref{ch:data-model} wird ein Datenmodell entwickelt, das einerseits Schichtentrennung zwischen Backend, Anwendungslogik und UI ermöglicht und andererseits die Visualisierung von statischen und dynamischen Daten ermöglichen. Diese Möglichkeit ist ein Alleinstellungsmerkmal von CodeLeaves.
+Im Kapitel \ref{ch:concept} wurde CodeLeaves darüber hinaus auch mit anderen 3D-Visualisierungen verglichen und festgestellt, dass CodeLeaves vor allem bei der Darstellung der Struktur einer Software und Verbindungen darin Vorteile gegenüber seinen Alternativen besitzt. Auch die mögliche Darstellung von statischen und dynamischen Daten ist ein Alleinstellungsmerkmal von CodeLeaves. Mithilfe von Expertengesprächen und eigenen Erfahrungen wurden User-Storys und Akzeptanzkriterien beschrieben, die für das danach folgende Datenmodell und den Prototyp wertvollen Input lieferten.
 
-Im Zuge dieser Arbeit wurde ein High-Fi-Prototyp für die HoloLens entwickelt. Primäres Ziel dabei war es, Algorithmen für die Generierung der 3D-Baumstrukturen zu suchen und grundlegende Interaktionen zu implementieren.
+In Kapitel \ref{ch:data-model} wurde ein Datenmodell entwickelt, das zum einen Schichtentrennung zwischen Backend, Anwendungslogik und UI unterstützt und zum anderen die Visualisierung von allen Informationen ermöglicht, die in der User-Storys gefordert wurden.
 
-Die verwendeten Algorithmen und die dafür nötige Mathematik wurde in Kapitel \ref{ch:layout} beschrieben. Es wird gezeigt, wie sich in der Natur vorkommende Strategien mit dem Goldenen Schnitt auf die Bäume von CodeLeaves übertragen lassen. Mit dem Sonnenblumen-Algorithmus werden Blätter eines Elternteils gleichmäßig auf einer Kreisfläche verteilt.
+Im Zuge dieser Arbeit wurde ein High-Fi-Prototyp für die HoloLens entwickelt. Primäres Ziel dabei war es, Algorithmen für die Generierung der 3D-Baumstrukturen und grundlegende Interaktionen zu implementieren.
 
-Durch hierarchisches Circle-Packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
+Die verwendeten Algorithmen und die dafür nötige Mathematik wurde in Kapitel \ref{ch:layout} beschrieben. Es wurde gezeigt, wie sich in der Natur vorkommende Strategien mit dem Goldenen Schnitt auf die Bäume von CodeLeaves übertragen lassen. Mit dem Sonnenblumen-Algorithmus werden Blätter eines Elternteils gleichmäßig auf einer Kreisfläche verteilt. Durch hierarchisches Circle-Packing werden die Knoten der Bäume so verteilt, dass Äste sich nicht überschneiden können und alle Blätter des Waldes von oben betrachtet sichtbar sind.
 
 Im Zuge des High-Fi-Prototypings wurde auch festgestellt, dass sich die HoloLens in der aktuellen Entwickler-Version nicht für die Betrachtung von sehr großen Software-Systemen eignet, da die Visualisierung dann nicht mehr flüssig gerendert wird.
 
-Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde zudem praxisnah erläutert, wie die lose Kopplung von Reaktion auf Interaktionen, Zustandsänderung der Anwendung und Aktualisierung der UI umgesetzt werden kann.
+Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behandelt. Dafür wurden in Kapitel \ref{ch:interaction-ar} Grundlagen erarbeitet. Die zur Verfügung stehenden Eingabemöglichkeiten der HoloLens wurden vorgestellt und allgemeine Herausforderungen der Interaktion in der AR beleuchtet. Mit reaktiver Programmierung wurde zudem praxisnah erläutert, wie die lose Kopplung von Eingabebehandlung, Zustandsänderung der Anwendung und Aktualisierung der UI umgesetzt werden kann.
 
-Zu guter Letzt wurden die im High-Fi-Prototyp bereits umgesetzten Interaktionen in Kapitel \ref{ch:interaction} aufgegriffen und durch einen Low-Fi-Prototyp ergänzt. Mit dem universellen Kontextmenü und den Manipulation-Indicators wurden Interaktions-Elemente eingeführt, die auch in anderen Anwendungen Verwendung finden können. Das erarbeitete Interaktions-Konzept ermöglicht es, den Wald interaktiv bis ins Detail zu erkunden.
+Zu guter Letzt wurden die im High-Fi-Prototyp bereits umgesetzten Interaktionen in Kapitel \ref{ch:interaction} aufgegriffen und durch einen Low-Fi-Prototyp ergänzt. Mit dem universellen Kontextmenü und den Manipulation-Indicators wurden Interaktions-Elemente eingeführt, die auch in anderen Anwendungen Verwendung finden können.
+
+Mit dem High-Fi-Prototyp wurde bereits ein Großteil der User-Storys aus Kapitel \ref{ch:concept} realisiert. User-Storys \ref{u:quality}, \ref{u:structure}, \ref{u:overview}, \ref{u:adjust} und \ref{u:project-selection} wurden durch die Projektauswahl, die Generierung des Waldes, die Beispiel-Metrik und den enthaltenen Basis-Interaktionen fast vollständig im High-Fi-Prototyp umgesetzt. In Ermangelung an echten Testdaten konnte die Anpassung der Dicke der Kanten und Wurzeln aus Akzeptanzkriterium \ref{acc:s-thickness} nicht realistisch getestet werden, ist aber technisch im High-Fi-Prototyp möglich. Der Import von neuen Daten aus Akzeptanzkriterien \ref{acc:u-import} und \ref{acc:u-add-data} lag laut Abgrenzung außerhalb der Ziele dieser Arbeit. Aus User-Storys \ref{u:interaction} und \ref{u:dynamic} sind die Interaktionen des Identifizierens von Wald-Elementen und der Anzeige des Zahlenwerts der aktuellen Metrik schon im High-Fi-Prototyp enthalten, alle weiteren Interaktionen dieser User-Storys wurden mit dem Low-Fi-Prototyp konzeptionell umgesetzt.
 
 \section{Ausblick}
 
-Mit dem High-Fi-Prototyp wurden bereits die wichtigsten Schritte für eine einsatzfähige Softwarevisualisierung gegangen. Für den produktiven Einsatz sind jedoch noch einige Aufgaben zu bewältigen.
+Die Aufgaben, die für einen produktiven Einsatz von CodeLeaves noch bewältigt werden müssen, werden im Folgendem zusammengefasst.
 
 \paragraph{Datenanbindung}
 
-Der Import von Daten benötigt ein Interface, wie es in Abbildung \ref{fig:project-selection-mockup} und \ref{fig:sonarqube-import} skizziert ist. Neben SonarQube für die Struktur der Software und deren statischen Metriken gilt es weitere Import-Möglichkeiten zu unterstützen. Für statische Abhängigkeiten bietet sich \textit{Structure101}\footnote{Structure101 ist eine agile Architektur-Entwicklungs-Umgebung (engl. ADE), mit der das Software-Entwicklungsteam eine Code-Basis organisieren kann (aus dem Englischen aus \cite{headway2017structure101}).} an. Mit Structure101 sind Abhängigkeiten auf Klassenebene verfügbar. Der Export der Daten von Structure101 wurde bereits erfolgreich getestet und muss als nächster Schritt in das Modell von CodeLeaves gebracht werden.
+Der Import von Daten benötigt ein Interface, wie es in Abbildungen \ref{fig:project-selection-mockup} und \ref{fig:sonarqube-import} skizziert ist. Neben SonarQube für die Struktur der Software und deren statischen Metriken gilt es weitere Import-Möglichkeiten zu unterstützen. Für statische Abhängigkeiten bietet sich \textit{Structure101}\footnote{Structure101 ist eine agile Architektur-Entwicklungs-Umgebung (engl. ADE), mit der das Software-Entwicklungsteam eine Code-Basis organisieren kann (aus dem Englischen aus \cite{headway2017structure101}).} an. Mit Structure101 sind Abhängigkeiten auf Klassenebene verfügbar. Der Export der Daten von Structure101 wurde bereits erfolgreich getestet und muss als nächster Schritt in das Modell von CodeLeaves gebracht werden.
 
-Für dynamische Daten lässt sich zum Beispiel das Software-EKG der QAware verwenden. Die EKG-Kollektoren sammeln dynamische Daten aus unterschiedlichen Datenquellen wie der Programmschnittstelle JMX und Windows Performance Counter \cite{weigend2011dynamische}. Das Software-EKG besitzt eine eigene UI zur Darstellung der gesammelten Daten. Statt dieser Visualisierung müssten die Daten in CodeLeaves importiert und auf die Struktur der Software übertragen werden.
+Für dynamische Daten lässt sich zum Beispiel das Software-EKG der QAware verwenden. Die EKG-Kollektoren sammeln dynamische Daten aus unterschiedlichen Datenquellen wie der Programmschnittstelle JMX und dem Windows Performance Counter \cite{weigend2011dynamische}. Das Software-EKG besitzt eine eigene UI zur Darstellung der gesammelten Daten. Statt dieser Visualisierung müssten die Daten in CodeLeaves importiert und auf die Struktur der Software übertragen werden.
 
 \paragraph{Evaluation der Aggregation}
 

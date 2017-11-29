@@ -53,7 +53,7 @@ Gerade bei komplexen Software-Systemen ist das der Fall. Soll zum Beispiel die z
 Angefangen bei UML-Diagrammen waren die meisten Darstellungsformen der Softwarevisualisierung bislang meist zweidimensional. Mit AR wird dieser Disziplin der Visualisierung jedoch wortwörtlich ein neuer Raum an Möglichkeiten eröffnet und diese Arbeit soll damit beginnen, den Raum zu füllen.
 
 \section{Zielsetzung der Arbeit}
-Für die Zielsetzung einer 3D-Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die "`visualization of artifacts related to software and its development process"' \cite{diehl2007software}. Diese Definition ist sehr breit gefasst. Wird der Fokus mehr auf die Nutzerorientierung gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
+Für die Zielsetzung einer 3D-Softwarevisualisierung in der AR sollten zunächst die allgemeinen Ziele einer Softwarevisualisierung betrachtet werden. Softwarevisualisierung ist für Diehl die \textit{"`visualization of artifacts related to software and its development process"'} \cite{diehl2007software}. Diese Definition ist sehr breit gefasst. Wird der Fokus mehr auf die Nutzerorientierung gelegt, lässt sich Softwarevisualisierung wie folgt definieren:
 
 \begin{defbox}{Softwarevisualisierung}{software-visualization}
 Softwarevisualisierung ist die bildliche oder auch metaphorische Darstellung einer Software, um dem Nutzer durch Vereinfachung und Abstraktion das bessere Verständnis oder die einfachere Analyse von Software zu ermöglichen.
@@ -933,7 +933,7 @@ Der Abstand $a_n$ zwischen dem Punkt $E$ und $P$ berechnet sich für den $n$-ten
   a_n = c \sqrt{n} \,,
 \end{equation}
 
-wobei $c$ eine Konstante ist und den Abstand der Kindknoten untereinander beeinflusst.
+\noindent wobei $c$ eine Konstante ist und den Abstand der Kindknoten untereinander beeinflusst.
 
 Die Rotation um die y-Achse $\varphi$ ist wie oben hergeleitet das $n$-te Vielfache vom Goldenen Winkel:
 
@@ -953,7 +953,7 @@ Die Länge $l$ der Kante kann mit
   l = h \cdot \cos\left(\theta\right)
 \end{equation}
 
-berechnet werden.
+\noindent  berechnet werden.
 
 Für die Positionierung des Kindknotens muss der Punkt $P$ vom konstruierten Kugelkoordinatensystem in das kartesische Koordinatensystem umgerechnet werden. Dies wird durch die Formel
 
@@ -966,7 +966,7 @@ Für die Positionierung des Kindknotens muss der Punkt $P$ vom konstruierten Kug
   \end{pmatrix}
 \end{equation}
 
-erreicht \cite{wolfram2017spherical}.
+\noindent erreicht \cite{wolfram2017spherical}.
 
 Damit ist alles für den Algorithmus gegeben, der Blätter eines Knotens mit gleichmäßigem Abstand auf eine gegebene Höhe verteilt und die Kanten entsprechend rotieren und skalieren kann.
 
@@ -1107,7 +1107,7 @@ Auflösung mithilfe von $d_1 + d_2 = d = \vert \vv{M}_2 - \vv{M}_1 \vert$ nach $
   d_1 = \frac{a^2 - b^2 + d^2}{2d} \,,
 \end{equation}
 
-was sich zurück in Gleichung \ref{equ:h} einsetzen lässt.
+\noindent was sich zurück in Gleichung \ref{equ:h} einsetzen lässt.
 
 Mit diesen Gleichungen kann der Circle-Packing-Algorithmus für Kinder eines Knotens angewandt werden. Für die Positionierung der Knoten im dreidimensionalen Raum kommt für die y-Koordinate jeweils noch die Länge der Kante des $0$-ten Geschwisters hinzu. Die Kanten der Geschwister müssen entsprechend deren Position angepasst werden
 
@@ -1756,7 +1756,7 @@ Neben dem Layout des Waldes wurde die Interaktion mit CodeLeaves intensiv behand
 
 Zu guter Letzt wurden die im High-Fi-Prototyp bereits umgesetzten Interaktionen in Kapitel \ref{ch:interaction} aufgegriffen und durch einen Low-Fi-Prototyp ergänzt. Mit dem universellen Kontextmenü und den Manipulation-Indicators wurden Interaktions-Elemente eingeführt, die auch in anderen Anwendungen Verwendung finden können.
 
-Mit dem High-Fi-Prototyp wurde bereits ein Großteil der User-Storys aus Kapitel \ref{ch:concept} realisiert. User-Storys \ref{u:quality}, \ref{u:structure}, \ref{u:overview}, \ref{u:adjust} und \ref{u:project-selection} wurden durch die Projektauswahl, die Generierung des Waldes, die Beispiel-Metrik und den enthaltenen Basis-Interaktionen fast vollständig im High-Fi-Prototyp umgesetzt. In Ermangelung an echten Testdaten konnte die Anpassung der Dicke der Kanten und Wurzeln aus Akzeptanzkriterium \ref{acc:s-thickness} nicht realistisch getestet werden, ist aber technisch im High-Fi-Prototyp möglich. Der Import von neuen Daten aus Akzeptanzkriterien \ref{acc:u-import} und \ref{acc:u-add-data} lag laut Abgrenzung außerhalb der Ziele dieser Arbeit. Aus User-Storys \ref{u:interaction} und \ref{u:dynamic} sind die Interaktionen des Identifizierens von Wald-Elementen und der Anzeige des Zahlenwerts der aktuellen Metrik schon im High-Fi-Prototyp enthalten, alle weiteren Interaktionen dieser User-Storys wurden mit dem Low-Fi-Prototyp konzeptionell umgesetzt.
+Mit dem High-Fi-Prototyp wurde bereits ein Großteil der User-Storys aus Kapitel \ref{ch:concept} realisiert. User-Storys \ref{u:quality}, \ref{u:structure}, \ref{u:overview}, \ref{u:adjust} und \ref{u:project-selection} wurden durch die Projektauswahl, die Generierung des Waldes, die Beispiel-Metrik und den enthaltenen Basis-Interaktionen fast vollständig im High-Fi-Prototyp umgesetzt. In Ermangelung echter Testdaten für Verbindungen konnte die Anpassung der Dicke der Kanten und Wurzeln aus Akzeptanzkriterium \ref{acc:s-thickness} nicht realistisch getestet werden, ist aber technisch im High-Fi-Prototyp möglich. Der Import von neuen Daten aus Akzeptanzkriterien \ref{acc:u-import} und \ref{acc:u-add-data} lag laut Abgrenzung in Abschnitt \ref{sec:distinction} außerhalb der Zielsetzung dieser Arbeit. Aus User-Storys \ref{u:interaction} und \ref{u:dynamic} sind die Interaktionen des Identifizierens von Wald-Elementen und der Anzeige des Zahlenwerts der aktuellen Metrik schon im High-Fi-Prototyp enthalten, alle weiteren Interaktionen dieser User-Storys wurden mit dem Low-Fi-Prototyp konzeptionell umgesetzt.
 
 \section{Ausblick}
 
